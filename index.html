@@ -54,6 +54,23 @@
 					<div class="clear"> </div>
 				</div>
 			</div>
+			
+			<div class="fade"></div>
+
+			<section class="star-wars">
+			  <div class="crawl">
+				<div class="title">
+				  <h1>Software engineer</h1>
+				  <p>Hello my name is Isma&iuml;l NGUYEN.</p>
+				  <p>&nbsp;</p>
+				</div>
+				
+				<p>I am a master student of a leading french engineering school and I also work at Capgemini Technology Services in a sandwich course.</p>
+				  
+				<p>Feel free to take a look at my professional experience as well as my technical skillset and don't hesitate to get in touch if you would like to discuss job opportunities.</p>
+			  </div>
+			</section>
+			
 			<div class="main">
 				<div class="wrap">
 					<div class="main_left">
@@ -79,6 +96,7 @@
 					<div class="clear"> </div>
 				</div>
 			</div>
+		
 		</div>
 		<div class="buttom">
 			<div class="wrap">
@@ -122,6 +140,12 @@
 
 			ga('create', 'UA-42237338-1', 'auto');
 			ga('send', 'pageview');
+			
+			// hide star wars text and show main block
+			setTimeout(function () {
+				$('.star-wars').hide();
+				$('.main').show();
+			}, 70000);
 		</script>
 		
 	</body>
