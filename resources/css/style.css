@@ -26,7 +26,7 @@ img{max-width:100%;}
 /*----//importing-fonts---*/
 body{
 	font-family:trebuchet ms, arial, sans-serif;
-	background: #252A2F; /*#fff*/;
+	background: #000000;
 }
 /*---start-wrap-----*/
 .wrap{
@@ -388,15 +388,13 @@ body{
 	}
 }
 
-/* --- STAR WARS intro text --- */
-
 .header {
 	position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     z-index: 9999;
-    background: #252a2f;
+    background: #000000;
 }
 
 .buttom {
@@ -404,7 +402,7 @@ body{
 	bottom: 0;
     width: 100vw;
     z-index: 9999;
-    background: #252a2f;
+    background: #000000;
 }
 
 .main {
@@ -413,6 +411,8 @@ body{
 	top: 50px;
 	width: 100vw;
 }
+
+/* --- STAR WARS intro text --- */
 
 .fade {
   position: relative;
