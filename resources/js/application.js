@@ -2,7 +2,7 @@
 var easter_egg = new Konami();
 easter_egg.code = function()
 { 
-    alert('Konami');
+    $(".chat-box").toggle('scale');
 }
 easter_egg.load();
 
