@@ -11,6 +11,12 @@ $(function() {
         {
             return false;
         }
+		
+		// If user wants a game, redirect to flight game
+		if(msg.indexOf('game') >= 0)
+		{
+			window.location.replace('./flight/index.html');
+		}
 
         // Print user request
         print_message(msg, 'user');
@@ -22,11 +28,6 @@ $(function() {
         }, 1000); 
 
     });
-
-    function setHeader(xhr)
-    {
-        xhr.setRequestHeader('Authorization', 'Bearer YPIEWPW3WE54NJQ47CUR2V77NSS6UQRD');
-    }
 
     function print_message(msg, type)
     {
