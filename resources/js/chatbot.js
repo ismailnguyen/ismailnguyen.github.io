@@ -77,7 +77,12 @@ $(function() {
 		
 		if(userWantsPlayGame)
 		{
-			window.location.replace('./flight/index.html');
+			let games = ['flight', 'snake'];
+			
+			let randomGameNumber = Math.floor(Math.random() * games.length);
+			let randomGame =  games[randomGameNumber];
+			
+			window.location.replace('./games/' + randomGame + '/index.html');
 		}
     }
 	
