@@ -25,7 +25,8 @@ body {
 }
 
 .lastname {
-	font-size: 3.35vw;
+	font-size: 2.35vw;
+	margin-bottom: 0;
 }
 
 .job-title {
