@@ -16,9 +16,16 @@ body {
 	font-weight: 400;
 	text-decoration: none;
 	vertical-align: baseline;
-	font-size: 8.35vw;
 	font-family: "Bowlby One SC";
 	font-style: normal
+}
+
+.firstname {
+	font-size: 8.35vw;
+}
+
+.lastname {
+	font-size: 3.35vw;
 }
 
 .job-title {
