@@ -17,16 +17,18 @@ body {
 	text-decoration: none;
 	vertical-align: baseline;
 	font-family: "Bowlby One SC";
-	font-style: normal
+	font-style: normal;
 }
 
 .firstname {
 	font-size: 8.35vw;
+	text-shadow: 0px 2px #fecb01, 3px 3px #fecb01, 4px 4px #fecb01;
 }
 
 .lastname {
 	font-size: 2.35vw;
 	margin-bottom: 0;
+	text-shadow: 0px 1px #fecb01, 1px 1px #fecb01, 2px 2px #fecb01;
 }
 
 .job-title {
@@ -272,25 +274,25 @@ body {
   width: 200px;
   height: 180px;
   animation: rt 6s infinite linear;
-  box-shadow: 0 0 1px 0 blueviolet, inset 0 0 10px 0 blueviolet;
+  box-shadow: 0 0 1px 0 #fecb01, inset 0 0 10px 0 #fecb01;
 }
 .circle:nth-of-type(2) {
   width: 180px;
   height: 200px;
   animation: rt 10s infinite linear;
-  box-shadow: 0 0 1px 0 darkviolet, inset 0 0 10px 0 darkviolet;
+  box-shadow: 0 0 1px 0 #feda4a, inset 0 0 10px 0 #feda4a;
 }
  .circle:nth-of-type(3) {
   width: 210px;
   height: 190px;
   animation: rt 5s infinite linear;
-  box-shadow: 0 0 1px 0 darkmagenta, inset 0 0 10px 0 darkmagenta;
+  box-shadow: 0 0 1px 0 #fee067, inset 0 0 10px 0 #fee067;
 }
  .circle:nth-of-type(4) {
   width: 190px;
   height: 210px;
   animation: rt 15s infinite linear;
-  box-shadow: 0 0 1px 0 magenta, inset 0 0 10px 0 magenta;
+  box-shadow: 0 0 1px 0 #feea9a, inset 0 0 10px 0 #feea9a;
 }
 
 @keyframes rt {
