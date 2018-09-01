@@ -49,13 +49,27 @@
 		<link type="text/css" rel="stylesheet" href="./resources/css/style.css" />
 		
 	</head>
-	<body>
-		<div class="container">
-			<div class="row">
+	<body class="js-logo-animation-container">
+		<div class="container">	
+			<div class="row header">
+				<div class="col-xs-12 lastname">
+					<svg viewBox="10 50 800 300">
+					  <symbol id="s-text">
+						<text text-anchor="middle" x="50%" y="50%" dy=".35em">NGUYEN</text>
+					  </symbol>
+					  <use class="text" xlink:href="#s-text"></use>
+					  <use class="text" xlink:href="#s-text"></use>
+					  <use class="text" xlink:href="#s-text"></use>
+					  <use class="text" xlink:href="#s-text"></use>
+					  <use class="text" xlink:href="#s-text"></use>
+					</svg>
+				</div>
+				
+				<div class="col-xs-12 firstname js-logo">
+					ISMA&Iuml;L
+				</div>
+				
 				<div class="col-xs-12">
-					<p class="name lastname">NGUYEN</p>
-					<p class="name firstname">ISMA&Iuml;L</p>
-					
 					<p class="job-title">
 						<span class="job-title normal">< / A</span>
 						<span class="job-title big">SOFTWARE </span>
@@ -110,6 +124,6 @@
 		<script src="./resources/js/konami.js"></script>
 		<script src="./resources/js/chatbot.js"></script>
 		<script src="./resources/js/application.js"></script>
-
+	
 	</body>
 </html>

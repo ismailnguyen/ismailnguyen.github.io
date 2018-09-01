@@ -6,10 +6,93 @@
 
 body {
 	background: #000000;
-	padding-top: 200px;
+	overflow: hidden;
 }
 
-.name {
+.header {
+	padding-top: 8em;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@media only screen and (max-width: 500px) {
+   .header {
+		padding-top: 6em;
+	}
+}
+
+.lastname {
+	height: 200px;
+}
+
+@media only screen and (max-width: 500px) {
+   .lastname {
+		height: 70px;
+	}
+}
+
+.lastname svg {
+	line-height: 1.15;
+	text-align: center;
+	font-family: "Bowlby One SC";
+	text-transform: uppercase;
+	font-size: 2.35vw;
+}
+
+@media only screen and (max-width: 500px) {
+   .lastname svg {
+        font-size: 10vw;
+    }
+}
+
+.lastname .text {
+	fill: none;
+	stroke-width: 1;
+	stroke-linejoin: round;
+	stroke-dasharray: 70 330;
+	stroke-dashoffset: 0;
+	-webkit-animation: stroke 6s infinite linear;
+	animation: stroke 6s infinite linear;
+}
+.lastname .text:nth-child(5n + 1) {
+	stroke: #F2385A;
+	-webkit-animation-delay: -1.2s;
+	animation-delay: -1.2s;
+}
+.lastname .text:nth-child(5n + 2) {
+	stroke: #F5A503;
+	-webkit-animation-delay: -2.4s;
+	animation-delay: -2.4s;
+}
+.lastname .text:nth-child(5n + 3) {
+	stroke: #E9F1DF;
+	-webkit-animation-delay: -3.6s;
+	animation-delay: -3.6s;
+}
+.lastname .text:nth-child(5n + 4) {
+	stroke: #56D9CD;
+	-webkit-animation-delay: -4.8s;
+	animation-delay: -4.8s;
+}
+.lastname .text:nth-child(5n + 5) {
+	stroke: #3AA1BF;
+	-webkit-animation-delay: -6s;
+	animation-delay: -6s;
+}
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+.firstname {
 	line-height: 1.15;
 	text-align: center;
 	color: #feda4a;
@@ -18,17 +101,14 @@ body {
 	vertical-align: baseline;
 	font-family: "Bowlby One SC";
 	font-style: normal;
-}
-
-.firstname {
 	font-size: 8.35vw;
 	text-shadow: 0px 2px #fecb01, 3px 3px #fecb01, 4px 4px #fecb01;
 }
 
-.lastname {
-	font-size: 2.35vw;
-	margin-bottom: 0;
-	text-shadow: 0px 1px #fecb01, 1px 1px #fecb01, 2px 2px #fecb01;
+@media only screen and (max-width: 500px) {
+   .firstname {
+        text-shadow: 0px 1px #fecb01, 1px 1px #fecb01, 2px 2px #fecb01;
+    }
 }
 
 .job-title {
@@ -74,7 +154,11 @@ body {
 }
 
 .footer {
-	padding-top: 80px;
+	position: fixed;
+	bottom: 5%;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 /* --- Chatbot --- */
@@ -259,6 +343,8 @@ body {
     clear: both;
     margin-bottom: 70px;
 }
+
+/* --- Circle animation --- */
 
 .circle {
   position: absolute;
