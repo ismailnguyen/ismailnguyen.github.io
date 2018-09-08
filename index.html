@@ -43,8 +43,14 @@
 		<meta name="robots" content="index, follow" />
 			
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./resources/css/vendor/bootstrap.min.css">
 		<link type="text/css" rel="stylesheet" href="./resources/css/style.css" />
+		
+		<link type="text/css" rel="stylesheet" href="./resources/css/circle-animation.css" />
+		<link type="text/css" rel="stylesheet" href="./resources/css/chatbot.css" />
+		<link type="text/css" rel="stylesheet" href="./resources/css/paper.css" />
+		<link type="text/css" rel="stylesheet" href="./resources/css/universe.css" />
+		
 	</head>
 	<body class="js-logo-animation-container">
 		<div class="container">	
@@ -74,9 +80,108 @@
 					</p>
 				</div>
 			</div>
+
+			<div id="universe" class="scale-stretched">
+				<div id="galaxy">
+					<div id="solar-system" class="earth">
+					  <div id="mercury" class="orbit">
+						<div class="pos">
+						  <div class="planet">
+							<dl class="infos">
+							  <dt></dt>
+							  <dd><span></span></dd>
+							</dl>
+						  </div>
+						</div>
+					  </div>
+					  <div id="venus" class="orbit">
+						<div class="pos">
+						  <div class="planet">
+							<dl class="infos">
+							  <dt></dt>
+							  <dd><span></span></dd>
+							</dl>
+						  </div>
+						</div>
+					  </div>
+					  <div id="earth" class="orbit">
+						<div class="pos">
+						  <div class="orbit">
+							<div class="pos">
+							  <div class="moon"></div>
+							</div>
+						  </div>
+						  <div class="planet">
+							<dl class="infos">
+							  <dt></dt>
+							  <dd><span></span></dd>
+							</dl>
+						  </div>
+						</div>
+					  </div>
+					  <div id="mars" class="orbit">
+						<div class="pos">
+						  <div class="planet">
+							<dl class="infos">
+							  <dt></dt>
+							  <dd><span></span></dd>
+							</dl>
+						  </div>
+						</div>
+					  </div>
+					  <div id="jupiter" class="orbit">
+						<div class="pos">
+						  <div class="planet">
+							<dl class="infos">
+							  <dt></dt>
+							  <dd><span></span></dd>
+							</dl>
+						  </div>
+						</div>
+					  </div>
+					  <div id="saturn" class="orbit">
+						<div class="pos">
+						  <div class="planet">
+							<div class="ring"></div>
+							<dl class="infos">
+							  <dt></dt>
+							  <dd><span></span></dd>
+							</dl>
+						  </div>
+						</div>
+					  </div>
+					  <div id="uranus" class="orbit">
+						<div class="pos">
+						  <div class="planet">
+							<dl class="infos">
+							  <dt></dt>
+							  <dd><span></span></dd>
+							</dl>
+						  </div>
+						</div>
+					  </div>
+					  <div id="neptune" class="orbit">
+						<div class="pos">
+						  <div class="planet">
+							<dl class="infos">
+							  <dt></dt>
+							  <dd><span></span></dd>
+							</dl>
+						  </div>
+						</div>
+					  </div>
+					  <div id="sun">
+						<dl class="infos">
+						  <dt></dt>
+						  <dd><span></span></dd>
+						</dl>
+					  </div>
+					</div>
+				</div>
+			</div>
 			
 			<div class="row footer">
-				<div class="col-xs-12">
+				<div class="col-xs-12" id="load-universe">
 					<div class="circle"></div>
 					<div class="circle"></div>
 					<div class="circle"></div>
@@ -99,6 +204,7 @@
 					<a href="./docs/CV_Ismail-Nguyen.pdf" target="_blank">Resum&eacute;</a>
 				</div>
 			</div>
+			
 		</div>
 
 		<div class="chat-box">
@@ -116,19 +222,16 @@
 				</form>      
 			</div>
 		</div>
-
-		<script src="./resources/js/jquery.min.js"></script>
-		
+	
+		<script src="./resources/js/vendor/jquery.min.js"></script>
 		<script src="./resources/js/logo-animation.js"></script>
-		
 		<script src="./resources/js/typing-animation.js"></script>
-		
 		<script src="./resources/js/chatbot.js"></script>
-		
-		<script src="./resources/js/konami.js"></script>
+		<script src="./resources/js/vendor/konami.js"></script>
 		<script src="./resources/js/easter-egg.js"></script>
-		
-		<script src="./resources/js/google-analytics.js"></script>
+		<script src="./resources/js/vendor/google-analytics.js"></script>
+		<script src="./resources/js/paper.js"></script>
+		<script src="./resources/js/universe.js"></script>
 	
 	</body>
 </html>
