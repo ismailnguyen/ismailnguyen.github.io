@@ -156,9 +156,5 @@ body {
 }
 
 .footer {
-	position: fixed;
-	bottom: 5%;
-    left: 0;
-    right: 0;
-    margin: auto;
+	padding-top: 10em;
 }
