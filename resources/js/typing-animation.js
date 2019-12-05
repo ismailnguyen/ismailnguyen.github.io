@@ -332,7 +332,7 @@
     };
 
     $.fn.typed.defaults = {
-        strings: ["These are the default values...", "You know what you should do?", "Use your own!", "Have a great day!"],
+        strings: [],
         stringsElement: null,
         // typing speed
         typeSpeed: 0,
@@ -370,9 +370,9 @@
 function handleTyping () {
   $(".typed-animation").typed({
     strings: [
-				'software <small>craftsman</small>', 
-				'family <small>guy</small>', 
-				'food <small>addicted</small>'
+				'software craftsman.', 
+				'family guy.', 
+				'food addicted.'
 	],
     typeSpeed: 50,
     starDelay: 200,
@@ -383,6 +383,6 @@ function handleTyping () {
   });
 }
 
-$("document").ready(function() {
+$(document).ready(function() {
   handleTyping();
 });
