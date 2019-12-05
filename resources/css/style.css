@@ -1,173 +1,36 @@
+/* --- Logo --- */
+
 @import url('https://themes.googleusercontent.com/fonts/css?kit=Qx6FPcitRwTC_k88tLPc-UdBEiE9uD1gMwjC8j0e9UVOHzq4pOkkVVXAxa-PHMp_TxxFasp78LYLHii6Z8AzWrPkbmw9Z2nKh64fN9qFysw');
 
-* {
-	box-sizing: border-box;
+.logo {
+	line-height: 1.15;
+	text-align: center;
+	color: #000;
+	font-weight: 400;
+	text-decoration: none;
+	vertical-align: baseline;
+	font-family: "Bowlby One SC";
+	font-style: normal;
+	font-size: 2.35vw;
+	text-shadow: 0px 2px #fecb01, 3px 3px #fecb01, 4px 4px #fecb01;
 }
 
+@media only screen and (max-width: 500px) {
+   .logo {
+		font-size: 8.35vw;
+        text-shadow: 0px 1px #fecb01, 1px 1px #fecb01, 2px 2px #fecb01;
+    }
+}
+
+/* ----------------------------------------------------- */
+
+/* --- Neon animation --- */
 @font-face {
 	font-family: 'neontubes';
 	src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot");
 	src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot?#iefix") format("embedded-opentype"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff2") format("woff2"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff") format("woff"), url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
-}
-
-body {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	margin: 0;
-	background: #000000;
-	overflow: hidden;
-}
-
-.header {
-	padding-top: 8em;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
-@media only screen and (max-width: 500px) {
-   .header {
-		padding-top: 6em;
-	}
-}
-
-.lastname {
-	height: 200px;
-}
-
-@media only screen and (max-width: 500px) {
-   .lastname {
-		height: 70px;
-	}
-}
-
-.lastname svg {
-	line-height: 1.15;
-	text-align: center;
-	font-family: "Bowlby One SC";
-	text-transform: uppercase;
-	font-size: 2.35vw;
-}
-
-@media only screen and (max-width: 500px) {
-   .lastname svg {
-        font-size: 10vw;
-    }
-}
-
-.lastname .text {
-	fill: none;
-	stroke-width: 1;
-	stroke-linejoin: round;
-	stroke-dasharray: 70 330;
-	stroke-dashoffset: 0;
-	-webkit-animation: stroke 6s infinite linear;
-	animation: stroke 6s infinite linear;
-}
-.lastname .text:nth-child(5n + 1) {
-	stroke: #FEDA4A;
-	-webkit-animation-delay: -1.2s;
-	animation-delay: -1.2s;
-}
-.lastname .text:nth-child(5n + 2) {
-	stroke: #FEDA4A;
-	-webkit-animation-delay: -2.4s;
-	animation-delay: -2.4s;
-}
-.lastname .text:nth-child(5n + 3) {
-	stroke: #E9F1DF;
-	-webkit-animation-delay: -3.6s;
-	animation-delay: -3.6s;
-}
-.lastname .text:nth-child(5n + 4) {
-	stroke: #FEDA4A;
-	-webkit-animation-delay: -4.8s;
-	animation-delay: -4.8s;
-}
-.lastname .text:nth-child(5n + 5) {
-	stroke: #FEDA4A;
-	-webkit-animation-delay: -6s;
-	animation-delay: -6s;
-}
-
-@-webkit-keyframes stroke {
-  100% {
-    stroke-dashoffset: -400;
-  }
-}
-@keyframes stroke {
-  100% {
-    stroke-dashoffset: -400;
-  }
-}
-
-.firstname {
-	line-height: 1.15;
-	text-align: center;
-	color: #feda4a;
-	font-weight: 400;
-	text-decoration: none;
-	vertical-align: baseline;
-	font-family: "Bowlby One SC";
-	font-style: normal;
-	font-size: 8.35vw;
-	text-shadow: 0px 2px #fecb01, 3px 3px #fecb01, 4px 4px #fecb01;
-}
-
-@media only screen and (max-width: 500px) {
-   .firstname {
-        text-shadow: 0px 1px #fecb01, 1px 1px #fecb01, 2px 2px #fecb01;
-    }
-}
-
-.job-title {
-	padding-bottom: 30px;
-	text-align: center;
-	text-transform: uppercase;
-}
-
-.job-title .normal {
-	color: #ffffff;
-	font-weight: 400;
-	text-decoration: none;
-	vertical-align: baseline;
-	font-size: 12pt;
-	font-family: "Titan One";
-	font-style: normal
-}
-
-.job-title .big {
-	font-size: 14pt;
-	font-family: "Titan One";
-	color: #ffffff;
-	font-weight: 400
-}
-
-.resume {
-	vertical-align: baseline;
-	text-align: center;
-	padding-top: 100px;
-	padding-bottom: 100px;
-	text-align: center;
-}
-
-.resume a {
-	color: #ffffff;
-	text-decoration:none;
-	font-weight: 400;
-	font-size: 24pt;
-	font-family: "Dr Sugiyama";
-	font-style: normal;	
-}
-
-.resume a:hover {
-	color: #feda4a;
-}
-
-.footer {
-	padding-top: 10em;
 }
 
 .neon-container {
