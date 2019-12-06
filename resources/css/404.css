@@ -89,7 +89,7 @@ body{
 .night{
     height: 560px;
     width: 700px;
-    background:url('../images/404/background.png');  
+    background:url('/resources/images/404/background.png');  
     background-size: cover;
     position: relative;
     overflow-x: hidden;
@@ -99,7 +99,7 @@ body{
   height: 140px;
   width: 500%;
   display: block;
-  background:url('../images/404/Img_02.png');
+  background:url('/resources/images/404/Img_02.png');
   position: absolute;
   bottom: 0;
   left: 0px;
