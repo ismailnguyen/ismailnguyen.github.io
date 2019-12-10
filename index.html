@@ -11,25 +11,25 @@
     <meta name="apple-mobile-web-app-title" content="Isma&iuml;l NGUYEN">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="msapplication-tap-highlight" content="no">
-    <link rel="shortcut icon" href="./resources/images/icon.png">
+    <link rel="shortcut icon" href="./resources/images/profile.png">
     <link rel="dns-prefetch" href="https://ismailnguyen.github.io">
     <link rel="prefetch" href="https://ismailnguyen.github.io">
     <link rel="manifest" href="manifest.json">
     <link rel="home" href="/">
     <link rel="msapplication-starturl" href="/">
 
-    <link rel="icon" href="./resources/images/icon.png" sizes="192x192">
-    <link rel="apple-touch-icon-precomposed" href="./resources/images/icon.png" sizes="192x192">
-    <link rel="msapplication-square192x192logo" href="./resources/images/icon.png" sizes="192x192">
-    <link rel="icon" href="./resources/images/icon.png" sizes="152x152">
-    <link rel="apple-touch-icon-precomposed" href="./resources/images/icon.png" sizes="152x152">
-    <link rel="msapplication-square152x152logo" href="./resources/images/icon.png" sizes="152x152">
-    <link rel="icon" href="./resources/images/icon.png" sizes="120x120">
-    <link rel="apple-touch-icon-precomposed" href="./resources/images/icon.png" sizes="120x120">
-    <link rel="msapplication-square120x120logo" href="./resources/images/icon.png" sizes="120x120">
-    <link rel="icon" href="./resources/images/icon.png" sizes="76x76">
-    <link rel="apple-touch-icon-precomposed" href="./resources/images/icon.png" sizes="76x76">
-    <link rel="msapplication-square76x76logo" href="./resources/images/icon.png" sizes="76x76">
+    <link rel="icon" href="./resources/images/profile.png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="./resources/images/profile.png" sizes="192x192">
+    <link rel="msapplication-square192x192logo" href="./resources/images/profile.png" sizes="192x192">
+    <link rel="icon" href="./resources/images/profile.png" sizes="152x152">
+    <link rel="apple-touch-icon-precomposed" href="./resources/images/profile.png" sizes="152x152">
+    <link rel="msapplication-square152x152logo" href="./resources/images/profile.png" sizes="152x152">
+    <link rel="icon" href="./resources/images/profile.png" sizes="120x120">
+    <link rel="apple-touch-icon-precomposed" href="./resources/images/profile.png" sizes="120x120">
+    <link rel="msapplication-square120x120logo" href="./resources/images/profile.png" sizes="120x120">
+    <link rel="icon" href="./resources/images/profile.png" sizes="76x76">
+    <link rel="apple-touch-icon-precomposed" href="./resources/images/profile.png" sizes="76x76">
+    <link rel="msapplication-square76x76logo" href="./resources/images/profile.png" sizes="76x76">
 
     <title>&lt; &frasl; A Software Craftsman &gt;</title>
 
@@ -44,6 +44,8 @@
     <meta name="robots" content="index, follow" />
 
     <link rel="stylesheet" href="./resources/css/vendor/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
     <link type="text/css" rel="stylesheet" href="./resources/css/style.css" />
 </head>
 
@@ -166,13 +168,89 @@
         </div>
     </section>
 
-    <section id="works" class="section">
+    <!-- Work Modals -->
+    <div id="ncrafts-pwa-modal" class="modal modal-full-screen modal-fx-slideBottom">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <section class="hero has-background-dark is-fullheight">
+                <div class="hero-body">
+                    <div class="container is-fluid">
+                        <div class="columns is-vcentered">
+                            <div class="column">
+                                <figure class="image is-square">
+                                    <img src="./resources/images/works/ncrafts-pwa.PNG" alt="NCrafts PWA">
+                                </figure>
+                            </div>
+                            <div class="column ">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                            <img src="https://pbs.twimg.com/profile_images/1065610855604252672/q3HvTFdY_400x400.jpg" alt="NewCrafts">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content has-text-light">
+                                        <span class="tag is-rounded is-link has-text-weight-bold">Vue JS</span>
+                                        <span class="tag is-rounded is-link has-text-weight-bold">PWA</span>
+                                        <span class="tag is-rounded is-link has-text-weight-bold">Heroku</span>
+                                        <p class="title is-4 has-text-white">NewCrafts</p>
+                                        <p class="subtitle is-6"><a href="https://app.ncrafts.io/" target="_blank">app.ncrafts.io</a></p>
+                                        NewCrafts conference mobile application.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <button class="modal-close has-background-white has-text-dark is-large" aria-label="close"></button>
+    </div>
+
+    <div id="ncrafts-training-modal" class="modal modal-full-screen modal-fx-slideBottom">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <section class="hero has-background-dark is-fullheight">
+                <div class="hero-body">
+                    <div class="container is-fluid">
+                        <div class="columns is-vcentered">
+                            <div class="column">
+                                <figure class="image is-square">
+                                    <img src="./resources/images/works/ncrafts-training.PNG" alt="NewCrafts Training">
+                                </figure>
+                            </div>
+                            <div class="column ">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-48x48">
+                                            <img src="https://pbs.twimg.com/profile_images/1065610855604252672/q3HvTFdY_400x400.jpg" alt="NewCrafts">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content has-text-light">
+                                        <span class="tag is-rounded is-link has-text-weight-bold">HTML</span>
+                                        <span class="tag is-rounded is-link has-text-weight-bold">CSS</span>
+                                        <span class="tag is-rounded is-link has-text-weight-bold">Azure</span>
+                                        <p class="title is-4 has-text-white">NewCrafts</p>
+                                        <p class="subtitle is-6"><a href="https://training.ncrafts.io/" target="_blank">training.ncrafts.io</a></p>
+                                        NewCrafts trainings website.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <button class="modal-close has-background-white has-text-dark is-large" aria-label="close"></button>
+    </div>
+    <!-- End Work Modals -->
+
+    <section id="works" class="section has-background-light">
         <div class="container">
             <h2 class="title">Works</h2>
 
-            <div class="columns">
+            <div id="works-carousel" class="columns is-vcentered carousel has-dark-arrows">
                 <div class="column">
-                    <div class="card">
+                    <div class="card work-item modal-link" data-target="ncrafts-pwa-modal">
                         <div class="card-image">
                             <figure class="image is-4by3">
                                 <img src="./resources/images/works/ncrafts-pwa.PNG" alt="NCrafts PWA">
@@ -191,22 +269,22 @@
                                 </div>
                             </div>
 
-                            <div class="content">
+                            <!-- <div class="content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                 <br>
                                 <span class="tag">Vue JS</span>
                                 <span class="tag">PWA</span>
                                 <span class="tag">Heroku</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="column">
-                    <div class="card">
+                    <div class="card work-item modal-link" data-target="ncrafts-training-modal">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="./resources/images/works//ncrafts-training.PNG" alt="NewCrafts Training">
+                                <img src="./resources/images/works/ncrafts-training.PNG" alt="NewCrafts Training">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -222,22 +300,93 @@
                                 </div>
                             </div>
 
-                            <div class="content">
+                            <!-- <div class="content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                 <br>
                                 <span class="tag">HTML</span>
                                 <span class="tag">CSS</span>
                                 <span class="tag">Azure</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="column">
-                    <div class="card">
+                    <div class="card work-item modal-link" data-target="crafter-journey-modal">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="./resources/images/works//agile-france-pwa.PNG" alt="Agile France PWA">
+                                <img src="./resources/images/works/crafter-journey.PNG" alt="A Software Crafter's Journey">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <img src="http://la-combe-du-lion-vert.fr/wp-content/uploads/2016/11/logo_La_Combe_du_Lion_Vert_small.png" alt="La Combe du Lion Vert">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">A Software Crafter's Journey</p>
+                                    <p class="subtitle is-6"><a href="https://a-software-crafter-s-journey.now.sh/" target="_blank">a-software-crafter-s-journey.now.sh</a></p>
+                                </div>
+                            </div>
+
+                            <!-- <div class="content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                                <br>
+                                <span class="tag">React JS</span>
+                                <span class="tag">PWA</span>
+                                <span class="tag">Firebase</span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card work-item">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="./resources/images/works/application-weekend.png" alt="Comment j'ai crée une application en un week-end">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title">
+                                “Comment j'ai crée une application en un week-end”
+                            </p>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    <a href="https://docs.google.com/presentation/d/14sLubBl04_m547yxraSP1mO-_R5Bf9ClwuyX9s-TjPs/" target="_blank">Read</a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="button is-white is-small" href="https://twitter.com/intent/tweet/?text=Comment j'ai crée une application en un weekend&amp;url=https://docs.google.com/presentation/d/14sLubBl04_m547yxraSP1mO-_R5Bf9ClwuyX9s-TjPs/" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                                        <span class="icon">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="button is-white is-small" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://docs.google.com/presentation/d/14sLubBl04_m547yxraSP1mO-_R5Bf9ClwuyX9s-TjPs/&amp;title=Comment j'ai crée une application en un weekend&amp;source=https://www.ismailnguyen.com/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                                        <span class="icon">
+                                            <i class="fab fa-linkedin"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card work-item modal-link" data-target="agile-france-pwa-modal">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="./resources/images/works/agile-france-pwa.PNG" alt="Agile France PWA">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -253,29 +402,29 @@
                                 </div>
                             </div>
 
-                            <div class="content">
+                            <!-- <div class="content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                 <br>
                                 <span class="tag">React JS</span>
                                 <span class="tag">PWA</span>
                                 <span class="tag">Firebase</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="column">
-                    <div class="card">
+                    <div class="card work-item modal-link" data-target="humans-relais-modal">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="./resources/images/works//humans-relais.png" alt="Humans Relais Android application">
+                                <img src="./resources/images/works/humans-relais.png" alt="Humans Relais Android application">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-48x48">
-                                        <img src="./resources/images/works//humans-relais-logo.png" alt="Humans Relais">
+                                        <img src="./resources/images/works/humans-relais-logo.png" alt="Humans Relais">
                                     </figure>
                                 </div>
                                 <div class="media-content">
@@ -284,23 +433,65 @@
                                 </div>
                             </div>
 
-                            <div class="content">
+                            <!-- <div class="content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                 <br>
                                 <span class="tag">Android</span>
                                 <span class="tag">Java</span>
                                 <span class="tag">Play Store</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="columns">
+
                 <div class="column">
-                    <div class="card">
+                    <div class="card work-item">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="./resources/images/works//bac-a-lettre.PNG" alt="Bac à lettre PWA">
+                                <img src="./resources/images/works/dry-principle.PNG" alt="DRY Principle">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title">
+                                DRY Principle
+                            </p>
+                            <p class="subtitle">
+                                Clean Code
+                            </p>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    <a href="https://docs.google.com/presentation/d/1RqId9XV6FtQ0_hYC26qG03rkEHc-ylODwF1FwilaBxo/" target="_blank">Read</a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="button is-white is-small" href="https://twitter.com/intent/tweet/?text=DRY Principle&amp;url=https://docs.google.com/presentation/d/1RqId9XV6FtQ0_hYC26qG03rkEHc-ylODwF1FwilaBxo/" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                                        <span class="icon">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="button is-white is-small" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://docs.google.com/presentation/d/1RqId9XV6FtQ0_hYC26qG03rkEHc-ylODwF1FwilaBxo/&amp;title=DRY Principle&amp;summary=Clean Code&amp;source=https://www.ismailnguyen.com/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                                        <span class="icon">
+                                            <i class="fab fa-linkedin"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card work-item modal-link" data-target="bac-a-lettre-modal">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="./resources/images/works/bac-a-lettre.PNG" alt="Bac à lettre PWA">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -316,29 +507,73 @@
                                 </div>
                             </div>
 
-                            <div class="content">
+                            <!-- <div class="content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                 <br>
                                 <span class="tag">React JS</span>
                                 <span class="tag">PWA</span>
                                 <span class="tag">Netlify</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="column">
-                    <div class="card">
+                    <div class="card work-item">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="./resources/images/works//tryeat.PNG" alt="Bac à lettre PWA">
+                                <img src="./resources/images/works/golden-circle.PNG" alt="The Golden Circle">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title">
+                                “The Golden Circle”
+                            </p>
+                            <p class="subtitle">
+                                A brief introduction
+                            </p>
+                            
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    <a href="https://docs.google.com/presentation/d/1lK0SjbXAwa2BeCO3kOeRipuXO5ywS-1XLIwJppP86Ro/" target="_blank">Read</a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="button is-white is-small" href="https://twitter.com/intent/tweet/?text=The Golden Circle&amp;url=https://docs.google.com/presentation/d/1lK0SjbXAwa2BeCO3kOeRipuXO5ywS-1XLIwJppP86Ro/" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                                        <span class="icon">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="button is-white is-small" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://docs.google.com/presentation/d/1lK0SjbXAwa2BeCO3kOeRipuXO5ywS-1XLIwJppP86Ro/&amp;title=The Golden Circle&amp;summary=A brief introduction&amp;source=https://www.ismailnguyen.com/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                                        <span class="icon">
+                                            <i class="fab fa-linkedin"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card work-item modal-link" data-target="tryeat-pwa-modal">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="./resources/images/works/tryeat.PNG" alt="Try Eat PWA">
                             </figure>
                         </div>
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-48x48">
-                                        <img src="./resources/images/works//tryeat-logo.PNG" alt="Bac à lettre">
+                                        <img src="./resources/images/works/tryeat-logo.PNG" alt="Try Eat">
                                     </figure>
                                 </div>
                                 <div class="media-content">
@@ -347,20 +582,20 @@
                                 </div>
                             </div>
 
-                            <div class="content">
+                            <!-- <div class="content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                 <br>
                                 <span class="tag">Vue JS</span>
                                 <span class="tag">PWA</span>
                                 <span class="tag">Semantic UI</span>
                                 <span class="tag">Firebase</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="column">
-                    <div class="card">
+                    <div class="card work-item modal-link" data-target="wedding-invitation-modal">
                         <div class="card-image">
                             <figure class="image is-4by3">
                                 <img src="https://raw.githubusercontent.com/ismailnguyen/Wedding-Invitation/master/screen1.png" alt="My wedding invitation">
@@ -374,22 +609,22 @@
                                 </div>
                             </div>
 
-                            <div class="content">
+                            <!-- <div class="content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                 <br>
                                 <span class="tag">HTML</span>
                                 <span class="tag">JavaScipt</span>
                                 <span class="tag">CSS</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="column">
-                    <div class="card">
+                    <div class="card work-item modal-link" data-target="joyti-restaurant-modal">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="./resources/images/works//joyti-restaurant.PNG" alt="Joyti Restaurant">
+                                <img src="./resources/images/works/joyti-restaurant.PNG" alt="Joyti Restaurant">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -400,24 +635,21 @@
                                 </div>
                             </div>
 
-                            <div class="content">
+                            <!-- <div class="content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                 <br>
                                 <span class="tag">HTML</span>
                                 <span class="tag">Google Sheets APIva</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
 
-                
-            </div>
-            <div class="columns">
                 <div class="column">
-                    <div class="card">
+                    <div class="card work-item modal-link" data-target="my-portfolio-modal">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="./resources/images/works//ismailnguyen.PNG" alt="My portfolio">
+                                <img src="./resources/images/works/ismailnguyen.PNG" alt="My portfolio">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -427,20 +659,98 @@
                                     <p class="subtitle is-6"><a href="https://github.com/ismailnguyen/ismailnguyen.github.io" target="_blank">github/ismailnguyen</a></p>
                                 </div>
                             </div>
-
+<!-- 
                             <div class="content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
                                 <br>
                                 <span class="tag">HTML</span>
                                 <span class="tag">Bulma</span>
                                 <span class="tag">Github Pages</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="column">
-                    <div class="card">
+                    <div class="card work-item">
+                        <div class="card-content">
+                            <p class="title">
+                                Imperfection is the new perfection
+                            </p>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    <a href="https://docs.google.com/presentation/d/1XFsJ-2ZMRti-iwg4UQ4HFEvja8FggakO_adyLMCWZOA/" target="_blank">Read</a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="button is-white is-small" href="https://twitter.com/intent/tweet/?text=Imperfection is the new perfection&amp;url=https://docs.google.com/presentation/d/1XFsJ-2ZMRti-iwg4UQ4HFEvja8FggakO_adyLMCWZOA/" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                                        <span class="icon">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="button is-white is-small" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://docs.google.com/presentation/d/1XFsJ-2ZMRti-iwg4UQ4HFEvja8FggakO_adyLMCWZOA/&amp;title=Imperfection is the new perfection&amp;source=https://www.ismailnguyen.com/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                                        <span class="icon">
+                                            <i class="fab fa-linkedin"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card work-item">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="./resources/images/works/open-closed-principle.png" alt="Open Closed Principle">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title">
+                                Open/Closed Principle
+                            </p>
+                            <p class="subtitle">
+                                SOLID Principle
+                            </p>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    <a href="https://docs.google.com/presentation/d/1Ame_zMdo07S4OcmEAyEjwLFZkYRsnS-unnHZcaP_-xM/" target="_blank">Read</a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="button is-white is-small" href="https://twitter.com/intent/tweet/?text=Open Closed Principle&amp;url=https://docs.google.com/presentation/d/1Ame_zMdo07S4OcmEAyEjwLFZkYRsnS-unnHZcaP_-xM/" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                                        <span class="icon">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </p>
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="button is-white is-small" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://docs.google.com/presentation/d/1Ame_zMdo07S4OcmEAyEjwLFZkYRsnS-unnHZcaP_-xM/&amp;title=Open Closed Principle&amp;summary=SOLID Principle&amp;source=https://www.ismailnguyen.com/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                                        <span class="icon">
+                                            <i class="fab fa-linkedin"></i>
+                                        </span>
+                                    </a>
+                                </span>
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card work-item">
                         <div class="card-content">
                             <p class="title">
                                 “Comment le Big Data peut influencer notre vie quotidienne ?”
@@ -448,7 +758,7 @@
                             <p class="subtitle">
                                 Ismaïl NGUYEN & Valentin MEYNE
                             </p>
-
+<!-- 
                             <div class="content">
                                 <span class="tag">Big Data</span>
                                 <span class="tag">IoT</span>
@@ -457,7 +767,7 @@
                                 <span class="tag">Machine learning</span>
                                 <span class="tag">Technology</span>
                                 <span class="tag">Algorithm</span>
-                            </div>
+                            </div> -->
                         </div>
                         <footer class="card-footer">
                             <p class="card-footer-item">
@@ -476,7 +786,7 @@
                             </p>
                             <p class="card-footer-item">
                                 <span>
-                                    <a class="button is-white is-small" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.ismailnguyen.com%2Fdocs%2FMemoire_Big-Data_Influence-sur-notre-vie-quotidienne_MEYNE-Valentin_NGUYEN-Ismail.pdf&amp;title=%E2%80%9CComment%20le%20Big%20Data%20peut%20influencer%20notre%20vie%20quotidienne%20%3F%E2%80%9D&amp;summary=%E2%80%9CComment%20le%20Big%20Data%20peut%20influencer%20notre%20vie%20quotidienne%20%3F%E2%80%9D&amp;source=https%3A%2F%2Fwww.ismailnguyen.com%2Fdocs%2FMemoire_Big-Data_Influence-sur-notre-vie-quotidienne_MEYNE-Valentin_NGUYEN-Ismail.pdf" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                                    <a class="button is-white is-small" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.ismailnguyen.com%2Fdocs%2FMemoire_Big-Data_Influence-sur-notre-vie-quotidienne_MEYNE-Valentin_NGUYEN-Ismail.pdf&amp;title=%E2%80%9CComment%20le%20Big%20Data%20peut%20influencer%20notre%20vie%20quotidienne%20%3F%E2%80%9D&amp;summary=%E2%80%9CComment%20le%20Big%20Data%20peut%20influencer%20notre%20vie%20quotidienne%20%3F%E2%80%9D&amp;source=https://www.ismailnguyen.com/" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
                                         <span class="icon">
                                             <i class="fab fa-linkedin"></i>
                                         </span>
@@ -486,7 +796,9 @@
                         </footer>
                     </div>
                 </div>
+
             </div>
+            
         </div>
     </section>
 
@@ -543,7 +855,7 @@
         </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer has-background-light">
         <div class="content has-text-centered">
             <p>
                 Handcrafted with <i class="fa fa-heart" style="color:red;"></i>. Under <a href="http://www.wtfpl.net/" target="_blank">WTFP licence</a>.
@@ -556,6 +868,8 @@
     <script defer src="./resources/js/typing-animation.js"></script>
     <script defer src="./resources/js/logo-animation.js"></script>
     <script defer src="./resources/js/vendor/google-analytics.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -564,6 +878,28 @@
                 // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
                 $(".navbar-burger").toggleClass("is-active");
                 $(".navbar-menu").toggleClass("is-active");
+            });
+
+            bulmaCarousel.attach('#works-carousel', {
+                initialSlide: 0,
+                slidesToScroll: 1,
+                slidesToShow: 4,
+                autoplay: true,
+                infinite: true,
+                loop: true,
+                navigation: true,
+                pagination: false,
+                navigationSwipe: true
+            });
+
+            $('.modal-close, .modal-background').click(function () {
+                $('.modal').removeClass('is-active');
+                $('html').removeClass('is-clipped');
+            });
+
+            $('.work-item').click(function () {
+                $('#' + $(this).data('target')).addClass('is-active');
+                $('html').addClass('is-clipped');
             });
         });
     </script>
