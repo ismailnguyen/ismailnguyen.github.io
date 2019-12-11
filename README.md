@@ -1,12 +1,12 @@
-## Getting started with SvelteJS v3
+# My portfolio - Ismaïl NGUYEN
 
-This is a simple starter template for building and running an app using [Svelte](https://v3.svelte.technology). To get going, make sure you have [NodeJS](https://nodejs.org/en/) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed on your machine.
+> Svelte JS, Bulma, HTML, Github Pages
 
-Next, `cd` to the directory where this project has been cloned...
+## Build
 
 ```
-git clone https://github.com/Holben888/svelte-starter-template.git
-cd ./svelte-starter-template
+git clone https://github.com/ismailnguyen/ismailnguyen.github.io.git
+cd ./ismailnguyen.github.io
 ```
 
 ...install all project dependencies...
