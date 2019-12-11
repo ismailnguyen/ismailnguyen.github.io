@@ -13,7 +13,7 @@
     "related_applications": [],
     "prefer_related_applications": false,
     "icons": [{
-        "src": "resources/images/icon.png",
+        "src": "resources/images/profile.png",
         "sizes": "16x16 32x32 64x64 128x128 192x192 256x256 512x512",
         "type": "image/png"
       }]
