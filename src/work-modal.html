@@ -52,21 +52,26 @@
                                         {/if}
                                     </p>
 
-                                    <p class="has-text-justified">
-                                        {work.description}
-                                    </p>
+                                    <div class="content is-medium has-text-white has-text-justified">
+                                        {@html work.description}
+                                    </div>
+                                    
+                                    <div class="buttons">
+                                        
+                                        {#if work.readMoreLink}
+                                            <a href={work.readMoreLink} target="_blank" class="button is-link is-light">
+                                                Read more
+                                            </a>
+                                        {/if}
 
-                                    {#if work.readMoreLink}
-                                        <a href={work.readMoreLink} target="_blank">
-                                            Read more
-                                        </a>
-                                    {/if}
+                                        {#if work.subTitle && work.subTitle.link}
+                                            <a href={work.subTitle.link} target="_blank" class="button is-link is-light">
+                                                View project
+                                            </a>
+                                        {/if}
 
-                                    {#if work.subTitle && work.subTitle.link}
-                                        <a href={work.subTitle.link} target="_blank">
-                                            View project
-                                        </a>
-                                    {/if}
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

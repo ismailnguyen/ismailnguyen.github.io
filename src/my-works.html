@@ -10,10 +10,10 @@
                         
                         {#if work.primaryImage} 
                             <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img src={work.primaryImage.src} alt={work.primaryImage.alt}>
-                                    </figure>
-                                </div>
+                                <figure class="image is-4by3">
+                                    <img src={work.primaryImage.src} alt={work.primaryImage.alt}>
+                                </figure>
+                            </div>
                         {/if}
 
                         <div class="card-content">
@@ -53,24 +53,33 @@
                                         <a href={work.readMoreLink} target="_blank">Read</a>
                                     </span>
                                 </p>
-                                <p class="card-footer-item">
-                                    <span>
-                                        <a class="button is-white is-small" href={twitterShareLink(work)} target="_blank" rel="noopener" aria-label="Share on Twitter">
-                                            <span class="icon">
-                                                <i class="fab fa-twitter"></i>
+                               
+                                {#if work.socialShare}
+                                    {#if work.socialShare.twitter}
+                                        <p class="card-footer-item">
+                                            <span>
+                                                <a class="button is-white is-small" href={twitterShareLink(work)} target="_blank" rel="noopener" aria-label="Share on Twitter">
+                                                    <span class="icon">
+                                                        <i class="fab fa-twitter"></i>
+                                                    </span>
+                                                </a>
                                             </span>
-                                        </a>
-                                    </span>
-                                </p>
-                                <p class="card-footer-item">
-                                    <span>
-                                        <a class="button is-white is-small" href={linkedInShareLink(work)} target="_blank" rel="noopener" aria-label="Share on LinkedIn">
-                                            <span class="icon">
-                                                <i class="fab fa-linkedin"></i>
+                                        </p>
+                                    {/if}
+
+                                    {#if work.socialShare.linkedIn}
+                                        <p class="card-footer-item">
+                                            <span>
+                                                <a class="button is-white is-small" href={linkedInShareLink(work)} target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                                                    <span class="icon">
+                                                        <i class="fab fa-linkedin"></i>
+                                                    </span>
+                                                </a>
                                             </span>
-                                        </a>
-                                    </span>
-                                </p>
+                                        </p>
+                                    {/if}
+
+                                {/if}
                             </footer>
                         {/if}
 
@@ -89,19 +98,6 @@
 
 <script>
     import WorkModal from './work-modal.html';
-    
-    function openModal (work) {
-        //console.log('houohu');
-        // $('.modal-close, .modal-background').click(function () {
-        //         $('.modal').removeClass('is-active');
-        //         $('html').removeClass('is-clipped');
-        //     });
-
-        //     $('.work-item').click(function () {
-        //         $('#' + $(this).data('target')).addClass('is-active');
-        //         $('html').addClass('is-clipped');
-        //     });
-    }
 
     function twitterShareLink (work) {
         return 'https://twitter.com/intent/tweet/'
@@ -137,7 +133,43 @@
               'PWA',
               'Heroku'
             ]
-        }, 
+        },
+        {
+          title: 'Feedback-storming : Event Storming of feedback ?',
+          subTitle: {
+              text: 'Event storming revisited to collect feedbacks'
+          },
+          readMoreLink: 'https://github.com/ismailnguyen/feedback-storming/',
+          socialShare: {
+              twitter: true,
+              linkedIn: true
+          },
+          description: `
+            <h1 class="title has-text-white" class="title">Why ?</h1>
+            <p>
+                Collect feedback Initiate to Event Storming
+            </p>
+
+            <h1 class="title has-text-white">How ?</h1>
+            <p>
+                Organize a "revisited" storming event session based on participants' feedback.
+            </p>
+
+            <h1 class="title has-text-white">What ?</h1>
+            <p>
+                Paste "event" post-it notes to mark each event experienced by the participants during the session, then paste "question" post-it notes on the questions that everyone asked themselves, paste "idea" post-it notes for each idea or area of improvement. All this while respecting the timeline with an event that marks the beginning of the session and one for the end of the session.
+            </p>
+
+            <h1 class="title has-text-white">When ?</h1>
+            <p>
+                At the end of an event (ceremony, presentation, workshop, training,...).
+            </p>
+          `,
+          tags: [
+              'Event Storming',
+              'Feedback'
+            ]
+        },
         {
           primaryImage: {
               src: './resources/images/works/ncrafts-training.PNG',

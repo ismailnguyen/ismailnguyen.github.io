@@ -670,7 +670,7 @@ var App = (function () {
 		};
 	}
 
-	// (59:36) {#if work.readMoreLink}
+	// (61:40) {#if work.readMoreLink}
 	function create_if_block_1(ctx) {
 		var a, text, a_href_value;
 
@@ -680,6 +680,7 @@ var App = (function () {
 				text = createText("Read more");
 				a.href = a_href_value = ctx.work.readMoreLink;
 				a.target = "_blank";
+				a.className = "button is-link is-light";
 			},
 
 			m(target, anchor) {
@@ -701,7 +702,7 @@ var App = (function () {
 		};
 	}
 
-	// (65:36) {#if work.subTitle && work.subTitle.link}
+	// (67:40) {#if work.subTitle && work.subTitle.link}
 	function create_if_block(ctx) {
 		var a, text, a_href_value;
 
@@ -711,6 +712,7 @@ var App = (function () {
 				text = createText("View project");
 				a.href = a_href_value = ctx.work.subTitle.link;
 				a.target = "_blank";
+				a.className = "button is-link is-light";
 			},
 
 			m(target, anchor) {
@@ -733,7 +735,7 @@ var App = (function () {
 	}
 
 	function create_fragment$3(ctx) {
-		var div8, div0, text0, div7, section, div6, div5, div4, text1, div3, div2, text2, div1, text3, p0, text4_value = ctx.work.title, text4, text5, p1, text6, p2, text7_value = ctx.work.description, text7, text8, text9, text10, button;
+		var div10, div0, text0, div9, section, div8, div7, div6, text1, div5, div4, text2, div3, text3, p0, text4_value = ctx.work.title, text4, text5, p1, text6, div1, raw_value = ctx.work.description, text7, div2, text8, text9, button;
 
 		var if_block0 = (ctx.work.primaryImage) && create_if_block_6(ctx);
 
@@ -755,21 +757,21 @@ var App = (function () {
 
 		return {
 			c() {
-				div8 = createElement("div");
+				div10 = createElement("div");
 				div0 = createElement("div");
 				text0 = createText("\r\n\r\n    ");
-				div7 = createElement("div");
+				div9 = createElement("div");
 				section = createElement("section");
+				div8 = createElement("div");
+				div7 = createElement("div");
 				div6 = createElement("div");
-				div5 = createElement("div");
-				div4 = createElement("div");
 				if (if_block0) if_block0.c();
 				text1 = createText("\r\n\r\n                        ");
-				div3 = createElement("div");
-				div2 = createElement("div");
+				div5 = createElement("div");
+				div4 = createElement("div");
 				if (if_block1) if_block1.c();
 				text2 = createText("\r\n\r\n                                ");
-				div1 = createElement("div");
+				div3 = createElement("div");
 				if (if_block2) if_block2.c();
 				text3 = createText("\r\n\r\n                                    ");
 				p0 = createElement("p");
@@ -778,64 +780,66 @@ var App = (function () {
 				p1 = createElement("p");
 				if (if_block3) if_block3.c();
 				text6 = createText("\r\n\r\n                                    ");
-				p2 = createElement("p");
-				text7 = createText(text7_value);
-				text8 = createText("\r\n\r\n                                    ");
+				div1 = createElement("div");
+				text7 = createText("\r\n                                    \r\n                                    ");
+				div2 = createElement("div");
 				if (if_block4) if_block4.c();
-				text9 = createText("\r\n\r\n                                    ");
+				text8 = createText("\r\n\r\n                                        ");
 				if (if_block5) if_block5.c();
-				text10 = createText("\r\n\r\n    ");
+				text9 = createText("\r\n\r\n    ");
 				button = createElement("button");
 				div0.className = "modal-background";
 				p0.className = "title is-4 has-text-white";
 				p1.className = "subtitle is-6";
-				p2.className = "has-text-justified";
-				div1.className = "media-content has-text-light";
-				div2.className = "media";
-				div3.className = "column ";
-				div4.className = "columns is-vcentered";
-				div5.className = "container is-fluid";
-				div6.className = "hero-body";
+				div1.className = "content is-medium has-text-white has-text-justified";
+				div2.className = "buttons";
+				div3.className = "media-content has-text-light";
+				div4.className = "media";
+				div5.className = "column ";
+				div6.className = "columns is-vcentered";
+				div7.className = "container is-fluid";
+				div8.className = "hero-body";
 				section.className = "hero has-background-dark is-fullheight";
-				div7.className = "modal-content";
+				div9.className = "modal-content";
 				button.className = "modal-close has-background-white has-text-dark is-large";
 				setAttribute(button, "aria-label", "close");
-				div8.id = ctx.modalId;
-				div8.className = "modal modal-full-screen modal-fx-slideBottom";
+				div10.id = ctx.modalId;
+				div10.className = "modal modal-full-screen modal-fx-slideBottom";
 			},
 
 			m(target, anchor) {
-				insert(target, div8, anchor);
-				append(div8, div0);
-				append(div8, text0);
+				insert(target, div10, anchor);
+				append(div10, div0);
+				append(div10, text0);
+				append(div10, div9);
+				append(div9, section);
+				append(section, div8);
 				append(div8, div7);
-				append(div7, section);
-				append(section, div6);
+				append(div7, div6);
+				if (if_block0) if_block0.m(div6, null);
+				append(div6, text1);
 				append(div6, div5);
 				append(div5, div4);
-				if (if_block0) if_block0.m(div4, null);
-				append(div4, text1);
+				if (if_block1) if_block1.m(div4, null);
+				append(div4, text2);
 				append(div4, div3);
-				append(div3, div2);
-				if (if_block1) if_block1.m(div2, null);
-				append(div2, text2);
-				append(div2, div1);
-				if (if_block2) if_block2.m(div1, null);
-				append(div1, text3);
-				append(div1, p0);
+				if (if_block2) if_block2.m(div3, null);
+				append(div3, text3);
+				append(div3, p0);
 				append(p0, text4);
-				append(div1, text5);
-				append(div1, p1);
+				append(div3, text5);
+				append(div3, p1);
 				if (if_block3) if_block3.m(p1, null);
-				append(div1, text6);
-				append(div1, p2);
-				append(p2, text7);
-				append(div1, text8);
-				if (if_block4) if_block4.m(div1, null);
-				append(div1, text9);
-				if (if_block5) if_block5.m(div1, null);
-				append(div8, text10);
-				append(div8, button);
+				append(div3, text6);
+				append(div3, div1);
+				div1.innerHTML = raw_value;
+				append(div3, text7);
+				append(div3, div2);
+				if (if_block4) if_block4.m(div2, null);
+				append(div2, text8);
+				if (if_block5) if_block5.m(div2, null);
+				append(div10, text9);
+				append(div10, button);
 			},
 
 			p(changed, ctx) {
@@ -845,7 +849,7 @@ var App = (function () {
 					} else {
 						if_block0 = create_if_block_6(ctx);
 						if_block0.c();
-						if_block0.m(div4, text1);
+						if_block0.m(div6, text1);
 					}
 				} else if (if_block0) {
 					if_block0.d(1);
@@ -858,7 +862,7 @@ var App = (function () {
 					} else {
 						if_block1 = create_if_block_5(ctx);
 						if_block1.c();
-						if_block1.m(div2, text2);
+						if_block1.m(div4, text2);
 					}
 				} else if (if_block1) {
 					if_block1.d(1);
@@ -871,7 +875,7 @@ var App = (function () {
 					} else {
 						if_block2 = create_if_block_4(ctx);
 						if_block2.c();
-						if_block2.m(div1, text3);
+						if_block2.m(div3, text3);
 					}
 				} else if (if_block2) {
 					if_block2.d(1);
@@ -893,8 +897,8 @@ var App = (function () {
 					}
 				}
 
-				if ((changed.work) && text7_value !== (text7_value = ctx.work.description)) {
-					setData(text7, text7_value);
+				if ((changed.work) && raw_value !== (raw_value = ctx.work.description)) {
+					div1.innerHTML = raw_value;
 				}
 
 				if (ctx.work.readMoreLink) {
@@ -903,7 +907,7 @@ var App = (function () {
 					} else {
 						if_block4 = create_if_block_1(ctx);
 						if_block4.c();
-						if_block4.m(div1, text9);
+						if_block4.m(div2, text8);
 					}
 				} else if (if_block4) {
 					if_block4.d(1);
@@ -916,7 +920,7 @@ var App = (function () {
 					} else {
 						if_block5 = create_if_block(ctx);
 						if_block5.c();
-						if_block5.m(div1, null);
+						if_block5.m(div2, null);
 					}
 				} else if (if_block5) {
 					if_block5.d(1);
@@ -924,7 +928,7 @@ var App = (function () {
 				}
 
 				if (changed.modalId) {
-					div8.id = ctx.modalId;
+					div10.id = ctx.modalId;
 				}
 			},
 
@@ -933,7 +937,7 @@ var App = (function () {
 
 			d(detach) {
 				if (detach) {
-					detachNode(div8);
+					detachNode(div10);
 				}
 
 				if (if_block0) if_block0.d();
@@ -999,7 +1003,7 @@ var App = (function () {
 	}
 
 	// (11:24) {#if work.primaryImage}
-	function create_if_block_4$1(ctx) {
+	function create_if_block_7(ctx) {
 		var div, figure, img, img_src_value, img_alt_value;
 
 		return {
@@ -1030,7 +1034,7 @@ var App = (function () {
 	}
 
 	// (22:32) {#if work.secondaryImage}
-	function create_if_block_3$1(ctx) {
+	function create_if_block_6$1(ctx) {
 		var div, figure, img, img_src_value, img_alt_value;
 
 		return {
@@ -1061,11 +1065,11 @@ var App = (function () {
 	}
 
 	// (33:36) {#if work.subTitle}
-	function create_if_block_1$1(ctx) {
+	function create_if_block_4$1(ctx) {
 		var p;
 
 		function select_block_type(ctx) {
-			if (ctx.work.subTitle.link) return create_if_block_2$1;
+			if (ctx.work.subTitle.link) return create_if_block_5$1;
 			return create_else_block;
 		}
 
@@ -1131,7 +1135,7 @@ var App = (function () {
 	}
 
 	// (35:44) {#if work.subTitle.link}
-	function create_if_block_2$1(ctx) {
+	function create_if_block_5$1(ctx) {
 		var a, text_value = ctx.work.subTitle.text, text, a_href_value;
 
 		return {
@@ -1159,70 +1163,196 @@ var App = (function () {
 
 	// (49:24) {#if work.readMoreLink}
 	function create_if_block$1(ctx) {
-		var footer, p0, span0, a0, text0, a0_href_value, text1, p1, span2, a1, span1, a1_href_value, text2, p2, span4, a2, span3, a2_href_value;
+		var footer, p, span, a, text0, a_href_value, text1;
+
+		var if_block = (ctx.work.socialShare) && create_if_block_1$1(ctx);
 
 		return {
 			c() {
 				footer = createElement("footer");
-				p0 = createElement("p");
-				span0 = createElement("span");
-				a0 = createElement("a");
+				p = createElement("p");
+				span = createElement("span");
+				a = createElement("a");
 				text0 = createText("Read");
-				text1 = createText("\r\n                                ");
-				p1 = createElement("p");
-				span2 = createElement("span");
-				a1 = createElement("a");
-				span1 = createElement("span");
-				span1.innerHTML = `<i class="fab fa-twitter"></i>`;
-				text2 = createText("\r\n                                ");
-				p2 = createElement("p");
-				span4 = createElement("span");
-				a2 = createElement("a");
-				span3 = createElement("span");
-				span3.innerHTML = `<i class="fab fa-linkedin"></i>`;
-				a0.href = a0_href_value = ctx.work.readMoreLink;
-				a0.target = "_blank";
-				p0.className = "card-footer-item";
-				span1.className = "icon";
-				a1.className = "button is-white is-small";
-				a1.href = a1_href_value = twitterShareLink(ctx.work);
-				a1.target = "_blank";
-				a1.rel = "noopener";
-				setAttribute(a1, "aria-label", "Share on Twitter");
-				p1.className = "card-footer-item";
-				span3.className = "icon";
-				a2.className = "button is-white is-small";
-				a2.href = a2_href_value = linkedInShareLink(ctx.work);
-				a2.target = "_blank";
-				a2.rel = "noopener";
-				setAttribute(a2, "aria-label", "Share on LinkedIn");
-				p2.className = "card-footer-item";
+				text1 = createText("\r\n                               \r\n                                ");
+				if (if_block) if_block.c();
+				a.href = a_href_value = ctx.work.readMoreLink;
+				a.target = "_blank";
+				p.className = "card-footer-item";
 				footer.className = "card-footer";
 			},
 
 			m(target, anchor) {
 				insert(target, footer, anchor);
-				append(footer, p0);
-				append(p0, span0);
-				append(span0, a0);
-				append(a0, text0);
+				append(footer, p);
+				append(p, span);
+				append(span, a);
+				append(a, text0);
 				append(footer, text1);
-				append(footer, p1);
-				append(p1, span2);
-				append(span2, a1);
-				append(a1, span1);
-				append(footer, text2);
-				append(footer, p2);
-				append(p2, span4);
-				append(span4, a2);
-				append(a2, span3);
+				if (if_block) if_block.m(footer, null);
+			},
+
+			p(changed, ctx) {
+				if (ctx.work.socialShare) {
+					if (if_block) {
+						if_block.p(changed, ctx);
+					} else {
+						if_block = create_if_block_1$1(ctx);
+						if_block.c();
+						if_block.m(footer, null);
+					}
+				} else if (if_block) {
+					if_block.d(1);
+					if_block = null;
+				}
+			},
+
+			d(detach) {
+				if (detach) {
+					detachNode(footer);
+				}
+
+				if (if_block) if_block.d();
+			}
+		};
+	}
+
+	// (57:32) {#if work.socialShare}
+	function create_if_block_1$1(ctx) {
+		var text, if_block1_anchor;
+
+		var if_block0 = (ctx.work.socialShare.twitter) && create_if_block_3$1(ctx);
+
+		var if_block1 = (ctx.work.socialShare.linkedIn) && create_if_block_2$1(ctx);
+
+		return {
+			c() {
+				if (if_block0) if_block0.c();
+				text = createText("\r\n\r\n                                    ");
+				if (if_block1) if_block1.c();
+				if_block1_anchor = createComment();
+			},
+
+			m(target, anchor) {
+				if (if_block0) if_block0.m(target, anchor);
+				insert(target, text, anchor);
+				if (if_block1) if_block1.m(target, anchor);
+				insert(target, if_block1_anchor, anchor);
+			},
+
+			p(changed, ctx) {
+				if (ctx.work.socialShare.twitter) {
+					if (if_block0) {
+						if_block0.p(changed, ctx);
+					} else {
+						if_block0 = create_if_block_3$1(ctx);
+						if_block0.c();
+						if_block0.m(text.parentNode, text);
+					}
+				} else if (if_block0) {
+					if_block0.d(1);
+					if_block0 = null;
+				}
+
+				if (ctx.work.socialShare.linkedIn) {
+					if (if_block1) {
+						if_block1.p(changed, ctx);
+					} else {
+						if_block1 = create_if_block_2$1(ctx);
+						if_block1.c();
+						if_block1.m(if_block1_anchor.parentNode, if_block1_anchor);
+					}
+				} else if (if_block1) {
+					if_block1.d(1);
+					if_block1 = null;
+				}
+			},
+
+			d(detach) {
+				if (if_block0) if_block0.d(detach);
+
+				if (detach) {
+					detachNode(text);
+				}
+
+				if (if_block1) if_block1.d(detach);
+
+				if (detach) {
+					detachNode(if_block1_anchor);
+				}
+			}
+		};
+	}
+
+	// (58:36) {#if work.socialShare.twitter}
+	function create_if_block_3$1(ctx) {
+		var p, span1, a, span0, a_href_value;
+
+		return {
+			c() {
+				p = createElement("p");
+				span1 = createElement("span");
+				a = createElement("a");
+				span0 = createElement("span");
+				span0.innerHTML = `<i class="fab fa-twitter"></i>`;
+				span0.className = "icon";
+				a.className = "button is-white is-small";
+				a.href = a_href_value = twitterShareLink(ctx.work);
+				a.target = "_blank";
+				a.rel = "noopener";
+				setAttribute(a, "aria-label", "Share on Twitter");
+				p.className = "card-footer-item";
+			},
+
+			m(target, anchor) {
+				insert(target, p, anchor);
+				append(p, span1);
+				append(span1, a);
+				append(a, span0);
 			},
 
 			p: noop,
 
 			d(detach) {
 				if (detach) {
-					detachNode(footer);
+					detachNode(p);
+				}
+			}
+		};
+	}
+
+	// (70:36) {#if work.socialShare.linkedIn}
+	function create_if_block_2$1(ctx) {
+		var p, span1, a, span0, a_href_value;
+
+		return {
+			c() {
+				p = createElement("p");
+				span1 = createElement("span");
+				a = createElement("a");
+				span0 = createElement("span");
+				span0.innerHTML = `<i class="fab fa-linkedin"></i>`;
+				span0.className = "icon";
+				a.className = "button is-white is-small";
+				a.href = a_href_value = linkedInShareLink(ctx.work);
+				a.target = "_blank";
+				a.rel = "noopener";
+				setAttribute(a, "aria-label", "Share on LinkedIn");
+				p.className = "card-footer-item";
+			},
+
+			m(target, anchor) {
+				insert(target, p, anchor);
+				append(p, span1);
+				append(span1, a);
+				append(a, span0);
+			},
+
+			p: noop,
+
+			d(detach) {
+				if (detach) {
+					detachNode(p);
 				}
 			}
 		};
@@ -1232,11 +1362,11 @@ var App = (function () {
 	function create_each_block_1(ctx) {
 		var div4, div3, text0, div2, div1, text1, div0, p, text2_value = ctx.work.title, text2, text3, text4;
 
-		var if_block0 = (ctx.work.primaryImage) && create_if_block_4$1(ctx);
+		var if_block0 = (ctx.work.primaryImage) && create_if_block_7(ctx);
 
-		var if_block1 = (ctx.work.secondaryImage) && create_if_block_3$1(ctx);
+		var if_block1 = (ctx.work.secondaryImage) && create_if_block_6$1(ctx);
 
-		var if_block2 = (ctx.work.subTitle) && create_if_block_1$1(ctx);
+		var if_block2 = (ctx.work.subTitle) && create_if_block_4$1(ctx);
 
 		var if_block3 = (ctx.work.readMoreLink) && create_if_block$1(ctx);
 
@@ -1289,7 +1419,7 @@ var App = (function () {
 					if (if_block0) {
 						if_block0.p(changed, ctx);
 					} else {
-						if_block0 = create_if_block_4$1(ctx);
+						if_block0 = create_if_block_7(ctx);
 						if_block0.c();
 						if_block0.m(div3, text0);
 					}
@@ -1302,7 +1432,7 @@ var App = (function () {
 					if (if_block1) {
 						if_block1.p(changed, ctx);
 					} else {
-						if_block1 = create_if_block_3$1(ctx);
+						if_block1 = create_if_block_6$1(ctx);
 						if_block1.c();
 						if_block1.m(div1, text1);
 					}
@@ -1315,7 +1445,7 @@ var App = (function () {
 					if (if_block2) {
 						if_block2.p(changed, ctx);
 					} else {
-						if_block2 = create_if_block_1$1(ctx);
+						if_block2 = create_if_block_4$1(ctx);
 						if_block2.c();
 						if_block2.m(div0, null);
 					}
@@ -1351,7 +1481,7 @@ var App = (function () {
 		};
 	}
 
-	// (85:0) {#each works as work, index}
+	// (94:0) {#each works as work, index}
 	function create_each_block$1(ctx) {
 		var current;
 
@@ -1595,7 +1725,43 @@ var App = (function () {
 	              'PWA',
 	              'Heroku'
 	            ]
-	        }, 
+	        },
+	        {
+	          title: 'Feedback-storming : Event Storming of feedback ?',
+	          subTitle: {
+	              text: 'Event storming revisited to collect feedbacks'
+	          },
+	          readMoreLink: 'https://github.com/ismailnguyen/feedback-storming/',
+	          socialShare: {
+	              twitter: true,
+	              linkedIn: true
+	          },
+	          description: `
+            <h1 class="title has-text-white" class="title">Why ?</h1>
+            <p>
+                Collect feedback Initiate to Event Storming
+            </p>
+
+            <h1 class="title has-text-white">How ?</h1>
+            <p>
+                Organize a "revisited" storming event session based on participants' feedback.
+            </p>
+
+            <h1 class="title has-text-white">What ?</h1>
+            <p>
+                Paste "event" post-it notes to mark each event experienced by the participants during the session, then paste "question" post-it notes on the questions that everyone asked themselves, paste "idea" post-it notes for each idea or area of improvement. All this while respecting the timeline with an event that marks the beginning of the session and one for the end of the session.
+            </p>
+
+            <h1 class="title has-text-white">When ?</h1>
+            <p>
+                At the end of an event (ceremony, presentation, workshop, training,...).
+            </p>
+          `,
+	          tags: [
+	              'Event Storming',
+	              'Feedback'
+	            ]
+	        },
 	        {
 	          primaryImage: {
 	              src: './resources/images/works/ncrafts-training.PNG',
