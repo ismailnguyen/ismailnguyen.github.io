@@ -1,6 +1,6 @@
 # My portfolio - Ismaïl NGUYEN
 
-> Svelte JS, Bulma, HTML, Github Pages
+> Svelte JS, Bulma, HTML, Rollup, Github Pages
 
 ## Build
 
