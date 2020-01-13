@@ -33,7 +33,7 @@
                                     {#if work.subTitle}
                                         <p class="subtitle is-6">
                                             {#if work.subTitle.link}
-                                                <a href={ work.subTitle.link } target="_blank">
+                                                <a href={ work.subTitle.link } target="_blank" rel="noopener">
                                                     { work.subTitle.text }
                                                 </a>
                                             {:else}
@@ -50,7 +50,7 @@
                             <footer class="card-footer">
                                 <p class="card-footer-item">
                                     <span>
-                                        <a href={work.readMoreLink} target="_blank">Read</a>
+                                        <a href={work.readMoreLink} target="_blank" rel="noopener">Read</a>
                                     </span>
                                 </p>
                                
@@ -115,7 +115,7 @@
     const works = [
         {
           primaryImage: {
-              src: './resources/images/works/ncrafts-pwa.PNG',
+              src: './resources/images/works/ncrafts-pwa.webp',
               alt: 'NCrafts PWA'
           },
           secondaryImage: {
@@ -172,7 +172,7 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/ncrafts-training.PNG',
+              src: './resources/images/works/ncrafts-training.webp',
               alt: 'NewCrafts Training'
           },
           secondaryImage: {
@@ -193,11 +193,11 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/crafter-journey.PNG',
+              src: './resources/images/works/crafter-journey.webp',
               alt: `A Software Crafter's Journey`
           },
           secondaryImage: {
-              src: 'http://la-combe-du-lion-vert.fr/wp-content/uploads/2016/11/logo_La_Combe_du_Lion_Vert_small.png',
+              src: 'https://la-combe-du-lion-vert.fr/wp-content/uploads/2016/11/logo_La_Combe_du_Lion_Vert_small.png',
               alt: 'La Combe du Lion Vert'
           },
           title: `A Software Crafter's Journey`,
@@ -214,7 +214,7 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/application-weekend.png',
+              src: './resources/images/works/application-weekend.webp',
               alt: `Comment j'ai crée une application en un week-end`
           },
           title: `“Comment j'ai crée une application en un week-end”`,
@@ -232,7 +232,7 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/agile-france-pwa.PNG',
+              src: './resources/images/works/agile-france-pwa.webp',
               alt: 'Agile France PWA'
           },
           secondaryImage: {
@@ -253,11 +253,11 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/humans-relais.png',
+              src: './resources/images/works/humans-relais.webp',
               alt: `Humans Relais Android application`
           },
           secondaryImage: {
-              src: './resources/images/works/humans-relais-logo.png',
+              src: './resources/images/works/humans-relais-logo.webp',
               alt: 'Humans Relais'
           },
           title: `Humans Relais`,
@@ -273,7 +273,7 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/dry-principle.PNG',
+              src: './resources/images/works/dry-principle.webp',
               alt: 'DRY Principle'
           },
          
@@ -294,7 +294,7 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/bac-a-lettre.PNG',
+              src: './resources/images/works/bac-a-lettre.webp',
               alt: 'Bac à lettre PWA'
           },
           secondaryImage: {
@@ -315,7 +315,7 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/golden-circle.PNG',
+              src: './resources/images/works/golden-circle.webp',
               alt: 'The Golden Circle'
           },
           title: '“The Golden Circle”',
@@ -331,11 +331,11 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/tryeat.PNG',
+              src: './resources/images/works/tryeat.webp',
               alt: 'Try Eat PWA'
           },
           secondaryImage: {
-              src: './resources/images/works/tryeat-logo.PNG',
+              src: './resources/images/works/tryeat-logo.webp',
               alt: 'Try Eat'
           },
           title: 'Try Eat',
@@ -370,7 +370,7 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/joyti-restaurant.PNG',
+              src: './resources/images/works/joyti-restaurant.webp',
               alt: 'Joyti Restaurant'
           },
           title: 'Joyti Restaurant',
@@ -386,11 +386,11 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/ismailnguyen.PNG',
+              src: './resources/images/works/ismailnguyen.webp',
               alt: 'My portfolio'
           },
           secondaryImage: {
-              src: './resources/images/profile.png',
+              src: './resources/images/profile.webp',
               alt: 'Ismaïl NGUYEN'
           },
           title: 'My portfolio',
@@ -417,7 +417,7 @@
         },
         {
           primaryImage: {
-              src: './resources/images/works/open-closed-principle.png',
+              src: './resources/images/works/open-closed-principle.webp',
               alt: 'Open/Closed Principle'
           },
           title: 'Open/Closed Principle',

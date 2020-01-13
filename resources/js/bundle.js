@@ -645,6 +645,7 @@ var App = (function () {
 				text = createText(text_value);
 				a.href = a_href_value = ctx.work.subTitle.link;
 				a.target = "_blank";
+				a.rel = "noopener";
 			},
 
 			m(target, anchor) {
@@ -681,6 +682,7 @@ var App = (function () {
 				a.href = a_href_value = ctx.work.readMoreLink;
 				a.target = "_blank";
 				a.className = "button is-link is-light";
+				a.rel = "noopener";
 			},
 
 			m(target, anchor) {
@@ -713,6 +715,7 @@ var App = (function () {
 				a.href = a_href_value = ctx.work.subTitle.link;
 				a.target = "_blank";
 				a.className = "button is-link is-light";
+				a.rel = "noopener";
 			},
 
 			m(target, anchor) {
@@ -1144,6 +1147,7 @@ var App = (function () {
 				text = createText(text_value);
 				a.href = a_href_value = ctx.work.subTitle.link;
 				a.target = "_blank";
+				a.rel = "noopener";
 			},
 
 			m(target, anchor) {
@@ -1178,6 +1182,7 @@ var App = (function () {
 				if (if_block) if_block.c();
 				a.href = a_href_value = ctx.work.readMoreLink;
 				a.target = "_blank";
+				a.rel = "noopener";
 				p.className = "card-footer-item";
 				footer.className = "card-footer";
 			},
@@ -1707,7 +1712,7 @@ var App = (function () {
 	    const works = [
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/ncrafts-pwa.PNG',
+	              src: './resources/images/works/ncrafts-pwa.webp',
 	              alt: 'NCrafts PWA'
 	          },
 	          secondaryImage: {
@@ -1764,7 +1769,7 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/ncrafts-training.PNG',
+	              src: './resources/images/works/ncrafts-training.webp',
 	              alt: 'NewCrafts Training'
 	          },
 	          secondaryImage: {
@@ -1785,11 +1790,11 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/crafter-journey.PNG',
+	              src: './resources/images/works/crafter-journey.webp',
 	              alt: `A Software Crafter's Journey`
 	          },
 	          secondaryImage: {
-	              src: 'http://la-combe-du-lion-vert.fr/wp-content/uploads/2016/11/logo_La_Combe_du_Lion_Vert_small.png',
+	              src: 'https://la-combe-du-lion-vert.fr/wp-content/uploads/2016/11/logo_La_Combe_du_Lion_Vert_small.png',
 	              alt: 'La Combe du Lion Vert'
 	          },
 	          title: `A Software Crafter's Journey`,
@@ -1806,7 +1811,7 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/application-weekend.png',
+	              src: './resources/images/works/application-weekend.webp',
 	              alt: `Comment j'ai crée une application en un week-end`
 	          },
 	          title: `“Comment j'ai crée une application en un week-end”`,
@@ -1824,7 +1829,7 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/agile-france-pwa.PNG',
+	              src: './resources/images/works/agile-france-pwa.webp',
 	              alt: 'Agile France PWA'
 	          },
 	          secondaryImage: {
@@ -1845,11 +1850,11 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/humans-relais.png',
+	              src: './resources/images/works/humans-relais.webp',
 	              alt: `Humans Relais Android application`
 	          },
 	          secondaryImage: {
-	              src: './resources/images/works/humans-relais-logo.png',
+	              src: './resources/images/works/humans-relais-logo.webp',
 	              alt: 'Humans Relais'
 	          },
 	          title: `Humans Relais`,
@@ -1865,7 +1870,7 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/dry-principle.PNG',
+	              src: './resources/images/works/dry-principle.webp',
 	              alt: 'DRY Principle'
 	          },
 	         
@@ -1886,7 +1891,7 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/bac-a-lettre.PNG',
+	              src: './resources/images/works/bac-a-lettre.webp',
 	              alt: 'Bac à lettre PWA'
 	          },
 	          secondaryImage: {
@@ -1907,7 +1912,7 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/golden-circle.PNG',
+	              src: './resources/images/works/golden-circle.webp',
 	              alt: 'The Golden Circle'
 	          },
 	          title: '“The Golden Circle”',
@@ -1923,11 +1928,11 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/tryeat.PNG',
+	              src: './resources/images/works/tryeat.webp',
 	              alt: 'Try Eat PWA'
 	          },
 	          secondaryImage: {
-	              src: './resources/images/works/tryeat-logo.PNG',
+	              src: './resources/images/works/tryeat-logo.webp',
 	              alt: 'Try Eat'
 	          },
 	          title: 'Try Eat',
@@ -1962,7 +1967,7 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/joyti-restaurant.PNG',
+	              src: './resources/images/works/joyti-restaurant.webp',
 	              alt: 'Joyti Restaurant'
 	          },
 	          title: 'Joyti Restaurant',
@@ -1978,11 +1983,11 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/ismailnguyen.PNG',
+	              src: './resources/images/works/ismailnguyen.webp',
 	              alt: 'My portfolio'
 	          },
 	          secondaryImage: {
-	              src: './resources/images/profile.png',
+	              src: './resources/images/profile.webp',
 	              alt: 'Ismaïl NGUYEN'
 	          },
 	          title: 'My portfolio',
@@ -2009,7 +2014,7 @@ var App = (function () {
 	        },
 	        {
 	          primaryImage: {
-	              src: './resources/images/works/open-closed-principle.png',
+	              src: './resources/images/works/open-closed-principle.webp',
 	              alt: 'Open/Closed Principle'
 	          },
 	          title: 'Open/Closed Principle',

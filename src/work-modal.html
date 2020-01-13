@@ -44,7 +44,7 @@
 
                                     <p class="subtitle is-6">
                                         {#if work.subTitle && work.subTitle.link}
-                                            <a href={work.subTitle.link} target="_blank">
+                                            <a href={work.subTitle.link} target="_blank" rel="noopener">
                                                 {work.subTitle.text}
                                             </a>
                                         {:elseif work.subTitle}
@@ -59,13 +59,13 @@
                                     <div class="buttons">
                                         
                                         {#if work.readMoreLink}
-                                            <a href={work.readMoreLink} target="_blank" class="button is-link is-light">
+                                            <a href={work.readMoreLink} target="_blank" class="button is-link is-light" rel="noopener">
                                                 Read more
                                             </a>
                                         {/if}
 
                                         {#if work.subTitle && work.subTitle.link}
-                                            <a href={work.subTitle.link} target="_blank" class="button is-link is-light">
+                                            <a href={work.subTitle.link} target="_blank" class="button is-link is-light" rel="noopener">
                                                 View project
                                             </a>
                                         {/if}
