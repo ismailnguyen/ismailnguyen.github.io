@@ -357,7 +357,7 @@ var App = (function () {
 			                        <span class="typed-animation"></span>
 			                        <span>&gt;</span></h2></div>
 
-			                <div class="column"><div class="box"><article class="media"><div class="media-left"><figure class="image is-64x64"><img src="https://ih0.redbubble.net/image.293388391.7026/flat,1000x1000,075,f.jpg" alt="Image"></figure></div>
+			                <div class="column"><div class="box"><article class="media"><div class="media-left"><figure class="image is-64x64"><img data-src="https://ih0.redbubble.net/image.293388391.7026/flat,1000x1000,075,f.jpg" alt="Image" class="lazyload"></figure></div>
 			                            <div class="media-content"><div class="content"><p><strong>Leonardo da Vinci</strong> <small>@leonardoDaVinci</small> <small>520 years ago</small>
 			                                        <br> Simplicity is the ultimate sophistication.
 			                                    </p></div>
@@ -439,15 +439,16 @@ var App = (function () {
 
 	// (10:24) {#if work.primaryImage}
 	function create_if_block_6(ctx) {
-		var div, figure, img, img_src_value, img_alt_value;
+		var div, figure, img, img_data_src_value, img_alt_value;
 
 		return {
 			c() {
 				div = createElement("div");
 				figure = createElement("figure");
 				img = createElement("img");
-				img.src = img_src_value = ctx.work.primaryImage.src;
+				img.dataset.src = img_data_src_value = ctx.work.primaryImage.src;
 				img.alt = img_alt_value = ctx.work.primaryImage.alt;
+				img.className = "lazyload";
 				figure.className = "image is-square";
 				div.className = "column";
 			},
@@ -459,8 +460,8 @@ var App = (function () {
 			},
 
 			p(changed, ctx) {
-				if ((changed.work) && img_src_value !== (img_src_value = ctx.work.primaryImage.src)) {
-					img.src = img_src_value;
+				if ((changed.work) && img_data_src_value !== (img_data_src_value = ctx.work.primaryImage.src)) {
+					img.dataset.src = img_data_src_value;
 				}
 
 				if ((changed.work) && img_alt_value !== (img_alt_value = ctx.work.primaryImage.alt)) {
@@ -478,15 +479,16 @@ var App = (function () {
 
 	// (21:32) {#if work.secondaryImage}
 	function create_if_block_5(ctx) {
-		var div, figure, img, img_src_value, img_alt_value;
+		var div, figure, img, img_data_src_value, img_alt_value;
 
 		return {
 			c() {
 				div = createElement("div");
 				figure = createElement("figure");
 				img = createElement("img");
-				img.src = img_src_value = ctx.work.secondaryImage.src;
+				img.dataset.src = img_data_src_value = ctx.work.secondaryImage.src;
 				img.alt = img_alt_value = ctx.work.secondaryImage.alt;
+				img.className = "lazyload";
 				figure.className = "image is-48x48";
 				div.className = "media-left";
 			},
@@ -498,8 +500,8 @@ var App = (function () {
 			},
 
 			p(changed, ctx) {
-				if ((changed.work) && img_src_value !== (img_src_value = ctx.work.secondaryImage.src)) {
-					img.src = img_src_value;
+				if ((changed.work) && img_data_src_value !== (img_data_src_value = ctx.work.secondaryImage.src)) {
+					img.dataset.src = img_data_src_value;
 				}
 
 				if ((changed.work) && img_alt_value !== (img_alt_value = ctx.work.secondaryImage.alt)) {
@@ -1007,15 +1009,16 @@ var App = (function () {
 
 	// (11:24) {#if work.primaryImage}
 	function create_if_block_7(ctx) {
-		var div, figure, img, img_src_value, img_alt_value;
+		var div, figure, img, img_data_src_value, img_alt_value;
 
 		return {
 			c() {
 				div = createElement("div");
 				figure = createElement("figure");
 				img = createElement("img");
-				img.src = img_src_value = ctx.work.primaryImage.src;
+				img.dataset.src = img_data_src_value = ctx.work.primaryImage.src;
 				img.alt = img_alt_value = ctx.work.primaryImage.alt;
+				img.className = "lazyload";
 				figure.className = "image is-4by3";
 				div.className = "card-image";
 			},
@@ -1038,15 +1041,16 @@ var App = (function () {
 
 	// (22:32) {#if work.secondaryImage}
 	function create_if_block_6$1(ctx) {
-		var div, figure, img, img_src_value, img_alt_value;
+		var div, figure, img, img_data_src_value, img_alt_value;
 
 		return {
 			c() {
 				div = createElement("div");
 				figure = createElement("figure");
 				img = createElement("img");
-				img.src = img_src_value = ctx.work.secondaryImage.src;
+				img.dataset.src = img_data_src_value = ctx.work.secondaryImage.src;
 				img.alt = img_alt_value = ctx.work.secondaryImage.alt;
+				img.className = "lazyload";
 				figure.className = "image is-48x48";
 				div.className = "media-left";
 			},
@@ -2124,18 +2128,18 @@ which use of it will be done in the long run but it will influence our everyday 
 				div1 = createElement("div");
 				div1.innerHTML = `<h1 class="title is-1">Get in touch</h1>
 			                <p class="is-size-4">Follow me on social medias</p>
-			                <div class="social-media"><a href="https://twitter.com/ishmaa_el" target="_blank" class="button is-medium is-light"><span class="icon is-medium"><i class="fab fa-twitter"></i></span>
+			                <div class="social-media"><a href="https://twitter.com/ishmaa_el" target="_blank" class="button is-medium is-light" rel="noopener"><span class="icon is-medium"><i class="fab fa-twitter"></i></span>
 			                        <span>Twitter</span></a>
-			                    <a href="https://www.linkedin.com/in/ismailnguyen" target="_blank" class="button is-medium is-light"><span class="icon is-medium"><i class="fab fa-linkedin"></i></span>
+			                    <a href="https://www.linkedin.com/in/ismailnguyen" target="_blank" class="button is-medium is-light" rel="noopener"><span class="icon is-medium"><i class="fab fa-linkedin"></i></span>
 			                        <span>LinkedIn</span></a>
-			                    <a href="https://github.com/ismailnguyen/" target="_blank" class="button is-medium is-light"><span class="icon is-medium"><i class="fab fa-github"></i></span>
+			                    <a href="https://github.com/ismailnguyen/" target="_blank" class="button is-medium is-light" rel="noopener"><span class="icon is-medium"><i class="fab fa-github"></i></span>
 			                        <span>GitHub</span></a></div>`;
 				text12 = createText("\r\n            ");
 				div7 = createElement("div");
 				div6 = createElement("div");
 				div5 = createElement("div");
 				div2 = createElement("div");
-				div2.innerHTML = `<img src="./resources/images/profile.png" alt="Image">`;
+				div2.innerHTML = `<img data-src="./resources/images/profile.png" alt="Image" class="lazyload">`;
 				text13 = createText("\r\n                        ");
 				div4 = createElement("div");
 				div3 = createElement("div");
@@ -2148,7 +2152,7 @@ which use of it will be done in the long run but it will influence our everyday 
 				br2 = createElement("br");
 				text18 = createText("\r\n                            Currently working ");
 				strong = createElement("strong");
-				strong.innerHTML = `@<a href="http://la-combe-du-lion-vert.fr/" target="_blank">LeLion_Vert</a>`;
+				strong.innerHTML = `@<a href="http://la-combe-du-lion-vert.fr/" target="_blank" rel="noopener">LeLion_Vert</a>`;
 				text21 = createText(", as a software craftsman and craft coach.\r\n                            ");
 				br3 = createElement("br");
 				text22 = createText("\r\n                            ");
@@ -2237,7 +2241,7 @@ which use of it will be done in the long run but it will influence our everyday 
 			c() {
 				footer = createElement("footer");
 				footer.innerHTML = `<div class="content has-text-centered"><p>
-			            Handcrafted with <i class="fa fa-heart" style="color:red;"></i>. Under <a href="http://www.wtfpl.net/" target="_blank">WTFP licence</a>.
+			            Handcrafted with <i class="fa fa-heart" style="color:red;"></i>. Under <a href="https://www.wtfpl.net/" target="_blank" rel="noopener">WTFP licence</a>.
 			        </p></div>`;
 				footer.className = "footer has-background-light";
 			},

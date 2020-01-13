@@ -11,7 +11,7 @@
                         {#if work.primaryImage} 
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src={work.primaryImage.src} alt={work.primaryImage.alt}>
+                                    <img data-src={work.primaryImage.src} alt={work.primaryImage.alt} class="lazyload">
                                 </figure>
                             </div>
                         {/if}
@@ -22,7 +22,7 @@
                                 {#if work.secondaryImage}
                                     <div class="media-left">
                                         <figure class="image is-48x48">
-                                            <img src={work.secondaryImage.src} alt={work.secondaryImage.alt}>
+                                            <img data-src={work.secondaryImage.src} alt={work.secondaryImage.alt} class="lazyload">
                                         </figure>
                                     </div>
                                 {/if}
