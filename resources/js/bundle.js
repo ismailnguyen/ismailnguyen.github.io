@@ -1715,12 +1715,32 @@ var App = (function () {
 
 	    const works = [
 	        {
+	            primaryImage: {
+	              src: './resources/images/works/agile-france.webp',
+	              alt: 'Agile-France'
+	          },
+	          secondaryImage: {
+	              src: './resources/images/works/logo/agile-france.png',
+	              alt: 'Agile-France'
+	          },
+	          title: 'Agile-France',
+	          subTitle: {
+	              text: 'agile-france.github.io',
+	              link: 'https://agile-france.github.io/site-Conf-Agile-France/'
+	          },
+	          description: '',
+	          tags: [
+	              'HTML',
+	              'Bulma'
+	            ]
+	        },
+	        {
 	          primaryImage: {
 	              src: './resources/images/works/ncrafts-pwa.webp',
 	              alt: 'NCrafts PWA'
 	          },
 	          secondaryImage: {
-	              src: 'https://pbs.twimg.com/profile_images/1065610855604252672/q3HvTFdY_400x400.jpg',
+	              src: './resources/images/works/logo/newcrafts.jpg',
 	              alt: 'NewCrafts'
 	          },
 	          title: 'NewCrafts',
@@ -1777,7 +1797,7 @@ var App = (function () {
 	              alt: 'NewCrafts Training'
 	          },
 	          secondaryImage: {
-	              src: 'https://pbs.twimg.com/profile_images/1065610855604252672/q3HvTFdY_400x400.jpg',
+	              src: './resources/images/works/logo/newcrafts.jpg',
 	              alt: 'NewCrafts'
 	          },
 	          title: 'NewCrafts Trainings',
@@ -1798,7 +1818,7 @@ var App = (function () {
 	              alt: `A Software Crafter's Journey`
 	          },
 	          secondaryImage: {
-	              src: 'http://la-combe-du-lion-vert.fr/wp-content/uploads/2016/11/logo_La_Combe_du_Lion_Vert_small.png',
+	              src: './resources/images/works/logo/La_Combe_du_Lion_Vert.png',
 	              alt: 'La Combe du Lion Vert'
 	          },
 	          title: `A Software Crafter's Journey`,
@@ -1837,7 +1857,7 @@ var App = (function () {
 	              alt: 'Agile France PWA'
 	          },
 	          secondaryImage: {
-	              src: 'https://agile-france.web.app/assets/img/favicon-96x96.png',
+	              src: './resources/images/works/logo/agile-france.png',
 	              alt: 'Agile France'
 	          },
 	          title: 'Agile France',
@@ -1899,7 +1919,7 @@ var App = (function () {
 	              alt: 'Bac à lettre PWA'
 	          },
 	          secondaryImage: {
-	              src: 'https://bac-a-lettre.netlify.com/assets/img/logo.svg',
+	              src: './resources/images/works/logo/bac-a-lettre.svg',
 	              alt: 'Bac à lettre'
 	          },
 	          title: 'Bac à lettre',
