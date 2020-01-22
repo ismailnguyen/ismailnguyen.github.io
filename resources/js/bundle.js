@@ -310,9 +310,9 @@ var App = (function () {
 			                Resumé
 			            </a></div>
 
-			        <div class="navbar-end"><div class="navbar-item"><div class="buttons"><a class="button is-light"><i class="fab fa-github"></i></a>
+			        <div class="navbar-end"><div class="navbar-item"><div class="buttons"><a class="button is-light" href="https://github.com/ismailnguyen/" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
 
-			                    <a class="button is-light"><i class="fab fa-twitter"></i></a>
+			                    <a class="button is-light" href="https://twitter.com/ishmaa_el" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
 
 			                    <a href="#get-in-touch" class="button is-primary is-light is-outlined js-scrollTo"><strong>Get in touch</strong></a></div></div></div></div>`;
 				nav.className = "navbar is-transparent is-light";
@@ -1798,7 +1798,7 @@ var App = (function () {
 	              alt: `A Software Crafter's Journey`
 	          },
 	          secondaryImage: {
-	              src: 'https://la-combe-du-lion-vert.fr/wp-content/uploads/2016/11/logo_La_Combe_du_Lion_Vert_small.png',
+	              src: 'http://la-combe-du-lion-vert.fr/wp-content/uploads/2016/11/logo_La_Combe_du_Lion_Vert_small.png',
 	              alt: 'La Combe du Lion Vert'
 	          },
 	          title: `A Software Crafter's Journey`,
