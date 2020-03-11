@@ -51,22 +51,22 @@ const works = [
             linkedIn: true
         },
         description: `
-        <h1 class="title has-text-white" class="title">Why ?</h1>
+        <h1 class="title" class="title">Why ?</h1>
         <p>
             Collect feedback Initiate to Event Storming
         </p>
 
-        <h1 class="title has-text-white">How ?</h1>
+        <h1 class="title">How ?</h1>
         <p>
             Organize a "revisited" storming event session based on participants' feedback.
         </p>
 
-        <h1 class="title has-text-white">What ?</h1>
+        <h1 class="title">What ?</h1>
         <p>
             Paste "event" post-it notes to mark each event experienced by the participants during the session, then paste "question" post-it notes on the questions that everyone asked themselves, paste "idea" post-it notes for each idea or area of improvement. All this while respecting the timeline with an event that marks the beginning of the session and one for the end of the session.
         </p>
 
-        <h1 class="title has-text-white">When ?</h1>
+        <h1 class="title">When ?</h1>
         <p>
             At the end of an event (ceremony, presentation, workshop, training,...).
         </p>
@@ -281,7 +281,7 @@ const works = [
         },
         title: 'Joyti Restaurant',
         subTitle: {
-            text: 'github/joyti-restauran',
+            text: 'github/joyti-restaurant',
             link: 'https://github.com/ismailnguyen/joyti-restaurant'
         },
         description: '',

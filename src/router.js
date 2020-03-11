@@ -11,6 +11,7 @@ import GetInTouch from './views/GetInTouch.vue'
 
 const router = new VueRouter({
     mode: 'history',
+    linkExactActiveClass: 'is-active',
     routes: [
         {
             name: 'Presentation',

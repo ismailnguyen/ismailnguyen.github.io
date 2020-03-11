@@ -25,6 +25,7 @@
 </script>
 
 <style>
+
   #root {
     background-color: #f5f5f5;
   }
