@@ -1,12 +1,17 @@
 <template>
-    <section class="hero has-background-dark is-fullheight">
+    <section class="hero has-background-light is-fullheight">
         <div class="hero-body">
             <div class="container is-fluid">
-                <div class="columns is-vcentered">
+                <div class="tags">
+                    <span class="tag is-rounded is-link has-text-weight-bold" v-for="(tag, tagIndex) in work.tags" :key="tagIndex">
+                        {{ tag }}
+                    </span>
+                </div>
 
+                <div class="columns is-vcentered">
                     <div class="column" v-if="work.primaryImage">
                         <figure class="image is-3by2">
-                            <img :data-src="work.primaryImage.src" :alt="work.primaryImage.alt" class="lazyload">
+                            <img :data-src="work.primaryImage.src" :alt="work.primaryImage.alt" loading="lazy">
                         </figure>
                     </div>
 
@@ -15,19 +20,12 @@
 
                             <div class="media-left" v-if="work.secondaryImage">
                                 <figure class="image is-48x48">
-                                    <img v-bind:data-src="work.secondaryImage.src" :alt="work.secondaryImage.alt" class="lazyload">
+                                    <img v-bind:data-src="work.secondaryImage.src" :alt="work.secondaryImage.alt" loading="lazy">
                                 </figure>
                             </div>
 
-                            <div class="media-content has-text-light">
-
-                                <div class="tags">
-                                    <span class="tag is-rounded is-link has-text-weight-bold" v-for="(tag, tagIndex) in work.tags" :key="tagIndex">
-                                        {{ tag }}
-                                    </span>
-                                </div>
-
-                                <p class="title is-4 has-text-white">
+                            <div class="media-content">
+                                <p class="title is-4">
                                     {{ work.title }}
                                 </p>
 
@@ -40,16 +38,17 @@
                                     </span>
                                 </p>
 
-                                <div class="content is-medium has-text-white has-text-justified" v-html="work.description">
+                                <div class="content is-medium has-text-justified" v-html="work.description"></div>
+
+                                <div class="buttons" v-if="work.subTitle && work.subTitle.link">
+                                    <a :href="work.subTitle.link" target="_blank" class="button is-link is-outlined is-light" rel="noopener">
+                                        View project
+                                    </a>
                                 </div>
 
-                                <div class="buttons">
-                                    <a :href="work.readMoreLink" target="_blank" class="button is-link is-light" rel="noopener" v-if="work.readMoreLink">
+                                <div class="buttons is-pulled-right" v-if="work.readMoreLink">
+                                    <a :href="work.readMoreLink" target="_blank" class="button is-link is-outlined is-light" rel="noopener">
                                         Read more
-                                    </a>
-
-                                    <a :href="work.subTitle.link" target="_blank" class="button is-link is-light" rel="noopener" v-if="work.subTitle && work.subTitle.link">
-                                        View project
                                     </a>
                                 </div>
 

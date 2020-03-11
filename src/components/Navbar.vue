@@ -14,8 +14,8 @@
             </a>
         </div>
 
-        <div :class="isMenuOpen ? 'navbar-menu is-active' : 'navbar-menu'">
-            <div class="navbar-start">
+        <div :class="isMenuOpen ? 'navbar-menu has-background-light is-active' : 'navbar-menu'">
+            <div class="navbar-start" @click="toggleMenu()">
                 <router-link to="/portfolio" class="navbar-item is-tab">
                     My works
                 </router-link>
@@ -91,12 +91,26 @@
 
 <style scoped>
     .button-github:hover {
-        color: white;
-        background-color: black;
+        color: black;
     }
 
     .button-twitter:hover {
         color: #1aa4ef;
-        background-color: black;
+    }
+
+    .button-linkedin:hover {
+        color: #0073b1;
+    }
+
+    .navbar-item.is-tab:hover {
+        background-color: #0000000a;
+        border-bottom-color: #fecb01;
+    }
+
+    .navbar-item.is-tab.is-active {
+        background-color: #0000000a;
+        border-bottom-color: #fecb01;
+        font-weight: bold;
+        color: #0a0a0a;
     }
 </style>
