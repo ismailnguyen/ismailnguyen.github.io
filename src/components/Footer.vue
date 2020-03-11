@@ -1,0 +1,9 @@
+<template>
+    <footer class="footer has-background-light">
+        <div class="content has-text-centered handwritten-text">
+            <p>
+                Handcrafted with <i class="fa fa-heart" style="color:red;"></i>. Under <a href="http://www.wtfpl.net/" target="_blank" rel="noopener">WTFP licence</a>.
+            </p>
+        </div>
+    </footer>
+</template>

@@ -13,10 +13,10 @@
         <link rel="shortcut icon" href="./resources/images/profile.png">
         <link rel="dns-prefetch" href="https://www.ismailnguyen.com">
         <link rel="prefetch" href="https://www.ismailnguyen.com">
-        <link rel="manifest" href="manifest.json">
+        <link rel="manifest" href="./manifest.json">
         <link rel="home" href="/">
         <link rel="msapplication-starturl" href="/">
-		<meta name="theme-color" content="#f5f5f5">
+		    <meta name="theme-color" content="#f5f5f5">
 
         <link rel="icon" href="./resources/images/profile.png" sizes="192x192">
         <link rel="apple-touch-icon" href="./resources/images/profile.png" sizes="192x192">
@@ -30,7 +30,8 @@
         <link rel="icon" href="./resources/images/profile.png" sizes="76x76">
         <link rel="apple-touch-icon" href="./resources/images/profile.png" sizes="76x76">
         <link rel="msapplication-square76x76logo" href="./resources/images/profile.png" sizes="76x76">
-
+        
+        <link rel="icon" href="<%= BASE_URL %>favicon.ico">
         <title>&lt; &frasl; A Software Craftsman &gt;</title>
 
         <meta name="description" content="A software craftsman" />
@@ -44,35 +45,27 @@
         <meta name="robots" content="index, follow" />
 
         <link rel="preload" href="./resources/css/vendor/bulma.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload" href="./resources/css/vendor/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload" href="./resources/css/vendor/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload" href="./resources/css/vendor/modal-fx.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <link rel="preload" href="./resources/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
 
     </head>
 
-    <body class="js-logo-animation-container">
+    <body id="js-logo-animation-container">
+  
+      <noscript>
+        <p>
+          Please enable Javascript or use a true browser to navigate into my portfolio.
+          <br><br>
+          Kind regards,<br>
+          Isma&iuml
+        </p>
+      </noscript>
+    
+      <div id="root"></div>
 	
-		<noscript>
-			<p>
-				Please enable Javascript or use a true browser to navigate into my portfolio.
-				<br><br>
-				Kind regards,<br>
-				Isma&iuml
-			</p>
-		</noscript>
-	
-        <script defer src="./resources/js/vendor/jquery.min.js"></script>
-        <script defer src="./resources/js/vendor/fontawesome.js"></script>
-        <script defer src="./resources/js/typing-animation.js"></script>
-        <script defer src="./resources/js/logo-animation.js"></script>
-        <script defer src="./resources/js/vendor/google-analytics.js"></script>
-        <script defer src="./resources/js/vendor/bulma-carousel.min.js"></script>
-        <script defer src="./resources/js/vendor/modal-fx.min.js"></script>
-        <script defer src="./resources/js/vendor/aos.js"></script>
-		<script defer src="./resources/js/vendor/lazysizes.min.js"></script>
-        <script defer src="./resources/js/bundle.js"></script>
-        <script defer src="./resources/js/main.js"></script>
+      <script defer src="./resources/js/vendor/fontawesome.js"></script>
+      <script defer src="./resources/js/vendor/google-analytics.js"></script>
+		  <script defer src="./resources/js/vendor/lazysizes.min.js"></script>
     </body>
 
 </html>

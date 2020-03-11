@@ -112,40 +112,10 @@
 
 /* ----------------------------------------------------- */
 
-/* --- Carousel --- */
-
-.carousel.has-dark-arrows .slider-navigation-previous, 
-.carousel.has-dark-arrows .slider-navigation-next {
-  background: #333333;
-  border: none;
-  color: #fff;
-}
-
-.carousel .slider-pagination {
-  /* display: none; */
-}
-
-/* ----------------------------------------------------- */
-
-/* --- Modal --- */
-
-.modal-close::before,
-.modal-close::after {
-  background-color: #333333;
-}
-
-/* ----------------------------------------------------- */
-
 /* --- Card --- */
 
 .work-item {
-	border-radius: 15px;
   margin: auto;
-}
-
-.work-item .card-image img {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
 }
 
 .work-item {
