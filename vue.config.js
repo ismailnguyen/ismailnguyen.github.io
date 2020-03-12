@@ -1,10 +1,20 @@
 var path = require('path');
+const RemovePlugin = require('remove-files-webpack-plugin');
 
 module.exports = {
   configureWebpack: {
     optimization: {
       splitChunks: false
-    }
+    },
+	plugins: [
+		new RemovePlugin({
+			after: {
+				include: [
+					'./dist/bundle.html'
+				]
+			}
+		})
+	]
   },
   filenameHashing: false,
   pages: {
