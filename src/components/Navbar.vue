@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar is-transparent is-light" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <router-link to="/" class="navbar-item">
+            <router-link to="/" class="navbar-item has-background-light">
                 <div id="brand" class="logo">
                     isma&iuml;l
                 </div>
@@ -103,12 +103,12 @@
         color: #0073b1;
     }
 
-    .navbar-item.is-tab:hover {
+    .navbar-menu .navbar-start .navbar-item.is-tab:hover {
         background-color: #0000000a;
         border-bottom-color: #fecb01;
     }
 
-    .navbar-item.is-tab.is-active {
+    .navbar-menu .navbar-start .navbar-item.is-tab.is-active {
         background-color: #0000000a;
         border-bottom-color: #fecb01;
         font-weight: bold;
