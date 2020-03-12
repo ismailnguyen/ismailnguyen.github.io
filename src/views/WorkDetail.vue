@@ -11,7 +11,7 @@
                 <div class="columns is-vcentered">
                     <div class="column" v-if="work.primaryImage">
                         <figure class="image is-3by2">
-                            <img :data-src="work.primaryImage.src" :alt="work.primaryImage.alt" loading="lazy">
+                            <img :src="work.primaryImage.src" :alt="work.primaryImage.alt" loading="lazy">
                         </figure>
                     </div>
 
@@ -20,7 +20,7 @@
 
                             <div class="media-left" v-if="work.secondaryImage">
                                 <figure class="image is-48x48">
-                                    <img v-bind:data-src="work.secondaryImage.src" :alt="work.secondaryImage.alt" loading="lazy">
+                                    <img :src="work.secondaryImage.src" :alt="work.secondaryImage.alt" loading="lazy">
                                 </figure>
                             </div>
 

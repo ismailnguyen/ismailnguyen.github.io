@@ -18,7 +18,7 @@
                             <article class="media">
                                 <div class="media-left">
                                         <figure class="image is-64x64">
-                                        <img data-src="https://ih0.redbubble.net/image.293388391.7026/flat,1000x1000,075,f.jpg" alt="Leo da Vinci" loading="lazy">
+                                        <img src="https://ih0.redbubble.net/image.293388391.7026/flat,1000x1000,075,f.jpg" alt="Leo da Vinci" loading="lazy">
                                     </figure>
                                 </div>
                                 <div class="media-content">

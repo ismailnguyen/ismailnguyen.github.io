@@ -31,7 +31,7 @@
                         <div class="notification is-warning">
                             <div class="columns">
                                 <div class="column">
-                                    <img data-src="./resources/images/profile.png" alt="Image" loading="lazy">
+                                    <img src="/resources/images/profile.png" alt="Image" loading="lazy">
                                 </div>
                                 <div class="column">
                                     <div class="neon-container">

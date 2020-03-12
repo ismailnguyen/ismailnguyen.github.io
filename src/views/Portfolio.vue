@@ -17,7 +17,7 @@
                         <div class="media">
                             <div class="media-left">
                                 <figure class="image is-48x48" v-if="work.secondaryImage">
-                                    <img :data-src="work.secondaryImage.src" :alt="work.secondaryImage.alt" loading="lazy">
+                                    <img :src="work.secondaryImage.src" :alt="work.secondaryImage.alt" loading="lazy">
                                 </figure>
                             </div>
 

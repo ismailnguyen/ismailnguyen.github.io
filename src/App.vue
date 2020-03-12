@@ -1,5 +1,5 @@
 <template>
-  <div id="root">
+  <div id="app">
 
     <Navbar />
     <transition name="slide-left">
