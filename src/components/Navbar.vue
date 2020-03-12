@@ -50,7 +50,7 @@
                             </a>
                         </transition>
 
-                        <button class="button is-primary is-light is-outlined" @click="toggleSocialButtons">
+                        <button class="button is-primary is-light is-outlined" @click="toggleSocialButtons()">
                             <strong>{{ showSocialButtons ? 'More ?' : 'Get in touch' }}</strong>
                         </button>
                     </div>
@@ -81,6 +81,7 @@
             toggleSocialButtons: function () {
                 if (this.showSocialButtons) {
                     this.$router.push('/get-in-touch')
+                    this.toggleMenu();
                 }
 
                 this.showSocialButtons = !this.showSocialButtons
