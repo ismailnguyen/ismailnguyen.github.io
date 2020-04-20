@@ -10,8 +10,8 @@ const works = [
         },
         title: 'Agile-France',
         subTitle: {
-            text: 'agile-france.github.io',
-            link: 'https://agile-france.github.io/site-Conf-Agile-France/'
+            text: '2020.conf.agile-france.org',
+            link: 'https://2020.conf.agile-france.org/'
         },
         description: '',
         tags: [
