@@ -26,6 +26,9 @@ module.exports = {
     contentBase: path.join(__dirname, '/'),
     compress: true,
     port: 9000,
-    index: '/index.html'
+    index: '/index.html',
+    watchOptions: {
+      poll: true
+    }
   }
 }

@@ -36,7 +36,7 @@
                     </div>
                     <footer class="card-footer">
                         <div class="card-footer-item">
-                            <button class="button is-info is-outlined is-static button-view-details is-hidden">View</button>
+                            <button class="button is-black button-view-details is-hidden">View</button>
                         </div>
                     </footer>
                 </div>
@@ -107,7 +107,6 @@
 
     .work-item:hover .button-view-details {
         display: block !important;
-        background-color: transparent;
         position: relative;
     }
 

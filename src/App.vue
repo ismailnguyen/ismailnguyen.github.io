@@ -26,9 +26,11 @@
 
 <style>
 
-  #root {
-    background-color: #f5f5f5;
+  .has-background-light,
+  .is-light {
+    background-color: #eceef7 !important;
   }
+
   .slide-left-enter-active,
   .slide-left-leave-active,
   .slide-right-enter-active,
