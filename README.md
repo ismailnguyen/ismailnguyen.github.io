@@ -1,6 +1,6 @@
 # ismailnguyen
 
-## Project setup
+## Project setup (local)
 ```
 npm install
 ```
@@ -19,6 +19,14 @@ npm run build
 ```
 npm run lint
 ```
+
+## Project setup (Github pages)
+```
+git push
+```
+
+Github Actions will handle to build and deployment using a workflow file inside `./github/workflows/main.yml` file
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
