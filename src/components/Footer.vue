@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer" :class="this.$route.name == 'WorkDetail' ? 'is-dark': 'is-light'">
+    <footer class="footer" :class="this.$route.name == 'WorkDetail' ? 'has-background-dark': 'has-background-light'">
         <div class="content has-text-centered handwritten-text">
             <p class="is-pulled-left">
                 Handcrafted with <i class="fa fa-heart" style="color:#6a35ff;"></i>

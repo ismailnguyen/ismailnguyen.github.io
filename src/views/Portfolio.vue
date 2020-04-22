@@ -98,7 +98,7 @@
 
     .work-item:hover .card-image {
         height: 100%;
-        opacity: 0.3;
+        filter: blur(3px);
     }
 
     .work-item:hover .image {

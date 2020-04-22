@@ -1,7 +1,7 @@
 <template>
     <section class="hero is-fullheight">
         <div class="hero-body">
-            <div class="container is-fluid handwritten-text has-text-justified has-text-grey-dark">
+            <div class="container is-fullhd handwritten-text has-text-justified has-text-grey-dark">
                 <h1 class="title is-spaced">
                     Terms And Conditions of Use
                 </h1>
@@ -13,7 +13,7 @@
                 </p>
 
                 <p>
-                     Copyright (C) {{ today }} Isma&iuml;l NGUYEN
+                    Copyright (C) {{ today }} Isma&iuml;l NGUYEN
                 </p>
 
                 <p>
