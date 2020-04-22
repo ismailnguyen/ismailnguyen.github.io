@@ -1,7 +1,8 @@
 <template>
-    <nav class="navbar is-transparent is-light" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-transparent" :class="this.$route.name == 'WorkDetail' ? 'is-dark': 'is-light'" role="navigation" aria-label="main navigation">
+
         <div class="navbar-brand">
-            <router-link to="/" class="navbar-item has-background-light">
+            <router-link to="/" class="navbar-item">
                 <div id="brand" class="logo">
                     isma&iuml;l
                 </div>
@@ -14,45 +15,56 @@
             </a>
         </div>
 
-        <div :class="isMenuOpen ? 'navbar-menu has-background-light is-active' : 'navbar-menu'">
+        <div :class="isMenuOpen ? 'navbar-menu is-active' : 'navbar-menu'">
             <div class="navbar-start" @click="toggleMenu()">
-                <router-link to="/portfolio" class="navbar-item is-tab">
+                <router-link to="/portfolio" class="navbar-item" :class="this.$route.name == 'WorkDetail' ? 'is-active': ''">
                     My works
                 </router-link>
 
-                <router-link to="/about-me" class="navbar-item is-tab">
-                    About me
+                <router-link to="/now" class="navbar-item">
+                    Now
                 </router-link>
-
-                <a href="./docs/CV_Ismail-Nguyen.pdf" target="_blank" class="navbar-item is-tab">
-                    Resum&eacute;
-                </a>
             </div>
 
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
                         <transition name="slide-left">
-                            <a v-show="showSocialButtons" class="button is-light button-github" href="https://github.com/ismailnguyen/" target="_blank" rel="noopener">
+                            <a v-show="showSocialButtons" class="button is-light button-social button-paypal" href="//www.paypal.me/ismailnguyen" target="_blank" rel="noopener">
+                                <i class="fab fa-paypal"></i>
+                            </a>
+                        </transition>
+
+                        <transition name="slide-left">
+                            <a v-show="showSocialButtons" class="button is-light button-social button-npm" href="//www.npmjs.com/~ismailnguyen" target="_blank" rel="noopener">
+                                <i class="fab fa-npm"></i>
+                            </a>
+                        </transition>
+
+                        <transition name="slide-left">
+                            <a v-show="showSocialButtons" class="button is-light button-social button-github" href="//github.com/ismailnguyen" target="_blank" rel="noopener">
                                 <i class="fab fa-github"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
-                            <a v-show="showSocialButtons" class="button is-light button-linkedin" href="https://www.linkedin.com/in/ismailnguyen" target="_blank" rel="noopener">
+                            <a v-show="showSocialButtons" class="button is-light button-social button-linkedin" href="//www.linkedin.com/in/ismailnguyen" target="_blank" rel="noopener">
                                 <i class="fab fa-linkedin"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
-                            <a v-show="showSocialButtons" class="button is-light button-twitter" href="https://twitter.com/ishmaa_el" target="_blank" rel="noopener">
+                            <a v-show="showSocialButtons" class="button is-light button-social button-twitter" href="https://twitter.com/ishmaa_el" target="_blank" rel="noopener">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </transition>
 
-                        <button class="button is-primary is-light is-outlined" @click="toggleSocialButtons()">
-                            <strong>{{ showSocialButtons ? 'More ?' : 'Get in touch' }}</strong>
+                        <button class="button button-cta" @click="toggleSocialButtons()" v-if="!showSocialButtons">
+                            <strong>Get in touch</strong>
                         </button>
+                        <a class="button button-cta" @click="toggleSocialButtons()" href="https://github.com/ismailnguyen/resume/raw/master/CV_Ismail-Nguyen.pdf" target="_blank" rel="noopener" v-else>
+                            <strong>Resum&eacute;</strong>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -79,11 +91,6 @@
             },
 
             toggleSocialButtons: function () {
-                if (this.showSocialButtons) {
-                    this.$router.push('/get-in-touch')
-                    this.toggleMenu();
-                }
-
                 this.showSocialButtons = !this.showSocialButtons
             }
         }
@@ -91,6 +98,74 @@
 </script>
 
 <style scoped>
+    @import url('https://themes.googleusercontent.com/fonts/css?kit=Qx6FPcitRwTC_k88tLPc-UdBEiE9uD1gMwjC8j0e9UVOHzq4pOkkVVXAxa-PHMp_TxxFasp78LYLHii6Z8AzWrPkbmw9Z2nKh64fN9qFysw');
+
+    .logo {
+        line-height: 1.15;
+        text-align: center;
+        color: #f8faff;
+        font-weight: 400;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-family: "Bowlby One SC";
+        font-style: normal;
+        font-size: 2.5vw;
+        text-shadow: 0px 2px #6a35ff, 3px 3px #6a35ff, 4px 4px #6a35ff;
+    }
+
+    @media only screen and (max-width: 500px) {
+    .logo {
+            font-size: 8.35vw;
+            text-shadow: 0px 1px #6a35ff, 1px 1px #6a35ff, 2px 2px #6a35ff;
+        }
+    }
+    
+    .navbar .burger {
+        color: #6a35ff;
+        font-size: 22px;
+    }
+    
+    .navbar .button {
+        border-radius: 0;
+        transition: box-shadow 300ms ease, background-color 300ms ease;
+    }
+    
+    .navbar.is-light .button-cta {
+        color: #fff;
+        background-color: #6a35ff;
+    }
+
+    .navbar.is-light .button-cta:hover {
+        background-color: #5a27e7;
+        box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
+    }
+
+    .navbar.is-dark .button-cta {
+        color: #fff;
+        background-color: rgba(67, 83, 255, 0.1);
+        border: none;
+    }
+
+    .navbar.is-dark .button-cta:hover {
+        background-color: #5a27e7;
+    }
+
+    .button-social {
+        background: none !important;
+    }
+
+    .has-background-dark .button-social.is-light:not(:hover) {
+        color: #fff;
+    }
+
+    .button-paypal:hover {
+        color: #15aabf;
+    }
+
+    .button-npm:hover {
+        color: #cb3837;
+    }
+
     .button-github:hover {
         color: black;
     }
@@ -103,15 +178,50 @@
         color: #0073b1;
     }
 
-    .navbar-menu .navbar-start .navbar-item.is-tab:hover {
-        background-color: #0000000a;
-        border-bottom-color: #fecb01;
+    .navbar.is-light .navbar-menu.is-active {
+        background-color: #eef0f3;
     }
 
-    .navbar-menu .navbar-start .navbar-item.is-tab.is-active {
-        background-color: #0000000a;
-        border-bottom-color: #fecb01;
+    .navbar.is-dark .navbar-menu.is-active {
+        background-color: #2e363b;
+    }
+
+    .navbar-menu .navbar-item {
+        padding-right: 22px;
+        padding-left: 22px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+    }
+
+    .navbar.is-light .navbar-menu .navbar-item {
+        color: #2d3958;
+    }
+
+    .navbar .navbar-item {
+        background: none !important;
+    }
+
+    .navbar.is-dark .navbar-menu .navbar-item {
+        color: #fff;
+        opacity: 0.5;
+        background: none;
+    }
+
+    .navbar-menu .navbar-start .navbar-item:hover,
+    .navbar-menu .navbar-start .navbar-item.is-active {
         font-weight: bold;
-        color: #0a0a0a;
+        border: none;
+        background: none;
+    }
+    
+    .navbar.is-light .navbar-menu .navbar-start .navbar-item:hover,
+    .navbar.is-light .navbar-menu .navbar-start .navbar-item.is-active {
+        color: #6a35ff;
+    }
+
+    .navbar.is-dark .navbar-menu .navbar-start .navbar-item:hover,
+    .navbar.is-dark .navbar-menu .navbar-start .navbar-item.is-active {
+        opacity: 1;
     }
 </style>

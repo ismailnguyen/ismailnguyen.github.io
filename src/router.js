@@ -4,10 +4,10 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import Presentation from './views/Presentation.vue'
-import AboutMe from './views/AboutMe.vue'
 import Portfolio from './views/Portfolio.vue'
 import WorkDetail from './views/WorkDetail.vue'
-import GetInTouch from './views/GetInTouch.vue'
+import Now from './views/Now.vue'
+import Terms from './views/Terms.vue'
 
 const router = new VueRouter({
     mode: 'history',
@@ -24,11 +24,6 @@ const router = new VueRouter({
             component: Presentation
         },
         {
-            name: 'AboutMe',
-            path: '/about-me',
-            component: AboutMe
-        },
-        {
             name: 'Portfolio',
             path: '/portfolio',
             component: Portfolio
@@ -40,9 +35,14 @@ const router = new VueRouter({
             props: (route) => ({ workTitle: route.params.title })
         },
         {
-            name: 'GetInTouch',
-            path: '/get-in-touch',
-            component: GetInTouch
+            name: 'Now',
+            path: '/now',
+            component: Now
+        },
+        {
+            name: 'Terms',
+            path: '/terms',
+            component: Terms
         }
     ],
     scrollBehavior (to, from, savedPosition) {

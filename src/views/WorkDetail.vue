@@ -1,83 +1,100 @@
 <template>
-    <section class="hero has-background-light is-fullheight">
-        <div class="hero-body">
-            <div class="container is-fluid">
-                <div class="tags">
-                    <span class="tag is-rounded is-link has-text-weight-bold" v-for="(tag, tagIndex) in work.tags" :key="tagIndex">
-                        {{ tag }}
-                    </span>
-                </div>
+    <div>
+        <section class="hero has-background-dark" :class="!hasContent() ? 'is-fullheight' : ''">
+            <div class="hero-body">
+                <div class="container is-fluid has-text-centered">
 
-                <div class="columns is-vcentered">
-                    <div class="column" v-if="work.primaryImage">
-                        <figure class="image is-3by2">
-                            <img :src="work.primaryImage.src" :alt="work.primaryImage.alt" loading="lazy">
-                        </figure>
+                    <h1 class="title is-1 is-spaced">
+                        <span class="icon is-large">
+                             <img :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
+                        </span>
+
+                        {{ work.title }}
+                    </h1>
+
+                    <h2 class="subtitle is-6" v-if="work.subTitle">
+                        {{ work.subTitle }}
+                    </h2>
+
+                    <div class="tags">
+                        <span class="tag" v-for="(tag, tagIndex) in work.tags" :key="tagIndex">
+                            {{ tag }}
+                        </span>
                     </div>
 
-                    <div class="column ">
-                        <div class="media">
+                    <div class="subhead" v-html="work.description"></div>
 
-                            <div class="media-left" v-if="work.secondaryImage">
-                                <figure class="image is-48x48">
-                                    <img :src="work.secondaryImage.src" :alt="work.secondaryImage.alt" loading="lazy">
-                                </figure>
-                            </div>
+                    <div class="buttons">
+                        <a :href="work.secondaryLink.url" target="_blank" class="button button-secondary" rel="noopener" v-if="work.secondaryLink">
+                            {{ work.secondaryLink.text }}
+                        </a>
 
-                            <div class="media-content">
-                                <p class="title is-4">
-                                    {{ work.title }}
-                                </p>
-
-                                <p class="subtitle is-6">
-                                    <a :href="work.subTitle.link" target="_blank" rel="noopener" v-if="work.subTitle && work.subTitle.link">
-                                        {{ work.subTitle.text }}
-                                    </a>
-                                    <span v-else-if="work.subTitle">
-                                        {{ work.subTitle.text }}
-                                    </span>
-                                </p>
-
-                                <div class="content is-medium has-text-justified" v-html="work.description"></div>
-
-                                <div class="buttons" v-if="work.subTitle && work.subTitle.link">
-                                    <a :href="work.subTitle.link" target="_blank" class="button is-link is-outlined is-light" rel="noopener">
-                                        View project
-                                    </a>
-                                </div>
-
-                                <div class="buttons is-pulled-right" v-if="work.readMoreLink">
-                                    <a :href="work.readMoreLink" target="_blank" class="button is-link is-outlined is-light" rel="noopener">
-                                        Read more
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
+                        <a :href="work.primaryLink.url" target="_blank" class="button button-primary" rel="noopener" v-if="work.primaryLink">
+                            {{ work.primaryLink.text }}
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-</template>
+        </section>
 
+        <section class="section" v-if="work.embeddedContentUrl">
+            <div class="container is-fluid">
+                <IframeBloc :url="work.embeddedContentUrl" />
+            </div>
+        </section>
+
+        <section class="section" v-if="markdownContent">
+            <div class="container is-fluid">
+                <MarkdownBloc :text="markdownContent" />
+            </div>
+        </section>
+
+        <section class="hero has-background-dark">
+            <div class="hero-body">
+                <div class="container is-fluid has-text-centered">
+                    <WorkCarousel :images="work.images" />
+                </div>
+            </div>
+        </section>
+    </div>
+</template>
 
 <script>
     import data from '../data.js';
+    import MarkdownBloc from '../components/MarkdownBloc'
+    import IframeBloc from '../components/IframeBloc'
+    import WorkCarousel from '../components/WorkCarousel'
 
     export default {
         props: ['workTitle'],
         data () {
             return {
-                works: data
+                works: data,
+                markdownContent: ''
             }
+        },
+        components: {
+            MarkdownBloc,
+            IframeBloc,
+            WorkCarousel
         },
         computed: {
             work: function () {
                 return this.works.find(work => work.title === this.workTitle)
             }
         },
+        mounted() {
+            if (this.work.markdownContentUrl) {
+                this.loadDescription();
+            }
+        },
         methods: {
+            loadDescription: function () {
+                fetch(this.work.markdownContentUrl)
+                    .then(response => response.text())
+                    .then(text => this.markdownContent = text);
+            },
+
             twitterShareLink: function () {
                 return 'https://twitter.com/intent/tweet/'
                         + '?text=' + this.work.title
@@ -89,7 +106,100 @@
                 + '&url=' + this.work.readMoreLink
                 + '&title=' + this.work.title
                 + '&source=https://www.ismailnguyen.com';
+            },
+
+            hasContent: function () {
+                return this.work.images
+                        || this.markdownContent
+                        || this.work.embeddedContentUrl;
             }
         }
     }
 </script>
+
+<style scoped>
+    .title .icon {
+        vertical-align: bottom;
+    }
+
+    .tags {
+        display: block;
+    }
+
+    .tag {
+        background-color: #3e484e;
+        color: #fff;
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 14px;
+        margin-left: 5px;
+        padding: 3px 16px 2px;
+        border-radius: 30px !important;
+        -webkit-transition: opacity 100ms ease-in-out, background-color 100ms ease-in-out;
+        transition: opacity 100ms ease-in-out, background-color 100ms ease-in-out;
+        font-size: 14px;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
+
+    .buttons {
+        display: inline-block;
+    }
+
+    .button-primary {
+        margin-right: 10px;
+        margin-left: 10px;
+        padding: 9px 24px;
+        background-color: #e23b7d;
+        font-size: 16px;
+        display: inline-block;
+        -webkit-transition: background-color 80ms ease-in-out;
+        transition: background-color 80ms ease-in-out;
+        font-family: Circular, sans-serif;
+        font-weight: 400;
+        text-decoration: none;
+        color: #fff;
+        border: 0;
+        line-height: inherit;
+        cursor: pointer;
+        border-radius: 0;
+    }
+
+    .button-primary:hover {
+        background-color: #c5326d;
+    }
+
+    .button-secondary {
+        margin-right: 10px;
+        margin-left: 10px;
+        background-color: #3e484e;
+        color: #fff;
+        font-size: 16px;
+        display: inline-block;
+        -webkit-transition: background-color 80ms ease-in-out;
+        transition: background-color 80ms ease-in-out;
+        font-family: Circular, sans-serif;
+        font-weight: 400;
+        text-decoration: none;
+        padding: 9px 24px;
+        font-size: 16px;
+        border: 0;
+        line-height: inherit;
+        cursor: pointer;
+        border-radius: 0;
+    }
+
+    .button-secondary:hover {
+        background-color: #536169;
+    }
+
+    .subhead {
+        max-width: 660px;
+        margin: 12px auto 30px;
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: normal;
+    }
+</style>

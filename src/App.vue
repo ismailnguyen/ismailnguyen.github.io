@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="has-background-light">
+  <div id="app" :class="this.$route.name == 'WorkDetail' ? 'has-background-dark': 'has-background-light'">
 
     <Navbar />
     <transition name="slide-left">
@@ -26,9 +26,36 @@
 
 <style>
 
+  body,
+  .has-background-light .hero h1,
+  .has-background-light .hero h2 {
+    color: #2d3958 !important; 
+  }
+
+  .has-background-light .hero h2 {
+    color: #7b88a8 !important;
+  }
+
+  body,
+  .has-background-dark .hero h1,
+  .has-background-dark .hero h2 {
+    color: #fff !important; 
+  }
+
+  .has-background-dark .hero h2,
+  .has-background-dark .hero .subtitle {
+    color: #acb9bf !important;
+  }
+
   .has-background-light,
   .is-light {
     background-color: #eceef7 !important;
+  }
+
+  .has-background-dark,
+  .is-dark {
+    background-color: #2e363b !important;
+    color: #acb9bf !important;
   }
 
   .slide-left-enter-active,
@@ -58,5 +85,9 @@
     margin: 10px 50px; 
     letter-spacing: 6px; 
     font-weight: bold
+  }
+
+  .is-clickable {
+    cursor: pointer;
   }
 </style>

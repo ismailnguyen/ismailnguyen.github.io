@@ -14,11 +14,11 @@
                     </div>
 
                     <div class="column">
-                        <div class="box">
+                        <div class="box twitter-box">
                             <article class="media">
                                 <div class="media-left">
                                     <figure class="image is-64x64">
-                                        <img src="/resources/images/leoDaVinci.jpg" alt="Leo da Vinci" loading="lazy">
+                                        <img src="/resources/images/profile.webp" alt="Leo da Vinci" loading="lazy">
                                     </figure>
                                 </div>
                                 <div class="media-content">
@@ -303,5 +303,9 @@
             filter: alpha(opacity=0);
             opacity: 0;
         }
+    }
+
+    .box.twitter-box {
+        box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
     }
 </style>

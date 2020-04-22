@@ -1,39 +1,113 @@
 const works = [
     {
-        primaryImage: {
-            src: '/resources/images/works/agile-france.webp',
-            alt: 'Agile-France'
+        logo: {
+            url: '/resources/images/works/logo/npm.png',
+            alt: 'NPM'
         },
-        secondaryImage: {
-            src: '/resources/images/works/logo/agile-france.png',
-            alt: 'Agile-France'
+        title: 'throttler-js',
+        subTitle: 'NPM Package',
+        description: 'A simple Javascript function Throttler',
+        primaryLink: {
+            url: 'https://www.npmjs.com/package/throttler-js',
+            text: 'NPM'
         },
-        title: 'Agile-France',
-        subTitle: {
-            text: '2020.conf.agile-france.org',
-            link: 'https://2020.conf.agile-france.org/'
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/throttler-js',
+            text: 'Source'
         },
-        description: '',
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/throttler-js/master/README.md',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
         tags: [
-            'HTML',
-            'Bulma'
+            'JavaScript',
+            'NPM',
+            'Node',
+            'Package',
+            'Throttle'
         ]
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/ncrafts-pwa.webp',
+        logo: {
+            url: '/resources/images/works/logo/npm.png',
+            alt: 'NPM'
+        },
+        title: 'togglify-js',
+        subTitle: 'NPM Package',
+        description: 'Javascript feature toggler',
+        primaryLink: {
+            url: 'https://www.npmjs.com/package/togglify-js',
+            text: 'NPM'
+        },
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/togglify-js',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/togglify-js/master/README.md',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
+        tags: [
+            'JavaScript',
+            'NPM',
+            'Node',
+            'Package'
+        ]
+    },
+    {
+        coverImage: {
+            url: '/resources/images/works/agile-france.webp',
+            alt: 'Agile-France'
+        },
+        logo: {
+            url: '/resources/images/works/logo/agile-france.png',
+            alt: 'Agile-France'
+        },
+        title: 'Agile-France',
+        subTitle: '2020.conf.agile-france.org',
+        primaryLink: {
+            text: 'Live', 
+            url: 'https://2020.conf.agile-france.org'
+        },
+        secondaryLink: {
+            text: 'Source', 
+            url: 'https://github.com/agile-france/site-Conf-Agile-France'
+        },
+        description: 'Agile France est la grande conférence Agile de la communauté pour la communauté : francophone, sans sponsor. Edition 2020 : 11 et 12 juin Chalet de la Porte Jaune Bois de Vincennes Paris',
+        tags: [
+            'HTML',
+            'Bulma'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/agile-france.webp',
+                alt: 'Agile-France'
+            }
+        ]
+    },
+    {
+        coverImage: {
+            url: '/resources/images/works/ncrafts-pwa.webp',
             alt: 'NCrafts PWA'
         },
-        secondaryImage: {
-            src: '/resources/images/works/logo/newcrafts.jpg',
+        logo: {
+            url: '/resources/images/works/logo/newcrafts.jpg',
             alt: 'NewCrafts'
         },
         title: 'NewCrafts',
-        subTitle: {
-            text: 'app.ncrafts.io',
-            link: 'https://app.ncrafts.io/'
+        subTitle: 'app.ncrafts.io',
+        primaryLink: {
+            text: 'Live', 
+            url: 'https://app.ncrafts.io'
         },
-        description: '',
+        secondaryLink: {
+            text: 'Source', 
+            url: 'https://github.com/ncraftsconf/Ncrafts-PWA'
+        },
+        description: 'NewCrafts Paris, an ephemeral learning ground for professional developers who care for quality code and bettering their practices.',
+        markdownContentUrl: 'https://raw.githubusercontent.com/ncraftsconf/Ncrafts-PWA/master/README.md',
         tags: [
             'Vue JS',
             'PWA',
@@ -41,91 +115,106 @@ const works = [
         ]
     },
     {
-        title: 'Feedback-storming : Event Storming of feedback ?',
-        subTitle: {
-            text: 'Event storming revisited to collect feedbacks'
+        logo: {
+            url: '/resources/images/works/logo/github.png',
+            alt: 'Github'
         },
-        readMoreLink: 'https://github.com/ismailnguyen/feedback-storming/',
+        title: 'Feedback-storming : Event Storming of feedback ?',
+        subTitle: 'Event storming revisited to collect feedbacks',
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/feedback-storming',
+            text: 'Read more'
+        },
         socialShare: {
             twitter: true,
             linkedIn: true
         },
-        description: `
-        <h1 class="title" class="title">Why ?</h1>
-        <p>
-            Collect feedback Initiate to Event Storming
-        </p>
-
-        <h1 class="title">How ?</h1>
-        <p>
-            Organize a "revisited" storming event session based on participants' feedback.
-        </p>
-
-        <h1 class="title">What ?</h1>
-        <p>
-            Paste "event" post-it notes to mark each event experienced by the participants during the session, then paste "question" post-it notes on the questions that everyone asked themselves, paste "idea" post-it notes for each idea or area of improvement. All this while respecting the timeline with an event that marks the beginning of the session and one for the end of the session.
-        </p>
-
-        <h1 class="title">When ?</h1>
-        <p>
-            At the end of an event (ceremony, presentation, workshop, training,...).
-        </p>
-        `,
+        description: '',
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/feedback-storming/master/README.md',
         tags: [
             'Event Storming',
             'Feedback'
         ]
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/ncrafts-training.webp',
+        coverImage: {
+            url: '/resources/images/works/ncrafts-training.webp',
             alt: 'NewCrafts Training'
         },
-        secondaryImage: {
-            src: '/resources/images/works/logo/newcrafts.jpg',
+        logo: {
+            url: '/resources/images/works/logo/newcrafts.jpg',
             alt: 'NewCrafts'
         },
         title: 'NewCrafts Trainings',
-        subTitle: {
-            text: 'training.ncrafts.io',
-            link: 'https://training.ncrafts.io/'
+        subTitle: 'training.ncrafts.io',
+        primaryLink: {
+            text: 'Live', 
+            url: 'https://training.ncrafts.io'
         },
-        description: '',
+        secondaryLink: {
+            text: 'Source', 
+            url: 'https://github.com/ncraftsconf/training'
+        },
+        description: 'Workshops for professional developers who care about quality code and bettering their practices.',
         tags: [
             'HTML',
             'CSS',
             'Azure'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/ncrafts-training.webp',
+                alt: 'NewCrafts Training'
+            }
         ]
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/crafter-journey.webp',
+        coverImage: {
+            url: '/resources/images/works/crafter-journey.webp',
             alt: `A Software Crafter's Journey`
         },
-        secondaryImage: {
-            src: '/resources/images/works/logo/La_Combe_du_Lion_Vert.png',
+        logo: {
+            url: '/resources/images/works/logo/La_Combe_du_Lion_Vert.png',
             alt: 'La Combe du Lion Vert'
         },
         title: `A Software Crafter's Journey`,
-        subTitle: {
-            text: 'a-software-crafter-s-journey.now.sh',
-            link: 'https://a-software-crafter-s-journey.now.sh/'
+        subTitle: 'Open source static blog.',
+        primaryLink: {
+            text: 'Live', 
+            url: 'https://lclv-blog-core.now.sh'
         },
-        description: '',
+        secondaryLink: {
+            text: 'Source', 
+            url: 'https://github.com/lelionvert/blog-core'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/lelionvert/blog-core/master/README.md',
         tags: [
             'React JS',
             'PWA',
             'Firebase'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/crafter-journey.webp',
+                alt: `A Software Crafter's Journey`
+            }
         ]
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/application-weekend.webp',
+        coverImage: {
+            url: '/resources/images/works/application-weekend.webp',
             alt: `Comment j'ai crée une application en un week-end`
         },
+        logo: {
+            url: '/resources/images/works/logo/google-slides.png',
+            alt: 'Google Slides'
+        },
         title: `“Comment j'ai crée une application en un week-end”`,
-        description: '',
-        readMoreLink: 'https://docs.google.com/presentation/d/14sLubBl04_m547yxraSP1mO-_R5Bf9ClwuyX9s-TjPs/',
+        secondaryLink: {
+            url: 'https://docs.google.com/presentation/d/14sLubBl04_m547yxraSP1mO-_R5Bf9ClwuyX9s-TjPs',
+            text: 'View slides'
+        },
+        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRuClSj26rirjEZZBIPLHEJj7ti8z5vgHLw7nUA3nWzSnq3RtytFg0SIXMx834a7akRInBkR1fpWA4a/embed?start=false&loop=false&delayms=3000',
         socialShare: {
         twitter: true,
         linkedIn: true
@@ -137,20 +226,26 @@ const works = [
         ]
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/agile-france-pwa.webp',
+        coverImage: {
+            url: '/resources/images/works/agile-france-pwa.webp',
             alt: 'Agile France PWA'
         },
-        secondaryImage: {
-            src: '/resources/images/works/logo/agile-france.png',
+        logo: {
+            url: '/resources/images/works/logo/agile-france.png',
             alt: 'Agile France'
         },
         title: 'Agile France',
-        subTitle: {
-            text: 'agile-france.web.app',
-            link: 'https://agile-france.web.app/'
+        subTitle: 'agile-france.web.app',
+        primaryLink: {
+            url: 'https://agile-france.web.app',
+            text: 'Live'
         },
-        description: '',
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/AgileFrance-PWA',
+            text: 'Source'
+        },
+        description: 'Agile France est la grande conférence Agile de la communauté pour la communauté : francophone, sans sponsor. Edition 2020 : 11 et 12 juin Chalet de la Porte Jaune Bois de Vincennes Paris',
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/AgileFrance-PWA/master/README.md',
         tags: [
             'React JS',
             'PWA',
@@ -158,19 +253,17 @@ const works = [
         ]
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/humans-relais.webp',
+        coverImage: {
+            url: '/resources/images/works/humans-relais.webp',
             alt: `Humans Relais Android application`
         },
-        secondaryImage: {
-            src: '/resources/images/works/humans-relais-logo.webp',
+        logo: {
+            url: '/resources/images/works/humans-relais-logo.webp',
             alt: 'Humans Relais'
         },
         title: `Humans Relais`,
-        subTitle: {
-            text: '@humansrelais'
-        },
-        description: '',
+        subTitle: 'humansrelais.fr',
+        description: `Humans Relais est une association qui a pour objectif de créer du lien entre personnes avec et sans-abri. On ne peut pas aider tout le monde, mais tout le monde peut aider quelqu'un.`,
         tags: [
             'Android',
             'Java',
@@ -178,17 +271,21 @@ const works = [
         ]
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/dry-principle.webp',
+        coverImage: {
+            url: '/resources/images/works/dry-principle.webp',
             alt: 'DRY Principle'
         },
-        
-        title: 'DRY Principle',
-        subTitle: {
-            text: 'Clean Code',
+        logo: {
+            url: '/resources/images/works/logo/google-slides.png',
+            alt: 'Google Slides'
         },
-        description: '',
-        readMoreLink: 'https://docs.google.com/presentation/d/1RqId9XV6FtQ0_hYC26qG03rkEHc-ylODwF1FwilaBxo/',
+        title: 'DRY Principle',
+        subTitle: 'Clean Code',
+        secondaryLink: {
+            url: 'https://docs.google.com/presentation/d/1RqId9XV6FtQ0_hYC26qG03rkEHc-ylODwF1FwilaBxo',
+            text: 'View slides'
+        },
+        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQRZiTtNfH6G5xteMhFFOTt4LwBW5OhCMMyKuMXKNkMlI8QPZG3jzM-malihXjZ8pSvOpvvjlzI10yh/embed?start=false&loop=false&delayms=3000',
         socialShare: {
             twitter: true,
             linkedIn: true
@@ -199,20 +296,26 @@ const works = [
         ]
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/bac-a-lettre.webp',
+        coverImage: {
+            url: '/resources/images/works/bac-a-lettre.webp',
             alt: 'Bac à lettre PWA'
         },
-        secondaryImage: {
-            src: '/resources/images/works/logo/bac-a-lettre.svg',
+        logo: {
+            url: '/resources/images/works/logo/bac-a-lettre.svg',
             alt: 'Bac à lettre'
         },
         title: 'Bac à lettre',
-        subTitle: {
-            text: 'bac-a-lettre.netlify.com',
-            link: 'https://bac-a-lettre.netlify.com/'
+        subTitle: 'bac-a-lettre.netlify.com',
+        primaryLink: {
+            url: 'https://bac-a-lettre.netlify.com',
+            text: 'Live'
         },
-        description: '',
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/Bac-a-lettre',
+            text: 'Source'
+        },
+        description: 'Random letter generator for Baccalaureat game',
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/Bac-a-lettre/master/README.md',
         tags: [
             'React JS',
             'PWA',
@@ -220,54 +323,76 @@ const works = [
         ]
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/golden-circle.webp',
+        coverImage: {
+            url: '/resources/images/works/golden-circle.webp',
             alt: 'The Golden Circle'
         },
-        title: '“The Golden Circle”',
-        subTitle: {
-            text: 'A brief introduction'
+        logo: {
+            url: '/resources/images/works/logo/google-slides.png',
+            alt: 'Google Slides'
         },
-        description: '',
-        readMoreLink: 'https://docs.google.com/presentation/d/1lK0SjbXAwa2BeCO3kOeRipuXO5ywS-1XLIwJppP86Ro/',
+        title: '“The Golden Circle”',
+        subTitle: 'A brief introduction',
+        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vTg-TYXA9kWgHj_uSPUM3Wf8IHqFiqctNZjBxhKxDW4oElNv5jEWNQPHZyFkzpCs3LrR37hXcGOOa7P/embed?start=false&loop=false&delayms=3000',
+        secondaryLink: {
+            url: 'https://docs.google.com/presentation/d/1lK0SjbXAwa2BeCO3kOeRipuXO5ywS-1XLIwJppP86Ro',
+            text: 'View slides'
+        },
         socialShare: {
             twitter: true,
             linkedIn: true
         }          
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/tryeat.webp',
+        coverImage: {
+            url: '/resources/images/works/tryeat.webp',
             alt: 'Try Eat PWA'
         },
-        secondaryImage: {
-            src: '/resources/images/works/tryeat-logo.webp',
+        logo: {
+            url: '/resources/images/works/tryeat-logo.webp',
             alt: 'Try Eat'
         },
         title: 'Try Eat',
-        subTitle: {
-            text: 'tryeat.me',
-            link: 'https://tryeat.me/'
+        subTitle: 'tryeat.me',
+        primaryLink: {
+            url: 'https://tryeat.me',
+            text: 'Live'
         },
-        description: '',
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/tryeat',
+            text: 'Source'
+        },
+        description: 'Application to store list of restaurants to try with a map in which you can see your favorites restaurants near your geo location',
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/TryEat/master/README.md',
         tags: [
             'Vue JS',
             'PWA',
             'Semantic UI',
             'Firebase'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/tryeat.webp',
+                alt: 'Try Eat PWA'
+            }
         ]
     },
     {
-        primaryImage: {
-            src: 'https://raw.githubusercontent.com/ismailnguyen/Wedding-Invitation/master/screen1.png',
+        coverImage: {
+            url: 'https://raw.githubusercontent.com/ismailnguyen/Wedding-Invitation/master/screen1.png',
             alt: 'My wedding invitation'
         },
-        title: 'My wedding invitation',
-        subTitle: {
-            text: 'github/Wedding-Invitation',
-            link: 'https://github.com/ismailnguyen/Wedding-Invitation'
+        logo: {
+            url: '/resources/images/works/logo/github.png',
+            alt: 'Github'
         },
-        description: '',
+        title: 'My wedding invitation',
+        subTitle: 'github/Wedding-Invitation',
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/Wedding-Invitation',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/Wedding-Invitation/master/README.md',
         tags: [
             'HTML',
             'JavaScipt',
@@ -275,46 +400,76 @@ const works = [
         ]
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/joyti-restaurant.webp',
+        coverImage: {
+            url: '/resources/images/works/joyti-restaurant.webp',
             alt: 'Joyti Restaurant'
         },
-        title: 'Joyti Restaurant',
-        subTitle: {
-            text: 'github/joyti-restaurant',
-            link: 'https://github.com/ismailnguyen/joyti-restaurant'
+        logo: {
+            url: '/resources/images/works/logo/github.png',
+            alt: 'Github'
         },
-        description: '',
+        title: 'Joyti Restaurant',
+        subTitle: 'github/joyti-restaurant',
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/joyti-restaurant',
+            text: 'Source'
+        },
+        description: 'Indian restaurant web site',
         tags: [
             'HTML',
             'Google Sheets API'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/joyti-restaurant.webp',
+                alt: 'Joyti Restaurant'
+            }
         ]
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/ismailnguyen.webp',
+        coverImage: {
+            url: '/resources/images/works/ismailnguyen.webp',
             alt: 'My portfolio'
         },
-        secondaryImage: {
-            src: '/resources/images/profile.webp',
+        logo: {
+            url: '/resources/images/profile.webp',
             alt: 'Ismaïl NGUYEN'
         },
         title: 'My portfolio',
-        subTitle: {
-            text: 'github/ismailnguyen',
-            link: 'https://github.com/ismailnguyen/ismailnguyen.github.io'
+        subTitle: 'github/ismailnguyen',
+        primaryLink: {
+            url: 'https://www.ismailnguyen.com',
+            text: 'Live'
         },
-        description: '',
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/ismailnguyen.github.io',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/ismailnguyen.github.io/master/README.md',
         tags: [
-            'Svelte JS',
+            'Vue JS',
             'Bulma',
             'HTML',
             'Github Pages'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/ismailnguyen.webp',
+                alt: 'My portfolio'
+            }
         ]
     },
     {
+        logo: {
+            url: '/resources/images/works/logo/google-slides.png',
+            alt: 'Google Slides'
+        },
         title: 'Imperfection is the new perfection',
-        readMoreLink: 'https://docs.google.com/presentation/d/1XFsJ-2ZMRti-iwg4UQ4HFEvja8FggakO_adyLMCWZOA/',
+        secondaryLink: {
+            url: 'https://docs.google.com/presentation/d/1XFsJ-2ZMRti-iwg4UQ4HFEvja8FggakO_adyLMCWZOA',
+            text: 'View slides'
+        },
+        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vTeje1M3a7w5NQLGRYkQUl2185f5_LXX1pliCEqunl8J2P8rDdwE8Ww3glUl0wHqdGfftYFVeif7aDa/embed?start=false&loop=false&delayms=3000',
         socialShare: {
             twitter: true,
             linkedIn: true
@@ -322,16 +477,21 @@ const works = [
         description: ''
     },
     {
-        primaryImage: {
-            src: '/resources/images/works/open-closed-principle.webp',
+        coverImage: {
+            url: '/resources/images/works/open-closed-principle.webp',
             alt: 'Open/Closed Principle'
         },
-        title: 'Open/Closed Principle',
-        subTitle: {
-            text: 'SOLID Principle'
+        logo: {
+            url: '/resources/images/works/logo/google-slides.png',
+            alt: 'Google Slides'
         },
-        description: '',
-        readMoreLink: 'https://docs.google.com/presentation/d/1Ame_zMdo07S4OcmEAyEjwLFZkYRsnS-unnHZcaP_-xM/',
+        title: 'Open/Closed Principle',
+        subTitle: 'SOLID Principle',
+        secondaryLink: {
+            url: 'https://docs.google.com/presentation/d/1Ame_zMdo07S4OcmEAyEjwLFZkYRsnS-unnHZcaP_-xM',
+            text: 'View slides'
+        },
+        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vSDR8hvyO2uuijP5AeTcWj-L0dSp_RzuP0n_Z6hOO5LIfzAee5MwoRSNfCzBgRbV27ZSo6s6-HoRlsu/embed?start=false&loop=false&delayms=3000',
         socialShare: {
             twitter: true,
             linkedIn: true
@@ -343,61 +503,21 @@ const works = [
         ]
     },
     {
-        title: '“Comment le Big Data peut influencer notre vie quotidienne ?”',
-        subTitle: {
-            text: 'Ismaïl NGUYEN & Valentin MEYNE'
+        logo: {
+            url: '/resources/images/works/logo/pdf.webp',
+            alt: 'PDF'
         },
-        readMoreLink: 'https://www.ismailnguyen.com/docs/Memoire_Big-Data_Influence-sur-notre-vie-quotidienne_MEYNE-Valentin_NGUYEN-Ismail.pdf',
+        title: '“Comment le Big Data peut influencer notre vie quotidienne ?”',
+        subTitle: 'by Ismaïl NGUYEN & Valentin MEYNE',
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/thesis-big-data-influence/raw/master/Memoire_Big-Data_Influence-sur-notre-vie-quotidienne_MEYNE-Valentin_NGUYEN-Ismail.pdf',
+            text: 'Download'
+        },
         socialShare: {
             twitter: true,
             linkedIn: true
         },
-        description: `
-        Wanting to understand the past and foresee the future. It is from now on a dream
-within the reach of Humanity.
-Immeasurable power to foresee the comings and goings of an individual. Basing on
-this individual tastes, preferences, experiences, body and acts, this data allows to
-identify him. We all produce them, at any time. It is harvested on websites and
-places on Earth we visited. Nevertheless, the main source to this day is our
-connected objects.
-Don’t believe you are spared if you are not passionate about new technologies
-because today we all possess at least one. It is our smartphone.
-This huge amount of Data, so big that it challenges the giants of IT industry that
-collect it to obtain relevant informations.
-It is called Big Data.
-With this huge power in the hands of the most powerful companies in the world we
-can ask ourselves :
-How Big Data can influence our everyday life ?
-
-This is where we come up with this document. We, two students who growth with
-computers, try to bring an answer by searching, grouping, analysing numerous press
-articles, conferences, books, from experts or thinkers.
-It appears that this technological progress have a global impact. Indeed, many field
-have started to mutate.
-From optimisation of production to anticipating consumer needs, the large retailers
-seems to benefit from it.
-The citizen security can be improved too. It can be trips, domestic accidents or
-health, by analysing each situation, the everyday life will be more secure than we
-could imagine.
-Our everyday life will be more secure and our consommation will be optimized at the
-expense of our independence and freedom.
-Actually, in politics, we can see there is a research for methods to obtain electors
-favours. Adapting a speech according to the results of the analyse of what people
-want is already an existing method. Also, governments are tempted to use the informations collected on everyone to detect the ones that can make trouble. The
-definition of someone who make trouble in the eyes of a government can change in
-the long run. An exception created today for anti-terrorism can become the norm
-tomorrow.
-Each company can be tempted, to stay competitive, to take advantage of consumer
-addiction predispositions, known or not by the client and keep him captive. In this
-way, our private life could be revealed without any possibility to fight back against
-entities that don’t have the same goal as our.
-All this points sum up in one word : “Control”. In fact, the greatest danger is to,
-knowing the future and his levers, a player influences it in his own interest.
-We will conclude by saying that Big Data and the changements it involves are greater
-than the discovery of atom in its time and despite its devastating potential, Big Data
-can improve the everyday life of each of us. Only History will tell us with certainty
-which use of it will be done in the long run but it will influence our everyday life.
-        `,
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/thesis-big-data-influence/master/README.md',
         tags: [
             'Big Data',
             'IoT',

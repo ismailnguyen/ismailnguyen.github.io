@@ -7,17 +7,17 @@
         <div class="columns is-mobile is-multiline is-centered">
             <div class="column is-one-third-desktop is-half-tablet is-full-mobile" v-for="(work, index) in works" :key="index">
                 <div class="card work-item modal-link is-clickable is-vcentered" @click="openWorkDetail(work)">
-                    <div class="card-image" v-if="work.primaryImage" :style="'background: url('+work.primaryImage.src+') no-repeat'">
+                    <div class="card-image" v-if="work.coverImage" :style="'background: url('+work.coverImage.url+') no-repeat'">
                         <figure class="image is-3by2">
                         </figure>
                     </div>
 
                     <div class="card-content">
-                        <figure class="image is-3by2" v-if="work.primaryImage"></figure>
+                        <figure class="image is-3by2" v-if="work.coverImage"></figure>
                         <div class="media">
                             <div class="media-left">
-                                <figure class="image is-48x48" v-if="work.secondaryImage">
-                                    <img :src="work.secondaryImage.src" :alt="work.secondaryImage.alt" loading="lazy">
+                                <figure class="image is-48x48" v-if="work.logo">
+                                    <img :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
                                 </figure>
                             </div>
 
@@ -36,7 +36,7 @@
                     </div>
                     <footer class="card-footer">
                         <div class="card-footer-item">
-                            <button class="button is-black button-view-details is-hidden">View</button>
+                            <button class="button button-view-details is-hidden"><strong>View</strong></button>
                         </div>
                     </footer>
                 </div>
@@ -83,7 +83,7 @@
         margin: auto;
         background-color: #fff;
         border-radius: 6px;
-        box-shadow: 0 1.5rem 1.5rem -1.25rem rgba(10,10,10,.05);
+        box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
         display: block;
         margin-bottom: 1.5rem;
         transition-duration: 86ms;
@@ -112,6 +112,19 @@
 
     .work-item .media {
         padding-top: 25px;
+    }
+
+     button {
+        border-radius: 0;
+        color: #fff;
+        background-color: #6a35ff;
+        transition: box-shadow 300ms ease, background-color 300ms ease;
+    }
+
+    button:hover {
+        background-color: #5a27e7;
+        color: #fff;
+        box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
     }
 
     .card-footer {
