@@ -1,6 +1,6 @@
 {
   "name": "ismailnguyen",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "author": "Ismaïl NGUYEN <nguyen.ismail@gmail.com>",
   "repository": "https://github.com/ismailnguyen/ismailnguyen.github.io.git",
   "license": "WTFPL (http://www.wtfpl.net)",
@@ -12,11 +12,9 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "markdown-it": "^10.0.0",
-    "remove-files-webpack-plugin": "^1.4.0",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
-    "vue-router": "^3.1.6",
-    "vueperslides": "^2.8.3"
+    "vue-router": "^3.1.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
@@ -25,7 +23,6 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
-    "html-webpack-plugin": "^4.2.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

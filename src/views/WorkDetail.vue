@@ -2,7 +2,7 @@
     <div>
         <section class="hero has-background-dark" :class="!hasContent() ? 'is-fullheight' : ''">
             <div class="hero-body">
-                <div class="container is-fluid has-text-centered">
+                <div class="container is-fullhd has-text-centered">
 
                     <h1 class="title is-1 is-spaced">
                         <span class="icon is-large">
@@ -38,20 +38,20 @@
         </section>
 
         <section class="section" v-if="work.embeddedContentUrl">
-            <div class="container is-fluid">
+            <div class="container is-fullhd">
                 <IframeBloc :url="work.embeddedContentUrl" />
             </div>
         </section>
 
         <section class="section" v-if="markdownContent">
-            <div class="container is-fluid">
+            <div class="container is-fullhd">
                 <MarkdownBloc :text="markdownContent" />
             </div>
         </section>
 
         <section class="hero has-background-dark">
             <div class="hero-body">
-                <div class="container is-fluid has-text-centered">
+                <div class="container is-fullhd has-text-centered">
                     <WorkCarousel :images="work.images" />
                 </div>
             </div>
