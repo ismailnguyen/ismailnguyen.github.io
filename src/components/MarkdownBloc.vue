@@ -1,7 +1,7 @@
 <template>
-    <article class="message is-family-code">
+    <article class="message">
         <div class="message-body">
-            <div class="content has-text-justified" v-html="parsedContent"></div>
+            <div class="content" v-html="parsedContent"></div>
         </div>
     </article>
 </template>
