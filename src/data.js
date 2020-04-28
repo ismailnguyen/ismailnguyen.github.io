@@ -5,11 +5,12 @@ const works = [
             alt: 'NPM'
         },
         title: 'throttler-js',
-        subTitle: 'NPM Package',
-        description: 'A simple Javascript function Throttler',
+        subTitle: 'A simple Javascript Throttler',
+        description: `throttler-js allows you to improve your application’s performance by limiting the number of events your code needs to handle.
+							You should use a throttle when you want to execute a callback at a controlled rate, allowing you to handle intermediate states repeatedly at each fixed interval of time.`,
         primaryLink: {
-            url: 'https://www.npmjs.com/package/throttler-js',
-            text: 'NPM'
+            url: 'https://www.ismailnguyen.com/throttler-js/',
+            text: 'View'
         },
         secondaryLink: {
             url: 'https://github.com/ismailnguyen/throttler-js',
@@ -35,10 +36,10 @@ const works = [
         },
         title: 'togglify-js',
         subTitle: 'NPM Package',
-        description: 'Javascript feature toggler',
+        description: `togglify-js is rism is a lightweight, extensible feature toggler.`,
         primaryLink: {
-            url: 'https://www.npmjs.com/package/togglify-js',
-            text: 'NPM'
+            url: 'https://www.ismailnguyen.com/togglify-js',
+            text: 'View'
         },
         secondaryLink: {
             url: 'https://github.com/ismailnguyen/togglify-js',
@@ -178,16 +179,17 @@ const works = [
             alt: 'La Combe du Lion Vert'
         },
         title: `A Software Crafter's Journey`,
-        subTitle: 'Open source static blog.',
+        subTitle: 'A Git based open source blog.',
+		description: `A Software Crafter's Journey is a blog built with modern web standards, blazingly fast due to a server side rendering and static blog posts. No need to host a back office, everything is managed through your Git repository, so you can make pull request to post a new article.`,
         primaryLink: {
-            text: 'Live', 
-            url: 'https://lclv-blog-core.now.sh'
+            text: 'View', 
+            url: 'https://www.ismailnguyen.com/a-software-crafter-s-journey/'
         },
         secondaryLink: {
             text: 'Source', 
-            url: 'https://github.com/lelionvert/blog-core'
+            url: 'https://github.com/ismailnguyen/a-software-crafter-s-journey'
         },
-        markdownContentUrl: 'https://raw.githubusercontent.com/lelionvert/blog-core/master/README.md',
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/a-software-crafter-s-journey/master/README.md',
         tags: [
             'React JS',
             'PWA',
