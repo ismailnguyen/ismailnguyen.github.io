@@ -35,7 +35,7 @@
                                 </li>
                                 <li>
                                     <p>
-                                        <i class="fa fa-map-marker-alt"></i> You can found me here : <i>{ `lat`: 2.33, `lon`: 48.86 }</i>
+                                        <i class="fa fa-map-marker-alt"></i> You can found me here : <i>{ `lat`: 48.86, `lon`: 2.33 }</i>
                                     </p>
                                 </li>
                                 <li>
