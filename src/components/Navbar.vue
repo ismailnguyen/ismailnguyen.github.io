@@ -110,18 +110,18 @@
         font-family: "Bowlby One SC";
         font-style: normal;
         font-size: 2.5vw;
-        text-shadow: 0px 2px #6a35ff, 3px 3px #6a35ff, 4px 4px #6a35ff;
+        text-shadow: 0px 2px #6b65a7, 3px 3px #6b65a7, 4px 4px #6b65a7;
     }
 
     @media only screen and (max-width: 500px) {
     .logo {
             font-size: 8.35vw;
-            text-shadow: 0px 1px #6a35ff, 1px 1px #6a35ff, 2px 2px #6a35ff;
+            text-shadow: 0px 1px #6b65a7, 1px 1px #6b65a7, 2px 2px #6b65a7;
         }
     }
     
     .navbar .burger {
-        color: #6a35ff;
+        color: #6b65a7;
         font-size: 22px;
     }
     
@@ -132,7 +132,7 @@
     
     .navbar.is-light .button-cta {
         color: #fff;
-        background-color: #6a35ff;
+        background-color: #6b65a7;
     }
 
     .navbar.is-light .button-cta:hover {
@@ -217,7 +217,7 @@
     
     .navbar.is-light .navbar-menu .navbar-start .navbar-item:hover,
     .navbar.is-light .navbar-menu .navbar-start .navbar-item.is-active {
-        color: #6a35ff;
+        color: #6b65a7;
     }
 
     .navbar.is-dark .navbar-menu .navbar-start .navbar-item:hover,

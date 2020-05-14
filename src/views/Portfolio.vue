@@ -117,7 +117,7 @@
      button {
         border-radius: 0;
         color: #fff;
-        background-color: #6a35ff;
+        background-color: #6b65a7;
         transition: box-shadow 300ms ease, background-color 300ms ease;
     }
 
