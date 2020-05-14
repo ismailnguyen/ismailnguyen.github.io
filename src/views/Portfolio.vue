@@ -122,7 +122,7 @@
     }
 
     button:hover {
-        background-color: #5a27e7;
+        background-color: #6b65a7;
         color: #fff;
         box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
     }
