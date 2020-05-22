@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="hero has-background-dark" :class="!hasContent() ? 'is-fullheight' : ''">
+        <section class="hero has-background-dark work-detail" :class="!hasContent() ? 'is-fullheight' : ''">
             <div class="hero-body">
                 <div class="container is-fullhd has-text-centered">
 
@@ -37,19 +37,19 @@
             </div>
         </section>
 
-        <section class="section" v-if="work.embeddedContentUrl">
+        <section class="section work-detail--content" v-if="work.embeddedContentUrl">
             <div class="container is-fullhd">
                 <IframeBloc :url="work.embeddedContentUrl" />
             </div>
         </section>
 
-        <section class="section" v-if="markdownContent">
+        <section class="section work-detail--content" v-if="markdownContent">
             <div class="container is-fullhd">
                 <MarkdownBloc :text="markdownContent" />
             </div>
         </section>
 
-        <section class="hero has-background-dark">
+        <section class="hero has-background-dark work-detail--content">
             <div class="hero-body">
                 <div class="container is-fullhd has-text-centered">
                     <WorkCarousel :images="work.images" />
@@ -117,7 +117,7 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .title .icon {
         vertical-align: bottom;
     }
@@ -201,5 +201,53 @@
         font-weight: 400;
         text-align: center;
         letter-spacing: normal;
+    }
+
+    .work-detail .title,
+    .work-detail .subtitle,
+    .work-detail .subhead,
+    .work-detail .buttons,
+    .work-detail--content {
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+        animation-fill-mode: both;
+    }
+
+    .work-detail .title {
+        animation-name: slideUp;
+        animation-delay: 700ms;
+    }
+
+    .work-detail .subtitle {
+      animation-name: slideUp;
+      animation-delay: 800ms;
+    }
+    
+    .work-detail .tag {
+        animation-duration: 500ms;
+        animation-name: bounceIn;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+    }
+
+    @for $i from 1 through 50 {
+      .work-detail .tag:nth-child(#{$i}n) {
+          animation-delay: #{($i/3 + 0.9)}s;
+      }
+    }
+
+    .work-detail .subhead {
+      animation-name: slideUp;
+      animation-delay: 2.1s;
+    }
+
+    .work-detail .buttons {
+        animation-name: slideUp;
+        animation-delay: 2.2s;
+    }
+
+    .work-detail--content {
+        animation-name: slideUp;
+        animation-delay: 2.3s;
     }
 </style>

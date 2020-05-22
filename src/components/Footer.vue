@@ -14,8 +14,20 @@
         </div>
     </footer>
 </template>
+
 <style scoped>
     p, a {
         color: #bcc4da !important;
+    }
+
+    .footer .content {
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+        animation-fill-mode: both;
+    }
+
+    .footer .content {
+      animation-name: slideDown;
+      animation-delay: 2s;
     }
 </style>

@@ -154,6 +154,10 @@
         background: none !important;
     }
 
+    .navbar.is-dark .button-social {
+        color: #fff;
+    }
+
     .has-background-dark .button-social.is-light:not(:hover) {
         color: #fff;
     }
@@ -223,5 +227,39 @@
     .navbar.is-dark .navbar-menu .navbar-start .navbar-item:hover,
     .navbar.is-dark .navbar-menu .navbar-start .navbar-item.is-active {
         opacity: 1;
+    }
+
+    .navbar {
+      animation-duration: 500ms;
+      animation-name: slideDown;
+      animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+      animation-delay: 200ms;
+    }
+
+    .button-social {
+      animation-duration: 500ms;
+      animation-name: slideDown;
+      animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+      animation-fill-mode: both;
+    }
+
+    .button-social:nth-child(5) {
+      animation-delay: 200ms;
+    }
+
+    .button-social:nth-child(4) {
+      animation-delay: 300ms;
+    }
+
+    .button-social:nth-child(3) {
+      animation-delay: 400ms;
+    }
+
+    .button-social:nth-child(2) {
+      animation-delay: 500ms;
+    }
+
+    .button-social:nth-child(1) {
+      animation-delay: 600ms;
     }
 </style>

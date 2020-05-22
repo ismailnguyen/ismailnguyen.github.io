@@ -381,7 +381,7 @@ const works = [
     },
     {
         coverImage: {
-            url: 'https://raw.githubusercontent.com/ismailnguyen/Wedding-Invitation/master/screen1.png',
+            url: 'https://raw.githubusercontent.com/ismailnguyen/Wedding-Invitation/master/screenshots/screen1.png',
             alt: 'My wedding invitation'
         },
         logo: {

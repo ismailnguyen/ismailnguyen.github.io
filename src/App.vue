@@ -37,7 +37,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
 
   body,
   .has-background-light .hero h1 {
@@ -113,4 +113,49 @@
   .is-clickable {
     cursor: pointer;
   }
+
+
+  /* --- Item animations --- */
+
+    @keyframes slideDown {
+      from {
+          opacity: 0;
+          transform: translateY(-1rem);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(1rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounceIn {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fillUp {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
 </style>

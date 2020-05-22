@@ -1,7 +1,7 @@
 <template>
-    <section class="section has-background-light">
+    <section class="section has-background-light portfolio">
         <div class="content is-large is-centered handwritten-text">
-            <h2>My works</h2>
+            <h2 class="title">My works</h2>
         </div>
 
         <div class="columns is-mobile is-multiline is-centered">
@@ -62,7 +62,7 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .card-image {
         display: block;
         background-size: cover !important;
@@ -129,5 +129,29 @@
 
     .card-footer {
         border: none;
+    }
+
+    .portfolio .handwritten-text .title {
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+        animation-fill-mode: both;
+    }
+
+    .portfolio .handwritten-text .title {
+        animation-name: slideUp;
+        animation-delay: 700ms;
+    }
+
+    .portfolio .column {
+      animation-duration: 500ms;
+      animation-name: slideUp;
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+    }
+
+    @for $i from 1 through 50 {
+      .portfolio .column:nth-child(#{$i}n) {
+          animation-delay: #{($i/3 + 0.7)}s;
+      }
     }
 </style>

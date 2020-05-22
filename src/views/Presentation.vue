@@ -1,5 +1,5 @@
 <template>
-    <section class="hero is-light is-fullheight-with-navbar">
+    <section class="hero is-light is-fullheight-with-navbar presentation">
         <div class="hero-body">
             <div class="container has-text-left">
                 <div class="columns">
@@ -307,5 +307,28 @@
 
     .box.twitter-box {
         box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
+    }
+
+    .presentation .title,
+    .presentation .subtitle,
+    .presentation .twitter-box {
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+        animation-fill-mode: both;
+    }
+
+    .presentation .title {
+        animation-name: slideUp;
+        animation-delay: 700ms;
+    }
+
+    .presentation .subtitle {
+      animation-name: slideUp;
+      animation-delay: 800ms;
+    }
+
+    .presentation .twitter-box {
+      animation-name: bounceIn;
+      animation-delay: 900ms;
     }
 </style>

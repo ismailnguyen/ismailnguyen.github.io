@@ -1,5 +1,5 @@
 <template>
-    <section class="hero is-light is-fullheight-with-navbar has-text-centered">
+    <section class="hero is-light is-fullheight-with-navbar has-text-centered about-me">
         <div class="hero-body">
             <div class="container">
               
@@ -161,5 +161,28 @@
     ul,
     li {
         padding-top: 20px;
+    }
+
+    .about-me .title,
+    .about-me blockquote,
+    .about-me .notification {
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+        animation-fill-mode: both;
+    }
+
+    .about-me .title {
+        animation-name: slideUp;
+        animation-delay: 700ms;
+    }
+
+    .about-me blockquote {
+      animation-name: slideUp;
+      animation-delay: 800ms;
+    }
+
+    .about-me .notification {
+      animation-name: bounceIn;
+      animation-delay: 900ms;
     }
 </style>
