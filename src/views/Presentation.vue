@@ -14,41 +14,10 @@
                     </div>
 
                     <div class="column">
-                        <div class="box twitter-box">
-                            <article class="media">
-                                <div class="media-left">
-                                    <figure class="image is-64x64">
-                                        <img src="/resources/images/profile.webp" alt="Leo da Vinci" loading="lazy">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p>
-                                            <strong>Leonardo da Vinci</strong> <small>@leonardoDaVinci</small> <small>520 years ago</small>
-                                            <br> Simplicity is the ultimate sophistication.
-                                        </p>
-                                    </div>
-                                    <nav class="level is-mobile">
-                                        <div class="level-left">
-                                            <a class="level-item" aria-label="reply">
-                                                <span class="icon is-small">
-                                                    <i class="fas fa-reply" aria-hidden="true"></i>
-                                                </span>
-                                            </a>
-                                            <a class="level-item" aria-label="retweet">
-                                                <span class="icon is-small">
-                                                    <i class="fas fa-retweet" aria-hidden="true"></i>
-                                                </span>
-                                            </a>
-                                            <a class="level-item" aria-label="like" @click="isHeartbeatEnabled = !isHeartbeatEnabled">
-                                                <span :class="isHeartbeatEnabled ? 'icon is-small load' : 'icon is-small'">
-                                                    <i class="fas fa-heart" aria-hidden="true"></i>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </nav>
-                                </div>
-                            </article>
+                        <div class="terminal">
+                            <div class="terminal-body">
+                                <span>Simplicity is the ultimate sophistication.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -69,9 +38,9 @@
         mounted() {
             var element = document.getElementById('animatedText');
             var rotationText = [
-            ' software craftsman.',
-            ' family guy.',
-            ' food addicted.'
+                ' software craftsman.',
+                ' family guy.',
+                ' food addicted.'
             ];
             var typingSpeed = 2000;
 
@@ -81,237 +50,9 @@
 </script>
 
 <style scoped>
-    .load {
-        width: 35px;
-        height: 35px;
-        background-color: #F08080;
-        border-radius: 35px;
-        position: relative;
-        animation: pulse 2000ms linear infinite;
-        -webkit-animation: pulse 2000ms linear infinite;
-        -moz-animation: pulse 2000ms linear infinite;
-    }
-
-    .load i{
-        position: absolute;
-        top: 28px;
-        left: 24%;
-        color: white;
-        text-shadow: -1px -1px #333;
-    }
-
-    .load:after,
-    .load:before {
-        display: inline-block;
-        margin: auto;
-        position: absolute;
-        content: "";
-        width: 35px;
-        height: 35px;
-        border-radius: 35px;
-        background-color: #CD5C5C;
-    }
-
-    .load:after {
-        z-index: -100;
-        -webkit-animation: outer-ripple 2000ms linear infinite;
-        -moz-animation: outer-ripple 2000ms linear infinite;
-        animation: outer-ripple 2000ms linear infinite;
-    }
-
-    .load:before {
-        z-index: -200;
-        -webkit-animation: inner-ripple 2000ms linear infinite;
-        -moz-animation: inner-ripple 2000ms linear infinite;
-        animation: inner-ripple 2000ms linear infinite;
-    }
-    /* outer ripple */
-
-    @keyframes pulse{
-        0% {
-            transform: scale(0.8);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        10% {
-            transform: scale(1.1);
-            filter: alpha(opacity=1);
-            opacity: 1;
-        }
-        20% {
-            transform: scale(0.9);
-            filter: alpha(opacity=1);
-            opacity: 1;
-        }
-        100% {
-            transform: scale(0.8);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-    }
-
-    @-moz-keyframes pulse{
-        0% {
-            transform: scale(0.8);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        10% {
-            transform: scale(1.1);
-            filter: alpha(opacity=1);
-            opacity: 1;
-        }
-        20% {
-            transform: scale(0.9);
-            filter: alpha(opacity=1);
-            opacity: 1;
-        }
-        100% {
-            transform: scale(0.8);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-    }
-
-    @-webkit-keyframes pulse{
-        0% {
-            transform: scale(0.8);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        10% {
-            transform: scale(1.1);
-            filter: alpha(opacity=1);
-            opacity: 1;
-        }
-        20% {
-            transform: scale(0.9);
-            filter: alpha(opacity=1);
-            opacity: 1;
-        }
-        100% {
-            transform: scale(0.8);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-    }
-
-    @keyframes outer-ripple {
-        0% {
-            transform: scale(1);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        80% {
-            transform: scale(3.5);
-            filter: alpha(opacity=0);
-            opacity: 0;
-        }
-        100% {
-            transform: scale(3.5);
-            filter: alpha(opacity=0);
-            opacity: 0;
-        }
-    }
-
-    @-webkit-keyframes outer-ripple {
-        0% {
-            transform: scale(1);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        80% {
-            transform: scale(3.5);
-            filter: alpha(opacity=0);
-            opacity: 0;
-        }
-        100% {
-            transform: scale(3.5);
-            filter: alpha(opacity=0);
-            opacity: 0;
-        }
-    }
-
-    @-moz-keyframes outer-ripple {
-        0% {
-            transform: scale(1);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        80% {
-            transform: scale(3.5);
-            filter: alpha(opacity=0);
-            opacity: 0;
-        }
-        100% {
-            transform: scale(3.5);
-            filter: alpha(opacity=0);
-            opacity: 0;
-        }
-    }
-    /* inner ripple */
-
-    @keyframes inner-ripple {
-        0% {
-            transform: scale(1);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        30% {
-            transform: scale(1);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        100% {
-            transform: scale(2.5);
-            filter: alpha(opacity=0);
-            opacity: 0;
-        }
-    }
-
-    @-webkit-keyframes inner-ripple {
-        0% {
-            transform: scale(1);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        30% {
-            transform: scale(1);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        100% {
-            transform: scale(2.5);
-            filter: alpha(opacity=0);
-            opacity: 0;
-        }
-    }
-
-    @-moz-keyframes inner-ripple {
-        0% {
-            transform: scale(1);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        30% {
-            transform: scale(1);
-            filter: alpha(opacity=50);
-            opacity: 0.5;
-        }
-        100% {
-            transform: scale(2.5);
-            filter: alpha(opacity=0);
-            opacity: 0;
-        }
-    }
-
-    .box.twitter-box {
-        box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
-    }
-
     .presentation .title,
     .presentation .subtitle,
-    .presentation .twitter-box {
+    .presentation .terminal {
         animation-duration: 1s;
         animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
         animation-fill-mode: both;
@@ -327,8 +68,53 @@
       animation-delay: 800ms;
     }
 
-    .presentation .twitter-box {
+    .presentation .terminal {
       animation-name: bounceIn;
       animation-delay: 900ms;
+    }
+
+    .terminal {
+        min-height: 0;
+        width: 100%;
+    }
+
+    .terminal-body {
+        box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
+        overflow-x: hidden;
+        max-width: 100%;
+        background: #2d3748;
+        color: #f7fafc;
+        font-size: .875rem;
+        font-family: Fira Mono, Consolas, Menlo, Monaco, Courier New, Courier, monospace;
+        border-radius: .5rem;
+        padding: 3.25rem 2.25rem 1.5rem 1.25rem;
+        position: relative;
+        box-sizing: border-box;
+    }
+    .terminal-body:before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        display: inline-block;
+        width: .75rem;
+        height: .75rem;
+        border-radius: 50%;
+        background: #f56565;
+        box-shadow: 25px 0 0 #fbd38d, 50px 0 0 #48bb78;
+    }
+    .terminal-body span {
+        display: block;
+        line-height: 1.5;
+    }
+    .terminal-body span:before {
+        content: "";
+        display: inline-block;
+    }
+    .terminal-body span:before {
+        margin-right: 0.75em;
+        color: #68d391;
+    }
+    .terminal-body span:before {
+        content: "lenoardDaVinci:~$";
     }
 </style>

@@ -109,17 +109,21 @@
         vertical-align: baseline;
         font-family: "Bowlby One SC";
         font-style: normal;
-        font-size: 2.5vw;
+        font-size: 2.75vw;
         text-shadow: 0px 2px #6b65a7, 3px 3px #6b65a7, 4px 4px #6b65a7;
     }
 
     @media only screen and (max-width: 500px) {
-    .logo {
+        .logo {
             font-size: 8.35vw;
             text-shadow: 0px 1px #6b65a7, 1px 1px #6b65a7, 2px 2px #6b65a7;
         }
     }
-    
+
+    .navbar.is-transparent {
+        background: none;
+    }
+
     .navbar .burger {
         color: #6b65a7;
         font-size: 22px;
