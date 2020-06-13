@@ -81,7 +81,7 @@
     .work-item {
         min-height: 26em;
         margin: auto;
-        background-color: #fff;
+        background-color: #f8faff;
         border-radius: 6px;
         box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
         display: block;
@@ -116,14 +116,14 @@
 
      button {
         border-radius: 0;
-        color: #fff;
+        color: #f8faff;
         background-color: #6b65a7;
         transition: box-shadow 300ms ease, background-color 300ms ease;
     }
 
     button:hover {
         background-color: #6b65a7;
-        color: #fff;
+        color: #f8faff;
         box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
     }
 

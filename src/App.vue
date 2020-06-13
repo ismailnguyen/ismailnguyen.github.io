@@ -1,6 +1,5 @@
 <template>
-  <div id="app" :class="this.$route.name == 'WorkDetail' ? 'has-background-dark': 'has-background-light'">
-
+  <div>
     <div class="notification is-danger is-light" v-if="isUnsupportedBrowser()">
       <b>Unsupported Browser!</b>
       This website will offer limited functionality in this browser. We only support the recent versions of major browsers like Chrome, Firefox, Safari, and Edge.
@@ -29,24 +28,48 @@
       isUnsupportedBrowser: function () {
           // Internet Explorer 10 and Internet Explorer 11
           return /Trident\/|MSIE/.test(window.navigator.userAgent);
+      },
+      initializeTheme: function () {
+        if (this.$route.name == 'WorkDetail')
+        {
+          document.body.classList.remove('has-background-light');
+          document.body.classList.add('has-background-dark');
+        }
+        else
+        {
+          document.body.classList.remove('has-background-dark');
+          document.body.classList.add('has-background-light');
+        }
       }
+    },
+    beforeMount() {
+      document.body.classList.add('has-navbar-fixed-top');
+
+      this.initializeTheme();
+    },
+    beforeUpdate () {
+      this.initializeTheme();
     }
   }
 </script>
 
 <style lang="scss">
+  html, body {
+    background: none;
+  }
+
   body {
     font-family: Muli, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
   }
 
   ::selection {
     background: #2d3958;
-    color: #fff;
+    color: #f8faff;
   }
 
   ::-moz-selection {
     background: #2d3958;
-    color: #fff;
+    color: #f8faff;
   }
 
   body,
@@ -60,7 +83,7 @@
 
   body,
   .has-background-dark .hero h1 {
-    color: #fff !important; 
+    color: #f8faff !important; 
   }
 
   .has-background-dark,

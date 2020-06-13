@@ -1,5 +1,5 @@
 <template>
-    <carousel :perPage="1" :paginationPadding="5" paginationColor="#404E57" paginationActiveColor="#fff">
+    <carousel :perPage="1" :paginationPadding="5" paginationColor="#404E57" paginationActiveColor="#f8faff">
         <slide v-for="(image, imageIndex) in images" :key="imageIndex">
             <figure class="image">
                 <img :src="image.url" :alt="image.alt" loading="lazy">

@@ -94,7 +94,7 @@ const works = [
             alt: 'NCrafts PWA'
         },
         logo: {
-            url: '/resources/images/works/logo/newcrafts.jpg',
+            url: '/resources/images/works/logo/newcrafts.png',
             alt: 'NewCrafts'
         },
         title: 'NewCrafts',
@@ -143,7 +143,7 @@ const works = [
             alt: 'NewCrafts Training'
         },
         logo: {
-            url: '/resources/images/works/logo/newcrafts.jpg',
+            url: '/resources/images/works/logo/newcrafts.png',
             alt: 'NewCrafts'
         },
         title: 'NewCrafts Trainings',
@@ -447,7 +447,7 @@ const works = [
             url: 'https://github.com/ismailnguyen/ismailnguyen.github.io',
             text: 'Source'
         },
-        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/ismailnguyen.github.io/master/README.md',
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/ismailnguyen.github.io/source/README.md',
         tags: [
             'Vue JS',
             'Bulma',

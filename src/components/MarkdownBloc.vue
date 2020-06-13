@@ -39,6 +39,10 @@
                         color: #9a86fd;
                         border-color: #9a86fd;
                     }
+
+                    hr {
+                        background-color: #9a86fd;
+                    }
                 }
             }
         }

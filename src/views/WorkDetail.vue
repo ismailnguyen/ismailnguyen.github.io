@@ -6,7 +6,7 @@
 
                     <h1 class="title is-1 is-spaced">
                         <span class="icon is-large">
-                             <img :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
+                             <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
                         </span>
 
                         {{ work.title }}
@@ -120,6 +120,9 @@
 <style scoped lang="scss">
     .title .icon {
         vertical-align: bottom;
+        border-radius: 50px;
+        background: #f8faff;
+        padding: 4px;
     }
 
     .tags {
@@ -128,7 +131,7 @@
 
     .tag {
         background-color: #3e484e;
-        color: #fff;
+        color: #f8faff;
         display: inline-block;
         margin-right: 5px;
         margin-bottom: 14px;
@@ -158,7 +161,7 @@
         font-family: Circular, sans-serif;
         font-weight: 400;
         text-decoration: none;
-        color: #fff;
+        color: #f8faff;
         border: 0;
         line-height: inherit;
         cursor: pointer;
@@ -167,13 +170,14 @@
 
     .button-primary:hover {
         background-color: #c5326d;
+        color: #f8faff;
     }
 
     .button-secondary {
         margin-right: 10px;
         margin-left: 10px;
         background-color: #3e484e;
-        color: #fff;
+        color: #f8faff;
         font-size: 16px;
         display: inline-block;
         -webkit-transition: background-color 80ms ease-in-out;
@@ -191,7 +195,7 @@
 
     .button-secondary:hover {
         background-color: #536169;
-        color: #fff;
+        color: #f8faff;
     }
 
     .subhead {

@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar is-transparent" :class="isMenuOpen ? 'is-blurred' : ''" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-transparent is-fixed-top" :class="isMenuOpen ? 'is-blurred' : ''" role="navigation" aria-label="main navigation">
 
         <div class="navbar-brand">
             <router-link to="/" class="navbar-item">
@@ -142,22 +142,14 @@
         font-size: 22px;
     }
 
-    .navbar.is-blurred .navbar-brand,
-    .navbar.is-blurred .navbar-menu {
+    .navbar.is-blurred {
         position: fixed;
         backdrop-filter: blur(8px);
         right: 0;
         left: 0;
         z-index: 100;
         overflow: auto;
-    }
-
-    .navbar.is-blurred .navbar-brand {
         top: 0;
-    }
-
-    .navbar.is-blurred .navbar-menu {
-        top: 3rem;
         bottom: 0;
     }
 
@@ -171,7 +163,7 @@
     }
     
     .has-background-light .navbar .button-cta {
-        color: #fff;
+        color: #f8faff;
         background-color: #6b65a7;
     }
 
@@ -181,7 +173,7 @@
     }
 
     .has-background-dark .navbar .button-cta {
-        color: #fff;
+        color: ;
         background-color: rgba(67, 83, 255, 0.1);
         border: none;
     }
@@ -191,11 +183,11 @@
     }
 
     .navbar.is-dark .button-social {
-        color: #fff;
+        color: #f8faff;
     }
 
     .has-background-dark .button-social.is-light:not(:hover) {
-        color: #fff;
+        color: #f8faff;
     }
 
     .button-paypal:hover {
@@ -244,7 +236,7 @@
     }
 
     .has-background-dark .navbar .navbar-menu .navbar-item {
-        color: #fff;
+        color: #f8faff;
         opacity: 0.5;
         background: none;
     }
