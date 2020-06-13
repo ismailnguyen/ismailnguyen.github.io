@@ -12,11 +12,9 @@
                         <h1 class="title is-1">Ismaïl Nguyen</h1>
 
                         <h2 class="subtitle is-4">
-                            <!-- <span>&lt; &frasl; I'm a</span> -->
                             <span>
-                                I want to make this world better !
+                                I want to make this world &lt; &frasl; better &gt; !
                             </span>
-                            <!-- <span>&gt;</span> -->
                         </h2>
                     </div>
 
