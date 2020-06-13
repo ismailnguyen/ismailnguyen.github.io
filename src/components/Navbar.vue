@@ -62,7 +62,7 @@
                         <button class="button button-cta" @click="toggleSocialButtons()" v-if="!showSocialButtons">
                             <strong>Get in touch</strong>
                         </button>
-                        <a class="button button-cta" @click="toggleSocialButtons()" href="https://github.com/ismailnguyen/resume/raw/master/CV_Ismail-Nguyen.pdf" target="_blank" rel="noopener" v-else>
+                        <a class="button button-cta" @click="toggleSocialButtons()" href="https://docs.google.com/document/d/1z-7fn0zN01tiEKbpnxmlNfx1EiSaNcAwgQxBGVaCjLA/edit?usp=sharing" target="_blank" rel="noopener" v-else>
                             <strong>Resum&eacute;</strong>
                         </a>
                     </div>
