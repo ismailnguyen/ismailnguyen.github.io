@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer" :class="this.$route.name == 'WorkDetail' ? 'has-background-dark': 'has-background-light'">
+    <footer class="footer">
         <div class="content has-text-centered handwritten-text" @click="isHeartbeatEnabled = !isHeartbeatEnabled">
             <p class="is-pulled-left">
                 Handcrafted with <span :class="isHeartbeatEnabled ? 'icon is-small pulse' : 'icon is-small'"><i class="fa fa-heart" style="color:#6b65a7;"></i></span>
@@ -28,7 +28,7 @@
 
 <style scoped>
     p, a {
-        color: #bcc4da !important;
+        color: #808592 !important;
     }
 
     .footer {
@@ -90,8 +90,8 @@
         -moz-animation: inner-ripple 2000ms linear infinite;
         animation: inner-ripple 2000ms linear infinite;
     }
-    /* outer ripple */
 
+    /* outer ripple */
     @keyframes pulse{
         0% {
             transform: scale(0.8);
@@ -214,8 +214,8 @@
             opacity: 0;
         }
     }
-    /* inner ripple */
 
+    /* inner ripple */
     @keyframes inner-ripple {
         0% {
             transform: scale(1);

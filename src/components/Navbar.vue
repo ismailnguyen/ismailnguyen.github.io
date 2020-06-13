@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar is-transparent" :class="this.$route.name == 'WorkDetail' ? 'is-dark': 'is-light'" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-transparent" :class="isMenuOpen ? 'is-blurred' : ''" role="navigation" aria-label="main navigation">
 
         <div class="navbar-brand">
             <router-link to="/" class="navbar-item">
@@ -8,7 +8,7 @@
                 </div>
             </router-link>
 
-            <a v-on:click="toggleMenu()" role="button" :class="isMenuOpen ? 'navbar-burger burger is-active' : 'navbar-burger burger'" aria-label="menu" aria-expanded="false">
+            <a v-on:click="isMenuOpen ? closeMenu() : openMenu()" role="button" :class="isMenuOpen ? 'navbar-burger burger is-active' : 'navbar-burger burger'" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -16,7 +16,7 @@
         </div>
 
         <div :class="isMenuOpen ? 'navbar-menu is-active' : 'navbar-menu'">
-            <div class="navbar-start" @click="toggleMenu()">
+            <div class="navbar-start" @click="closeMenu()">
                 <router-link to="/portfolio" class="navbar-item" :class="this.$route.name == 'WorkDetail' ? 'is-active': ''">
                     My works
                 </router-link>
@@ -86,8 +86,18 @@
             animate('brand');
         },
         methods: {
-            toggleMenu: function () {
-                this.isMenuOpen = !this.isMenuOpen
+            openMenu: function () {
+                if (this.isMenuOpen)
+                    return;
+
+                this.isMenuOpen = true
+            },
+
+            closeMenu: function () {
+                if (!this.isMenuOpen)
+                    return;
+
+                this.isMenuOpen = false
             },
 
             toggleSocialButtons: function () {
@@ -120,13 +130,39 @@
         }
     }
 
-    .navbar.is-transparent {
-        background: none;
+    .navbar.is-transparent,
+    .navbar-menu.is-active,
+    .navbar .navbar-item,
+    .button-social {
+        background: none !important;
     }
 
     .navbar .burger {
         color: #6b65a7;
         font-size: 22px;
+    }
+
+    .navbar.is-blurred .navbar-brand,
+    .navbar.is-blurred .navbar-menu {
+        position: fixed;
+        backdrop-filter: blur(8px);
+        right: 0;
+        left: 0;
+        z-index: 100;
+        overflow: auto;
+    }
+
+    .navbar.is-blurred .navbar-brand {
+        top: 0;
+    }
+
+    .navbar.is-blurred .navbar-menu {
+        top: 3rem;
+        bottom: 0;
+    }
+
+    .navbar .navbar-menu.is-active {
+        box-shadow: none !important;
     }
     
     .navbar .button {
@@ -134,28 +170,24 @@
         transition: box-shadow 300ms ease, background-color 300ms ease;
     }
     
-    .navbar.is-light .button-cta {
+    .has-background-light .navbar .button-cta {
         color: #fff;
         background-color: #6b65a7;
     }
 
-    .navbar.is-light .button-cta:hover {
+    .has-background-light .navbar .button-cta:hover {
         background-color: #6b65a7;
         box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
     }
 
-    .navbar.is-dark .button-cta {
+    .has-background-dark .navbar .button-cta {
         color: #fff;
         background-color: rgba(67, 83, 255, 0.1);
         border: none;
     }
 
-    .navbar.is-dark .button-cta:hover {
+    .has-background-dark .navbar .button-cta:hover {
         background-color: #6b65a7;
-    }
-
-    .button-social {
-        background: none !important;
     }
 
     .navbar.is-dark .button-social {
@@ -186,11 +218,11 @@
         color: #0073b1;
     }
 
-    .navbar.is-light .navbar-menu.is-active {
+    .has-background-light .navbar .navbar-menu.is-active {
         background-color: #eef0f3;
     }
 
-    .navbar.is-dark .navbar-menu.is-active {
+    .has-background-dark .navbar .navbar-menu.is-active {
         background-color: #2e363b;
     }
 
@@ -202,15 +234,16 @@
         letter-spacing: -0.01em;
     }
 
-    .navbar.is-light .navbar-menu .navbar-item {
+    .navbar .navbar-menu.is-active  .navbar-item {
+        font-size: 1.25rem;
+        margin: 1rem;
+    }
+
+    .has-background-light .navbar .navbar-menu .navbar-item {
         color: #2d3958;
     }
 
-    .navbar .navbar-item {
-        background: none !important;
-    }
-
-    .navbar.is-dark .navbar-menu .navbar-item {
+    .has-background-dark .navbar .navbar-menu .navbar-item {
         color: #fff;
         opacity: 0.5;
         background: none;
@@ -223,21 +256,33 @@
         background: none;
     }
     
-    .navbar.is-light .navbar-menu .navbar-start .navbar-item:hover,
-    .navbar.is-light .navbar-menu .navbar-start .navbar-item.is-active {
+    .has-background-light .navbar .navbar-menu .navbar-start .navbar-item:hover,
+    .has-background-light .navbar .navbar-menu .navbar-start .navbar-item.is-active {
         color: #6b65a7;
     }
 
-    .navbar.is-dark .navbar-menu .navbar-start .navbar-item:hover,
-    .navbar.is-dark .navbar-menu .navbar-start .navbar-item.is-active {
+    .has-background-dark .navbar .navbar-menu .navbar-start .navbar-item:hover,
+    .has-background-dark .navbar .navbar-menu .navbar-start .navbar-item.is-active {
         opacity: 1;
     }
+
+    /* Animations */
 
     .navbar {
       animation-duration: 500ms;
       animation-name: slideDown;
       animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
       animation-delay: 200ms;
+    }
+
+    .navbar.is-blurred .navbar-menu {
+        animation-duration: 500ms;
+        animation-name: slideRight;
+        animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+    }
+
+    .navbar .burger span {
+        transition: all 0.2s ease-in-out 0s;
     }
 
     .button-social {

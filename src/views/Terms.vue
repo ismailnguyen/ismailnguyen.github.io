@@ -27,6 +27,10 @@
                         See more at <a href="//www.wtfpl.net/" target="_blank" rel="noopener">www.wtfpl.net</a>
                     </small>
                 </p>
+
+                <figure class="profile-picture image is-pulled-right">
+                    <img src="/resources/images/profile.png" alt="Profile picture">
+                </figure>
             </div>
         </div>
     </section>

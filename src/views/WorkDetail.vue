@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="hero has-background-dark work-detail" :class="!hasContent() ? 'is-fullheight' : ''">
+        <section class="hero work-detail" :class="!hasContent() ? 'is-fullheight' : ''">
             <div class="hero-body">
                 <div class="container is-fullhd has-text-centered">
 
@@ -49,7 +49,7 @@
             </div>
         </section>
 
-        <section class="hero has-background-dark work-detail--content">
+        <section class="hero work-detail--content">
             <div class="hero-body">
                 <div class="container is-fullhd has-text-centered">
                     <WorkCarousel :images="work.images" />
@@ -191,6 +191,7 @@
 
     .button-secondary:hover {
         background-color: #536169;
+        color: #fff;
     }
 
     .subhead {

@@ -4,19 +4,29 @@
             <div class="container has-text-left">
                 <div class="columns">
                     <div class="column">
-                        <h1 class="title is-1">Hey, I'm Ismaïl Nguyen.</h1>
+                        <h2 class="subtitle is-5">
+                            <span>
+                                Hi there ! I am
+                            </span>
+                        </h2>
+                        <h1 class="title is-1">Ismaïl Nguyen</h1>
 
                         <h2 class="subtitle is-4">
-                            <span>&lt; &frasl; I'm a</span>
-                            <span id="animatedText"></span>
-                            <span>&gt;</span>
+                            <!-- <span>&lt; &frasl; I'm a</span> -->
+                            <span>
+                                I want to make this world better !
+                            </span>
+                            <!-- <span>&gt;</span> -->
                         </h2>
                     </div>
 
                     <div class="column">
                         <div class="terminal">
+                            <figure class="profile-picture image is-24x24 is-pulled-right">
+                                <img class="is-rounded" src="/resources/images/profile.png" alt="Profile picture">
+                            </figure>
                             <div class="terminal-body">
-                                <span>Simplicity is the ultimate sophistication.</span>
+                                <span id="animatedText"></span>
                             </div>
                         </div>
                     </div>
@@ -36,13 +46,13 @@
             }
         },
         mounted() {
-            var element = document.getElementById('animatedText');
-            var rotationText = [
-                ' software craftsman.',
-                ' family guy.',
-                ' food addicted.'
+            const element = document.getElementById('animatedText');
+            const rotationText = [
+                `I'm a software craftsman.`,
+                `I'm a family guy.`,
+                `I'm a food addicted.`
             ];
-            var typingSpeed = 2000;
+            const typingSpeed = 2000;
 
             new TxtType(element, rotationText, typingSpeed);
         }
@@ -76,9 +86,6 @@
     .terminal {
         min-height: 0;
         width: 100%;
-    }
-
-    .terminal-body {
         box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
         overflow-x: hidden;
         max-width: 100%;
@@ -87,6 +94,24 @@
         font-size: .875rem;
         font-family: Fira Mono, Consolas, Menlo, Monaco, Courier New, Courier, monospace;
         border-radius: .5rem;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    .terminal > .profile-picture {
+        margin-top: 10px;
+        margin-right: 15px;
+        padding: 1px;
+        background: white;
+        border: 1px solid white;
+        border-radius: 50px;
+    }
+
+    .terminal-body {
+        overflow-x: hidden;
+        max-width: 100%;
+        color: #f7fafc;
+        font-size: .875rem;
         padding: 3.25rem 2.25rem 1.5rem 1.25rem;
         position: relative;
         box-sizing: border-box;
@@ -115,6 +140,6 @@
         color: #68d391;
     }
     .terminal-body span:before {
-        content: "lenoardDaVinci:~$";
+        content: "ishmaa-el:~$";
     }
 </style>

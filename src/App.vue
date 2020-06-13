@@ -8,12 +8,9 @@
 
     <Navbar />
     
-    <transition name="slide-left">
-      <router-view />
-    </transition>
+    <router-view />
     
     <Footer />
-    
   </div>
 </template>
 
@@ -38,6 +35,19 @@
 </script>
 
 <style lang="scss">
+  body {
+    font-family: Muli, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  }
+
+  ::selection {
+    background: #2d3958;
+    color: #fff;
+  }
+
+  ::-moz-selection {
+    background: #2d3958;
+    color: #fff;
+  }
 
   body,
   .has-background-light .hero h1 {
@@ -53,32 +63,30 @@
     color: #fff !important; 
   }
 
+  .has-background-dark,
+  .hero.is-dark,
   .has-background-dark .hero h2,
   .has-background-dark .hero .subtitle {
     color: #acb9bf !important;
   }
 
   .has-background-light {
-    background-color: #eceef7 !important;
+    background: #D3CCE3;
+    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+    background: linear-gradient(to right, #E9E4F0, #D3CCE3);
   }
 
-  .hero.is-light,
-  .navbar.is-light {
-    background-color: #eceef7;
-  }
-
-  .has-background-dark,
-  .hero.is-dark {
-    color: #acb9bf;
+  .hero,
+  .navbar
+   {
+    background:none !important;
   }
 
   .has-background-dark {
-    background-color: #2e363b !important;
-  }
-
-  .hero.is-dark,
-  .navbar.is-dark {
-    background-color: #2e363b;
+    background: #152331;
+    background: -webkit-linear-gradient(45deg, #000000, #152331);
+    background: linear-gradient(45deg, #000000, #152331);
+    /*background: rgb(22, 23, 27) !important; */
   }
 
   .slide-left-enter-active,
@@ -114,48 +122,57 @@
     cursor: pointer;
   }
 
-
   /* --- Item animations --- */
-
-    @keyframes slideDown {
-      from {
-          opacity: 0;
-          transform: translateY(-1rem);
-      }
-      to {
-          opacity: 1;
-          transform: translateY(0);
-      }
-    }
-
-    @keyframes slideUp {
-      from {
+  @keyframes slideDown {
+    from {
         opacity: 0;
-        transform: translateY(1rem);
-      }
-      to {
+        transform: translateY(-1rem);
+    }
+    to {
         opacity: 1;
         transform: translateY(0);
-      }
     }
+  }
 
-    @keyframes bounceIn {
-      from {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-    @keyframes fillUp {
-      from {
-        transform: scaleX(0);
-      }
-      to {
-        transform: scaleX(1);
-      }
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(-5rem);
     }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes bounceIn {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fillUp {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
 </style>
