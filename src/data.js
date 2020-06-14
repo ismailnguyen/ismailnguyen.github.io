@@ -1,5 +1,48 @@
 const works = [
     {
+        coverImage: {
+            url: '/resources/images/works/vue-dark-mode-switch.png',
+            alt: 'vue-dark-mode-switch'
+        },
+        logo: {
+            url: '/resources/images/works/logo/vuejs.png',
+            alt: 'Vue.js'
+        },
+        title: 'vue-dark-mode-switch',
+        subTitle: 'VueJS Dark mode switch component',
+        description: `vue-dark-mode-switch is a beautiful switch for dark mode theme switching.`,
+        primaryLink: {
+            url: 'https://www.ismailnguyen.com/vue-dark-mode-switch/',
+            text: 'View'
+        },
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/vue-dark-mode-switch',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/vue-dark-mode-switch/master/README.md',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
+        tags: [
+            'Vuejs-component',
+            'Javascript',
+            'Dark mode',
+            'Switch',
+            'NPM Package'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/vue-dark-mode-switch.png',
+                alt: 'vue-dark-mode-switch'
+            }
+        ]
+    },
+    {
+        coverImage: {
+            url: '/resources/images/works/throttler-js.png',
+            alt: 'throttler-js'
+        },
         logo: {
             url: '/resources/images/works/logo/npm.png',
             alt: 'NPM'
@@ -27,9 +70,19 @@ const works = [
             'Node',
             'Package',
             'Throttle'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/throttler-js.png',
+                alt: 'throttler-js'
+            }
         ]
     },
     {
+        coverImage: {
+            url: '/resources/images/works/togglify-js.png',
+            alt: 'togglify-js'
+        },
         logo: {
             url: '/resources/images/works/logo/npm.png',
             alt: 'NPM'
@@ -55,6 +108,12 @@ const works = [
             'NPM',
             'Node',
             'Package'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/togglify-js.png',
+                alt: 'togglify-js'
+            }
         ]
     },
     {
@@ -110,7 +169,7 @@ const works = [
         description: 'NewCrafts Paris, an ephemeral learning ground for professional developers who care for quality code and bettering their practices.',
         markdownContentUrl: 'https://raw.githubusercontent.com/ncraftsconf/Ncrafts-PWA/master/README.md',
         tags: [
-            'Vue JS',
+            'Vue.js',
             'PWA',
             'Heroku'
         ]
@@ -191,9 +250,10 @@ const works = [
         },
         markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/a-software-crafter-s-journey/master/README.md',
         tags: [
-            'React JS',
-            'PWA',
-            'Firebase'
+            'Blog',
+            'Nuxt.js', 
+            'Vue.js',
+            'Markdown'
         ],
         images: [
             {
@@ -222,7 +282,7 @@ const works = [
         linkedIn: true
         },
         tags: [
-            'Vue JS',
+            'Vue.js',
             'PWA',
             'Heroku'
         ]
@@ -367,7 +427,7 @@ const works = [
         description: 'Application to store list of restaurants to try with a map in which you can see your favorites restaurants near your geo location',
         markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/TryEat/master/README.md',
         tags: [
-            'Vue JS',
+            'Vue.js',
             'PWA',
             'Semantic UI',
             'Firebase'
@@ -449,7 +509,7 @@ const works = [
         },
         markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/ismailnguyen.github.io/source/README.md',
         tags: [
-            'Vue JS',
+            'Vue.js',
             'Bulma',
             'HTML',
             'Github Pages'
