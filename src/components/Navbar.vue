@@ -82,7 +82,6 @@
 
 <script>
     import animate from '../logo-animation'
-    import 'bulma-switch/dist/css/bulma-switch.min.css'
     import ThemeSwitch from './ThemeSwitch.vue'
     
     export default {
