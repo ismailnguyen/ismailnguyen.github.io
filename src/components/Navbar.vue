@@ -26,7 +26,7 @@
                 </router-link>
 
                 <div class="navbar-item">
-                    <ThemeSwitch @switched="onThemeSwitched" />
+                    <DarkModeSwitch @switched="onThemeSwitched" :initialState="isDarkMode" />
                 </div>
             </div>
 
@@ -78,10 +78,11 @@
 
 <script>
     import animate from '../logo-animation'
-    import ThemeSwitch from './ThemeSwitch.vue'
+    import DarkModeSwitch from 'vue-dark-mode-switch'
+    import 'vue-dark-mode-switch/dist/vue-dark-mode-switch.css'
     
     export default {
-        data() {
+        data () {
             return {
                 isMenuOpen: false,
                 showSocialButtons: false,
@@ -92,7 +93,7 @@
             }
         },
         components: {
-            ThemeSwitch
+            DarkModeSwitch
         },
         mounted () {
             animate('brand');
