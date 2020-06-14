@@ -53,9 +53,13 @@
     color: #f8faff;
   }
 
+  .hero .subhead {
+    color: #6b65a7;
+  }
+
   .has-background-light body,
   .has-background-light .hero h1 {
-    color: #2d3958 !important; 
+    color: #2d3958 !important;
   }
 
   .has-background-light .hero h2 {
@@ -64,7 +68,7 @@
 
   .has-background-dark body,
   .has-background-dark .hero h1 {
-    color: #f8faff !important; 
+    color: #f8faff !important;
   }
 
   .has-background-dark,
@@ -90,7 +94,6 @@
     background: #152331;
     background: -webkit-linear-gradient(45deg, #000000, #152331);
     background: linear-gradient(45deg, #000000, #152331);
-    /*background: rgb(22, 23, 27) !important; */
   }
 
   .slide-left-enter-active,
@@ -113,13 +116,6 @@
   .slide-right-enter {
     opacity: 0;
     transform: translate(-2em, 0);
-  }
-
-  .handwritten-text {
-    font-family: 'Waiting for the Sunrise', cursive; 
-    margin: 10px 50px; 
-    letter-spacing: 6px; 
-    font-weight: bold
   }
 
   .is-clickable {

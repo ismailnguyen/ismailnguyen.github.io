@@ -46,6 +46,13 @@
       animation-delay: 2s;
     }
 
+    .handwritten-text {
+        font-family: 'Waiting for the Sunrise', cursive; 
+        margin: 10px 50px; 
+        letter-spacing: 6px; 
+        font-weight: bold
+    }
+
     .pulse {
         width: 35px;
         height: 35px;

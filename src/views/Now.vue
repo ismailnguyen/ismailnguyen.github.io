@@ -212,8 +212,21 @@
         font-size: 40px;
     }
 
-    .icon-logo > * {
+    .has-background-light .icon-logo > * {
         color: #6b65a7;
+    }
+
+    .has-background-dark .icon-logo > * {
+        color: #f8faff;
+    }
+
+    .has-background-dark .about-me .twitter-box {
+        background-color: rgb(41, 43, 51);
+        color: rgb(149, 156, 177);
+    }
+
+    .has-background-dark .about-me .twitter-box .media-content strong {
+        color: #f8faff;
     }
 
     ul,

@@ -26,10 +26,11 @@
                 </router-link>
 
                 <div class="navbar-item">
-                    <div class="field">
-                        <input id="themeSwitch" type="checkbox" class="switch is-small is-rounded is-outlined" v-model="isDarkMode" @click="switchTheme()">
+                    <!-- <div class="field">
+                        <input id="themeSwitch" type="checkbox" class="switch is-small is-rounded is-outlined">
                         <label for="themeSwitch">{{ isDarkMode ? 'Light on' : 'Light off' }}</label>
-                    </div>
+                    </div> -->
+                    <ThemeSwitch @switched="onThemeSwitched" />
                 </div>
             </div>
 
@@ -82,6 +83,7 @@
 <script>
     import animate from '../logo-animation'
     import 'bulma-switch/dist/css/bulma-switch.min.css'
+    import ThemeSwitch from './ThemeSwitch.vue'
     
     export default {
         data() {
@@ -93,6 +95,9 @@
                     'WorkDetail'
                 ]
             }
+        },
+        components: {
+            ThemeSwitch
         },
         mounted () {
             animate('brand');
@@ -115,13 +120,13 @@
             toggleSocialButtons: function () {
                 this.showSocialButtons = !this.showSocialButtons
             },
-            
-            switchTheme: function () {
-                if (this.isDarkMode) {
-                    this.setLightTheme();
+
+            onThemeSwitched: function (isSwitched) {
+                if (isSwitched) {
+                    this.setDarkTheme();
                 }
                 else {
-                    this.setDarkTheme();
+                    this.setLightTheme();
                 }
             },
 
