@@ -26,10 +26,6 @@
                 </router-link>
 
                 <div class="navbar-item">
-                    <!-- <div class="field">
-                        <input id="themeSwitch" type="checkbox" class="switch is-small is-rounded is-outlined">
-                        <label for="themeSwitch">{{ isDarkMode ? 'Light on' : 'Light off' }}</label>
-                    </div> -->
                     <ThemeSwitch @switched="onThemeSwitched" />
                 </div>
             </div>
