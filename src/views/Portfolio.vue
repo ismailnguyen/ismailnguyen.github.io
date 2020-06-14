@@ -1,9 +1,5 @@
 <template>
-    <section class="section has-background-light portfolio">
-        <div class="content is-large is-centered handwritten-text">
-            <h2 class="title">My works</h2>
-        </div>
-
+    <section class="section portfolio">
         <div class="columns is-mobile is-multiline is-centered">
             <div class="column is-one-third-desktop is-half-tablet is-full-mobile" v-for="(work, index) in works" :key="index">
                 <div class="card work-item modal-link is-clickable is-vcentered" @click="openWorkDetail(work)">
@@ -16,9 +12,9 @@
                         <figure class="image is-3by2" v-if="work.coverImage"></figure>
                         <div class="media">
                             <div class="media-left">
-                                <figure class="image is-48x48" v-if="work.logo">
-                                    <img :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
-                                </figure>
+                                <span class="icon is-large">
+                                    <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
+                                </span>
                             </div>
 
                             <div class="media-content">
@@ -36,7 +32,9 @@
                     </div>
                     <footer class="card-footer">
                         <div class="card-footer-item">
-                            <button class="button button-view-details is-hidden"><strong>View</strong></button>
+                            <button class="button button-view-details is-hidden">
+                                <strong>View</strong>
+                            </button>
                         </div>
                     </footer>
                 </div>
@@ -63,13 +61,42 @@
 </script>
 
 <style scoped lang="scss">
+    .media {
+        align-items: center;
+
+        &-left .icon {
+            vertical-align: bottom;
+            border-radius: 50px;
+            background: #f8faff;
+            padding: 4px;
+        }
+
+        &-content {
+            overflow: hidden;
+        }
+    }
+
+    .has-background-dark {
+        .work-item {
+            background-color: rgb(41, 43, 51);
+            box-shadow: 0 3rem 3rem -1.25rem rgba(10, 10, 10, .1);
+
+            &:hover {
+                box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
+            }
+            
+            .title {
+                color: rgb(149, 156, 177);
+            }
+        }
+    }
+    
     .card-image {
         display: block;
         background-size: cover !important;
         width: 100%;
         position: absolute;
         height: 235px;
-
         transition: 0.2s all ease-out;
         background-position: center;
         background-repeat: no-repeat;
@@ -89,11 +116,11 @@
         transition-duration: 86ms;
         transition-property: box-shadow, transform;
         will-change: box-shadow, transform;
-    }
-
-    .work-item:hover {
-        transition: all 0.3s ease-out;
-        box-shadow: 0 3rem 3rem -1.25rem rgba(10, 10, 10, .1);
+        
+        &:hover {
+            transition: all 0.3s ease-out;
+            box-shadow: 0 3rem 3rem -1.25rem rgba(10, 10, 10, .1);
+        }
     }
 
     .work-item:hover .card-image {
@@ -131,17 +158,6 @@
         border: none;
     }
 
-    .portfolio .handwritten-text .title {
-        animation-duration: 1s;
-        animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
-        animation-fill-mode: both;
-    }
-
-    .portfolio .handwritten-text .title {
-        animation-name: slideUp;
-        animation-delay: 700ms;
-    }
-
     .portfolio .column {
       animation-duration: 500ms;
       animation-name: slideUp;
@@ -151,7 +167,7 @@
 
     @for $i from 1 through 50 {
       .portfolio .column:nth-child(#{$i}n) {
-          animation-delay: #{($i/3 + 0.7)}s;
+          animation-delay: #{($i/3 + 0.5)}s;
       }
     }
 </style>

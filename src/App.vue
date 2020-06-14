@@ -29,26 +29,7 @@
           // Internet Explorer 10 and Internet Explorer 11
           return /Trident\/|MSIE/.test(window.navigator.userAgent);
       },
-      initializeTheme: function () {
-        if (this.$route.name == 'WorkDetail')
-        {
-          document.body.classList.remove('has-background-light');
-          document.body.classList.add('has-background-dark');
-        }
-        else
-        {
-          document.body.classList.remove('has-background-dark');
-          document.body.classList.add('has-background-light');
-        }
-      }
-    },
-    beforeMount() {
-      document.body.classList.add('has-navbar-fixed-top');
-
-      this.initializeTheme();
-    },
-    beforeUpdate () {
-      this.initializeTheme();
+      
     }
   }
 </script>
@@ -72,7 +53,7 @@
     color: #f8faff;
   }
 
-  body,
+  .has-background-light body,
   .has-background-light .hero h1 {
     color: #2d3958 !important; 
   }
@@ -81,7 +62,7 @@
     color: #7b88a8 !important;
   }
 
-  body,
+  .has-background-dark body,
   .has-background-dark .hero h1 {
     color: #f8faff !important; 
   }

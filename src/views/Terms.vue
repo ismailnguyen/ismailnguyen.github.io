@@ -50,4 +50,8 @@
     p {
         padding-top: 30px;
     }
+    
+    p, a {
+        color: #808592 !important;
+    }
 </style>

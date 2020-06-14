@@ -24,6 +24,13 @@
                 <router-link to="/now" class="navbar-item">
                     Now
                 </router-link>
+
+                <div class="navbar-item">
+                    <div class="field">
+                        <input id="themeSwitch" type="checkbox" class="switch is-small is-rounded is-outlined" v-model="isDarkMode" @click="switchTheme()">
+                        <label for="themeSwitch">{{ isDarkMode ? 'Light on' : 'Light off' }}</label>
+                    </div>
+                </div>
             </div>
 
             <div class="navbar-end">
@@ -74,12 +81,17 @@
 
 <script>
     import animate from '../logo-animation'
+    import 'bulma-switch/dist/css/bulma-switch.min.css'
     
     export default {
         data() {
             return {
                 isMenuOpen: false,
-                showSocialButtons: false
+                showSocialButtons: false,
+                isDarkMode: false,
+                defaultDarkPages: [
+                    'WorkDetail'
+                ]
             }
         },
         mounted () {
@@ -102,7 +114,46 @@
 
             toggleSocialButtons: function () {
                 this.showSocialButtons = !this.showSocialButtons
+            },
+            
+            switchTheme: function () {
+                if (this.isDarkMode) {
+                    this.setLightTheme();
+                }
+                else {
+                    this.setDarkTheme();
+                }
+            },
+
+            setLightTheme: function () {
+                document.body.classList.remove('has-background-dark');
+                document.body.classList.add('has-background-light');
+
+                this.isDarkMode = false;
+            },
+
+            setDarkTheme: function () {
+                document.body.classList.remove('has-background-light');
+                document.body.classList.add('has-background-dark');
+
+                this.isDarkMode = true;
+            },
+
+            initializeTheme: function () {
+                if (this.defaultDarkPages.includes(this.$route.name))
+                {
+                    this.setDarkTheme();
+                }
+                else
+                {
+                    this.setLightTheme();
+                }
             }
+        },
+        beforeMount() {
+            document.body.classList.add('has-navbar-fixed-top');
+
+            this.initializeTheme();
         }
     }
 </script>
@@ -173,13 +224,32 @@
     }
 
     .has-background-dark .navbar .button-cta {
-        color: ;
+        color: #f8faff;
         background-color: rgba(67, 83, 255, 0.1);
         border: none;
     }
 
     .has-background-dark .navbar .button-cta:hover {
         background-color: #6b65a7;
+    }
+
+    .has-background-light .switch[type=checkbox].is-small.is-outlined+label::before,
+    .has-background-light .switch[type=checkbox].is-small.is-outlined+label:before {
+        border-color: #6b65a7;
+    }
+    .has-background-light .switch[type=checkbox].is-small.is-outlined+label::after,
+    .has-background-light .switch[type=checkbox].is-small.is-outlined+label:after {
+        background-color: #6b65a7;
+    }
+
+    .has-background-dark .switch[type=checkbox].is-small.is-outlined+label::before,
+    .has-background-dark .switch[type=checkbox].is-small.is-outlined+label:before {
+        border-color: #6b65a7;
+        background-color: #6b65a7;
+    }
+    .has-background-dark .switch[type=checkbox].is-small.is-outlined+label::after,
+    .has-background-dark .switch[type=checkbox].is-small.is-outlined+label:after {
+        background-color: #f8faff;
     }
 
     .navbar.is-dark .button-social {
