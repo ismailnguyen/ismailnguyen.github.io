@@ -63,12 +63,14 @@
                             </a>
                         </transition>
 
-                        <button class="button button-cta" @click="toggleSocialButtons()" v-if="!showSocialButtons">
-                            <strong>Get in touch</strong>
-                        </button>
-                        <a class="button button-cta" @click="toggleSocialButtons()" href="https://docs.google.com/document/d/1z-7fn0zN01tiEKbpnxmlNfx1EiSaNcAwgQxBGVaCjLA/edit?usp=sharing" target="_blank" rel="noopener" v-else>
-                            <strong>Resum&eacute;</strong>
-                        </a>
+                        <div class="button-cta-wrapper">
+                            <button class="button button-cta" @click="toggleSocialButtons()" v-if="!showSocialButtons">
+                                Get in touch
+                            </button>
+                            <a class="button button-cta" @click="toggleSocialButtons()" href="https://docs.google.com/document/d/1z-7fn0zN01tiEKbpnxmlNfx1EiSaNcAwgQxBGVaCjLA/edit?usp=sharing" target="_blank" rel="noopener" v-else>
+                                Resum&eacute;
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,7 +186,7 @@
 
     .navbar.is-transparent,
     .navbar-menu.is-active,
-    .navbar .navbar-item,
+    .navbar a.navbar-item,
     .button-social {
         background: none !important;
     }
@@ -209,19 +211,36 @@
         box-shadow: none !important;
     }
     
-    .navbar .button {
-        border-radius: 0;
-        transition: box-shadow 300ms ease, background-color 300ms ease;
-    }
-    
     .has-background-light .navbar .button-cta {
+        border: none;
+        border-radius: 5px;
         color: #f8faff;
-        background-color: #6b65a7;
+        font-weight: bold;
+        background: #6b65a7;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.26);
+        transition: .3s cubic-bezier(.175,.885,.32,1.275);
+    }
+
+    .has-background-light .navbar .button-cta:hover:before {
+        transform: translate(3px,-3px);
+    }
+
+    .has-background-light .navbar .button-cta:before {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        transition: .3s cubic-bezier(.175,.885,.32,1.275);
+        border-radius: 5px;
+        background-color: rgba(138,61,245,.2);
     }
 
     .has-background-light .navbar .button-cta:hover {
-        background-color: #6b65a7;
-        box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
+        transform: translate(-2px,2px);
     }
 
     .has-background-dark .navbar .button-cta {
@@ -289,43 +308,48 @@
         background-color: #2e363b;
     }
 
-    .navbar-menu .navbar-item {
+    .navbar-menu a.navbar-item {
         padding-right: 22px;
         padding-left: 22px;
         font-size: 16px;
         font-weight: 500;
         letter-spacing: -0.01em;
+        margin: 5px;
+        border-radius: 5px;
+        transition: all .1s;
     }
 
-    .navbar .navbar-menu.is-active  .navbar-item {
+    .navbar .navbar-menu.is-active  a.navbar-item {
         font-size: 1.25rem;
         margin: 1rem;
     }
 
-    .has-background-light .navbar .navbar-menu .navbar-item {
+    .has-background-light .navbar .navbar-menu a.navbar-item {
         color: #2d3958;
     }
 
-    .has-background-dark .navbar .navbar-menu .navbar-item {
+    .has-background-dark .navbar .navbar-menu a.navbar-item {
         color: #f8faff;
         opacity: 0.5;
         background: none;
     }
 
-    .navbar-menu .navbar-start .navbar-item:hover,
-    .navbar-menu .navbar-start .navbar-item.is-active {
+    .navbar-menu .navbar-start a.navbar-item:hover,
+    .navbar-menu .navbar-start a.navbar-item.is-active {
+        background-color: rgba(148,179,225,.1) !important;
+    }
+
+    .navbar-menu .navbar-start a.navbar-item.is-active {
         font-weight: bold;
-        border: none;
-        background: none;
     }
     
-    .has-background-light .navbar .navbar-menu .navbar-start .navbar-item:hover,
-    .has-background-light .navbar .navbar-menu .navbar-start .navbar-item.is-active {
+    .has-background-light .navbar .navbar-menu .navbar-start a.navbar-item:hover,
+    .has-background-light .navbar .navbar-menu .navbar-start a.navbar-item.is-active {
         color: #6b65a7;
     }
 
-    .has-background-dark .navbar .navbar-menu .navbar-start .navbar-item:hover,
-    .has-background-dark .navbar .navbar-menu .navbar-start .navbar-item.is-active {
+    .has-background-dark .navbar .navbar-menu .navbar-start a.navbar-item:hover,
+    .has-background-dark .navbar .navbar-menu .navbar-start a.navbar-item.is-active {
         opacity: 1;
     }
 
