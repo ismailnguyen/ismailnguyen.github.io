@@ -1,9 +1,9 @@
 <template>
     <div class="terminal">
-        <figure class="profile-picture image is-24x24 is-pulled-right">
+        <figure class="profile-picture image is-24x24 is-pulled-right is-clickable" @click="rotateProfilPicture = !rotateProfilPicture" :class="rotateProfilPicture ? 'profile-picture--rotate' : ''">
             <img class="is-rounded" src="/resources/images/profile.png" alt="Profile picture">
         </figure>
-        <div class="terminal-body">
+        <div class="terminal-body" @click="blinkTerminal = !blinkTerminal" :class="blinkTerminal ? 'terminal-body--blink' : ''">
             <span v-html="username"></span>
             <span id="animatedText" v-html="text"></span>
         </div>
@@ -17,10 +17,12 @@
         props: ['username', 'texts', 'typingSpeed'],
         data () {
             return {
-                text: ''
+                text: '',
+                rotateProfilPicture: false,
+                blinkTerminal: false
             }
         },
-        mounted() {
+        mounted () {
             if (!this.texts)
                 return;
 
@@ -64,6 +66,13 @@
             background: white;
             border: 1px solid white;
             border-radius: 50px;
+            
+            &--rotate {
+                animation-name: spin;
+                animation-duration: 5000ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear; 
+            }
         }
 
         &-body {
@@ -74,6 +83,12 @@
             padding: 3.25rem 2.25rem 1.5rem 1.25rem;
             position: relative;
             box-sizing: border-box;
+
+            &--blink {
+                &:before {
+                    animation: blink .5s steps(5, start) infinite;
+                }
+            }
 
             &:before {
                 content: "";
@@ -98,6 +113,21 @@
                     color: #68d391;
                 }
             }
+        }
+    }
+
+    @keyframes blink {
+        to {
+            visibility: hidden;
+        }
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(-360deg);
         }
     }
 </style>
