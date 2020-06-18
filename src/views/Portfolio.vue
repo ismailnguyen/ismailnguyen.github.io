@@ -137,6 +137,38 @@
         position: relative;
     }
 
+    .button-view-details {
+        border: none;
+        border-radius: 5px;
+        color: #f8faff;
+        font-weight: bold;
+        background: #6b65a7;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.26);
+        transition: .3s cubic-bezier(.175,.885,.32,1.275);
+    }
+
+    .button-view-details:hover:before {
+        transform: translate(3px,-3px);
+    }
+
+    .button-view-details:before {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        transition: .3s cubic-bezier(.175,.885,.32,1.275);
+        border-radius: 5px;
+        background-color: rgba(138,61,245,.2);
+    }
+
+    .button-view-details:hover {
+        transform: translate(-2px,2px);
+    }
+
     .work-item .media {
         padding-top: 25px;
     }
