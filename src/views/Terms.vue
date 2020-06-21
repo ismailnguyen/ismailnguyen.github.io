@@ -54,4 +54,11 @@
     p, a {
         color: #808592 !important;
     }
+
+    .handwritten-text {
+        font-family: 'Waiting for the Sunrise', cursive; 
+        margin: 10px 50px; 
+        letter-spacing: 6px; 
+        font-weight: bold
+    }
 </style>

@@ -54,8 +54,6 @@
     }
 
     .pulse {
-        width: 35px;
-        height: 35px;
         background-color: #F08080;
         border-radius: 35px;
         position: relative;

@@ -210,6 +210,10 @@
     .navbar .navbar-menu.is-active {
         box-shadow: none !important;
     }
+
+    .navbar .navbar-item .toggleWrapper {
+        padding-top: .25rem;
+    }
     
     .has-background-light .navbar .button-cta {
         border: none;
@@ -308,7 +312,7 @@
         background-color: #2e363b;
     }
 
-    .navbar-menu a.navbar-item {
+    .navbar-menu .navbar-item {
         padding-right: 22px;
         padding-left: 22px;
         font-size: 16px;
@@ -319,7 +323,7 @@
         transition: all .1s;
     }
 
-    .navbar .navbar-menu.is-active  a.navbar-item {
+    .navbar .navbar-menu.is-active .navbar-item {
         font-size: 1.25rem;
         margin: 1rem;
     }
