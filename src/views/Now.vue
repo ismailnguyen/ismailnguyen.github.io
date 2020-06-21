@@ -1,22 +1,14 @@
 <template>
     <section class="hero is-light is-fullheight-with-navbar has-text-centered about-me">
+        
+        <FullScreenBackgroundMap location="Romainville" />
+
         <div class="hero-body">
             <div class="container">
               
                 <div class="columns is-vcentered">
-                    <div class="column">
-                        <iframe 
-                            width="100%"
-                            height="100%"
-                            frameborder="0"
-                            marginheight="0"
-                            marginwidth="0"
-                            title="map"
-                            scrolling="no"
-                            src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Romainville&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
-                            style="filter: grayscale(1) contrast(1.2) opacity(0.4);">
-                        </iframe>
-                    </div>
+                    <div class="column"></div>
+
                     <div class="column animated-column">
                         <div class="box twitter-box">
                             <article class="media">
@@ -177,7 +169,12 @@
 </template>
 
 <script>
+    import FullScreenBackgroundMap from '../components/FullScreenBackgroundMap'
+
     export default {
+        components: {
+            FullScreenBackgroundMap
+        },
         mounted () {
             this.startAnimation();
         },
@@ -227,23 +224,6 @@
 
     .has-background-dark .about-me .twitter-box .media-content strong {
         color: #f8faff;
-    }
-
-    ul,
-    li {
-        padding-top: 20px;
-    }
-
-    iframe {
-        border: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
     }
 
     .animated-column {
