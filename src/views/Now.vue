@@ -96,7 +96,7 @@
                                 <div class="media-content">
                                     <div class="content">
                                         <p>
-                                            <strong>Organizer</strong> <small>@<a href="//conf.agile-france.org" target="_blank" rel="noopener">Agile France</a></small> <small>{{ new Date().getFullYear() - 2019  }} years ago</small>
+                                            <strong>Organizer</strong> <small>@<a href="//2020.conf.agile-france.org" target="_blank" rel="noopener">Agile France</a></small> <small>{{ new Date().getFullYear() - 2019  }} years ago</small>
                                             <br>
                                             Agile France is the great Agile conference of the community for the community: Francophone, without sponsor.
                                         </p>
