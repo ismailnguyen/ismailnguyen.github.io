@@ -1,6 +1,30 @@
 const works = [
     {
         coverImage: {
+            url: '/resources/images/works/minimum-viable-product.png',
+            alt: `Minimum Viable Product`
+        },
+        logo: {
+            url: '/resources/images/works/logo/google-slides.png',
+            alt: 'Google Slides'
+        },
+        title: `Minimum Viable Product`,
+        secondaryLink: {
+            url: 'https://docs.google.com/presentation/d/1SOpcBXwhMqVV3dQOpGHEXsqgNS_3trN4hl0rU41vQBc',
+            text: 'View slides'
+        },
+        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRzsQqli_CoHHj2dhijfOwOfOwrylgMsxvHnL_IguPI2VhMhD34fOewjcwqZfSvkrntSIa1sjp5fYb9/embed?start=false&loop=false&delayms=3000',
+        socialShare: {
+			twitter: true,
+			linkedIn: true
+        },
+        tags: [
+            'MVP',
+			'Agile'
+        ]
+    },
+	{
+        coverImage: {
             url: '/resources/images/works/vue-dark-mode-switch.png',
             alt: 'vue-dark-mode-switch'
         },
@@ -278,8 +302,8 @@ const works = [
         },
         embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRuClSj26rirjEZZBIPLHEJj7ti8z5vgHLw7nUA3nWzSnq3RtytFg0SIXMx834a7akRInBkR1fpWA4a/embed?start=false&loop=false&delayms=3000',
         socialShare: {
-        twitter: true,
-        linkedIn: true
+			twitter: true,
+			linkedIn: true
         },
         tags: [
             'Vue.js',
