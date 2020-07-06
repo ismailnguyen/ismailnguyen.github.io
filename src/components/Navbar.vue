@@ -175,6 +175,7 @@
         font-style: normal;
         font-size: 2.75vw;
         text-shadow: 0px 2px #6b65a7, 3px 3px #6b65a7, 4px 4px #6b65a7;
+		background: url(/resources/images/cracker.gif);
     }
 
     @media only screen and (max-width: 500px) {
