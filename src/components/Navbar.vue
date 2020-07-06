@@ -88,10 +88,7 @@
             return {
                 isMenuOpen: false,
                 showSocialButtons: false,
-                isDarkMode: false,
-                defaultDarkPages: [
-                    'WorkDetail'
-                ]
+                isDarkMode: false
             }
         },
         components: {
@@ -120,37 +117,63 @@
             },
 
             onThemeSwitched: function (isSwitched) {
-                if (isSwitched) {
-                    this.setDarkTheme();
+                this.setTheme(isSwitched);
+                this.saveThemePreference(isSwitched);
+            },
+
+            setTheme: function (isDark) {
+                if (isDark) {
+                    document.body.classList.remove('has-background-light');
+                    document.body.classList.add('has-background-dark');
                 }
                 else {
-                    this.setLightTheme();
+                    document.body.classList.remove('has-background-dark');
+                    document.body.classList.add('has-background-light');
                 }
+
+                this.isDarkMode = isDark;
             },
 
-            setLightTheme: function () {
-                document.body.classList.remove('has-background-dark');
-                document.body.classList.add('has-background-light');
-
-                this.isDarkMode = false;
+            isThemePreferenceSaved: function () {
+                return localStorage.getItem('theme');
             },
 
-            setDarkTheme: function () {
-                document.body.classList.remove('has-background-light');
-                document.body.classList.add('has-background-dark');
+            isSavedThemePreferenceDark: function () {
+                return localStorage.getItem('theme') === 'dark';
+            },
 
-                this.isDarkMode = true;
+            saveThemePreference: function (isDark) {
+                localStorage.setItem('theme', isDark ? 'dark' : 'light')
+            },
+
+            isNight: function () {
+                var date = new Date();
+                return (date.getHours() >= 22 || date.getHours() < 6);
+            },
+
+            isWindowColorSchemeDark: function () {
+                return window.matchMedia 
+                        && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            },
+
+            listenToWindowColorSchemeUpdate: function () {
+                window.matchMedia('(prefers-color-scheme: dark)')
+                       .addEventListener('change', e => this.setTheme(e.matches));
             },
 
             initializeTheme: function () {
-                if (this.defaultDarkPages.includes(this.$route.name))
-                {
-                    this.setDarkTheme();
+                if (this.isThemePreferenceSaved()) {
+                    this.setTheme(this.isSavedThemePreferenceDark());
+
+                    return;
                 }
-                else
-                {
-                    this.setLightTheme();
-                }
+                
+                this.setTheme(
+                    this.isNight()
+                    || this.isWindowColorSchemeDark()
+                );
+
+                this.listenToWindowColorSchemeUpdate();
             }
         },
         beforeMount() {
@@ -175,8 +198,7 @@
         font-style: normal;
         font-size: 2.75vw;
         text-shadow: 0px 2px #6b65a7, 3px 3px #6b65a7, 4px 4px #6b65a7;
-		background: url(/resources/images/cracker.gif);
-    }
+	}
 
     @media only screen and (max-width: 500px) {
         .logo {
@@ -186,8 +208,6 @@
     }
 
     .navbar.is-transparent,
-    .navbar-menu.is-active,
-    .navbar a.navbar-item,
     .button-social {
         background: none !important;
     }
@@ -216,7 +236,7 @@
         padding-top: .25rem;
     }
     
-    .has-background-light .navbar .button-cta {
+    .navbar .button-cta {
         border: none;
         border-radius: 5px;
         color: #f8faff;
@@ -226,11 +246,11 @@
         transition: .3s cubic-bezier(.175,.885,.32,1.275);
     }
 
-    .has-background-light .navbar .button-cta:hover:before {
+    .navbar .button-cta:hover:before {
         transform: translate(3px,-3px);
     }
 
-    .has-background-light .navbar .button-cta:before {
+    .navbar .button-cta:before {
         content: "";
         pointer-events: none;
         position: absolute;
@@ -244,7 +264,7 @@
         background-color: rgba(138,61,245,.2);
     }
 
-    .has-background-light .navbar .button-cta:hover {
+    .navbar .button-cta:hover {
         transform: translate(-2px,2px);
     }
 
@@ -339,11 +359,13 @@
         background: none;
     }
 
+    .navbar-item.is-active,
     .navbar-menu .navbar-start a.navbar-item:hover,
     .navbar-menu .navbar-start a.navbar-item.is-active {
-        background-color: rgba(148,179,225,.1) !important;
+		/*background-color: rgba(148,179,225,.1) !important;*/
+        background: url(/resources/images/cracker.gif) !important;
     }
-
+	
     .navbar-menu .navbar-start a.navbar-item.is-active {
         font-weight: bold;
     }

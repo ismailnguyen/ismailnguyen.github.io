@@ -3,7 +3,7 @@
         <figure class="profile-picture image is-24x24 is-pulled-right is-clickable" @click="rotateProfilPicture = !rotateProfilPicture" :class="rotateProfilPicture ? 'profile-picture--rotate' : ''">
             <img class="is-rounded" src="/resources/images/profile.png" alt="Profile picture">
         </figure>
-        <div class="terminal-body" @click="blinkTerminal = !blinkTerminal" :class="blinkTerminal ? 'terminal-body--blink' : ''">
+        <div class="terminal-body" @click="onButtonClick()" :class="blinkTerminal ? 'terminal-body--blink' : ''">
             <span v-html="username"></span>
             <span id="animatedText" v-html="text"></span>
         </div>
@@ -35,6 +35,12 @@
             }
         },
         methods: {
+            onButtonClick: function () {
+                this.blinkTerminal = !this.blinkTerminal;
+
+                localStorage.clear();
+            },
+
             startAnimation: function () {
                 const element = document.getElementById('animatedText');
 
