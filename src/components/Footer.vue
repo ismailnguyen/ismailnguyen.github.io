@@ -2,7 +2,7 @@
     <footer class="footer">
         <div class="content has-text-centered handwritten-text" @click="isHeartbeatEnabled = !isHeartbeatEnabled">
             <p class="is-pulled-left">
-                Handcrafted with <span :class="isHeartbeatEnabled ? 'icon is-small pulse' : 'icon is-small'"><i class="fa fa-heart" style="color:#6b65a7;"></i></span>
+                Handcrafted with <span :class="isHeartbeatEnabled ? 'icon is-small pulse' : 'icon is-small'">❤️</span>
             </p>
             <p class="is-pulled-right">
                 <router-link to="/terms">
@@ -53,21 +53,20 @@
         font-weight: bold
     }
 
+    .icon.is-small {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
     .pulse {
         background-color: #F08080;
         border-radius: 35px;
         position: relative;
+        padding-top: 6px;
+        padding-left: 6px;
         animation: pulse 2000ms linear infinite;
         -webkit-animation: pulse 2000ms linear infinite;
         -moz-animation: pulse 2000ms linear infinite;
-    }
-
-    .pulse i{
-        position: absolute;
-        top: 28px;
-        left: 24%;
-        color: white;
-        text-shadow: -1px -1px #333;
     }
 
     .pulse:after,
