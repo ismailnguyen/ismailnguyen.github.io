@@ -1,7 +1,36 @@
 const works = [
     {
         coverImage: {
-            url: '/resources/images/works/minimum-viable-product.png',
+            url: '/resources/images/works/gradient-theme.webp',
+            alt: 'Gradient theme'
+        },
+        logo: {
+            url: '/resources/images/works/logo/gradient-theme.png',
+            alt: 'Gradient theme'
+        },
+        title: 'Gradient theme',
+        subTitle: 'github/gradient-theme',
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/gradient-theme',
+            text: 'Source'
+        },
+        description: 'HTML/CSS theme integration',
+        tags: [
+            'HTML',
+            'CSS',
+            'Frond end integration',
+            'Mockup'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/gradient-theme.webp',
+                alt: 'Gradient theme'
+            }
+        ]
+    },
+    {
+        coverImage: {
+            url: '/resources/images/works/minimum-viable-product.webp',
             alt: `Minimum Viable Product`
         },
         logo: {
@@ -25,7 +54,7 @@ const works = [
     },
 	{
         coverImage: {
-            url: '/resources/images/works/vue-dark-mode-switch.png',
+            url: '/resources/images/works/vue-dark-mode-switch.webp',
             alt: 'vue-dark-mode-switch'
         },
         logo: {
@@ -57,14 +86,14 @@ const works = [
         ],
         images: [
             {
-                url: '/resources/images/works/vue-dark-mode-switch.png',
+                url: '/resources/images/works/vue-dark-mode-switch.webp',
                 alt: 'vue-dark-mode-switch'
             }
         ]
     },
     {
         coverImage: {
-            url: '/resources/images/works/throttler-js.png',
+            url: '/resources/images/works/throttler-js.webp',
             alt: 'throttler-js'
         },
         logo: {
@@ -97,14 +126,14 @@ const works = [
         ],
         images: [
             {
-                url: '/resources/images/works/throttler-js.png',
+                url: '/resources/images/works/throttler-js.webp',
                 alt: 'throttler-js'
             }
         ]
     },
     {
         coverImage: {
-            url: '/resources/images/works/togglify-js.png',
+            url: '/resources/images/works/togglify-js.webp',
             alt: 'togglify-js'
         },
         logo: {
@@ -135,7 +164,7 @@ const works = [
         ],
         images: [
             {
-                url: '/resources/images/works/togglify-js.png',
+                url: '/resources/images/works/togglify-js.webp',
                 alt: 'togglify-js'
             }
         ]
@@ -491,11 +520,15 @@ const works = [
             alt: 'Joyti Restaurant'
         },
         logo: {
-            url: '/resources/images/works/logo/github.png',
-            alt: 'Github'
+            url: '/resources/images/works/logo/joyti-restaurant.png',
+            alt: 'Joyti Restaurant'
         },
         title: 'Joyti Restaurant',
         subTitle: 'github/joyti-restaurant',
+        primaryLink: {
+            url: 'https://joyti-restaurant.netlify.app',
+            text: 'View'
+        },
         secondaryLink: {
             url: 'https://github.com/ismailnguyen/joyti-restaurant',
             text: 'Source'
