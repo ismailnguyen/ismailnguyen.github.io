@@ -1,6 +1,40 @@
 const works = [
     {
         coverImage: {
+            url: '/resources/images/works/review-it.png',
+            alt: 'Review.it - Namasté'
+        },
+        logo: {
+            url: '/resources/images/works/logo/namaste.png',
+            alt: 'Review.it - Namasté'
+        },
+        title: 'Namasté Restaurant',
+        subTitle: 'Review.it',
+        primaryLink: {
+            url: 'https://review-it.vercel.app/r/1/Namast%C3%A9-Rosny2',
+            text: 'View'
+        },
+        description: 'QR Code to post review and see restaurant menu card',
+        tags: [
+            'Google review',
+            'Tripadvisor review',
+            'QR Code',
+            'Menu card',
+            'Web app',
+            'Restaurant'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/review-it.png',
+                alt: 'Review.it web application'
+            },
+            {
+                url: '/resources/images/works/namaste-Rosny2-review-qrcode.png',
+                alt: 'Namaste restaurant QR code'
+            }
+        ]
+    },{
+        coverImage: {
             url: '/resources/images/works/gradient-theme.webp',
             alt: 'Gradient theme'
         },
