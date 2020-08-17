@@ -24,6 +24,10 @@ const works = [
             'Restaurant'
         ],
         images: [
+			{
+				url: '/resources/images/works/board Namaste Rosny 2.jpg',
+				alt: 'Namaste restaurant board'
+			},
             {
                 url: '/resources/images/works/review-it.png',
                 alt: 'Review.it web application'
