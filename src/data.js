@@ -1,6 +1,45 @@
 const works = [
     {
         coverImage: {
+            url: '/resources/images/works/vue-css-waves.png',
+            alt: 'vue-css-waves'
+        },
+        logo: {
+            url: '/resources/images/works/logo/vuejs.png',
+            alt: 'Vue.js'
+        },
+        title: 'vue-css-waves',
+        subTitle: 'VueJS CSS waves component',
+        description: `vue-css-waves is a simple waves component made in CSS.`,
+        primaryLink: {
+            url: 'https://www.ismailnguyen.com/vue-css-waves/',
+            text: 'View'
+        },
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/vue-css-waves',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/vue-css-waves/master/README.md',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
+        tags: [
+            'Vuejs-component',
+            'Javascript',
+            'CSS',
+            'Waves',
+            'NPM Package'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/vue-dark-mode-switch.webp',
+                alt: 'vue-css-waves'
+            }
+        ]
+    },
+	{
+        coverImage: {
             url: '/resources/images/works/review-it.png',
             alt: 'Review.it - Namasté'
         },
