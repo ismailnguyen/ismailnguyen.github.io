@@ -12,17 +12,27 @@
                 </router-link>
             </p>
         </div>
+
+        <div class="waves-container">
+            <Waves />
+        </div>
     </footer>
 </template>
 
 
 <script>
+    import Waves from 'vue-css-waves'
+    import 'vue-css-waves/dist/vue-css-waves.css'
+    
     export default {
         data () {
             return {
                 isHeartbeatEnabled: false
             }
-        }
+        },
+        components: {
+            Waves
+        },
     }
 </script>
 
@@ -33,9 +43,11 @@
 
     .footer {
         background: none !important;
+        padding: 0;
     }
 
-    .footer .content {
+    .footer .content,
+    .footer .waves-container {
         animation-duration: 1s;
         animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
         animation-fill-mode: both;
@@ -44,6 +56,11 @@
     .footer .content {
       animation-name: slideDown;
       animation-delay: 2s;
+    }
+
+    .footer .waves-container {
+      animation-name: slideRight;
+      animation-delay: 2.5s;
     }
 
     .handwritten-text {

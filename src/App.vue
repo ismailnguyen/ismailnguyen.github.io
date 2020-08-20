@@ -57,6 +57,10 @@
     color: #6b65a7;
   }
 
+  .hero.is-fullheight-with-navbar {
+    min-height: 74vh;
+  }
+
   .has-background-light body,
   .has-background-light .hero h1 {
     color: #2d3958 !important;
