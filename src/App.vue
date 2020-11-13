@@ -54,7 +54,7 @@
   }
 
   .hero .subhead {
-    color: #6b65a7;
+    color: #818cab;
   }
 
   .hero.is-fullheight-with-navbar {
@@ -95,9 +95,7 @@
   }
 
   .has-background-dark {
-    background: #152331;
-    background: -webkit-linear-gradient(45deg, #000000, #152331);
-    background: linear-gradient(45deg, #000000, #152331);
+    background:#1f2023 !important;
   }
 
   .slide-left-enter-active,

@@ -56,11 +56,17 @@
     .footer .content {
       animation-name: slideDown;
       animation-delay: 2s;
+      padding-bottom: 1rem;
     }
 
     .footer .waves-container {
       animation-name: slideRight;
       animation-delay: 2.5s;
+    }
+
+    >>> .waves {
+        height: auto;
+        max-height: none;
     }
 
     .handwritten-text {
