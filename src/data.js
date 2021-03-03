@@ -1,6 +1,85 @@
 const works = [
     {
         coverImage: {
+            url: '/resources/images/works/vue-fullscreen-background-map.png',
+            alt: 'vue-fullscreen-background-map'
+        },
+        logo: {
+            url: '/resources/images/works/logo/vuejs.png',
+            alt: 'Vue.js'
+        },
+        title: 'vue-fullscreen-background-map',
+        subTitle: 'VueJS full screen backgroud Google Map',
+        description: `vue-fullscreen-backgroud-map is Google Map background pointing on a given location.`,
+        primaryLink: {
+            url: 'https://www.ismailnguyen.com/vue-fullscreen-background-map/',
+            text: 'View'
+        },
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/vue-fullscreen-background-map',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/vue-fullscreen-background-map/main/README.md',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
+        tags: [
+            'Vuejs-component',
+            'Javascript',
+            'Background',
+            'Google Map',
+            'NPM Package'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/vue-fullscreen-background-map.png',
+                alt: 'vue-css-waves'
+            }
+        ]
+    },
+	{
+        coverImage: {
+            url: '/resources/images/works/vue-animated-terminal.png',
+            alt: 'vue-animated-terminal'
+        },
+        logo: {
+            url: '/resources/images/works/logo/vuejs.png',
+            alt: 'Vue.js'
+        },
+        title: 'vue-animated-terminal',
+        subTitle: 'VueJS Terminal with animated text',
+        description: `vue-animated-terminal is a CSS based terminal with an animated text.`,
+        primaryLink: {
+            url: 'https://www.ismailnguyen.com/vue-animated-terminal/',
+            text: 'View'
+        },
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/vue-animated-terminal',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/vue-animated-terminal/main/README.md',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
+        tags: [
+            'Vuejs-component',
+            'Javascript',
+            'CSS',
+            'Terminal',
+			'Animation',
+            'NPM Package'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/vue-animated-terminal.png',
+                alt: 'vue-css-waves'
+            }
+        ]
+    },
+	{
+        coverImage: {
             url: '/resources/images/works/vue-css-waves.png',
             alt: 'vue-css-waves'
         },
@@ -33,7 +112,7 @@ const works = [
         ],
         images: [
             {
-                url: '/resources/images/works/vue-dark-mode-switch.webp',
+                url: '/resources/images/works/vue-css-waves.png',
                 alt: 'vue-css-waves'
             }
         ]
