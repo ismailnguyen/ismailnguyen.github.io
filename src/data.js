@@ -9,8 +9,8 @@ const works = [
             alt: 'Vue.js'
         },
         title: 'vue-fullscreen-background-map',
-        subTitle: 'VueJS full screen backgroud Google Map',
-        description: `vue-fullscreen-backgroud-map is Google Map background pointing on a given location.`,
+        subTitle: 'VueJS full screen background Google Map',
+        description: `vue-fullscreen-background-map is Google Map background pointing on a given location.`,
         primaryLink: {
             url: 'https://www.ismailnguyen.com/vue-fullscreen-background-map/',
             text: 'View'
@@ -19,7 +19,7 @@ const works = [
             url: 'https://github.com/ismailnguyen/vue-fullscreen-background-map',
             text: 'Source'
         },
-        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/vue-fullscreen-background-map/main/README.md',
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/vue-fullscreen-background-map/master/README.md',
         socialShare: {
             twitter: true,
             linkedIn: true
