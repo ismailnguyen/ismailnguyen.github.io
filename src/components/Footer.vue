@@ -1,8 +1,8 @@
 <template>
     <footer class="footer">
-        <div class="content has-text-centered handwritten-text" @click="isHeartbeatEnabled = !isHeartbeatEnabled">
+        <div class="content has-text-centered handwritten-text">
             <p class="is-pulled-left">
-                Handcrafted with <span :class="isHeartbeatEnabled ? 'icon is-small pulse' : 'icon is-small'">❤️</span>
+                Handcrafted with <span @click="isHeartbeatEnabled = !isHeartbeatEnabled" :class="isHeartbeatEnabled ? 'icon is-small pulse' : 'icon is-small'">❤️</span>
             </p>
             <p class="is-pulled-right">
                 <router-link to="/terms">
@@ -13,7 +13,7 @@
             </p>
         </div>
 
-        <div class="waves-container">
+        <div class="waves-container" style="display:none;">
             <Waves />
         </div>
     </footer>

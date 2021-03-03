@@ -628,7 +628,7 @@ const works = [
             alt: 'My portfolio'
         },
         logo: {
-            url: '/resources/images/profile.webp',
+            url: '/resources/images/profile.png',
             alt: 'Ismaïl NGUYEN'
         },
         title: 'My portfolio',
@@ -649,9 +649,17 @@ const works = [
             'Github Pages'
         ],
         images: [
+			{
+                url: '/resources/images/works/ismailnguyen-3.png',
+                alt: 'My portfolio v3'
+            },
+			{
+                url: '/resources/images/works/ismailnguyen-2.png',
+                alt: 'My portfolio v2'
+            },
             {
                 url: '/resources/images/works/ismailnguyen.webp',
-                alt: 'My portfolio'
+                alt: 'My portfolio v1'
             }
         ]
     },

@@ -1,8 +1,7 @@
 <template>
     <nav class="navbar is-transparent is-fixed-top" :class="isMenuOpen ? 'is-blurred' : ''" role="navigation" aria-label="main navigation">
-
         <div class="navbar-brand">
-            <router-link to="/" class="navbar-item">
+             <router-link to="/" class="navbar-item">
                 <div id="brand" class="logo">
                     isma&iuml;l
                 </div>
@@ -16,61 +15,38 @@
         </div>
 
         <div :class="isMenuOpen ? 'navbar-menu is-active' : 'navbar-menu'">
-            <div class="navbar-start" @click="closeMenu()">
-                <router-link to="/portfolio" class="navbar-item" :class="this.$route.name == 'WorkDetail' ? 'is-active': ''">
-                    My works
-                </router-link>
-
-                <router-link to="/now" class="navbar-item">
-                    Now
-                </router-link>
-
-                <div class="navbar-item">
-                    <DarkModeSwitch @switched="onThemeSwitched" :initialState="isDarkMode" />
-                </div>
-            </div>
-
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
                         <transition name="slide-left">
-                            <a v-show="showSocialButtons" class="button is-light button-social button-paypal" href="//www.paypal.me/ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-paypal"></i>
-                            </a>
-                        </transition>
-
-                        <transition name="slide-left">
-                            <a v-show="showSocialButtons" class="button is-light button-social button-npm" href="//www.npmjs.com/~ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-npm"></i>
-                            </a>
-                        </transition>
-
-                        <transition name="slide-left">
-                            <a v-show="showSocialButtons" class="button is-light button-social button-github" href="//github.com/ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </transition>
-
-                        <transition name="slide-left">
-                            <a v-show="showSocialButtons" class="button is-light button-social button-linkedin" href="//www.linkedin.com/in/ismailnguyen" target="_blank" rel="noopener">
+                            <a class="button is-light button-social button-linkedin" href="//www.linkedin.com/in/ismailnguyen" target="_blank" rel="noopener">
                                 <i class="fab fa-linkedin"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
-                            <a v-show="showSocialButtons" class="button is-light button-social button-twitter" href="https://twitter.com/ishmaa_el" target="_blank" rel="noopener">
-                                <i class="fab fa-twitter"></i>
+                            <a class="button is-light button-social button-paypal" href="//www.paypal.me/ismailnguyen" target="_blank" rel="noopener">
+                                <i class="fab fa-paypal"></i>
                             </a>
                         </transition>
 
-                        <div class="button-cta-wrapper">
-                            <button class="button button-cta" @click="toggleSocialButtons()" v-if="!showSocialButtons">
-                                Get in touch
-                            </button>
-                            <a class="button button-cta" @click="toggleSocialButtons()" href="https://docs.google.com/document/d/1z-7fn0zN01tiEKbpnxmlNfx1EiSaNcAwgQxBGVaCjLA/edit?usp=sharing" target="_blank" rel="noopener" v-else>
-                                Resum&eacute;
+                        <transition name="slide-left">
+                            <a  class="button is-light button-social button-npm" href="//www.npmjs.com/~ismailnguyen" target="_blank" rel="noopener">
+                                <i class="fab fa-npm"></i>
                             </a>
-                        </div>
+                        </transition>
+
+                        <transition name="slide-left">
+                            <a class="button is-light button-social button-github" href="//github.com/ismailnguyen" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </transition>
+
+                        <transition name="slide-left">
+                            <a class="button is-light button-social button-twitter" href="https://twitter.com/ishmaa_el" target="_blank" rel="noopener">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </transition>
                     </div>
                 </div>
             </div>
@@ -80,19 +56,16 @@
 
 <script>
     import animate from '../logo-animation'
-    import DarkModeSwitch from 'vue-dark-mode-switch'
-    import 'vue-dark-mode-switch/dist/vue-dark-mode-switch.css'
     
     export default {
         data () {
             return {
                 isMenuOpen: false,
                 showSocialButtons: false,
-                isDarkMode: false
+                isDarkMode: true
             }
         },
         components: {
-            DarkModeSwitch
         },
         mounted () {
             animate('brand');
@@ -196,14 +169,13 @@
         vertical-align: baseline;
         font-family: "Bowlby One SC";
         font-style: normal;
-        font-size: 2.75vw;
-        text-shadow: 0px 2px #6b65a7, 3px 3px #6b65a7, 4px 4px #6b65a7;
+        font-size: 2.75rem;
+        text-shadow: 0px 2px #f582ae, 3px 3px #f582ae, 4px 4px #f582ae;
 	}
 
     @media only screen and (max-width: 500px) {
         .logo {
-            font-size: 8.35vw;
-            text-shadow: 0px 1px #6b65a7, 1px 1px #6b65a7, 2px 2px #6b65a7;
+            text-shadow: 0px 1px #f582ae, 1px 1px #f582ae, 2px 2px #f582ae;
         }
     }
 
@@ -213,7 +185,7 @@
     }
 
     .navbar .burger {
-        color: #6b65a7;
+        color: #f582ae;
         font-size: 22px;
     }
 
@@ -241,9 +213,13 @@
         border-radius: 5px;
         color: #f8faff;
         font-weight: bold;
-        background: #6b65a7;
+        background: #f582ae;
         box-shadow: 0 2px 4px 0 rgba(0,0,0,.26);
         transition: .3s cubic-bezier(.175,.885,.32,1.275);
+    }
+
+    .navbar-item.is-active {
+        background: none;
     }
 
     .navbar .button-cta:hover:before {
@@ -275,32 +251,29 @@
     }
 
     .has-background-dark .navbar .button-cta:hover {
-        background-color: #6b65a7;
+        background-color: #f582ae;
     }
 
     .has-background-light .switch[type=checkbox].is-small.is-outlined+label::before,
     .has-background-light .switch[type=checkbox].is-small.is-outlined+label:before {
-        border-color: #6b65a7;
+        border-color: #f582ae;
     }
     .has-background-light .switch[type=checkbox].is-small.is-outlined+label::after,
     .has-background-light .switch[type=checkbox].is-small.is-outlined+label:after {
-        background-color: #6b65a7;
+        background-color: #f582ae;
     }
 
     .has-background-dark .switch[type=checkbox].is-small.is-outlined+label::before,
     .has-background-dark .switch[type=checkbox].is-small.is-outlined+label:before {
-        border-color: #6b65a7;
-        background-color: #6b65a7;
+        border-color: #f582ae;
+        background-color: #f582ae;
     }
     .has-background-dark .switch[type=checkbox].is-small.is-outlined+label::after,
     .has-background-dark .switch[type=checkbox].is-small.is-outlined+label:after {
         background-color: #f8faff;
     }
 
-    .navbar.is-dark .button-social {
-        color: #f8faff;
-    }
-
+    .navbar.is-dark .button-social,
     .has-background-dark .button-social.is-light:not(:hover) {
         color: #f8faff;
     }
@@ -314,7 +287,7 @@
     }
 
     .button-github:hover {
-        color: black;
+        color: #000;
     }
 
     .button-twitter:hover {
@@ -326,11 +299,11 @@
     }
 
     .has-background-light .navbar .navbar-menu.is-active {
-        background-color: #eef0f3;
+        background-color: none;
     }
 
     .has-background-dark .navbar .navbar-menu.is-active {
-        background-color: #2e363b;
+        background: none;
     }
 
     .navbar-menu .navbar-item {
@@ -359,20 +332,13 @@
         background: none;
     }
 
-    .navbar-item.is-active,
-    .navbar-menu .navbar-start a.navbar-item:hover,
-    .navbar-menu .navbar-start a.navbar-item.is-active {
-		/*background-color: rgba(148,179,225,.1) !important;*/
-        background: url(/resources/images/cracker.gif) !important;
-    }
-	
     .navbar-menu .navbar-start a.navbar-item.is-active {
         font-weight: bold;
     }
     
     .has-background-light .navbar .navbar-menu .navbar-start a.navbar-item:hover,
     .has-background-light .navbar .navbar-menu .navbar-start a.navbar-item.is-active {
-        color: #6b65a7;
+        color: #f582ae;
     }
 
     .has-background-dark .navbar .navbar-menu .navbar-start a.navbar-item:hover,

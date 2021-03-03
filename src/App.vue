@@ -8,15 +8,15 @@
     <Navbar />
     
     <router-view />
-    
-    <Footer />
+	
+	<Footer />
   </div>
 </template>
 
 <script>
   import 'bulma/css/bulma.css'
-  import Navbar from './components/Navbar.vue'
-  import Footer from './components/Footer.vue'
+  import Navbar from './components/Navbar'
+  import Footer from './components/Footer'
 
   export default {
     name: 'App',
@@ -25,12 +25,27 @@
       Footer
     },
     methods: {
-      isUnsupportedBrowser: function () {
-          // Internet Explorer 10 and Internet Explorer 11
-          return /Trident\/|MSIE/.test(window.navigator.userAgent);
-      },
-      
-    }
+		isUnsupportedBrowser: function () {
+			// Internet Explorer 10 and Internet Explorer 11
+			return /Trident\/|MSIE/.test(window.navigator.userAgent);
+		},
+		printConsoleSignature: function () {
+			var consoleSignatureStyle = "font-size: 16px;" +
+			"background: linear-gradient(to right, #e66465, #9198e5);" +
+			"color: white;" +
+			"text-align: center;" +
+			"padding: 10px 15px;" +
+			"width: 100%;" +
+			"border-radius: 20px;";
+
+			var consoleSignatureText = "%cHi there 👋 ! I am Ismaïl NGUYEN, nice to meet you there 😊";
+
+			console.log(consoleSignatureText, consoleSignatureStyle);
+		}
+    },
+	mounted() {
+		this.printConsoleSignature();
+	}
   }
 </script>
 
@@ -42,19 +57,26 @@
   body {
     font-family: Muli, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
   }
+  
+  .handwritten-text {
+    font-family: 'Waiting for the Sunrise', cursive; 
+	margin: 10px 50px; 
+	letter-spacing: 6px; 
+	font-weight: bold
+  }
 
   ::selection {
-    background: #2d3958;
+    background: #f582ae;
     color: #f8faff;
   }
 
   ::-moz-selection {
-    background: #2d3958;
+    background: #f582ae;
     color: #f8faff;
   }
 
   .hero .subhead {
-    color: #818cab;
+    color: #fff;
   }
 
   .hero.is-fullheight-with-navbar {
@@ -79,11 +101,11 @@
   .hero.is-dark,
   .has-background-dark .hero h2,
   .has-background-dark .hero .subtitle {
-    color: #acb9bf !important;
+    color: #fff !important;
   }
 
   .has-background-light {
-    background: #D3CCE3;
+    background: #000;
     background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
     background: linear-gradient(to right, #E9E4F0, #D3CCE3);
   }
@@ -95,7 +117,7 @@
   }
 
   .has-background-dark {
-    background:#1f2023 !important;
+    background-color: #1c1c1e;
   }
 
   .slide-left-enter-active,

@@ -1,66 +1,273 @@
 <template>
-    <section class="section portfolio">
-        <div class="columns is-mobile is-multiline is-centered">
-            <div class="column is-one-third-desktop is-half-tablet is-full-mobile" v-for="(work, index) in works" :key="index">
-                <div class="card work-item modal-link is-clickable is-vcentered" @click="openWorkDetail(work)">
-                    <div class="card-image" v-if="work.coverImage" :style="'background: url('+work.coverImage.url+') no-repeat'">
-                        <figure class="image is-3by2">
-                        </figure>
-                    </div>
 
-                    <div class="card-content">
-                        <figure class="image is-3by2" v-if="work.coverImage"></figure>
-                        <div class="media">
-                            <div class="media-left">
-                                <span class="icon is-large">
-                                    <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
-                                </span>
-                            </div>
 
-                            <div class="media-content">
-                                <p class="title is-4">{{ work.title }}</p>
-                                <p class="subtitle is-6" v-if="work.subTitle">
-                                    <a :href="work.subTitle.link" target="_blank" rel="noopener" v-if="work.subTitle.link">
-                                        {{ work.subTitle.text }}
-                                    </a>
-                                    <span v-else>
-                                        {{ work.subTitle.text }}
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <footer class="card-footer">
-                        <div class="card-footer-item">
-                            <button class="button button-view-details is-hidden">
-                                <strong>View</strong>
-                            </button>
-                        </div>
-                    </footer>
-                </div>
-            </div>
+        <div class="box">
+            <a class="card" @click="openWorkDetail(work)" href="" v-for="(work, index) in works.slice(6, works.length)" :key="index" :style="work.coverImage ? 'background: url('+work.coverImage.url+') center/cover no-repeat;': ''">
+            </a>
         </div>
-    </section>
+
+
+<!-- 
+  <div class="columns is-mobile is-multiline is-centered">
+
+    
+    <div class="column is-one-third-desktop is-half-tablet is-full-mobile" v-for="(work, index) in works" :key="index">
+      <div class="card" :style="work.coverImage ? 'background: url('+work.coverImage.url+') center/cover no-repeat;': ''" @click="openWorkDetail(work)">
+  
+      <div class="content">
+        <div class="title">
+          {{work.title}}
+        </div>
+        <div class="text">
+          {{work.subtitle}}
+        </div>
+      </div>
+      <div class="sinopse">
+        <div class="content-sinopse">          
+          <div class="title">{{ work.title }}</div>
+          <div class="text">
+            {{ work.description }}
+          </div>
+        </div>
+        <div class="view series_lacasa">See more</div>
+      </div>
+    </div>
+        </div>
+    </div> -->
 </template>
 
 <script>
-    import data from '../data.js';
+    import data from '../data.js'
 
     export default {
         data () {
             return {
+                currentImage: data[0].coverImage.url,
                 works: data
             }
         },
         methods: {
             openWorkDetail: function (work) {
                 this.$router.push({ name: 'WorkDetail', params: { title: work.title } })
-            }
+            },
+          
         }
     }
 </script>
 
 <style scoped lang="scss">
+.box {
+  display: grid;
+  grid-gap: 20px;
+  background: linear-gradient(to bottom right, #f9fafb, #dfe4eb);
+  grid-template-columns: repeat(6, minmax(100px, 1fr));
+}
+
+.box .card {
+  transition: transform .3s;  
+}
+
+.box .card:hover {
+  transition: transform .3s;
+  transform: scale(1.4);
+}
+
+.box .card {
+  border-radius: 2px;
+  height: 120px;
+  box-shadow: 8px 8px 20px 0 rgba(106,53,255,.32);
+}
+
+@media(max-width: 900px) {
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+
+}
+
+@media(max-width: 700px) {
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+}
+
+@media(max-width: 500px) {
+  .box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;    
+  }
+
+  .box .card:hover {
+    transition: transform .3s;
+    transform: scale(1.2);
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+    .columns {
+        text-align: center;
+        width: 5000px;
+        transform: translateY(-50%) translateX(-50%);
+    }
+
+    .hero-foot {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    h3.title {
+        color: white !important;
+    }
+
+    .card {
+      overflow:hidden;
+      width: 200px;
+      height:100px;
+      background:#fff;
+      box-shadow:1px 22px 44px rgba(0,0,0,.19);
+      transition:0.6s;
+      border-radius:2px;
+      position:relative;
+      &:hover {
+        transform:translateY(-15px);
+        box-shadow:1px 12px 34px rgba(0,0,0,.31);
+        .sinopse{
+          opacity:1;
+          transition-delay:0.4s;
+          .view{
+            opacity:1;
+            transform:translateY(0%);
+            transition:0.6s;
+            transition-delay:1s;
+          }
+          .content-sinopse {
+            .text{
+              transform:translateY(0);
+              transition-delay:0.6s;
+            }
+            .title {
+              transform:translateY(0);
+              transition-delay:0.2s;
+            }
+          }
+        }
+        .date{
+          transform:translateY(-100%);
+          opacity:0;
+        }
+        .content{
+            transform:translateY(100%);
+            opacity:0;
+        }
+      }
+      .date{
+        position:absolute;
+        top:25px;
+        right:25px;
+        color:#fff;
+        font-weight:300;
+        font-size:14px;
+        transition:0.8s;
+        .tv_ico {
+          img {
+            width:12px;
+            vertical-align:baseline;
+            margin-left:6px;
+          }
+        }
+      }
+      .content{
+        transition:0.8s;
+        display:flex;
+        flex-wrap:wrap;
+        align-self:flex-end;
+        padding:25px 25px 50px 25px;
+        .title{
+          width:100%;
+          color:#fff;
+          font-size:44px;
+          font-weight:700;
+          line-height:50px;
+          margin-bottom:12px;
+        }
+        .text{
+          width:100%;
+          color:#fff;
+          font-size:16px;
+          font-weight:300;
+        }
+      }
+      .sinopse {
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+        padding:25px 25px 50px 25px;
+        background:rgba(0,0,0,.78);
+        color:#fff;
+        font-weight:300;
+        opacity:0;
+        transition:0.8s;
+        display:flex;
+        align-items:flex-end;
+        flex-wrap:wrap;
+        iframe {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          margin-left: -30px;
+          height: 260px;
+        }
+        .view {
+          position:absolute;
+          bottom:15px;
+          right:25px;
+          color:#fff;
+          font-size:14px;
+          border-bottom:1px solid #fff;
+          opacity:0;
+          transform:translateY(100%);
+          transition:0.6s;
+          cursor:pointer;
+        }
+        .content-sinopse{
+          .title{
+            color:rgba(255,255,255,.6);
+            font-size:22px;
+            font-weight:700;
+            margin-bottom:12px;
+            transform:translateY(-100%);
+            transition:0.6s;
+          }
+          .text{
+            transform:translateY(100%);
+            transition:0.6s;
+            color:rgba(255,255,255,.6);
+            font-weight:300;
+            font-size:14px;
+          }
+        }
+      }
+}
+    .is-fixed {
+        position: fixed;
+    }
+    
+    .is-cover {
+        width: 35%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
     .media {
         align-items: center;
 
@@ -190,16 +397,16 @@
         border: none;
     }
 
-    .portfolio .column {
-      animation-duration: 500ms;
-      animation-name: slideUp;
-      animation-fill-mode: both;
-      animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
-    }
+    // .portfolio {
+    //   animation-duration: 500ms;
+    //   animation-name: slideUp;
+    //   animation-fill-mode: both;
+    //   animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+    // }
 
-    @for $i from 1 through 50 {
-      .portfolio .column:nth-child(#{$i}n) {
-          animation-delay: #{($i/3 + 0.5)}s;
-      }
-    }
+    // @for $i from 1 through 50 {
+    //   .portfolio:nth-child(#{$i}n) {
+    //       animation-delay: #{($i/3 + 3)}s;
+    //   }
+    // }
 </style>
