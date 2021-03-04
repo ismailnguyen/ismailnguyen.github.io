@@ -21,10 +21,20 @@
                     copies of this license document, and changing it is allowed as long 
                     as the name is changed.
                 </p>
+				
+				<p>
+					DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+					<br>
+					TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+				</p>
+				
+				<p>
+					0. You just DO WHAT THE FUCK YOU WANT TO.
+				</p>
 
                 <p>
                     <small>
-                        See more at <a href="//www.wtfpl.net/" target="_blank" rel="noopener">www.wtfpl.net</a>
+                        See more at <a href="www.wtfpl.net" target="_blank" rel="noopener">www.wtfpl.net</a>
                     </small>
                 </p>
 
