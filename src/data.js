@@ -1,6 +1,41 @@
 const works = [
     {
         coverImage: {
+            url: '/resources/images/works/npm-package.png',
+            alt: 'npm-package'
+        },
+        logo: {
+            url: '/resources/images/works/logo/npm.png',
+            alt: 'NPM'
+        },
+        title: 'npm-package',
+        subTitle: 'A generic landing page generator',
+        description: `npm-package is landing page generator for NPM packages.`,
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/npm-package',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/npm-package/master/README.md',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
+        tags: [
+            'JavaScript',
+            'NPM',
+            'Bootstrap',
+            'Package',
+            'Landing page'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/npm-package.png',
+                alt: 'npm-package'
+            }
+        ]
+    },
+	{
+        coverImage: {
             url: '/resources/images/works/vue-fullscreen-background-map.png',
             alt: 'vue-fullscreen-background-map'
         },
