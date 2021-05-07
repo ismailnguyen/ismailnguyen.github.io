@@ -18,6 +18,12 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
+						<transition name="slide-left">
+                            <a class="button is-light button-social button-buymeacoffee" href="//www.buymeacoffee.com/ismailnguyen" target="_blank" rel="noopener">
+                                <i class="fas fa-coffee"></i>
+                            </a>
+                        </transition>
+						
                         <transition name="slide-left">
                             <a class="button is-light button-social button-linkedin" href="//www.linkedin.com/in/ismailnguyen" target="_blank" rel="noopener">
                                 <i class="fab fa-linkedin"></i>
@@ -297,6 +303,10 @@
     .button-linkedin:hover {
         color: #0073b1;
     }
+	
+	.button-buymeacoffee:hover {
+		color: #fd0;
+	}
 
     .has-background-light .navbar .navbar-menu.is-active {
         background-color: none;
