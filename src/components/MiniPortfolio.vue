@@ -6,10 +6,10 @@
 			</h3>
 			
 			<ul class="featuredposts__list">
-				<li class="featuredposts__item" v-for="(work, index) in displayedWorks" :key="index">
+				<li class="featuredposts__item" v-for="(work, index) in displayedWorks" :key="index" :title="work.title">
 					<div class="featuredpost" style="background-color: #232831;">
 						<figure v-if="work.coverImage" class="image is-1by1">
-							<img :src="work.coverImage.url" alt="" class="featuredpost__image" loading="lazy">
+							<img :src="work.coverImage.url" :alt="work.description" :title="work.description" class="featuredpost__image" loading="lazy">
 						</figure>
 						<div class="featuredpost__inner">
 							<div class="media">

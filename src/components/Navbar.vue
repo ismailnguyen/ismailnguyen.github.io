@@ -20,37 +20,43 @@
                     <div class="buttons">
 						<transition name="slide-left">
                             <a class="button is-light button-social button-buymeacoffee" href="//www.buymeacoffee.com/ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fas fa-coffee"></i>
+                                <i class="fas fa-coffee" title="Buy me a coffee"></i>
                             </a>
                         </transition>
 						
                         <transition name="slide-left">
+                            <a class="button is-light button-social button-dev" href="//dev.to/ismailnguyen" target="_blank" rel="noopener">
+                                <i class="fab fa-dev" title="DEV Community"></i>
+                            </a>
+                        </transition>
+						
+						<transition name="slide-left">
                             <a class="button is-light button-social button-linkedin" href="//www.linkedin.com/in/ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-linkedin"></i>
+                                <i class="fab fa-linkedin" title="LinkedIn"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
                             <a class="button is-light button-social button-paypal" href="//www.paypal.me/ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-paypal"></i>
+                                <i class="fab fa-paypal" title="Paypal"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
                             <a  class="button is-light button-social button-npm" href="//www.npmjs.com/~ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-npm"></i>
+                                <i class="fab fa-npm" title="NPM"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
                             <a class="button is-light button-social button-github" href="//github.com/ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-github"></i>
+                                <i class="fab fa-github" title="Github"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
                             <a class="button is-light button-social button-twitter" href="https://twitter.com/ishmaa_el" target="_blank" rel="noopener">
-                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-twitter" title="Twitter"></i>
                             </a>
                         </transition>
                     </div>
@@ -292,7 +298,8 @@
         color: #cb3837;
     }
 
-    .button-github:hover {
+    .button-dev:hover,
+	.button-github:hover {
         color: #000;
     }
 
@@ -381,24 +388,32 @@
       animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
       animation-fill-mode: both;
     }
-
-    .button-social:nth-child(5) {
+	
+	.button-social:nth-child(7) {
       animation-delay: 200ms;
     }
-
-    .button-social:nth-child(4) {
+	
+	.button-social:nth-child(6) {
       animation-delay: 300ms;
     }
 
-    .button-social:nth-child(3) {
+    .button-social:nth-child(5) {
       animation-delay: 400ms;
     }
 
-    .button-social:nth-child(2) {
+    .button-social:nth-child(4) {
       animation-delay: 500ms;
     }
 
-    .button-social:nth-child(1) {
+    .button-social:nth-child(3) {
       animation-delay: 600ms;
+    }
+
+    .button-social:nth-child(2) {
+      animation-delay: 700ms;
+    }
+
+    .button-social:nth-child(1) {
+      animation-delay: 800ms;
     }
 </style>

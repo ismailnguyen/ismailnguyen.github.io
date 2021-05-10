@@ -60,7 +60,8 @@
         & .subhead,
         & .title,
         & .subtitle,
-        & .image {
+        & .image,
+		& .mouse {
             animation-duration: 1s;
             animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
             animation-fill-mode: both;
@@ -88,6 +89,10 @@
 		& .has-text-background {
 			background-color: #f582ae;
 		}
+		
+		& .mouse {
+			animation-delay: 1.5s;
+		}
     }
 
     .miniportfolio {
@@ -95,7 +100,7 @@
         animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
         animation-fill-mode: both;
         animation-name: fillUp;
-        animation-delay: 1.1s;
+        animation-delay: 2s;
     }
 	
 	.center-do-not-use {
