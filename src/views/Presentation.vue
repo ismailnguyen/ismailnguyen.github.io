@@ -87,7 +87,15 @@
         }
 		
 		& .has-text-background {
-			background-color: #f582ae;
+			background-image: linear-gradient(120deg, #f582ae,#f582ae 100%);
+			background-repeat: no-repeat;
+			background-size: 100% 0.6em;
+			background-position: 0 70%;
+			transition: background-size 0.25s ease-in;
+			
+			&:hover {
+				background-size: 100% 88% !important; 
+			}
 		}
 		
 		& .mouse {
