@@ -143,6 +143,42 @@ const works = [
     },
     {
         coverImage: {
+            url: '/resources/images/works/sfcc-template-debugger.png',
+            alt: 'sfcc-template-debugger'
+        },
+        logo: {
+            url: '/resources/images/works/logo/sfcc.png',
+            alt: 'sfcc-template-debugger'
+        },
+        title: 'sfcc-template-debugger',
+        subTitle: 'A cartridge for helping developers debug ISML templates.',
+        description: ``,
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/sfcc-template-debugger',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/sfcc-template-debugger/main/README.md',
+        markdownLicenseUrl: 'https://raw.githubusercontent.com/ismailnguyen/sfcc-template-debugger/main/LICENSE.txt',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
+        tags: [
+            'SFCC',
+            'Demandware',
+            'Cartridge',
+            'ISML',
+            'Debugger'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/sfcc-template-debugger.png',
+                alt: 'TemplateDebugger.js'
+            }
+        ]
+    },
+    {
+        coverImage: {
             url: '/resources/images/works/npm-package.png',
             alt: 'npm-package'
         },
