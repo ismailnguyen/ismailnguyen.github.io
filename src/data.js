@@ -1,6 +1,32 @@
 const works = [
     {
         coverImage: {
+            url: '/resources/images/works/from-developer-to-architect.png',
+            alt: `From developer to architect : a software craftsman's journey`
+        },
+        logo: {
+            url: '/resources/images/works/logo/google-slides.png',
+            alt: 'Google Slides'
+        },
+        title: `From developer to architect : a software craftsman's journey`,
+        secondaryLink: {
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vRp53fpjlDSWHaaMeNPdyLB0THYdzOu56v0vN3xo2SOxaPtpPtAU3Spvq-LMg3K4qvQXvLcTTkxmpur/embed?start=false&loop=false&delayms=3000',
+            text: 'View slides'
+        },
+        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRp53fpjlDSWHaaMeNPdyLB0THYdzOu56v0vN3xo2SOxaPtpPtAU3Spvq-LMg3K4qvQXvLcTTkxmpur/embed?start=false&loop=false&delayms=3000',
+        socialShare: {
+			twitter: true,
+			linkedIn: true
+        },
+        tags: [
+            'Talk',
+			'Agile',
+            'FrugAgile',
+            'Software craftsmanship'
+        ]
+    },
+    {
+        coverImage: {
             url: '/resources/images/works/dwauther-screenshot1.jpeg',
             alt: 'dwauther'
         },
@@ -408,7 +434,7 @@ const works = [
         },
         title: `Minimum Viable Product`,
         secondaryLink: {
-            url: 'https://docs.google.com/presentation/d/1SOpcBXwhMqVV3dQOpGHEXsqgNS_3trN4hl0rU41vQBc',
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vRzsQqli_CoHHj2dhijfOwOfOwrylgMsxvHnL_IguPI2VhMhD34fOewjcwqZfSvkrntSIa1sjp5fYb9/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
         embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRzsQqli_CoHHj2dhijfOwOfOwrylgMsxvHnL_IguPI2VhMhD34fOewjcwqZfSvkrntSIa1sjp5fYb9/embed?start=false&loop=false&delayms=3000',
@@ -695,7 +721,7 @@ const works = [
         },
         title: `“Comment j'ai crée une application en un week-end”`,
         secondaryLink: {
-            url: 'https://docs.google.com/presentation/d/14sLubBl04_m547yxraSP1mO-_R5Bf9ClwuyX9s-TjPs',
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vRuClSj26rirjEZZBIPLHEJj7ti8z5vgHLw7nUA3nWzSnq3RtytFg0SIXMx834a7akRInBkR1fpWA4a/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
         embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRuClSj26rirjEZZBIPLHEJj7ti8z5vgHLw7nUA3nWzSnq3RtytFg0SIXMx834a7akRInBkR1fpWA4a/embed?start=false&loop=false&delayms=3000',
@@ -766,7 +792,7 @@ const works = [
         title: 'DRY Principle',
         subTitle: 'Clean Code',
         secondaryLink: {
-            url: 'https://docs.google.com/presentation/d/1RqId9XV6FtQ0_hYC26qG03rkEHc-ylODwF1FwilaBxo',
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vQRZiTtNfH6G5xteMhFFOTt4LwBW5OhCMMyKuMXKNkMlI8QPZG3jzM-malihXjZ8pSvOpvvjlzI10yh/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
         embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQRZiTtNfH6G5xteMhFFOTt4LwBW5OhCMMyKuMXKNkMlI8QPZG3jzM-malihXjZ8pSvOpvvjlzI10yh/embed?start=false&loop=false&delayms=3000',
@@ -819,7 +845,7 @@ const works = [
         subTitle: 'A brief introduction',
         embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vTg-TYXA9kWgHj_uSPUM3Wf8IHqFiqctNZjBxhKxDW4oElNv5jEWNQPHZyFkzpCs3LrR37hXcGOOa7P/embed?start=false&loop=false&delayms=3000',
         secondaryLink: {
-            url: 'https://docs.google.com/presentation/d/1lK0SjbXAwa2BeCO3kOeRipuXO5ywS-1XLIwJppP86Ro',
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vTg-TYXA9kWgHj_uSPUM3Wf8IHqFiqctNZjBxhKxDW4oElNv5jEWNQPHZyFkzpCs3LrR37hXcGOOa7P/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
         socialShare: {
@@ -962,7 +988,7 @@ const works = [
         },
         title: 'Imperfection is the new perfection',
         secondaryLink: {
-            url: 'https://docs.google.com/presentation/d/1XFsJ-2ZMRti-iwg4UQ4HFEvja8FggakO_adyLMCWZOA',
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vTeje1M3a7w5NQLGRYkQUl2185f5_LXX1pliCEqunl8J2P8rDdwE8Ww3glUl0wHqdGfftYFVeif7aDa/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
         embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vTeje1M3a7w5NQLGRYkQUl2185f5_LXX1pliCEqunl8J2P8rDdwE8Ww3glUl0wHqdGfftYFVeif7aDa/embed?start=false&loop=false&delayms=3000',
@@ -984,7 +1010,7 @@ const works = [
         title: 'Open/Closed Principle',
         subTitle: 'SOLID Principle',
         secondaryLink: {
-            url: 'https://docs.google.com/presentation/d/1Ame_zMdo07S4OcmEAyEjwLFZkYRsnS-unnHZcaP_-xM',
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vSDR8hvyO2uuijP5AeTcWj-L0dSp_RzuP0n_Z6hOO5LIfzAee5MwoRSNfCzBgRbV27ZSo6s6-HoRlsu/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
         embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vSDR8hvyO2uuijP5AeTcWj-L0dSp_RzuP0n_Z6hOO5LIfzAee5MwoRSNfCzBgRbV27ZSo6s6-HoRlsu/embed?start=false&loop=false&delayms=3000',
