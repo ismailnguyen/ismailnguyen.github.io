@@ -1,13 +1,4 @@
 const works = [
-    //TO ADD
-    https://github.com/ismailnguyen/jenkins-occ-theme
-    https://github.com/ismailnguyen/invoisoeur
-    https://github.com/ismailnguyen/jira-fix-version-updater
-    https://github.com/ismailnguyen/search-allocine => logo/allocine.png
-    https://github.com/ismailnguyen/password-prompter-js
-    https://github.com/ismailnguyen/delete-old-branches
-    https://github.com/ismailnguyen/freetify-chrome-extension => logo/google-chrome.png
-    https://github.com/ismailnguyen/google-incognito-consent-checker-chrome-extension => logo/google-chrome.png
     {
         coverImage: {
             url: '/resources/images/works/dwauther-screenshot1.jpeg',
