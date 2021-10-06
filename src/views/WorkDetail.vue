@@ -29,6 +29,14 @@
                             {{ work.secondaryLink.text }}
                         </a>
 
+                        <a :href="'/work/' + encodeURIComponent(work.title) + '/privacy'" class="button button-secondary" v-if="work.markdownPrivacyUrl">
+                            Privacy Policy
+                        </a>
+
+                        <a :href="'/work/' + encodeURIComponent(work.title) + '/license'" class="button button-secondary" v-if="work.markdownLicenseUrl">
+                            License
+                        </a>
+
                         <a :href="work.primaryLink.url" target="_blank" class="button button-primary" rel="noopener" v-if="work.primaryLink">
                             {{ work.primaryLink.text }}
                         </a>

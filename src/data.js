@@ -1,6 +1,49 @@
 const works = [
     {
         coverImage: {
+            url: '/resources/images/works/dwauther-screenshot1.jpeg',
+            alt: 'dwauther'
+        },
+        logo: {
+            url: '/resources/images/works/logo/dwauther.png',
+            alt: 'DW Auther'
+        },
+        title: 'DW Auther',
+        subTitle: 'Demandware/SFCC login automater including MFA generation',
+        description: `Automate DW BM authentication
+        
+        Automatically fills username, password and the OTP token and login into Business Manager within few seconds without doing anything !`,
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/dwauther',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/dwauther/main/README.md',
+        markdownPrivacyUrl: 'https://raw.githubusercontent.com/ismailnguyen/dwauther/main/PRIVACY.md',
+        markdownLicenseUrl: 'https://raw.githubusercontent.com/ismailnguyen/dwauther/main/LICENSE.txt',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
+        tags: [
+            'JavaScript',
+            '2FA',
+            'Extension',
+            'Google Chrome',
+            'SFCC'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/dwauther-screenshot1.jpeg',
+                alt: 'SFCC login panel'
+            },
+            {
+                url: '/resources/images/works/dwauther-screenshot2.jpeg',
+                alt: 'SFCC MFA panel'
+            }
+        ]
+    },
+    {
+        coverImage: {
             url: '/resources/images/works/npm-package.png',
             alt: 'npm-package'
         },
