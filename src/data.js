@@ -34,11 +34,110 @@ const works = [
         images: [
             {
                 url: '/resources/images/works/dwauther-screenshot1.jpeg',
+                alt: 'Google Chrome store'
+            },
+            {
+                url: '/resources/images/works/dwauther-screenshot1.jpeg',
                 alt: 'SFCC login panel'
             },
             {
-                url: '/resources/images/works/dwauther-screenshot2.jpeg',
+                url: '/resources/images/works/dwauther-screenshot3.jpeg',
                 alt: 'SFCC MFA panel'
+            }
+        ]
+    },
+    {
+        coverImage: {
+            url: '/resources/images/works/pokymon-screenshot1.png',
+            alt: 'pokymon'
+        },
+        logo: {
+            url: '/resources/images/works/logo/pokymon.png',
+            alt: 'Pokymon'
+        },
+        title: 'Pokymon',
+        subTitle: 'Poker planning',
+        description: `"Plans are nothing; planning is everything."
+        -Dwight D. Eisenhower`,
+        primaryLink: {
+            url: 'https://pokymon.netlify.app',
+            text: 'Live'
+        },
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/pokymon-client',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/pokymon-client/master/README.md',
+        markdownLicenseUrl: 'https://raw.githubusercontent.com/ismailnguyen/pokymon-client/master/LICENSE.txt',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
+        tags: [
+            'Supabase',
+            'VueJS',
+            'Poker planning',
+            'Agile'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/pokymon-screenshot1.png',
+                alt: 'Pokymon room voting session'
+            },
+            {
+                url: '/resources/images/works/pokymon-screenshot2.png',
+                alt: 'Pokymon room card revealed'
+            },
+            {
+                url: '/resources/images/works/pokymon-screenshot3.png',
+                alt: 'Login panel'
+            }
+        ]
+    },
+    {
+        coverImage: {
+            url: '/resources/images/works/pullover-screenshot1.png',
+            alt: 'pullover'
+        },
+        logo: {
+            url: '/resources/images/works/logo/pullover.png',
+            alt: 'Pullover'
+        },
+        title: 'Pullover',
+        subTitle: 'Pull request merge response time tracker',
+        description: `Pullover calculates the response time for each pull request to be reviewed (first response from a default reviewer / merge)`,
+        primaryLink: {
+            url: 'https://pullover.vercel.app',
+            text: 'Live'
+        },
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/pullover',
+            text: 'Source'
+        },
+        markdownLicenseUrl: 'https://raw.githubusercontent.com/ismailnguyen/pullover/master/LICENSE.txt',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
+        tags: [
+            'Bitbucket',
+            'Git',
+            'Tracking',
+            'Pull request',
+            'Cyberpunk theme'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/pullover-screenshot1.png',
+                alt: 'KPIs panel'
+            },
+            {
+                url: '/resources/images/works/pullover-screenshot2.png',
+                alt: 'Login panel'
+            },
+            {
+                url: '/resources/images/works/pullover-screenshot3.png',
+                alt: 'Opening animation'
             }
         ]
     },
