@@ -39,6 +39,10 @@ const works = [
         description: `Automate DW BM authentication
         
         Automatically fills username, password and the OTP token and login into Business Manager within few seconds without doing anything !`,
+        primaryLink: {
+            url: 'https://chrome.google.com/webstore/detail/dw-auther/eeenabodlfdiglphhkhemojbhhnfgfmf',
+            text: 'Install'
+        },
         secondaryLink: {
             url: 'https://github.com/ismailnguyen/dwauther',
             text: 'Source'
