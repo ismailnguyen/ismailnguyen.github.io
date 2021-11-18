@@ -1,6 +1,47 @@
 const works = [
     {
         coverImage: {
+            url: '/resources/images/works/fortuneteller-screenshot1.png',
+            alt: 'fortuneteller'
+        },
+        logo: {
+            url: '/resources/images/works/logo/fortuneteller.png',
+            alt: 'fortuneteller'
+        },
+        title: 'fortuneteller',
+        subTitle: 'SFCC meta data uploader (vscode extension)',
+        description: `Salesforce Commerce Cloud aka SFCC/Demandware meta data uploader VS Code extension`,
+        primaryLink: {
+            url: 'https://marketplace.visualstudio.com/items?itemName=ismailnguyen.fortuneteller',
+            text: 'Install'
+        },
+        secondaryLink: {
+            url: 'https://github.com/ismailnguyen/fortuneteller',
+            text: 'Source'
+        },
+        markdownContentUrl: 'https://raw.githubusercontent.com/ismailnguyen/fortuneteller/main/README.md',
+        markdownLicenseUrl: 'https://raw.githubusercontent.com/ismailnguyen/fortuneteller/main/LICENSE.txt',
+        socialShare: {
+            twitter: true,
+            linkedIn: true
+        },
+        tags: [
+            'Metadata',
+            'Extension',
+            'VS Code',
+            'Demandware',
+            'Commerce Cloud',
+            'SFCC'
+        ],
+        images: [
+            {
+                url: '/resources/images/works/fortuneteller-screenshot1.png',
+                alt: 'Microsoft Visual Studio Marketplace'
+            }
+        ]
+    },
+    {
+        coverImage: {
             url: '/resources/images/works/from-developer-to-architect.png',
             alt: `From developer to architect : a software craftsman's journey`
         },
