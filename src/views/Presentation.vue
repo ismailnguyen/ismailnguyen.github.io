@@ -13,7 +13,7 @@
                                 I am <span class="has-text-background">Ismaïl NGUYEN</span>
                             </h1>
 
-                            <h2 class="subtitle is-4 handwritten-text">
+                            <h2 class="subtitle is-4 handwritten-text animated-text">
                                 I have no special talent. I am only passionately curious.
                             </h2>
                         </div>
@@ -35,23 +35,43 @@
         </section>
 		
 		<section class="hero is-dark is-fullheight miniportfolio">
-			<MiniPortfolio v-show="isVisible" />
+			<MiniPortfolio />
         </section>
    </div>
 </template>
 
 <script>
     import MiniPortfolio from '../components/MiniPortfolio'
+	import anime from 'animejs/lib/anime.es.js';
 
     export default {
         data () {
             return {
-                isVisible: true
             }
         },
         components: {
             MiniPortfolio
-        }
+        },
+		mounted() {
+			var animatedTextWrapper = document.querySelector('.animated-text');
+			animatedTextWrapper.innerHTML = animatedTextWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+			anime
+			.timeline({loop: false})
+			.add({
+				targets: '.animated-text .letter',
+				opacity: [0,1],
+				easing: "easeInOutQuad",
+				duration: 2250,
+				delay: (el, i) => 150 * (i+1)
+			}).add({
+				targets: '.animated-text',
+				opacity: 0,
+				duration: 1000,
+				easing: "easeOutExpo",
+				delay: 1000
+			});
+		}
 }
 </script>
 
@@ -99,7 +119,7 @@
 		}
 		
 		& .mouse {
-			animation-delay: 1.5s;
+			animation-delay: 7s;
 		}
     }
 
