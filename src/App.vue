@@ -54,15 +54,43 @@
     background: none;
   }
 
+  @font-face {
+    font-family: 'Bluu Next Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('fonts/Bluu Next Bold'), url('/resources/fonts/BluuNext-Bold.woff') format('woff');
+  }
+    
+  @font-face {
+    font-family: 'Bluu Next Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bluu Next Bold Italic'), url('/resources/fonts/BluuNext-Bolditalic.woff') format('woff');
+  }
+
   body {
+    font-family:'Bluu Next Bold';
+  }
+
+  article {
     font-family: Muli, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  }
+
+  html {
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+  }
+
+  nav, section, footer {
+    scroll-snap-align: start;
   }
   
   .handwritten-text {
     font-family: 'Waiting for the Sunrise', cursive; 
-	margin: 10px 50px; 
-	letter-spacing: 6px; 
-	font-weight: bold
+    margin: 10px 50px; 
+    letter-spacing: 6px; 
+    font-weight: bold;
   }
 
   ::selection {
@@ -84,7 +112,9 @@
   }
 
   .has-background-light body,
-  .has-background-light .hero h1 {
+  .has-background-light h1,
+  .has-background-light h2,
+  .has-background-light h3 {
     color: #2d3958 !important;
   }
 
