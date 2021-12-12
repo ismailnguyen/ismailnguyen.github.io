@@ -173,7 +173,6 @@
         display: inline-block;
         -webkit-transition: background-color 80ms ease-in-out;
         transition: background-color 80ms ease-in-out;
-        font-family: Circular, sans-serif;
         font-weight: 400;
         text-decoration: none;
         color: #f8faff;
@@ -209,7 +208,6 @@
         display: inline-block;
         -webkit-transition: background-color 80ms ease-in-out;
         transition: background-color 80ms ease-in-out;
-        font-family: Circular, sans-serif;
         font-weight: 400;
         text-decoration: none;
         padding: 9px 24px;

@@ -20,9 +20,9 @@
             </div>
         </section>
 
-        <section class="section work-detail--content" v-if="markdownLicenseUrl">
+        <section class="section work-detail--content" v-if="hasContent()">
             <div class="container is-fullhd">
-                <MarkdownBloc :text="markdownLicenseUrl" />
+                <MarkdownBloc :text="markdownLicenseText" />
             </div>
         </section>
     </div>
@@ -37,7 +37,7 @@
         data () {
             return {
                 works: data,
-                markdownLicenseUrl: ''
+                markdownLicenseText: ''
             }
         },
         components: {
@@ -57,11 +57,11 @@
             loadDescription: function () {
                 fetch(this.work.markdownLicenseUrl)
                     .then(response => response.text())
-                    .then(text => this.markdownLicenseUrl = text);
+                    .then(text => this.markdownLicenseText = text);
             },
 
             hasContent: function () {
-                return this.markdownLicenseUrl;
+                return this.markdownLicenseText;
             }
         }
     }

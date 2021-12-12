@@ -20,9 +20,9 @@
             </div>
         </section>
 
-        <section class="section work-detail--content" v-if="markdownPrivacyUrl">
+        <section class="section work-detail--content" v-if="hasContent()">
             <div class="container is-fullhd">
-                <MarkdownBloc :text="markdownPrivacyUrl" />
+                <MarkdownBloc :text="markdownPrivacyText" />
             </div>
         </section>
     </div>
@@ -37,7 +37,7 @@
         data () {
             return {
                 works: data,
-                markdownPrivacyUrl: ''
+                markdownPrivacyText: ''
             }
         },
         components: {
@@ -57,11 +57,11 @@
             loadDescription: function () {
                 fetch(this.work.markdownPrivacyUrl)
                     .then(response => response.text())
-                    .then(text => this.markdownPrivacyUrl = text);
+                    .then(text => this.markdownPrivacyText = text);
             },
 
             hasContent: function () {
-                return this.markdownPrivacyUrl;
+                return this.markdownPrivacyText;
             }
         }
     }
