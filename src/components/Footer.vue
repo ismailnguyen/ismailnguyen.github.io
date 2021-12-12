@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <div class="content has-text-centered handwritten-text">
+        <div class="content has-text-centered">
             <p class="is-pulled-left">
                 Handcrafted with <span @click="isHeartbeatEnabled = !isHeartbeatEnabled" :class="isHeartbeatEnabled ? 'icon is-small pulse' : 'icon is-small'">❤️</span>
             </p>
@@ -18,7 +18,6 @@
         </div>
     </footer>
 </template>
-
 
 <script>
     import Waves from 'vue-css-waves'
@@ -69,10 +68,10 @@
         max-height: none;
     }
 
-    .handwritten-text {
-        font-family: 'Waiting for the Sunrise', cursive; 
+    .footer .content {
+        font-family:'Bluu Next Bold', sans-serif;
         margin: 10px 50px; 
-        letter-spacing: 6px; 
+        letter-spacing: 6px;
         font-weight: bold
     }
 

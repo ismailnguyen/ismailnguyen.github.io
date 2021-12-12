@@ -73,8 +73,7 @@
         data () {
             return {
                 isMenuOpen: false,
-                showSocialButtons: false,
-                isDarkMode: true
+                showSocialButtons: false
             }
         },
         components: {
@@ -97,43 +96,16 @@
                 this.isMenuOpen = false
             },
 
-            toggleSocialButtons: function () {
-                this.showSocialButtons = !this.showSocialButtons
-            },
-
-            onThemeSwitched: function (isSwitched) {
-                this.setTheme(isSwitched);
-                this.saveThemePreference(isSwitched);
-            },
-
             setTheme: function (isDark) {
                 if (isDark) {
                     document.body.classList.remove('has-background-light');
                     document.body.classList.add('has-background-dark');
-                }
-                else {
-                    document.body.classList.remove('has-background-dark');
-                    document.body.classList.add('has-background-light');
+
+                    return;
                 }
 
-                this.isDarkMode = isDark;
-            },
-
-            isThemePreferenceSaved: function () {
-                return localStorage.getItem('theme');
-            },
-
-            isSavedThemePreferenceDark: function () {
-                return localStorage.getItem('theme') === 'dark';
-            },
-
-            saveThemePreference: function (isDark) {
-                localStorage.setItem('theme', isDark ? 'dark' : 'light')
-            },
-
-            isNight: function () {
-                var date = new Date();
-                return (date.getHours() >= 22 || date.getHours() < 6);
+                document.body.classList.remove('has-background-dark');
+                document.body.classList.add('has-background-light');
             },
 
             isWindowColorSchemeDark: function () {
@@ -147,16 +119,7 @@
             },
 
             initializeTheme: function () {
-                if (this.isThemePreferenceSaved()) {
-                    this.setTheme(this.isSavedThemePreferenceDark());
-
-                    return;
-                }
-                
-                this.setTheme(
-                    this.isNight()
-                    || this.isWindowColorSchemeDark()
-                );
+                this.setTheme(this.isWindowColorSchemeDark());
 
                 this.listenToWindowColorSchemeUpdate();
             }
@@ -170,7 +133,21 @@
 </script>
 
 <style scoped>
-    @import url('https://themes.googleusercontent.com/fonts/css?kit=Qx6FPcitRwTC_k88tLPc-UdBEiE9uD1gMwjC8j0e9UVOHzq4pOkkVVXAxa-PHMp_TxxFasp78LYLHii6Z8AzWrPkbmw9Z2nKh64fN9qFysw');
+    @font-face {
+        font-family: 'Bowlby One SC';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://fonts.gstatic.com/s/bowlbyonesc/v12/DtVlJxerQqQm37tzN3wMug9P_gH2oipOnuCABQ.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+        font-family: 'Bowlby One SC';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://fonts.gstatic.com/s/bowlbyonesc/v12/DtVlJxerQqQm37tzN3wMug9P_g_2oipOnuA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
 
     .logo {
         line-height: 1.15;
@@ -179,7 +156,7 @@
         font-weight: 400;
         text-decoration: none;
         vertical-align: baseline;
-        font-family: "Bowlby One SC";
+        font-family: 'Bowlby One SC';
         font-style: normal;
         font-size: 2.75rem;
         text-shadow: 0px 2px #f582ae, 3px 3px #f582ae, 4px 4px #f582ae;

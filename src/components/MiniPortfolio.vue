@@ -31,7 +31,7 @@
 			
 			<p class="featuredposts__footer" v-if="!showAllWorks">
 				<a @click="showAllWorks=true" class="featuredposts__see-all">
-					See All Works
+					<span class="has-text-background">See All Works</span>
 				</a>
 			</p>
 		</div>
@@ -60,6 +60,18 @@
 </script>
 
 <style scoped lang="scss">
+.has-text-background {
+   background-image: linear-gradient(120deg, #fff,#fff 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.4em;
+    background-position: 0 70%;
+    transition: background-size 0.25s ease-in;
+    
+    &:hover {
+        background-size: 100% 88% !important; 
+    }
+}
+
 .media-left .icon {
     vertical-align: bottom;
     border-radius: 50px;
@@ -68,8 +80,6 @@
 }
 
 .featuredposts__list {
-    display: flex;
-    flex-wrap: wrap;
     margin: 2rem 0;
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(245px,1fr));
@@ -78,7 +88,6 @@
 
 .featuredposts__item {
     padding: 0;
-    flex: none;
     max-width: none;
 	display: block;
 }
@@ -90,8 +99,13 @@
     border-radius: .5rem;
     overflow: hidden;
     background-color: var(--color-bg-offset);
-    box-shadow: 14px 14px 60px -10px rgba(0, 0, 0, 0.3);
-}
+    box-shadow: 0 2px 1px rgba(0,0,0,0.09), 
+              0 4px 2px rgba(0,0,0,0.09), 
+              0 8px 4px rgba(0,0,0,0.09), 
+              0 16px 8px rgba(0,0,0,0.09),
+              0 32px 16px rgba(0,0,0,0.09);
+    scroll-snap-align: start;
+  }
 
 .featuredpost__inner {
     position: absolute;
@@ -160,7 +174,6 @@ a {
 .featuredposts__see-all {
     font-size: 1.25rem;
     font-weight: 700;
-    display: inline-flex;
     align-items: center;
 }
 </style>
