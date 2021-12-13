@@ -2,6 +2,10 @@
     <section class="hero is-fullheight">
         <div class="hero-body">
             <div class="container is-fullhd">
+                <figure class="image is-pulled-right">
+                    <img :src="profilePicture" alt="Profile picture">
+                </figure>
+                
                 <article class="message">
                     <div class="message-body">
                         <div class="content">
@@ -54,7 +58,22 @@
             today: function () {
                 return new Date().getFullYear();
             }
-        }
+        },
+         data () {
+            return {
+				profilePicture: '/resources/images/avatar/face/1.png',
+            }
+        },
+		mounted() {
+			this.animateProfilePicture();
+		},
+		methods: {
+			animateProfilePicture: function () {
+				setInterval(() => {   
+					this.profilePicture = '/resources/images/avatar/face/' + Math.floor((Math.random()*13)+1) + '.png';
+				}, 1000);
+			}
+		}
     }
 </script>
 
