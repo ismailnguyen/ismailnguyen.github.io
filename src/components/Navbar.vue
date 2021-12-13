@@ -292,10 +292,7 @@
 		color: #fd0;
 	}
 
-    .has-background-light .navbar .navbar-menu.is-active {
-        background-color: none;
-    }
-
+    .has-background-light .navbar .navbar-menu.is-active,
     .has-background-dark .navbar .navbar-menu.is-active {
         background: none;
     }
