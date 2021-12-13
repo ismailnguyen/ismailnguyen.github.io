@@ -4,7 +4,7 @@
             <div class="hero-body">
                 <div class="container has-text-left">
                     <div class="columns is-vcentered">
-                        <div class="column">
+                        <div class="column is-5-tablet is-5-desktop">
                             <h3 class="subhead is-5 handwritten-text">
                                 Hi there 👋 !
                             </h3>
@@ -18,15 +18,15 @@
                             </h2>
                         </div>
 
-                        <div class="column">
-                            <figure class="image is-pulled-right">
-								<img src="/resources/images/profile.png" alt="Profile picture">
+                        <div class="column is-7-tablet is-7-desktop">
+                            <figure class="image is4by3">
+								<img :src="profilePicture" alt="Profile picture">
 							</figure>
                         </div>
                     </div>
 					
 					<div class="center-do-not-use">
-						<div class="mouse">
+						<div class="mouse" v-show="showMouseWheel">
 							<div class="wheel"></div>
 						</div>
 					</div>
@@ -47,32 +47,53 @@
     export default {
         data () {
             return {
+				profilePicture: '/resources/images/avatar/face/1.png',
+				showMouseWheel: true
             }
         },
         components: {
             MiniPortfolio
         },
 		mounted() {
-			var animatedTextWrapper = document.querySelector('.animated-text');
-			animatedTextWrapper.innerHTML = animatedTextWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+			this.animateDescriptionText();
+			this.animateProfilePicture();
+			this.animateMouseWheel();
+		},
+		methods: {
+			animateDescriptionText: function () {
+				var animatedTextWrapper = document.querySelector('.animated-text');
+				animatedTextWrapper.innerHTML = animatedTextWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-			anime
-			.timeline({loop: false})
-			.add({
-				targets: '.animated-text .letter',
-				opacity: [0,1],
-				easing: "easeInOutQuad",
-				duration: 2250,
-				delay: (el, i) => 150 * (i+1)
-			}).add({
-				targets: '.animated-text',
-				opacity: 0,
-				duration: 1000,
-				easing: "easeOutExpo",
-				delay: 1000
-			});
+				anime
+				.timeline({loop: false})
+				.add({
+					targets: '.animated-text .letter',
+					opacity: [0,1],
+					easing: "easeInOutQuad",
+					duration: 2250,
+					delay: (el, i) => 150 * (i+1)
+				}).add({
+					targets: '.animated-text',
+					opacity: 0,
+					duration: 1000,
+					easing: "easeOutExpo",
+					delay: 1000
+				});
+			},
+
+			animateProfilePicture: function () {
+				setInterval(() => {   
+					this.profilePicture = '/resources/images/avatar/body/' + Math.floor((Math.random()*8)+1) + '.png';
+				}, 1000);
+			},
+
+			animateMouseWheel: function () {
+				window.onscroll = () => {
+					this.showMouseWheel = window.scrollY < 200;
+				};
+			}
 		}
-}
+	}
 </script>
 
 <style scoped lang="scss">
@@ -122,6 +143,16 @@
 			animation-delay: 7s;
 		}
     }
+
+	@media(max-width: 400px) {
+		.title.is-1 {
+			font-size: 2rem;
+		}
+
+		.subtitle.is-4 {
+			font-size: 1rem;
+		}
+	}
 
     .miniportfolio {
         animation-duration: 1s;
