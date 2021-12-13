@@ -38,9 +38,19 @@
 			"width: 100%;" +
 			"border-radius: 20px;";
 
-			var consoleSignatureText = "%cHi there 👋 ! I am Ismaïl NGUYEN, nice to meet you there 😊";
+			console.log(`%cHi there 👋 !`, consoleSignatureStyle);
 
-			console.log(consoleSignatureText, consoleSignatureStyle);
+      setTimeout(() => {   
+        console.log(`%cI am Ismaïl NGUYEN`, consoleSignatureStyle);
+      }, 1000);
+
+      setTimeout(() => {   
+        console.log(`%cNice to meet you here 😊`, consoleSignatureStyle);
+      }, 2000);
+
+      setTimeout(() => {   
+        console.log(`%cFeel free to checkout the full source code of this website in my github at https://github.com/ismailnguyen/ismailnguyen.github.io`, consoleSignatureStyle);
+      }, 3000);
 		}
     },
 	mounted() {
@@ -135,7 +145,7 @@
   }
 
   .has-background-light {
-    background: #000;
+    background: #D3CCE3;
     background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
     background: linear-gradient(to right, #E9E4F0, #D3CCE3);
   }
