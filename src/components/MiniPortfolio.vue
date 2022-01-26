@@ -104,7 +104,6 @@
               0 8px 4px rgba(0,0,0,0.09), 
               0 16px 8px rgba(0,0,0,0.09),
               0 32px 16px rgba(0,0,0,0.09);
-    scroll-snap-align: start;
   }
 
 .featuredpost__inner {
