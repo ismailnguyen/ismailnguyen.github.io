@@ -1,6 +1,6 @@
 <template>
     <figure class="image is-16by9">
-        <iframe :src="url" class="has-ratio" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <iframe :src="url" class="has-ratio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mozallowfullscreen webkitallowfullscreen></iframe>
     </figure>
 </template>
 

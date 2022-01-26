@@ -45,6 +45,12 @@
             </div>
         </section>
 
+        <section class="section work-detail--content" v-if="work.embeddedVideoUrl">
+            <div class="container is-fullhd">
+                <IframeBloc :url="work.embeddedVideoUrl" />
+            </div>
+        </section>
+
         <section class="section work-detail--content" v-if="work.embeddedContentUrl">
             <div class="container is-fullhd">
                 <IframeBloc :url="work.embeddedContentUrl" />

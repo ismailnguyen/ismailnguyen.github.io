@@ -50,10 +50,15 @@ const works = [
             alt: 'Google Slides'
         },
         title: `From developer to architect : a software craftsman's journey`,
+        primaryLink: {
+            url: 'https://www.youtube.com/watch?v=-dQNvgVzCdI',
+            text: 'Watch video'
+        },
         secondaryLink: {
             url: 'https://docs.google.com/presentation/d/e/2PACX-1vRp53fpjlDSWHaaMeNPdyLB0THYdzOu56v0vN3xo2SOxaPtpPtAU3Spvq-LMg3K4qvQXvLcTTkxmpur/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
+        embeddedVideoUrl: 'https://www.youtube.com/embed/-dQNvgVzCdI',
         embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRp53fpjlDSWHaaMeNPdyLB0THYdzOu56v0vN3xo2SOxaPtpPtAU3Spvq-LMg3K4qvQXvLcTTkxmpur/embed?start=false&loop=false&delayms=3000',
         socialShare: {
 			twitter: true,
