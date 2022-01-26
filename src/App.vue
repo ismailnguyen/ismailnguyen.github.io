@@ -85,16 +85,6 @@
   article {
     font-family: Muli, "San Francisco", "SF Pro Text", -apple-system, system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
   }
-
-  html {
-    scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y mandatory;
-  }
-
-  nav, section, footer {
-    scroll-snap-align: start;
-  }
   
   .handwritten-text {
     font-family: 'Waiting for the Sunrise', cursive; 
