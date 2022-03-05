@@ -2,9 +2,7 @@
     <nav class="navbar is-transparent is-fixed-top" :class="isMenuOpen ? 'is-blurred' : ''" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
              <router-link to="/" class="navbar-item">
-                <div id="brand" class="logo">
-                    isma&iuml;l
-                </div>
+                <div id="brand" class="logo"></div>
             </router-link>
 
             <a v-on:click="isMenuOpen ? closeMenu() : openMenu()" role="button" :class="isMenuOpen ? 'navbar-burger burger is-active' : 'navbar-burger burger'" aria-label="menu" aria-expanded="false">
@@ -79,7 +77,7 @@
         components: {
         },
         mounted () {
-            animate('brand');
+            animate('brand', ['isma&iuml;l', 'NGUYEN']);
         },
         methods: {
             openMenu: function () {
