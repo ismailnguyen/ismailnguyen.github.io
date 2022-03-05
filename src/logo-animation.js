@@ -54,6 +54,19 @@
   
   function animate (animationElementId, phrases) {
 	var container = document.body;
+	var animationElement = document.getElementById(animationElementId);
+	
+	const fx = new TextScramble(animationElement)
+
+	let counter = 0
+	const next = () => {
+		fx.setText(phrases[counter]).then(() => {
+			setTimeout(next, 800)
+		})
+		counter = (counter + 1) % phrases.length
+	}
+
+	next()
 
 	container.onmousemove = event => {
 		var halfW = ( container.clientWidth / 2 );
@@ -66,23 +79,9 @@
 		var degY  = ( ( coorX / halfW ) * -20 );
 
 		var factorX = 0.75; if (coorY < 0) { factorX = 1.5 - factorX; }
-			var factorY = 0.75; if (coorX < 0) { factorY = 1.5 - factorY; }
-
-		var animationElement = document.getElementById(animationElementId);
+		var factorY = 0.75; if (coorX < 0) { factorY = 1.5 - factorY; }
 
 		animationElement.style.transform = 'perspective( 600px ) translate3d( 0, 0, 0 ) rotateX('+ (degX*factorX) +'deg) rotateY('+ (degY*factorY) +'deg)';
-
-		const fx = new TextScramble(animationElement)
-
-		let counter = 0
-		const next = () => {
-			fx.setText(phrases[counter]).then(() => {
-				setTimeout(next, 800)
-			})
-			counter = (counter + 1) % phrases.length
-		}
-
-		next()
 	}
 }
 
