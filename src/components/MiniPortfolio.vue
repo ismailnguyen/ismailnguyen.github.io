@@ -7,10 +7,7 @@
 			
 			<ul class="featuredposts__list">
 				<li class="featuredposts__item" v-for="(work, index) in displayedWorks" :key="index" :title="work.title">
-					<div class="featuredpost" style="background-color: #232831;">
-						<figure v-if="work.coverImage" class="image is-1by1">
-							<img :src="work.coverImage.url" :alt="work.subTitle" :title="work.subTitle" class="featuredpost__image" loading="lazy">
-						</figure>
+					<div class="featuredpost" :style="work.coverImage ? 'background-image: url(' +work.coverImage.url+ ')' : ''">
 						<div class="featuredpost__inner">
 							<div class="media">
 								<div class="media-left">
@@ -60,6 +57,7 @@
 </script>
 
 <style scoped lang="scss">
+
 .has-text-background {
    background-image: linear-gradient(120deg, #fff,#fff 100%);
     background-repeat: no-repeat;
@@ -92,12 +90,26 @@
 	display: block;
 }
 
+.featuredposts__list:hover > .featuredposts__item:not(:hover) .featuredpost {
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+.featuredposts__item:hover .featuredpost {
+  transform: scale(1.05) translateZ(0);
+}
+
 .featuredpost {
     display: block;
     height: 300px;
     position: relative;
     border-radius: .5rem;
     overflow: hidden;
+    transform-origin: center;
+    transform: scale(1) translateZ(0);
+    transition: 
+        filter 200ms linear,
+        transform 200ms linear;
+    background-size: cover;
+    background-position: center;
     background-color: var(--color-bg-offset);
     box-shadow: 0 2px 1px rgba(0,0,0,0.09), 
               0 4px 2px rgba(0,0,0,0.09), 
@@ -152,6 +164,7 @@ a {
     font-size: 1.75rem;
     line-height: 1.4;
     margin-bottom: .5rem;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
 }
 
 .featuredpost__description {
