@@ -157,13 +157,19 @@
         font-family: 'Bowlby One SC';
         font-style: normal;
         font-size: 2.75rem;
-        text-shadow: 0px 2px #f582ae, 3px 3px #f582ae, 4px 4px #f582ae;
-	}
-
-    @media only screen and (max-width: 500px) {
-        .logo {
-            text-shadow: 0px 1px #f582ae, 1px 1px #f582ae, 2px 2px #f582ae;
-        }
+        background: linear-gradient(219deg, 
+            #186cb8 19%, 
+            transparent 19%,transparent 20%, 
+            #2a9a9f 20%, #2a9a9f  39%,
+            transparent 39%,transparent 40%, 
+            #f1b211 40%, #f1b211 59% ,
+            transparent 59%,transparent 60%, 
+            #e83611 60%, #e83611 79%,
+            transparent 79%, transparent 80%, 
+            #f9002f 80%);
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0px 1px #f582ae38, 2px 2px #f582ae38, 5px 5px #f582ae38
     }
 
     .navbar.is-transparent,
