@@ -28,7 +28,8 @@ const router = new VueRouter({
         {
             name: 'Portfolio',
             path: '/portfolio',
-            component: Portfolio
+            component: Portfolio,
+            props: { showAll: true }
         },
         {
             name: 'WorkDetail',

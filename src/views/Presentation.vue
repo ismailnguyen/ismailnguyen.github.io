@@ -34,14 +34,14 @@
             </div>
         </section>
 		
-		<section class="hero is-dark is-fullheight miniportfolio">
-			<MiniPortfolio />
+		<section class="hero is-dark is-fullheight portfolio">
+			<Portfolio />
         </section>
    </div>
 </template>
 
 <script>
-    import MiniPortfolio from '../components/MiniPortfolio'
+    import Portfolio from '../views/Portfolio'
 	import anime from 'animejs/lib/anime.es.js';
 
     export default {
@@ -52,7 +52,7 @@
             }
         },
         components: {
-            MiniPortfolio
+            Portfolio
         },
 		mounted() {
 			this.animateDescriptionText();
@@ -154,7 +154,7 @@
 		}
 	}
 
-    .miniportfolio {
+    .portfolio {
         animation-duration: 1s;
         animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
         animation-fill-mode: both;

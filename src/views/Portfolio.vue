@@ -1,412 +1,192 @@
 <template>
-
-
-        <div class="box">
-            <a class="card" @click="openWorkDetail(work)" href="" v-for="(work, index) in works.slice(6, works.length)" :key="index" :style="work.coverImage ? 'background: url('+work.coverImage.url+') center/cover no-repeat;': ''">
-            </a>
-        </div>
-
-
-<!-- 
-  <div class="columns is-mobile is-multiline is-centered">
-
-    
-    <div class="column is-one-third-desktop is-half-tablet is-full-mobile" v-for="(work, index) in works" :key="index">
-      <div class="card" :style="work.coverImage ? 'background: url('+work.coverImage.url+') center/cover no-repeat;': ''" @click="openWorkDetail(work)">
-  
-      <div class="content">
-        <div class="title">
-          {{work.title}}
-        </div>
-        <div class="text">
-          {{work.subtitle}}
-        </div>
-      </div>
-      <div class="sinopse">
-        <div class="content-sinopse">          
-          <div class="title">{{ work.title }}</div>
-          <div class="text">
-            {{ work.description }}
-          </div>
-        </div>
-        <div class="view series_lacasa">See more</div>
-      </div>
-    </div>
-        </div>
-    </div> -->
+    <div class="hero-body">
+		<div class="container has-text-left">
+			<h3 class="title is-5">
+				Featured Works
+			</h3>
+			
+			<ul class="featuredposts__list">
+				<li class="featuredposts__item" v-for="(work, index) in displayedWorks" :key="index" :title="work.title">
+					<div class="featuredpost" :style="work.coverImage ? 'background-image: url(' +work.coverImage.url+ ')' : ''">
+						<div class="featuredpost__inner">
+							<div class="media">
+								<div class="media-left">
+									<span class="icon is-large"><img :src="work.logo.url" :alt="work.title"></span>
+								</div>
+								<div class="media-content">
+									<a :href="'work/' + encodeURIComponent(work.title)" class="featuredpost__link">
+										<span class="featuredpost__title">{{ work.title }}</span>
+									</a>
+								</div>
+							</div>
+						
+							<p class="featuredpost__description">{{ work.subTitle }}</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+			<p class="featuredposts__footer" v-if="!showAllWorks">
+				<a @click="showAllWorks=true" class="featuredposts__see-all">
+					<span class="has-text-background">See All Works</span>
+				</a>
+			</p>
+		</div>
+	</div>
 </template>
 
 <script>
     import data from '../data.js'
 
     export default {
+        props: ['showAll'],
         data () {
             return {
-                currentImage: data[0].coverImage.url,
-                works: data
+                works: data,
+				showAllWorks: this.showAll || false
             }
         },
-        methods: {
-            openWorkDetail: function (work) {
-                this.$router.push({ name: 'WorkDetail', params: { title: work.title } })
-            },
-          
-        }
+		computed: {
+			displayedWorks: function () {
+				if (this.showAllWorks)
+					return this.works;
+
+				return this.works.slice(0 ,6);
+			}
+		}
     }
 </script>
 
 <style scoped lang="scss">
-.box {
-  display: grid;
-  grid-gap: 20px;
-  background: linear-gradient(to bottom right, #f9fafb, #dfe4eb);
-  grid-template-columns: repeat(6, minmax(100px, 1fr));
-}
 
-.box .card {
-  transition: transform .3s;  
-}
-
-.box .card:hover {
-  transition: transform .3s;
-  transform: scale(1.4);
-}
-
-.box .card {
-  border-radius: 2px;
-  height: 120px;
-  box-shadow: 8px 8px 20px 0 rgba(106,53,255,.32);
-}
-
-@media(max-width: 900px) {
-  .box {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
-  }
-
-}
-
-@media(max-width: 700px) {
-  .box {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
-  }
-}
-
-@media(max-width: 500px) {
-  .box {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(1, 1fr);
-    text-align: center;    
-  }
-
-  .box .card:hover {
-    transition: transform .3s;
-    transform: scale(1.2);
-  }
-}
-
-@import url(https://fonts.googleapis.com/css?family=Lato:300);
-
-    .columns {
-        text-align: center;
-        width: 5000px;
-        transform: translateY(-50%) translateX(-50%);
-    }
-
-    .hero-foot {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    h3.title {
-        color: white !important;
-    }
-
-    .card {
-      overflow:hidden;
-      width: 200px;
-      height:100px;
-      background:#fff;
-      box-shadow:1px 22px 44px rgba(0,0,0,.19);
-      transition:0.6s;
-      border-radius:2px;
-      position:relative;
-      &:hover {
-        transform:translateY(-15px);
-        box-shadow:1px 12px 34px rgba(0,0,0,.31);
-        .sinopse{
-          opacity:1;
-          transition-delay:0.4s;
-          .view{
-            opacity:1;
-            transform:translateY(0%);
-            transition:0.6s;
-            transition-delay:1s;
-          }
-          .content-sinopse {
-            .text{
-              transform:translateY(0);
-              transition-delay:0.6s;
-            }
-            .title {
-              transform:translateY(0);
-              transition-delay:0.2s;
-            }
-          }
-        }
-        .date{
-          transform:translateY(-100%);
-          opacity:0;
-        }
-        .content{
-            transform:translateY(100%);
-            opacity:0;
-        }
-      }
-      .date{
-        position:absolute;
-        top:25px;
-        right:25px;
-        color:#fff;
-        font-weight:300;
-        font-size:14px;
-        transition:0.8s;
-        .tv_ico {
-          img {
-            width:12px;
-            vertical-align:baseline;
-            margin-left:6px;
-          }
-        }
-      }
-      .content{
-        transition:0.8s;
-        display:flex;
-        flex-wrap:wrap;
-        align-self:flex-end;
-        padding:25px 25px 50px 25px;
-        .title{
-          width:100%;
-          color:#fff;
-          font-size:44px;
-          font-weight:700;
-          line-height:50px;
-          margin-bottom:12px;
-        }
-        .text{
-          width:100%;
-          color:#fff;
-          font-size:16px;
-          font-weight:300;
-        }
-      }
-      .sinopse {
-        width:100%;
-        height:100%;
-        position:absolute;
-        top:0;
-        left:0;
-        padding:25px 25px 50px 25px;
-        background:rgba(0,0,0,.78);
-        color:#fff;
-        font-weight:300;
-        opacity:0;
-        transition:0.8s;
-        display:flex;
-        align-items:flex-end;
-        flex-wrap:wrap;
-        iframe {
-          position: absolute;
-          top: 0;
-          width: 100%;
-          margin-left: -30px;
-          height: 260px;
-        }
-        .view {
-          position:absolute;
-          bottom:15px;
-          right:25px;
-          color:#fff;
-          font-size:14px;
-          border-bottom:1px solid #fff;
-          opacity:0;
-          transform:translateY(100%);
-          transition:0.6s;
-          cursor:pointer;
-        }
-        .content-sinopse{
-          .title{
-            color:rgba(255,255,255,.6);
-            font-size:22px;
-            font-weight:700;
-            margin-bottom:12px;
-            transform:translateY(-100%);
-            transition:0.6s;
-          }
-          .text{
-            transform:translateY(100%);
-            transition:0.6s;
-            color:rgba(255,255,255,.6);
-            font-weight:300;
-            font-size:14px;
-          }
-        }
-      }
-}
-    .is-fixed {
-        position: fixed;
-    }
+.has-text-background {
+   background-image: linear-gradient(120deg, #fff,#fff 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.4em;
+    background-position: 0 70%;
+    transition: background-size 0.25s ease-in;
     
-    .is-cover {
-        width: 35%;
-        top: 0;
-        bottom: 0;
-        margin: auto;
+    &:hover {
+        background-size: 100% 88% !important; 
     }
+}
 
-    .media {
-        align-items: center;
+.media-left .icon {
+    vertical-align: bottom;
+    border-radius: 50px;
+    background: #f8faff;
+    padding: 4px;
+}
 
-        &-left .icon {
-            vertical-align: bottom;
-            border-radius: 50px;
-            background: #f8faff;
-            padding: 4px;
-        }
+.featuredposts__list {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(245px,1fr));
+    grid-gap: 3rem;
+}
 
-        &-content {
-            overflow: hidden;
-        }
-    }
+.featuredposts__item {
+    padding: 0;
+    max-width: none;
+	display: block;
+}
 
-    .has-background-dark {
-        .work-item {
-            background-color: rgb(41, 43, 51);
-            box-shadow: 0 3rem 3rem -1.25rem rgba(10, 10, 10, .1);
+.featuredposts__list:hover > .featuredposts__item:not(:hover) .featuredpost {
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+.featuredposts__item:hover .featuredpost {
+  transform: scale(1.05) translateZ(0);
+}
 
-            &:hover {
-                box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
-            }
-            
-            .title {
-                color: rgb(149, 156, 177);
-            }
-        }
-    }
-    
-    .card-image {
-        display: block;
-        background-size: cover !important;
-        width: 100%;
-        position: absolute;
-        height: 235px;
-        transition: 0.2s all ease-out;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-top-left-radius: 6px;
-        border-top-right-radius: 6px;
-        top: 0;
-    }
+.featuredpost {
+    display: block;
+    height: 300px;
+    position: relative;
+    border-radius: .5rem;
+    overflow: hidden;
+    transform-origin: center;
+    transform: scale(1) translateZ(0);
+    transition: 
+        filter 200ms linear,
+        transform 200ms linear;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-bg-offset);
+    box-shadow: 0 2px 1px rgba(0,0,0,0.09), 
+              0 4px 2px rgba(0,0,0,0.09), 
+              0 8px 4px rgba(0,0,0,0.09), 
+              0 16px 8px rgba(0,0,0,0.09),
+              0 32px 16px rgba(0,0,0,0.09);
+  }
 
-    .work-item {
-        min-height: 26em;
-        margin: auto;
-        background-color: #f8faff;
-        border-radius: 6px;
-        box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
-        display: block;
-        margin-bottom: 1.5rem;
-        transition-duration: 86ms;
-        transition-property: box-shadow, transform;
-        will-change: box-shadow, transform;
-        
-        &:hover {
-            transition: all 0.3s ease-out;
-            box-shadow: 0 3rem 3rem -1.25rem rgba(10, 10, 10, .1);
-        }
-    }
+.featuredpost__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    border-radius: .5rem;
+    color: #fff;
+    padding: 1rem;
+    background-image: linear-gradient(0deg,rgba(0,0,0,0) 0,rgba(0,0,0,.15) 50%,rgba(0,0,0,.4) 100%);
+}
 
-    .work-item:hover .card-image {
-        height: 100%;
-        filter: blur(3px);
-    }
+.featuredpost:focus-within .featuredpost__inner,
+.featuredpost:hover .featuredpost__inner {
+    background-image: linear-gradient(0deg,rgba(0,0,0,.5) 0,rgba(0,0,0,.4) 100%);
+}
 
-    .work-item:hover .image {
-        display: none;
-    }
+.featuredpost__link {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    display: block;
+    color: inherit!important;
+}
 
-    .work-item:hover .button-view-details {
-        display: block !important;
-        position: relative;
-    }
+.featuredpost__link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
 
-    .button-view-details {
-        border: none;
-        border-radius: 5px;
-        color: #f8faff;
-        font-weight: bold;
-        background: #6b65a7;
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,.26);
-        transition: .3s cubic-bezier(.175,.885,.32,1.275);
-    }
+a {
+	color: #f582ae !important;
+    text-decoration: none;
+}
 
-    .button-view-details:hover:before {
-        transform: translate(3px,-3px);
-    }
+.featuredpost__title {
+    display: block;
+    font-weight: 500;
+    font-size: 1.75rem;
+    line-height: 1.4;
+    margin-bottom: .5rem;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+}
 
-    .button-view-details:before {
-        content: "";
-        pointer-events: none;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 0;
-        transition: .3s cubic-bezier(.175,.885,.32,1.275);
-        border-radius: 5px;
-        background-color: rgba(138,61,245,.2);
-    }
+.featuredpost__description {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .2s cubic-bezier(.4,0,.2,1),transform .2s cubic-bezier(.4,0,.2,1);
+}
 
-    .button-view-details:hover {
-        transform: translate(-2px,2px);
-    }
+.featuredpost:hover .featuredpost__description, .featuredpost__link:focus+.featuredpost__description {
+    transform: translateY(0);
+    opacity: 1;
+}
 
-    .work-item .media {
-        padding-top: 25px;
-    }
+.featuredposts__footer {
+    text-align: right;
+}
 
-     button {
-        border-radius: 0;
-        color: #f8faff;
-        background-color: #6b65a7;
-        transition: box-shadow 300ms ease, background-color 300ms ease;
-    }
-
-    button:hover {
-        background-color: #6b65a7;
-        color: #f8faff;
-        box-shadow: 8px 8px 20px 0 rgba(106, 53, 255, 0.32);
-    }
-
-    .card-footer {
-        border: none;
-    }
-
-    // .portfolio {
-    //   animation-duration: 500ms;
-    //   animation-name: slideUp;
-    //   animation-fill-mode: both;
-    //   animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
-    // }
-
-    // @for $i from 1 through 50 {
-    //   .portfolio:nth-child(#{$i}n) {
-    //       animation-delay: #{($i/3 + 3)}s;
-    //   }
-    // }
+.featuredposts__see-all {
+    font-size: 1.25rem;
+    font-weight: 700;
+    align-items: center;
+}
 </style>
