@@ -53,8 +53,14 @@
                         </transition>
 
                         <transition name="slide-left">
-                            <a class="button is-light button-social button-twitter" href="https://twitter.com/ishmaa_el" target="_blank" rel="noopener">
+                            <a class="button is-light button-social button-twitter" href="//twitter.com/ishmaa_el" target="_blank" rel="noopener">
                                 <i class="fab fa-twitter" title="Twitter"></i>
+                            </a>
+                        </transition>
+
+                        <transition name="slide-left">
+                            <a class="button is-light button-social button-resume" href="/resume">
+                                <i class="fas fa-file-alt" title="Resum&eacute;"></i>
                             </a>
                         </transition>
                     </div>
@@ -286,6 +292,10 @@
 
     .button-twitter:hover {
         color: #1aa4ef;
+    }
+
+    .button-resume:hover {
+        color: #508ff4;
     }
 
     .button-linkedin:hover {

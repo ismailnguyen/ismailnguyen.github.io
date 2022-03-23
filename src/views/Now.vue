@@ -1,7 +1,7 @@
 <template>
     <section class="hero is-light is-fullheight-with-navbar has-text-centered about-me">
         
-        <FullScreenBackgroundMap location="Romainville" />
+        <FullScreenBackgroundMap location="Geneva" />
 
         <div class="hero-body">
             <div class="container">
@@ -39,9 +39,9 @@
                                 <div class="media-content">
                                     <div class="content">
                                         <p>
-                                            <strong>Tech lead</strong> <small>@<a href="//fr.loccitane.com" target="_blank" rel="noopener">L'Occitane en Provence</a></small> <small>{{ new Date().getFullYear() - 2017  }} years ago</small>
+                                            <strong>Tech Lead / Solution Architect</strong> <small>@<a href="//fr.loccitane.com" target="_blank" rel="noopener">L'Occitane en Provence</a></small> <small>{{ new Date().getFullYear() - 2017  }} years ago</small>
                                             <br>
-                                            In the <i>Checkout team</i> of the e-commerce website.
+                                            In the <i>Center of Excellence</i> of the e-commerce website.
                                         </p>
                                     </div>
                                 </div>

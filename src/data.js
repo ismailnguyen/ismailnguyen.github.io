@@ -59,7 +59,10 @@ const works = [
             text: 'View slides'
         },
         embeddedVideoUrl: 'https://www.youtube.com/embed/-dQNvgVzCdI',
-        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRp53fpjlDSWHaaMeNPdyLB0THYdzOu56v0vN3xo2SOxaPtpPtAU3Spvq-LMg3K4qvQXvLcTTkxmpur/embed?start=false&loop=false&delayms=3000',
+        embeddedContent: {
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vRp53fpjlDSWHaaMeNPdyLB0THYdzOu56v0vN3xo2SOxaPtpPtAU3Spvq-LMg3K4qvQXvLcTTkxmpur/embed?start=false&loop=false&delayms=3000',
+            orientation: 'horizontal'
+        },
         socialShare: {
 			twitter: true,
 			linkedIn: true
@@ -487,7 +490,10 @@ const works = [
             url: 'https://docs.google.com/presentation/d/e/2PACX-1vRzsQqli_CoHHj2dhijfOwOfOwrylgMsxvHnL_IguPI2VhMhD34fOewjcwqZfSvkrntSIa1sjp5fYb9/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
-        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRzsQqli_CoHHj2dhijfOwOfOwrylgMsxvHnL_IguPI2VhMhD34fOewjcwqZfSvkrntSIa1sjp5fYb9/embed?start=false&loop=false&delayms=3000',
+        embeddedContent: {
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vRzsQqli_CoHHj2dhijfOwOfOwrylgMsxvHnL_IguPI2VhMhD34fOewjcwqZfSvkrntSIa1sjp5fYb9/embed?start=false&loop=false&delayms=3000',
+            orientation: 'horizontal'
+        },
         socialShare: {
 			twitter: true,
 			linkedIn: true
@@ -774,7 +780,10 @@ const works = [
             url: 'https://docs.google.com/presentation/d/e/2PACX-1vRuClSj26rirjEZZBIPLHEJj7ti8z5vgHLw7nUA3nWzSnq3RtytFg0SIXMx834a7akRInBkR1fpWA4a/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
-        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vRuClSj26rirjEZZBIPLHEJj7ti8z5vgHLw7nUA3nWzSnq3RtytFg0SIXMx834a7akRInBkR1fpWA4a/embed?start=false&loop=false&delayms=3000',
+        embeddedContent: {
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vRuClSj26rirjEZZBIPLHEJj7ti8z5vgHLw7nUA3nWzSnq3RtytFg0SIXMx834a7akRInBkR1fpWA4a/embed?start=false&loop=false&delayms=3000',
+            orientation: 'horizontal'
+        },
         socialShare: {
 			twitter: true,
 			linkedIn: true
@@ -845,7 +854,10 @@ const works = [
             url: 'https://docs.google.com/presentation/d/e/2PACX-1vQRZiTtNfH6G5xteMhFFOTt4LwBW5OhCMMyKuMXKNkMlI8QPZG3jzM-malihXjZ8pSvOpvvjlzI10yh/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
-        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vQRZiTtNfH6G5xteMhFFOTt4LwBW5OhCMMyKuMXKNkMlI8QPZG3jzM-malihXjZ8pSvOpvvjlzI10yh/embed?start=false&loop=false&delayms=3000',
+        embeddedContent: {
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vQRZiTtNfH6G5xteMhFFOTt4LwBW5OhCMMyKuMXKNkMlI8QPZG3jzM-malihXjZ8pSvOpvvjlzI10yh/embed?start=false&loop=false&delayms=3000',
+            orientation: 'horizontal'
+        },
         socialShare: {
             twitter: true,
             linkedIn: true
@@ -893,7 +905,10 @@ const works = [
         },
         title: '“The Golden Circle”',
         subTitle: 'A brief introduction',
-        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vTg-TYXA9kWgHj_uSPUM3Wf8IHqFiqctNZjBxhKxDW4oElNv5jEWNQPHZyFkzpCs3LrR37hXcGOOa7P/embed?start=false&loop=false&delayms=3000',
+        embeddedContent: {
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vTg-TYXA9kWgHj_uSPUM3Wf8IHqFiqctNZjBxhKxDW4oElNv5jEWNQPHZyFkzpCs3LrR37hXcGOOa7P/embed?start=false&loop=false&delayms=3000',
+            orientation: 'horizontal'
+        },
         secondaryLink: {
             url: 'https://docs.google.com/presentation/d/e/2PACX-1vTg-TYXA9kWgHj_uSPUM3Wf8IHqFiqctNZjBxhKxDW4oElNv5jEWNQPHZyFkzpCs3LrR37hXcGOOa7P/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
@@ -1041,7 +1056,10 @@ const works = [
             url: 'https://docs.google.com/presentation/d/e/2PACX-1vTeje1M3a7w5NQLGRYkQUl2185f5_LXX1pliCEqunl8J2P8rDdwE8Ww3glUl0wHqdGfftYFVeif7aDa/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
-        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vTeje1M3a7w5NQLGRYkQUl2185f5_LXX1pliCEqunl8J2P8rDdwE8Ww3glUl0wHqdGfftYFVeif7aDa/embed?start=false&loop=false&delayms=3000',
+        embeddedContent: {
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vTeje1M3a7w5NQLGRYkQUl2185f5_LXX1pliCEqunl8J2P8rDdwE8Ww3glUl0wHqdGfftYFVeif7aDa/embed?start=false&loop=false&delayms=3000',
+            orientation: 'horizontal'
+        },
         socialShare: {
             twitter: true,
             linkedIn: true
@@ -1063,7 +1081,10 @@ const works = [
             url: 'https://docs.google.com/presentation/d/e/2PACX-1vSDR8hvyO2uuijP5AeTcWj-L0dSp_RzuP0n_Z6hOO5LIfzAee5MwoRSNfCzBgRbV27ZSo6s6-HoRlsu/embed?start=false&loop=false&delayms=3000',
             text: 'View slides'
         },
-        embeddedContentUrl: 'https://docs.google.com/presentation/d/e/2PACX-1vSDR8hvyO2uuijP5AeTcWj-L0dSp_RzuP0n_Z6hOO5LIfzAee5MwoRSNfCzBgRbV27ZSo6s6-HoRlsu/embed?start=false&loop=false&delayms=3000',
+        embeddedContent: {
+            url: 'https://docs.google.com/presentation/d/e/2PACX-1vSDR8hvyO2uuijP5AeTcWj-L0dSp_RzuP0n_Z6hOO5LIfzAee5MwoRSNfCzBgRbV27ZSo6s6-HoRlsu/embed?start=false&loop=false&delayms=3000',
+            orientation: 'horizontal'
+        },
         socialShare: {
             twitter: true,
             linkedIn: true
@@ -1099,7 +1120,32 @@ const works = [
             'Technology',
             'Algorithm'
         ]
-    }
+    },
+    {
+        coverImage: {
+            url: '/resources/images/profile.png',
+            alt: `Resumé`
+        },
+        logo: {
+            url: '/resources/images/works/logo/google-docs.png',
+            alt: 'Google Docs'
+        },
+        title: `Resumé`,
+        secondaryLink: {
+            url: 'https://docs.google.com/document/d/1z-7fn0zN01tiEKbpnxmlNfx1EiSaNcAwgQxBGVaCjLA/',
+            text: 'Download'
+        },
+        embeddedContent: {
+            url: 'https://docs.google.com/document/d/1z-7fn0zN01tiEKbpnxmlNfx1EiSaNcAwgQxBGVaCjLA/edit',
+            orientation: 'vertical'
+        },
+        socialShare: {
+			twitter: false,
+			linkedIn: false
+        },
+        tags: [
+        ]
+    },
 ];
 
 export default works;

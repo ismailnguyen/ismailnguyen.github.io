@@ -50,6 +50,12 @@ const router = new VueRouter({
             props: (route) => ({ workTitle: route.params.title })
         },
         {
+            name: 'Resume',
+            path: '/resume',
+            component: WorkDetail,
+            props: () => ({ workTitle: 'Resumé' })
+        },
+        {
             name: 'Now',
             path: '/now',
             component: Now

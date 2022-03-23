@@ -51,9 +51,9 @@
             </div>
         </section>
 
-        <section class="section work-detail--content" v-if="work.embeddedContentUrl">
+        <section class="section work-detail--content" v-if="work.embeddedContent && work.embeddedContent.url">
             <div class="container is-fullhd">
-                <IframeBloc :url="work.embeddedContentUrl" />
+                <IframeBloc :url="work.embeddedContent.url" :orientation="work.embeddedContent.orientation" />
             </div>
         </section>
 
@@ -125,7 +125,7 @@
             hasContent: function () {
                 return this.work.images
                         || this.markdownContent
-                        || this.work.embeddedContentUrl;
+                        || this.work.embeddedContent;
             }
         }
     }
