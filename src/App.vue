@@ -6,8 +6,13 @@
     </div>
 
     <Navbar />
-    
     <router-view />
+    <button
+      class="tally-button"
+      data-tally-open="3jaD66"
+      data-tally-emoji-text="👋"
+      data-tally-emoji-animation="wave"
+      data-tally-auto-close="2000">👋</button>
 	
 	<Footer />
   </div>
@@ -25,37 +30,37 @@
       Footer
     },
     methods: {
-		isUnsupportedBrowser: function () {
-			// Internet Explorer 10 and Internet Explorer 11
-			return /Trident\/|MSIE/.test(window.navigator.userAgent);
-		},
-		printConsoleSignature: function () {
-			var consoleSignatureStyle = "font-size: 16px;" +
-			"background: linear-gradient(to right, #e66465, #9198e5);" +
-			"color: white;" +
-			"text-align: center;" +
-			"padding: 10px 15px;" +
-			"width: 100%;" +
-			"border-radius: 20px;";
+      isUnsupportedBrowser: function () {
+        // Internet Explorer 10 and Internet Explorer 11
+        return /Trident\/|MSIE/.test(window.navigator.userAgent);
+      },
+      printConsoleSignature: function () {
+        var consoleSignatureStyle = "font-size: 16px;" +
+        "background: linear-gradient(to right, #e66465, #9198e5);" +
+        "color: white;" +
+        "text-align: center;" +
+        "padding: 10px 15px;" +
+        "width: 100%;" +
+        "border-radius: 20px;";
 
-			console.log(`%cHi there 👋 !`, consoleSignatureStyle);
+        console.log(`%cHi there 👋 !`, consoleSignatureStyle);
 
-      setTimeout(() => {   
-        console.log(`%cI am Ismaïl NGUYEN`, consoleSignatureStyle);
-      }, 1000);
+        setTimeout(() => {   
+          console.log(`%cI am Ismaïl NGUYEN`, consoleSignatureStyle);
+        }, 1000);
 
-      setTimeout(() => {   
-        console.log(`%cNice to meet you here 😊`, consoleSignatureStyle);
-      }, 2000);
+        setTimeout(() => {   
+          console.log(`%cNice to meet you here 😊`, consoleSignatureStyle);
+        }, 2000);
 
-      setTimeout(() => {   
-        console.log(`%cFeel free to checkout the full source code of this website in my github at https://github.com/ismailnguyen/ismailnguyen.github.io`, consoleSignatureStyle);
-      }, 3000);
-		}
+        setTimeout(() => {   
+          console.log(`%cFeel free to checkout the full source code of this website in my github at https://github.com/ismailnguyen/ismailnguyen.github.io`, consoleSignatureStyle);
+        }, 3000);
+      },
     },
-	mounted() {
-		this.printConsoleSignature();
-	}
+    mounted() {
+      this.printConsoleSignature();
+    }
   }
 </script>
 
@@ -228,5 +233,19 @@
     to {
       transform: scaleX(1);
     }
+  }
+
+  .tally-button {
+    background: none;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  
+  .tally-button:hover {
+    animation: index-module_wave__28Vlw 1s ease-in-out 20
   }
 </style>
