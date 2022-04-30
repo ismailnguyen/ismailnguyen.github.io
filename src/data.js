@@ -1123,20 +1123,20 @@ const works = [
     },
     {
         coverImage: {
-            url: '/resources/images/profile.png',
+            url: '/resources/images/avatar/full_walking.png',
             alt: `Resumé`
         },
         logo: {
-            url: '/resources/images/works/logo/google-docs.png',
-            alt: 'Google Docs'
+            url: '/resources/images/works/logo/notion.png',
+            alt: 'Notion'
         },
         title: `Resumé`,
         secondaryLink: {
-            url: 'https://docs.google.com/document/d/1z-7fn0zN01tiEKbpnxmlNfx1EiSaNcAwgQxBGVaCjLA/',
+            url: 'https://ismailnguyen.notion.site/Resume-76b61cac195d4a7b867bec952ed76db6',
             text: 'Download'
         },
         embeddedContent: {
-            url: 'https://docs.google.com/document/d/1z-7fn0zN01tiEKbpnxmlNfx1EiSaNcAwgQxBGVaCjLA/edit',
+            url: 'https://v1.embednotion.com/embed/f503ad8239d7414196e949164494b4df',
             orientation: 'vertical'
         },
         socialShare: {
