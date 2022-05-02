@@ -59,7 +59,7 @@
                         </transition>
 
                         <transition name="slide-left">
-                            <a class="button is-light button-social button-resume" href="/resume">
+                            <a class="button is-light button-social button-resume" href="//ismailnguyen.notion.site/Resume-76b61cac195d4a7b867bec952ed76db6" target="_blank" rel="noopener">
                                 <i class="fas fa-file-alt" title="Resum&eacute;"></i>
                             </a>
                         </transition>
