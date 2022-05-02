@@ -13,7 +13,7 @@
             </p>
         </div>
 
-        <div class="waves-container" style="display:none;">
+        <div class="waves-container">
             <Waves />
         </div>
     </footer>
