@@ -29,7 +29,7 @@
 				</li>
 			</ul>
 			
-			<p class="featuredposts__footer" v-if="!showAllWorks">
+			<p class="featuredposts__footer" v-if="!showAllWorks && !isLoading">
 				<a @click="showAllWorks=true" class="featuredposts__see-all">
 					<span class="has-text-background">See All Works</span>
 				</a>
