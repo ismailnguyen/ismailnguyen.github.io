@@ -54,13 +54,13 @@
 
     .footer .content {
       animation-name: slideDown;
-      animation-delay: 2s;
+      animation-delay: 3s;
       padding-bottom: 1rem;
     }
 
     .footer .waves-container {
       animation-name: slideRight;
-      animation-delay: 2.5s;
+      animation-delay: 4.5s;
     }
 
     >>> .waves {
