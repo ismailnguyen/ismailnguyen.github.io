@@ -4,23 +4,26 @@
 			<h3 class="title is-5">
 				Featured Works
 			</h3>
-			
-			<ul class="featuredposts__list">
-				<li class="featuredposts__item" v-for="(work, index) in displayedWorks" :key="index" :title="work.title">
+                    
+			<ul class="featuredposts__list" :class="isLoading ? 'loading-skeleton' : ''">
+				<li 
+                    class="featuredposts__item" v-for="(work, index) in displayedWorks"
+                    :key="index"
+                    :title="work.title">
 					<div class="featuredpost" :style="work.coverImage ? 'background-image: url(' +work.coverImage.url+ ')' : ''">
 						<div class="featuredpost__inner">
 							<div class="media">
-								<div class="media-left">
+								<div class="media-left" v-if="work.logo">
 									<span class="icon is-large"><img :src="work.logo.url" :alt="work.title"></span>
 								</div>
 								<div class="media-content">
-									<a :href="'work/' + encodeURIComponent(work.title)" class="featuredpost__link">
+									<a :href="'work/' + encodeURIComponent(work.id)" class="featuredpost__link">
 										<span class="featuredpost__title">{{ work.title }}</span>
 									</a>
 								</div>
 							</div>
 						
-							<p class="featuredpost__description">{{ work.subTitle }}</p>
+							<p class="featuredpost__description" v-if="work.subTitle">{{ work.subTitle }}</p>
 						</div>
 					</div>
 				</li>
@@ -36,14 +39,36 @@
 </template>
 
 <script>
-    import data from '../data.js'
+    import NotionService from '@/services/NotionService.js'
 
     export default {
         props: ['showAll'],
         data () {
             return {
-                works: data,
-				showAllWorks: this.showAll || false
+                works: [],
+				showAllWorks: this.showAll || false,
+                isLoading: true
+            }
+        },
+        async created() {
+            this.loadWorks();
+            this.fetchPortfolio();
+        },
+        methods: {
+            loadWorks: function () {
+                for (var i = 0; i < 7; i++) {
+                    this.works.push({
+                        isPinned: true,
+                        title: '...'
+                    });
+                }
+            },
+
+            fetchPortfolio: async function () {
+                const notionService = new NotionService();
+
+                this.works = await notionService.getAllPages()
+                this.isLoading = false;
             }
         },
 		computed: {
@@ -51,7 +76,7 @@
 				if (this.showAllWorks)
 					return this.works;
 
-				return this.works.slice(0 ,6);
+				return this.works ? this.works.filter(work => work.isPinned) : [];
 			}
 		}
     }
@@ -91,9 +116,6 @@
 	display: block;
 }
 
-.featuredposts__list:hover > .featuredposts__item:not(:hover) .featuredpost {
-  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
-}
 .featuredposts__item:hover .featuredpost {
   transform: scale(1.05) translateZ(0);
 }
@@ -188,5 +210,35 @@ a {
     font-size: 1.25rem;
     font-weight: 700;
     align-items: center;
+}
+
+%loading-skeleton {
+  color: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #eee;
+  border-color: #eee;
+
+  &::placeholder {
+    color: transparent;
+  }
+}
+.loading-skeleton {
+  pointer-events: none;
+  animation: loading-skeleton 1s infinite alternate;
+  
+  li .featuredpost,
+  .featuredpost__title {
+    @extend %loading-skeleton;
+  }
+}
+
+@keyframes loading-skeleton {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>

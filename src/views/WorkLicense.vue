@@ -1,18 +1,18 @@
 <template>
     <div>
-        <section class="hero work-detail" :class="!hasContent() ? 'is-fullheight' : ''">
+        <section class="hero work-detail" :class="!hasContent ? 'is-fullheight' : ''" v-if="work">
             <div class="hero-body">
                 <div class="container is-fullhd has-text-centered">
 
                     <h1 class="title is-1 is-spaced">
-                        <span class="icon is-large">
-                             <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
+                        <span class="icon is-large" v-if="work.logo">
+                            <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
                         </span>
 
                         {{ work.title }}
                     </h1>
                     <div class="buttons">
-                        <a :href="'/work/' + encodeURIComponent(work.title)" class="button button-secondary">
+                        <a :href="'/work/' + encodeURIComponent(work.id)" class="button button-secondary">
                             <i class="fas fa-arrow-left" title="Go back"></i>
                         </a>
                     </div>
@@ -20,7 +20,7 @@
             </div>
         </section>
 
-        <section class="section work-detail--content" v-if="hasContent()">
+        <section class="section work-detail--content" v-if="hasContent">
             <div class="container is-fullhd">
                 <MarkdownBloc :text="markdownLicenseText" />
             </div>
@@ -29,37 +29,41 @@
 </template>
 
 <script>
-    import data from '../data.js';
+    import NotionService from '@/services/NotionService.js'
     import MarkdownBloc from '../components/MarkdownBloc'
 
     export default {
-        props: ['workTitle'],
+        props: ['workId'],
         data () {
             return {
-                works: data,
+                work: {},
                 markdownLicenseText: ''
             }
         },
         components: {
             MarkdownBloc,
         },
-        computed: {
-            work: function () {
-                return this.works.find(work => work.title === this.workTitle)
-            }
-        },
-        mounted() {
+        async created() {
+            const notionService = new NotionService();
+
+            this.work = await this.fetchPortfolio(notionService);
+
             if (this.work.markdownLicenseUrl) {
                 this.loadDescription();
             }
         },
         methods: {
+            fetchPortfolio: async function (notionService) {
+                return notionService.getPage(this.workId);
+            },
+
             loadDescription: function () {
                 fetch(this.work.markdownLicenseUrl)
                     .then(response => response.text())
                     .then(text => this.markdownLicenseText = text);
-            },
-
+            }
+        },
+        computed: {
             hasContent: function () {
                 return this.markdownLicenseText;
             }

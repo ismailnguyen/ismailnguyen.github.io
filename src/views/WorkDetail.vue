@@ -1,11 +1,11 @@
 <template>
     <div>
-        <section class="hero work-detail" :class="!hasContent() ? 'is-fullheight' : ''">
+        <section class="hero work-detail" :class="!hasContent ? 'is-fullheight' : ''" v-if="work">
             <div class="hero-body">
                 <div class="container is-fullhd has-text-centered">
 
                     <h1 class="title is-1 is-spaced">
-                        <span class="icon is-large">
+                        <span class="icon is-large" v-if="work.logo">
                              <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
                         </span>
 
@@ -25,19 +25,31 @@
                     <div class="subhead" v-html="work.description"></div>
 
                     <div class="buttons">
-                        <a :href="work.secondaryLink.url" target="_blank" class="button button-secondary" rel="noopener" v-if="work.secondaryLink">
+                        <a :href="work.secondaryLink.url"
+                            target="_blank"
+                            class="button button-secondary"
+                            rel="noopener"
+                            v-if="work.secondaryLink && work.secondaryLink.text && work.secondaryLink.url">
                             {{ work.secondaryLink.text }}
                         </a>
 
-                        <a :href="work.primaryLink.url" target="_blank" class="button button-primary" rel="noopener" v-if="work.primaryLink">
+                        <a :href="work.primaryLink.url"
+                            target="_blank"
+                            class="button button-primary"
+                            rel="noopener"
+                            v-if="work.primaryLink && work.primaryLink.text && work.primaryLink.url">
                             {{ work.primaryLink.text }}
                         </a>
 
-                        <a :href="'/work/' + encodeURIComponent(work.title) + '/privacy'" class="button button-secondary" v-if="work.markdownPrivacyUrl">
+                        <a :href="'/work/' + encodeURIComponent(work.id) + '/privacy'"
+                            class="button button-secondary"
+                            v-if="work.markdownPrivacyUrl">
                             Privacy Policy
                         </a>
 
-                        <a :href="'/work/' + encodeURIComponent(work.title) + '/license'" class="button button-secondary" v-if="work.markdownLicenseUrl">
+                        <a :href="'/work/' + encodeURIComponent(work.id) + '/license'"
+                            class="button button-secondary"
+                            v-if="work.markdownLicenseUrl">
                             License
                         </a>
                     </div>
@@ -60,7 +72,7 @@
         <section class="hero work-detail--content">
             <div class="hero-body">
                 <div class="container is-fullhd has-text-centered">
-                    <WorkCarousel :images="work.images" />
+                    <WorkCarousel :images="images" />
                 </div>
             </div>
         </section>
@@ -74,17 +86,18 @@
 </template>
 
 <script>
-    import data from '../data.js';
+    import NotionService from '@/services/NotionService.js'
     import MarkdownBloc from '../components/MarkdownBloc'
     import IframeBloc from '../components/IframeBloc'
     import WorkCarousel from '../components/WorkCarousel'
 
     export default {
-        props: ['workTitle'],
+        props: ['workId'],
         data () {
             return {
-                works: data,
-                markdownContent: ''
+                work: {},
+                markdownContent: '',
+                images: []
             }
         },
         components: {
@@ -92,17 +105,22 @@
             IframeBloc,
             WorkCarousel
         },
-        computed: {
-            work: function () {
-                return this.works.find(work => work.title === this.workTitle)
-            }
-        },
-        mounted() {
+        async created() {
+            const notionService = new NotionService();
+
+            this.work = await this.fetchPortfolio(notionService);
+
             if (this.work.markdownContentUrl) {
                 this.loadDescription();
             }
+
+            this.images = await notionService.getPageImages(this.workId)
         },
         methods: {
+            fetchPortfolio: async function (notionService) {
+                return notionService.getPage(this.workId);
+            },
+
             loadDescription: function () {
                 fetch(this.work.markdownContentUrl)
                     .then(response => response.text())
@@ -120,10 +138,11 @@
                 + '&url=' + this.work.readMoreLink
                 + '&title=' + this.work.title
                 + '&source=https://www.ismailnguyen.com';
-            },
-
+            }
+        },
+        computed: {
             hasContent: function () {
-                return this.work.images
+                return this.images
                         || this.markdownContent
                         || this.work.embeddedContent;
             }
