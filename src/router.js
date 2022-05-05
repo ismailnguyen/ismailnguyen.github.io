@@ -33,27 +33,21 @@ const router = new VueRouter({
         },
         {
             name: 'WorkDetail',
-            path: '/work/:title',
+            path: '/work/:id',
             component: WorkDetail,
-            props: (route) => ({ workTitle: route.params.title })
+            props: (route) => ({ workId: route.params.id })
         },
         {
             name: 'WorkPrivacy',
-            path: '/work/:title/Privacy',
+            path: '/work/:id/Privacy',
             component: WorkPrivacy,
-            props: (route) => ({ workTitle: route.params.title })
+            props: (route) => ({ workId: route.params.id })
         },
         {
             name: 'WorkLicense',
-            path: '/work/:title/License',
+            path: '/work/:id/License',
             component: WorkLicense,
-            props: (route) => ({ workTitle: route.params.title })
-        },
-        {
-            name: 'Resume',
-            path: '/resume',
-            component: WorkDetail,
-            props: () => ({ workTitle: 'Resumé' })
+            props: (route) => ({ workId: route.params.id })
         },
         {
             name: 'Now',
