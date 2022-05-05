@@ -243,6 +243,11 @@
     border: none;
     font-size: 3rem;
     cursor: pointer;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+    animation-fill-mode: both;
+    animation-name: fillUp;
+    animation-delay: 2s;
   }
   
   .tally-button:hover {
