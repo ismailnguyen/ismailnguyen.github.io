@@ -29,7 +29,7 @@
 </template>
 
 <script>
-    import NotionService from '@/services/NotionService.js'
+    import WorksService from '@/services/WorksService.js'
     import MarkdownBloc from '../components/MarkdownBloc'
 
     export default {
@@ -44,17 +44,17 @@
             MarkdownBloc,
         },
         async created() {
-            const notionService = new NotionService();
+            const worksService = new WorksService();
 
-            this.work = await this.fetchPortfolio(notionService);
+            this.work = await this.fetchPortfolio(worksService);
 
             if (this.work.markdownLicenseUrl) {
                 this.loadDescription();
             }
         },
         methods: {
-            fetchPortfolio: async function (notionService) {
-                return notionService.getPage(this.workId);
+            fetchPortfolio: async function (worksService) {
+                return worksService.getPage(this.workId);
             },
 
             loadDescription: function () {

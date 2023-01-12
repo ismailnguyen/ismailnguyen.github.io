@@ -28,9 +28,7 @@ jobs:
       - name: Setup environment variables
         run: |
           touch .env
-          echo VUE_APP_NOTION_API_URL=${{ secrets.NOTION_API_URL }} >> .env
-          echo VUE_APP_NOTION_TOKEN=${{ secrets.NOTION_TOKEN }} >> .env
-          echo VUE_APP_NOTION_PROJECTS_DATABASE_ID=${{ secrets.NOTION_PROJECTS_DATABASE_ID }} >> .env
+          echo VUE_APP_WORKS_API_URL=${{ secrets.WORKS_API_URL }} >> .env
 
       - run: npm install
       - run: npm run build

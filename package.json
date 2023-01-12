@@ -1,6 +1,6 @@
 {
   "name": "ismailnguyen",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "author": "Ismaïl NGUYEN <nguyen.ismail@gmail.com>",
   "repository": "https://github.com/ismailnguyen/ismailnguyen.github.io.git",
   "license": "WTFPL (http://www.wtfpl.net)",
@@ -10,7 +10,6 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@notionhq/client": "^1.0.4",
     "animejs": "^3.2.1",
     "bulma": "^0.8.2",
     "core-js": "^3.6.4",

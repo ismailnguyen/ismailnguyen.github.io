@@ -39,7 +39,7 @@
 </template>
 
 <script>
-    import NotionService from '@/services/NotionService.js'
+    import WorksService from '@/services/WorksService.js'
 
     export default {
         props: ['showAll'],
@@ -65,9 +65,9 @@
             },
 
             fetchPortfolio: async function () {
-                const notionService = new NotionService();
+                const worksService = new WorksService();
 
-                this.works = await notionService.getAllPages()
+                this.works = await worksService.getAllPages()
                 this.isLoading = false;
             }
         },
