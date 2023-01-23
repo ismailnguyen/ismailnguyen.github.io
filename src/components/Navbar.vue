@@ -63,6 +63,12 @@
                                 <i class="fas fa-file-alt" title="Resum&eacute;"></i>
                             </a>
                         </transition>
+
+                        <transition name="slide-left">
+                            <a class="button is-light button-social button-github" href="//github.com/ismailnguyen/ismailnguyen.github.io" target="_blank" rel="noopener">
+                                <i class="fas fa-code" title="Resum&eacute;"></i>
+                            </a>
+                        </transition>
                     </div>
                 </div>
             </div>
