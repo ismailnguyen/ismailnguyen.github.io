@@ -152,7 +152,7 @@
   }
 
   .has-background-dark {
-    background-color: #1c1c1e;
+    background-color: #1c1c1e !important;
   }
 
   .slide-left-enter-active,
