@@ -41,7 +41,7 @@
 
                             <p>
                                 <small>
-                                    See more at <a href="www.wtfpl.net" target="_blank" rel="noopener">www.wtfpl.net</a>
+                                    See more at <a href="//www.wtfpl.net" target="_blank" rel="noopener">www.wtfpl.net</a>
                                 </small>
                             </p>
                         </div>
