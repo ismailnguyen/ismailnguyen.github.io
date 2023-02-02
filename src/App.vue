@@ -22,6 +22,7 @@
   import 'bulma/css/bulma.css'
   import Navbar from './components/Navbar'
   import Footer from './components/Footer'
+  import Konami from 'konami';
 
   export default {
     name: 'App',
@@ -30,6 +31,11 @@
       Footer
     },
     methods: {
+      initEasterEgg: function () {
+        new Konami(() => {
+          document.querySelector('.tally-popup iframe').src = 'https://with-me.netlify.app/';
+        });
+      },
       isUnsupportedBrowser: function () {
         // Internet Explorer 10 and Internet Explorer 11
         return /Trident\/|MSIE/.test(window.navigator.userAgent);
@@ -60,6 +66,7 @@
     },
     mounted() {
       this.printConsoleSignature();
+      this.initEasterEgg();
     }
   }
 </script>
