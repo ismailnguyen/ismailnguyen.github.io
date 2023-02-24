@@ -17,8 +17,7 @@
 
 <style scoped>
     iframe {
-        box-shadow: 0 13px 21px rgba(17, 26, 31, 0.5);
-        border-radius: 3px;
+        border-radius: 0;
         cursor: grab;
     }
 </style>

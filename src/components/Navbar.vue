@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar is-transparent is-fixed-top" :class="isMenuOpen ? 'is-blurred' : ''" role="navigation" aria-label="main navigation">
+    <nav class="navbar" :class="isMenuOpen ? 'is-blurred' : ''" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
              <router-link to="/" class="navbar-item">
                 <div id="brand" class="logo"></div>
@@ -105,39 +105,6 @@
 
                 this.isMenuOpen = false
             },
-
-            setTheme: function (isDark) {
-                if (isDark) {
-                    document.body.classList.remove('has-background-light');
-                    document.body.classList.add('has-background-dark');
-
-                    return;
-                }
-
-                document.body.classList.remove('has-background-dark');
-                document.body.classList.add('has-background-light');
-            },
-
-            isWindowColorSchemeDark: function () {
-                return window.matchMedia 
-                        && window.matchMedia('(prefers-color-scheme: dark)').matches;
-            },
-
-            listenToWindowColorSchemeUpdate: function () {
-                window.matchMedia('(prefers-color-scheme: dark)')
-                       .addEventListener('change', e => this.setTheme(e.matches));
-            },
-
-            initializeTheme: function () {
-                this.setTheme(this.isWindowColorSchemeDark());
-
-                this.listenToWindowColorSchemeUpdate();
-            }
-        },
-        beforeMount() {
-            document.body.classList.add('has-navbar-fixed-top');
-
-            this.initializeTheme();
         }
     }
 </script>
@@ -169,28 +136,22 @@
         font-family: 'Bowlby One SC';
         font-style: normal;
         font-size: 2.75rem;
-        background: linear-gradient(219deg, 
-            #186cb8 19%, 
-            transparent 19%,transparent 20%, 
-            #2a9a9f 20%, #2a9a9f  39%,
-            transparent 39%,transparent 40%, 
-            #f1b211 40%, #f1b211 59% ,
-            transparent 59%,transparent 60%, 
-            #e83611 60%, #e83611 79%,
-            transparent 79%, transparent 80%, 
-            #f9002f 80%);
+        background: #060602;
         background-clip: text;
         color: transparent;
-        text-shadow: 0px 1px #f582ae38, 2px 2px #f582ae38, 5px 5px #f582ae38
     }
 
-    .navbar.is-transparent,
     .button-social {
-        background: none !important;
+        background: white;
+        border-radius: 0;
+    }
+
+    .button-social:hover {
+        border: 1px solid black
     }
 
     .navbar .burger {
-        color: #f582ae;
+        color: #060602;
         font-size: 22px;
     }
 
@@ -216,9 +177,9 @@
     .navbar .button-cta {
         border: none;
         border-radius: 5px;
-        color: #f8faff;
+        color: #060602;
         font-weight: bold;
-        background: #f582ae;
+        background: #fff;
         box-shadow: 0 2px 4px 0 rgba(0,0,0,.26);
         transition: .3s cubic-bezier(.175,.885,.32,1.275);
     }
@@ -250,37 +211,27 @@
     }
 
     .has-background-dark .navbar .button-cta {
-        color: #f8faff;
-        background-color: rgba(67, 83, 255, 0.1);
+        color: #060602;
+        background-color: #fff;
         border: none;
     }
 
     .has-background-dark .navbar .button-cta:hover {
-        background-color: #f582ae;
+        background-color: #fff;
     }
 
-    .has-background-light .switch[type=checkbox].is-small.is-outlined+label::before,
-    .has-background-light .switch[type=checkbox].is-small.is-outlined+label:before {
-        border-color: #f582ae;
+    .switch[type=checkbox].is-small.is-outlined+label::before,
+    .switch[type=checkbox].is-small.is-outlined+label:before {
+        border-color: #fff;
     }
-    .has-background-light .switch[type=checkbox].is-small.is-outlined+label::after,
-    .has-background-light .switch[type=checkbox].is-small.is-outlined+label:after {
-        background-color: #f582ae;
-    }
-
-    .has-background-dark .switch[type=checkbox].is-small.is-outlined+label::before,
-    .has-background-dark .switch[type=checkbox].is-small.is-outlined+label:before {
-        border-color: #f582ae;
-        background-color: #f582ae;
-    }
-    .has-background-dark .switch[type=checkbox].is-small.is-outlined+label::after,
-    .has-background-dark .switch[type=checkbox].is-small.is-outlined+label:after {
-        background-color: #f8faff;
+    .switch[type=checkbox].is-small.is-outlined+label::after,
+    .switch[type=checkbox].is-small.is-outlined+label:after {
+        background-color: #fff;
     }
 
-    .navbar.is-dark .button-social,
-    .has-background-dark .button-social.is-light:not(:hover) {
-        color: #f8faff;
+    .navbar .button-social,
+    .button-social.is-light:not(:hover) {
+        color: #060602;
     }
 
     .button-paypal:hover {
@@ -293,7 +244,7 @@
 
     .button-dev:hover,
 	.button-github:hover {
-        color: #000;
+        color: #fff;
     }
 
     .button-twitter:hover {
@@ -333,12 +284,9 @@
         margin: 1rem;
     }
 
-    .has-background-light .navbar .navbar-menu a.navbar-item {
-        color: #2d3958;
-    }
 
-    .has-background-dark .navbar .navbar-menu a.navbar-item {
-        color: #f8faff;
+    .navbar .navbar-menu a.navbar-item {
+        color: #060602;
         opacity: 0.5;
         background: none;
     }
@@ -347,18 +295,12 @@
         font-weight: bold;
     }
     
-    .has-background-light .navbar .navbar-menu .navbar-start a.navbar-item:hover,
-    .has-background-light .navbar .navbar-menu .navbar-start a.navbar-item.is-active {
-        color: #f582ae;
-    }
-
-    .has-background-dark .navbar .navbar-menu .navbar-start a.navbar-item:hover,
-    .has-background-dark .navbar .navbar-menu .navbar-start a.navbar-item.is-active {
-        opacity: 1;
+    .navbar .navbar-menu .navbar-start a.navbar-item:hover,
+    .navbar .navbar-menu .navbar-start a.navbar-item.is-active {
+        color: #060602;
     }
 
     /* Animations */
-
     .navbar {
       animation-duration: 500ms;
       animation-name: slideDown;

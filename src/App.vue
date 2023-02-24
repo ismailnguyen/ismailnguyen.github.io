@@ -6,15 +6,18 @@
     </div>
 
     <Navbar />
+
     <router-view />
+
     <button
       class="tally-button"
       data-tally-open="3jaD66"
-      data-tally-emoji-text="👋"
+      data-tally-emoji-text="👋🏽"
       data-tally-emoji-animation="wave"
-      data-tally-auto-close="2000">👋</button>
+      data-tally-auto-close="2000">👋🏽</button>
 	
-	<Footer />
+    <Footer />
+
   </div>
 </template>
 
@@ -42,8 +45,8 @@
       },
       printConsoleSignature: function () {
         var consoleSignatureStyle = "font-size: 16px;" +
-        "background: linear-gradient(to right, #e66465, #9198e5);" +
-        "color: white;" +
+        "background-image: linear-gradient(180deg,#bfff39,#a8ff35 70%);" +
+        "color: #060602;" +
         "text-align: center;" +
         "padding: 10px 15px;" +
         "width: 100%;" +
@@ -72,8 +75,23 @@
 </script>
 
 <style lang="scss">
-  html, body {
-    background: none;
+  html {
+    background: #9cf32b!important;
+    /* background: #a8ff35!important;*/
+  }
+
+  body {
+    margin: 1rem;
+    border-radius: 50px;
+    background-image: linear-gradient(180deg,#bfff39,#a8ff35 70%);
+  }
+
+  .message {
+    background-color: #fff;
+  }
+
+  .message-body {
+    border-color: whitesmoke;
   }
 
   @font-face {
@@ -105,61 +123,38 @@
     font-weight: bold;
   }
 
+  /* Do not factorize this with the below one because it won't work*/
   ::selection {
-    background: #f582ae;
-    color: #f8faff;
+    background: #fff;
+    color: #060602;
   }
 
   ::-moz-selection {
-    background: #f582ae;
-    color: #f8faff;
+    background: #fff;
+    color: #060602;
   }
 
   .hero .subhead {
-    color: #fff;
+    color: #060602;
   }
 
   .hero.is-fullheight-with-navbar {
     min-height: 74vh;
   }
 
-  .has-background-light body,
-  .has-background-light h1,
-  .has-background-light h2,
-  .has-background-light h3 {
-    color: #2d3958 !important;
-  }
-
-  .has-background-light .hero h2 {
-    color: #7b88a8 !important;
-  }
-
-  .has-background-dark body,
-  .has-background-dark .hero h1 {
-    color: #f8faff !important;
-  }
-
-  .has-background-dark,
-  .hero.is-dark,
-  .has-background-dark .hero h2,
-  .has-background-dark .hero .subtitle {
-    color: #fff !important;
-  }
-
-  .has-background-light {
-    background: #D3CCE3;
-    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
-    background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+  body,
+  h1,
+  h2,
+  h3,
+  .hero h2,
+  .hero .subtitle {
+    color: #060602 !important;
   }
 
   .hero,
   .navbar
    {
     background:none !important;
-  }
-
-  .has-background-dark {
-    background-color: #1c1c1e !important;
   }
 
   .slide-left-enter-active,
@@ -258,6 +253,6 @@
   }
   
   .tally-button:hover {
-    animation: index-module_wave__28Vlw 1s ease-in-out 20
+    animation: index-module_wave__28Vlw 1s ease-in-out 20;
   }
 </style>

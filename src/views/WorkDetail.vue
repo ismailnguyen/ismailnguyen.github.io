@@ -69,7 +69,7 @@
             </div>
         </section>
 
-        <section class="hero work-detail--content">
+        <section class="hero work-detail--content" v-if="images">
             <div class="hero-body">
                 <div class="container is-fullhd has-text-centered">
                     <WorkCarousel :images="images" />
@@ -162,16 +162,9 @@
         display: block;
     }
 
-    .has-background-dark {
-        .tag {
-            background-color: #3e484e;
-            color: #f8faff;
-        }
-    }
-
     .tag {
-        background-color: #f8faff;
-        color: #3e484e;
+        background-color: #3e484e;
+        color: #f8faff;
         display: inline-block;
         margin-right: 5px;
         margin-bottom: 14px;
@@ -193,7 +186,7 @@
         margin-right: 10px;
         margin-left: 10px;
         padding: 9px 24px;
-        background-color: #e23b7d;
+        background-color: #060602;
         font-size: 16px;
         display: inline-block;
         -webkit-transition: background-color 80ms ease-in-out;
@@ -208,20 +201,8 @@
     }
 
     .button-primary:hover {
-        background-color: #c5326d;
+        background-color: #3e484e;
         color: #f8faff;
-    }
-
-    .has-background-dark {
-        .button-secondary {
-            background-color: #3e484e;
-            color: #f8faff;
-
-            &:hover {
-                background-color: #536169;
-                color: #f8faff;
-            }
-        }
     }
 
     .button-secondary {
@@ -256,6 +237,18 @@
         font-weight: 400;
         text-align: center;
         letter-spacing: normal;
+    }
+
+    .work-detail--content {
+        background: #fff !important;
+    }
+
+    .work-detail--content + .work-detail--content {
+        margin-top: 3rem;
+    }
+
+    .work-detail--content .container {
+        border: 5px solid #a8ff35;
     }
 
     /* Animations */

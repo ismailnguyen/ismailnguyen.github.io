@@ -8,7 +8,6 @@ import Portfolio from './views/Portfolio.vue'
 import WorkDetail from './views/WorkDetail.vue'
 import WorkPrivacy from './views/WorkPrivacy.vue'
 import WorkLicense from './views/WorkLicense.vue'
-import Now from './views/Now.vue'
 import Terms from './views/Terms.vue'
 
 const router = new VueRouter({
@@ -48,11 +47,6 @@ const router = new VueRouter({
             path: '/work/:id/License',
             component: WorkLicense,
             props: (route) => ({ workId: route.params.id })
-        },
-        {
-            name: 'Now',
-            path: '/now',
-            component: Now
         },
         {
             name: 'Terms',

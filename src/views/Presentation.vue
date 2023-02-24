@@ -1,12 +1,12 @@
 <template>
    <div>
-        <section class="hero is-dark is-fullheight presentation">
+        <section class="hero is-fullheight presentation">
             <div class="hero-body">
                 <div class="container has-text-left">
                     <div class="columns is-vcentered">
                         <div class="column is-5-tablet is-5-desktop">
                             <h3 class="subhead is-5 handwritten-text">
-                                Hi there 👋 !
+                                Hi there 👋🏽 !
                             </h3>
 
                             <h1 class="title is-1 handwritten-text">
@@ -34,7 +34,7 @@
             </div>
         </section>
 		
-		<section class="hero is-dark is-fullheight portfolio">
+		<section class="hero is-fullheight portfolio">
 			<Portfolio />
         </section>
    </div>
@@ -117,6 +117,13 @@
         & .title {
             animation-delay: 800ms;
 			padding-bottom: 40px;
+
+			& span {
+				background-image: linear-gradient(120deg,#fff,#fff 100%);
+				background-repeat: no-repeat;
+				background-size: 100% 0.6em;
+				background-position: 0 70%;
+			}
         }
 
         & .subtitle {
@@ -126,18 +133,6 @@
         & .image {
             animation-delay: 1s;
         }
-		
-		& .has-text-background {
-			background-image: linear-gradient(120deg, #f582ae,#f582ae 100%);
-			background-repeat: no-repeat;
-			background-size: 100% 0.6em;
-			background-position: 0 70%;
-			transition: background-size 0.25s ease-in;
-			
-			&:hover {
-				background-size: 100% 88% !important; 
-			}
-		}
 		
 		& .mouse {
 			animation-delay: 7s;
@@ -155,6 +150,7 @@
 	}
 
     .portfolio {
+		background: #fff !important;
         animation-duration: 1s;
         animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
         animation-fill-mode: both;
@@ -175,7 +171,7 @@
 		width: 24px;
 		border-radius: 14px;
 		transform: none;
-		border: 2px solid #ffffffaa;
+		border: 2px solid #060602;
 		margin-bottom: 6px;
 	}
 
@@ -188,7 +184,7 @@
 		position: relative;
 		height: 4px;
 		width: 4px;
-		border: 2px solid #ffffffaa;
+		border: 2px solid #060602;
 		border-radius: 8px;
 	}
 

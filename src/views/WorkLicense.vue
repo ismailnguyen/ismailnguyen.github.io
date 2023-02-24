@@ -88,42 +88,6 @@
         padding-top: 0;
     }
 
-    .button-primary {
-        margin-right: 10px;
-        margin-left: 10px;
-        padding: 9px 24px;
-        background-color: #e23b7d;
-        font-size: 16px;
-        display: inline-block;
-        -webkit-transition: background-color 80ms ease-in-out;
-        transition: background-color 80ms ease-in-out;
-        font-family: Circular, sans-serif;
-        font-weight: 400;
-        text-decoration: none;
-        color: #f8faff;
-        border: 0;
-        line-height: inherit;
-        cursor: pointer;
-        border-radius: 0;
-    }
-
-    .button-primary:hover {
-        background-color: #c5326d;
-        color: #f8faff;
-    }
-
-    .has-background-dark {
-        .button-secondary {
-            background-color: #3e484e;
-            color: #f8faff;
-
-            &:hover {
-                background-color: #536169;
-                color: #f8faff;
-            }
-        }
-    }
-
     .button-secondary {
         margin-right: 10px;
         margin-left: 10px;

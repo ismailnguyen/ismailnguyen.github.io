@@ -37,12 +37,17 @@
 
 <style scoped>
     p, a {
-        color: #808592 !important;
+        color: #060602 !important;
     }
 
     .footer {
         background: none !important;
-        padding: 0;
+        padding: 1rem 0 0 0;
+    }
+
+    .footer .icon {
+        color: transparent;
+        text-shadow: 0 0 red;
     }
 
     .footer .content,
@@ -68,9 +73,25 @@
         max-height: none;
     }
 
+    .parallax>use:first-child {
+        fill: rgb(167 255 51 / 70%) !important;
+    }
+
+    .parallax>use:nth-child(2) {
+        fill: rgb(167 255 51 / 50%);
+    }
+
+    .parallax>use:nth-child(3) {
+        fill: rgb(167 255 51 / 30%);
+    }
+
+    .parallax>use:nth-child(4) {
+        fill: rgb(167 255 51 / 100%);
+    }
+
     .footer .content {
         font-family:'Bluu Next Bold', sans-serif;
-        margin: 10px 50px; 
+        padding: 10px 50px; 
         letter-spacing: 6px;
         font-weight: bold
     }
@@ -81,7 +102,7 @@
     }
 
     .pulse {
-        background-color: #F08080;
+        background-color: #fff;
         border-radius: 35px;
         position: relative;
         padding-top: 6px;
@@ -100,7 +121,7 @@
         width: 35px;
         height: 35px;
         border-radius: 35px;
-        background-color: #CD5C5C;
+        background-color: #fff;
     }
 
     .pulse:after {
