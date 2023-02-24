@@ -20,7 +20,7 @@
 </template>
 
 <script>
-    import Waves from 'vue-css-waves'
+    import Waves from './Waves.vue'
     import 'vue-css-waves/dist/vue-css-waves.css'
     
     export default {
@@ -71,22 +71,6 @@
     >>> .waves {
         height: auto;
         max-height: none;
-    }
-
-    .parallax>use:first-child {
-        fill: rgb(167 255 51 / 70%) !important;
-    }
-
-    .parallax>use:nth-child(2) {
-        fill: rgb(167 255 51 / 50%);
-    }
-
-    .parallax>use:nth-child(3) {
-        fill: rgb(167 255 51 / 30%);
-    }
-
-    .parallax>use:nth-child(4) {
-        fill: rgb(167 255 51 / 100%);
     }
 
     .footer .content {
