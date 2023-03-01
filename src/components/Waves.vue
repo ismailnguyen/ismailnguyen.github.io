@@ -24,6 +24,7 @@
 		/*Fix for safari gap*/
 		min-height: 100px;
 		max-height: 150px;
+		border-radius: 50px;
 	}
 
 	/* Animation */
