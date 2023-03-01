@@ -163,15 +163,14 @@
     }
 
     .tag {
-        background-color: #3e484e;
-        color: #f8faff;
+        background-color: #9cf32b;
+        color: #060602;
         display: inline-block;
         margin-right: 5px;
         margin-bottom: 14px;
         margin-left: 5px;
         padding: 3px 16px 2px;
         border-radius: 30px !important;
-        -webkit-transition: opacity 100ms ease-in-out, background-color 100ms ease-in-out;
         transition: opacity 100ms ease-in-out, background-color 100ms ease-in-out;
         font-size: 14px;
         text-decoration: none;
@@ -212,7 +211,6 @@
         color: #3e484e;
         font-size: 16px;
         display: inline-block;
-        -webkit-transition: background-color 80ms ease-in-out;
         transition: background-color 80ms ease-in-out;
         font-weight: 400;
         text-decoration: none;
