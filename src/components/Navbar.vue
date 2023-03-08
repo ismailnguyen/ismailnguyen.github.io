@@ -142,7 +142,7 @@
     }
 
     .button-social {
-        background: white;
+        background: #9cf32b;
         border-radius: 0;
     }
 
@@ -210,16 +210,6 @@
         transform: translate(-2px,2px);
     }
 
-    .has-background-dark .navbar .button-cta {
-        color: #060602;
-        background-color: #fff;
-        border: none;
-    }
-
-    .has-background-dark .navbar .button-cta:hover {
-        background-color: #fff;
-    }
-
     .switch[type=checkbox].is-small.is-outlined+label::before,
     .switch[type=checkbox].is-small.is-outlined+label:before {
         border-color: #fff;
@@ -231,7 +221,7 @@
 
     .navbar .button-social,
     .button-social.is-light:not(:hover) {
-        color: #060602;
+        color: darkgreen;
     }
 
     .button-paypal:hover {
@@ -262,11 +252,6 @@
 	.button-buymeacoffee:hover {
 		color: #fd0;
 	}
-
-    .has-background-light .navbar .navbar-menu.is-active,
-    .has-background-dark .navbar .navbar-menu.is-active {
-        background: none;
-    }
 
     .navbar-menu .navbar-item {
         padding-right: 22px;

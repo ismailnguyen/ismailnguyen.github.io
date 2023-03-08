@@ -119,7 +119,7 @@
 			padding-bottom: 40px;
 
 			& span {
-				background-image: linear-gradient(120deg,#fff,#fff 100%);
+				background-image: linear-gradient(120deg, rgb(50,255,53), rgb(50,255,53) 100%);
 				background-repeat: no-repeat;
 				background-size: 100% 0.6em;
 				background-position: 0 70%;
