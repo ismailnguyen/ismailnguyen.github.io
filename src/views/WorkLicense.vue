@@ -3,7 +3,6 @@
         <section class="hero work-detail" :class="!hasContent ? 'is-fullheight' : ''" v-if="work">
             <div class="hero-body">
                 <div class="container is-fullhd has-text-centered">
-
                     <h1 class="title is-1 is-spaced">
                         <span class="icon is-large" v-if="work.logo">
                             <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
@@ -22,7 +21,11 @@
 
         <section class="section work-detail--content" v-if="hasContent">
             <div class="container is-fullhd">
-                <MarkdownBloc :text="markdownLicenseText" />
+                <MarkdownBloc
+                    title="License"
+                    :text="markdownLicenseText"
+                    :icon="work.logo.url"
+                />
             </div>
         </section>
     </div>
@@ -30,7 +33,7 @@
 
 <script>
     import WorksService from '@/services/WorksService.js'
-    import MarkdownBloc from '../components/MarkdownBloc'
+    import MarkdownBloc from '../components/TerminalMarkdownBloc'
 
     export default {
         props: ['workId'],
@@ -41,7 +44,7 @@
             }
         },
         components: {
-            MarkdownBloc,
+            MarkdownBloc
         },
         async created() {
             const worksService = new WorksService();

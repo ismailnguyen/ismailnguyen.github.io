@@ -17,55 +17,55 @@
                 <div class="navbar-item">
                     <div class="buttons">
 						<transition name="slide-left">
-                            <a class="button is-light button-social button-buymeacoffee" href="//www.buymeacoffee.com/ismailnguyen" target="_blank" rel="noopener">
+                            <a class="button button-social button-buymeacoffee" href="//www.buymeacoffee.com/ismailnguyen" target="_blank" rel="noopener">
                                 <i class="fas fa-coffee" title="Buy me a coffee"></i>
                             </a>
                         </transition>
 						
                         <transition name="slide-left">
-                            <a class="button is-light button-social button-dev" href="//dev.to/ismailnguyen" target="_blank" rel="noopener">
+                            <a class="button button-social button-dev" href="//dev.to/ismailnguyen" target="_blank" rel="noopener">
                                 <i class="fab fa-dev" title="DEV Community"></i>
                             </a>
                         </transition>
 						
 						<transition name="slide-left">
-                            <a class="button is-light button-social button-linkedin" href="//www.linkedin.com/in/ismailnguyen" target="_blank" rel="noopener">
+                            <a class="button button-social button-linkedin" href="//www.linkedin.com/in/ismailnguyen" target="_blank" rel="noopener">
                                 <i class="fab fa-linkedin" title="LinkedIn"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
-                            <a class="button is-light button-social button-paypal" href="//www.paypal.me/ismailnguyen" target="_blank" rel="noopener">
+                            <a class="button button-social button-paypal" href="//www.paypal.me/ismailnguyen" target="_blank" rel="noopener">
                                 <i class="fab fa-paypal" title="Paypal"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
-                            <a  class="button is-light button-social button-npm" href="//www.npmjs.com/~ismailnguyen" target="_blank" rel="noopener">
+                            <a  class="button button-social button-npm" href="//www.npmjs.com/~ismailnguyen" target="_blank" rel="noopener">
                                 <i class="fab fa-npm" title="NPM"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
-                            <a class="button is-light button-social button-github" href="//github.com/ismailnguyen" target="_blank" rel="noopener">
+                            <a class="button button-social button-github" href="//github.com/ismailnguyen" target="_blank" rel="noopener">
                                 <i class="fab fa-github" title="Github"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
-                            <a class="button is-light button-social button-twitter" href="//twitter.com/ishmaa_el" target="_blank" rel="noopener">
+                            <a class="button button-social button-twitter" href="//twitter.com/ishmaa_el" target="_blank" rel="noopener">
                                 <i class="fab fa-twitter" title="Twitter"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
-                            <a class="button is-light button-social button-resume" href="//ismailnguyen.notion.site/Resume-76b61cac195d4a7b867bec952ed76db6" target="_blank" rel="noopener">
+                            <a class="button button-social button-resume" href="//ismailnguyen.notion.site/Resume-76b61cac195d4a7b867bec952ed76db6" target="_blank" rel="noopener">
                                 <i class="fas fa-file-alt" title="Resum&eacute;"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
-                            <a class="button is-light button-social button-github" href="//github.com/ismailnguyen/ismailnguyen.github.io" target="_blank" rel="noopener">
+                            <a class="button button-social button-github" href="//github.com/ismailnguyen/ismailnguyen.github.io" target="_blank" rel="noopener">
                                 <i class="fas fa-code" title="Resum&eacute;"></i>
                             </a>
                         </transition>
@@ -136,23 +136,25 @@
         font-family: 'Bowlby One SC';
         font-style: normal;
         font-size: 2.75rem;
-        background: #060602;
+        background: #fff;
         background-clip: text;
         color: transparent;
     }
 
     .button-social {
-        background: #9cf32b;
+        background: #839c11;
+        color: #fff;
         border-radius: 0;
-    }
-
-    .button-social:hover {
-        border: 1px solid black
+        border: none;
     }
 
     .navbar .burger {
-        color: #060602;
+        color: #fff;
         font-size: 22px;
+    }
+
+    .navbar-menu.is-active {
+        background: none;
     }
 
     .navbar.is-blurred {
@@ -219,11 +221,6 @@
         background-color: #fff;
     }
 
-    .navbar .button-social,
-    .button-social.is-light:not(:hover) {
-        color: darkgreen;
-    }
-
     .button-paypal:hover {
         color: #15aabf;
     }
@@ -234,7 +231,7 @@
 
     .button-dev:hover,
 	.button-github:hover {
-        color: #fff;
+        color: #000;
     }
 
     .button-twitter:hover {

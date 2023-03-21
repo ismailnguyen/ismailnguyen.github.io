@@ -22,7 +22,11 @@
 
         <section class="section work-detail--content" v-if="hasContent">
             <div class="container is-fullhd">
-                <MarkdownBloc :text="markdownPrivacyText" />
+                <MarkdownBloc
+                    title="Privacy policy"
+                    :text="markdownPrivacyText"
+                    :icon="work.logo.url"
+                />
             </div>
         </section>
     </div>
@@ -30,7 +34,7 @@
 
 <script>
     import WorksService from '@/services/WorksService.js'
-    import MarkdownBloc from '../components/MarkdownBloc'
+    import MarkdownBloc from '../components/TerminalMarkdownBloc'
 
     export default {
         props: ['workId'],

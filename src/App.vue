@@ -7,6 +7,8 @@
 
     <Navbar />
 
+    <video class="bg-video" src="/resources/videos/bg_video.mp4" muted loop autoplay></video>
+    
     <router-view />
 
     <button
@@ -45,8 +47,8 @@
       },
       printConsoleSignature: function () {
         var consoleSignatureStyle = "font-size: 16px;" +
-        "background-image: linear-gradient(180deg,#bfff39,#a8ff35 70%);" +
-        "color: #060602;" +
+        "background-image: linear-gradient(120deg, #839c11, #839c11 100%);" +
+        "color: #fff;" +
         "text-align: center;" +
         "padding: 10px 15px;" +
         "width: 100%;" +
@@ -77,21 +79,23 @@
 <style lang="scss">
   html {
     background: #9cf32b!important;
-    /* background: #a8ff35!important;*/
+  }
+
+  video.bg-video
+  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
   }
 
   body {
     margin: 1rem;
     border-radius: 50px;
     background-image: linear-gradient(180deg,#bfff39,#a8ff35 70%);
-  }
-
-  .message {
-    background-color: #fff;
-  }
-
-  .message-body {
-    border-color: whitesmoke;
   }
 
   @font-face {
@@ -135,7 +139,7 @@
   }
 
   .hero .subhead {
-    color: #060602;
+    color: #fff;
   }
 
   .hero.is-fullheight-with-navbar {
@@ -146,9 +150,10 @@
   h1,
   h2,
   h3,
+  .hero .title,
   .hero h2,
   .hero .subtitle {
-    color: #060602 !important;
+    color: #fff;
   }
 
   .hero,

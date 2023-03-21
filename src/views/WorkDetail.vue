@@ -163,8 +163,8 @@
     }
 
     .tag {
-        background-color: #9cf32b;
-        color: #060602;
+        background-color: #839c11;
+        color: #fff;
         display: inline-block;
         margin-right: 5px;
         margin-bottom: 14px;
@@ -246,7 +246,7 @@
     }
 
     .work-detail--content .container {
-        border: 5px solid #a8ff35;
+        border: 5px solid #839c11;
     }
 
     /* Animations */

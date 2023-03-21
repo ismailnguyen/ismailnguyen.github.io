@@ -37,7 +37,7 @@
 
 <style scoped>
     p, a {
-        color: #060602 !important;
+        color: #fff !important;
     }
 
     .footer {

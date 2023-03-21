@@ -87,7 +87,7 @@
 
 <style scoped lang="scss">
     .featuredposts__see-all {
-        background-image: linear-gradient(180deg,#bfff39,#a8ff35 70%);
+        background-image: linear-gradient(120deg, #839c11, #839c11 100%);
         background-repeat: no-repeat;
         background-size: 100% 0.4em;
         background-position: 0 70%;
@@ -116,8 +116,6 @@
         overflow: hidden;
     }
 
-
-
     .featuredpost__inner {
         position: absolute;
         top: 0;
@@ -138,6 +136,10 @@
 
     .featuredposts__footer {
         text-align: right;
+    }
+
+    .featuredposts__footer a {
+        color: #060602;
     }
 
     .featuredposts__see-all {

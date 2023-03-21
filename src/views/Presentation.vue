@@ -16,6 +16,7 @@
                             <h2 class="subtitle is-4 handwritten-text animated-text">
                                 I have no special talent. I am only passionately curious.
                             </h2>
+							
                         </div>
 
                         <div class="column is-7-tablet is-7-desktop">
@@ -119,7 +120,7 @@
 			padding-bottom: 40px;
 
 			& span {
-				background-image: linear-gradient(120deg, rgb(50,255,53), rgb(50,255,53) 100%);
+				background-image: linear-gradient(120deg, #839c11, #839c11 100%);
 				background-repeat: no-repeat;
 				background-size: 100% 0.6em;
 				background-position: 0 70%;
@@ -171,7 +172,7 @@
 		width: 24px;
 		border-radius: 14px;
 		transform: none;
-		border: 2px solid #060602;
+		border: 2px solid #fff;
 		margin-bottom: 6px;
 	}
 
@@ -180,17 +181,33 @@
 		width: 2px;
 		display: block;
 		margin: 5px auto;
-		background: white;
+		background: #fff;
 		position: relative;
 		height: 4px;
 		width: 4px;
-		border: 2px solid #060602;
+		border: 2px solid #fff;
 		border-radius: 8px;
 	}
 
 	.wheel {
+		animation: mouse-wheel 1s linear infinite;
 		-webkit-animation: mouse-wheel 1s linear infinite;
 		-moz-animation: mouse-wheel 1s linear infinite;
+	}
+
+	@keyframes mouse-wheel {
+		0% {
+			opacity: 1;
+			-webkit-transform: translateY(0);
+			-ms-transform: translateY(0);
+			transform: translateY(0);
+		}
+		100% {
+			opacity: 0;
+			-webkit-transform: translateY(20px);
+			-ms-transform: translateY(20px);
+			transform: translateY(20px);
+		}
 	}
 
 	@-webkit-keyframes mouse-wheel {
