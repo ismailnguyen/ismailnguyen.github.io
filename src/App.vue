@@ -7,7 +7,7 @@
 
     <Navbar />
 
-    <video class="bg-video" src="//ismailngtv.cluster021.hosting.ovh.net/videoplayback.webm" muted loop autoplay></video>
+    <video class="bg-video" src="//dapper-phoenix-0e57fc.netlify.app/bg_video.webm" muted loop autoplay></video>
     
     <router-view />
 
