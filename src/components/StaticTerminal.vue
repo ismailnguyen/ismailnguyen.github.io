@@ -38,7 +38,7 @@
     .terminal {
         min-height: 0;
         width: 100%;
-        box-shadow: 8px 8px 20px 0 rgba(50,255,53,0.3);
+        box-shadow: 8px 8px 20px 0 rgba(0,0,0,0.3);
         overflow-x: hidden;
         max-width: 100%;
         background: whitesmoke;
@@ -81,7 +81,7 @@
 
                     & .content {
                         & h1, h2, h3, h4, h5, h6 {
-                            color: #839c11 !important;
+                            color: #060602 !important;
                         }
                     }
                 }
@@ -113,7 +113,7 @@
                     content: "";
                     display: inline-block;
                     margin-right: 0.75em;
-                    color: #839c11;
+                    color: #060602;
                 }
             }
         }

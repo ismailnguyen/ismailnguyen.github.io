@@ -1,23 +1,9 @@
 <template>
   <div>
-    <div class="notification is-danger is-light" v-if="isUnsupportedBrowser()">
-      <b>Unsupported Browser!</b>
-      This website will offer limited functionality in this browser. We only support the recent versions of major browsers like Chrome, Firefox, Safari, and Edge.
-    </div>
-
     <Navbar />
 
-    <video class="bg-video" src="//dapper-phoenix-0e57fc.netlify.app/bg_video.webm" muted loop autoplay></video>
-    
     <router-view />
 
-    <button
-      class="tally-button"
-      data-tally-open="3jaD66"
-      data-tally-emoji-text="👋🏽"
-      data-tally-emoji-animation="wave"
-      data-tally-auto-close="2000">👋🏽</button>
-	
     <Footer />
 
   </div>
@@ -27,7 +13,6 @@
   import 'bulma/css/bulma.css'
   import Navbar from './components/Navbar'
   import Footer from './components/Footer'
-  import Konami from 'konami';
 
   export default {
     name: 'App',
@@ -36,15 +21,6 @@
       Footer
     },
     methods: {
-      initEasterEgg: function () {
-        new Konami(() => {
-          document.querySelector('.tally-popup iframe').src = 'https://with-me.netlify.app/';
-        });
-      },
-      isUnsupportedBrowser: function () {
-        // Internet Explorer 10 and Internet Explorer 11
-        return /Trident\/|MSIE/.test(window.navigator.userAgent);
-      },
       printConsoleSignature: function () {
         var consoleSignatureStyle = "font-size: 16px;" +
         "background-image: linear-gradient(120deg, #839c11, #839c11 100%);" +
@@ -78,7 +54,7 @@
 
 <style lang="scss">
   html {
-    background: #9cf32b!important;
+    background: #FFF!important;
   }
 
   video.bg-video
@@ -95,7 +71,6 @@
   body {
     margin: 1rem;
     border-radius: 50px;
-    background-image: linear-gradient(180deg,#bfff39,#a8ff35 70%);
   }
 
   @font-face {
@@ -122,8 +97,8 @@
   
   .handwritten-text {
     font-family: 'Waiting for the Sunrise', cursive; 
-    margin: 10px 50px; 
-    letter-spacing: 6px; 
+    margin: 10px 50px;
+    letter-spacing: 6px;
     font-weight: bold;
   }
 
@@ -139,7 +114,7 @@
   }
 
   .hero .subhead {
-    color: #fff;
+    color: #060602;
   }
 
   .hero.is-fullheight-with-navbar {
@@ -153,7 +128,7 @@
   .hero .title,
   .hero h2,
   .hero .subtitle {
-    color: #fff;
+    color: #060602;
   }
 
   .hero,
@@ -240,24 +215,5 @@
     to {
       transform: scaleX(1);
     }
-  }
-
-  .tally-button {
-    background: none;
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    border: none;
-    font-size: 3rem;
-    cursor: pointer;
-    animation-duration: 1s;
-    animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
-    animation-fill-mode: both;
-    animation-name: fillUp;
-    animation-delay: 2s;
-  }
-  
-  .tally-button:hover {
-    animation: index-module_wave__28Vlw 1s ease-in-out 20;
   }
 </style>

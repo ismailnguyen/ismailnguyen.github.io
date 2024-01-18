@@ -1,6 +1,6 @@
 <template>
    <div>
-        <section class="hero is-fullheight presentation">
+        <section class="hero is-fullheight-with-navbar presentation">
             <div class="hero-body">
                 <div class="container has-text-left">
                     <div class="columns is-vcentered">
@@ -13,52 +13,41 @@
                                 I am <span class="has-text-background">Ismaïl NGUYEN</span>
                             </h1>
 
-                            <h2 class="subtitle is-4 handwritten-text animated-text">
-                                I have no special talent. I am only passionately curious.
+                            <h2 class="subtitle is-4 ">
+                                <p class="handwritten-text animated-text">
+                                    I have no special talent. I am only passionately curious.
+                                </p>
+
+                                <a href="/portfolio" class="button button-secondary portfolio__link">
+                                    See my works
+                                </a>
                             </h2>
-							
                         </div>
 
                         <div class="column is-7-tablet is-7-desktop">
                             <figure class="image is4by3">
-								<img :src="profilePicture" alt="Profile picture">
+								<img class="profile--picture" src="/resources/images/avatar/full_walking.png" alt="Profile picture">
 							</figure>
                         </div>
                     </div>
-					
-					<div class="center-do-not-use">
-						<div class="mouse" v-show="showMouseWheel">
-							<div class="wheel"></div>
-						</div>
-					</div>
                 </div>
             </div>
-        </section>
-		
-		<section class="hero is-fullheight portfolio">
-			<Portfolio />
         </section>
    </div>
 </template>
 
 <script>
-    import Portfolio from '../views/Portfolio'
 	import anime from 'animejs/lib/anime.es.js';
 
     export default {
         data () {
             return {
 				profilePicture: '/resources/images/avatar/face/1.png',
-				showMouseWheel: true
             }
-        },
-        components: {
-            Portfolio
         },
 		mounted() {
 			this.animateDescriptionText();
 			this.animateProfilePicture();
-			this.animateMouseWheel();
 		},
 		methods: {
 			animateDescriptionText: function () {
@@ -84,15 +73,9 @@
 
 			animateProfilePicture: function () {
 				setInterval(() => {   
-					this.profilePicture = '/resources/images/avatar/body/' + Math.floor((Math.random()*8)+1) + '.png';
+					this.profilePicture = '';
 				}, 1000);
 			},
-
-			animateMouseWheel: function () {
-				window.onscroll = () => {
-					this.showMouseWheel = window.scrollY < 200;
-				};
-			}
 		}
 	}
 </script>
@@ -103,7 +86,7 @@
         & .title,
         & .subtitle,
         & .image,
-		& .mouse {
+		& .portfolio__link {
             animation-duration: 1s;
             animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
             animation-fill-mode: both;
@@ -120,7 +103,7 @@
 			padding-bottom: 40px;
 
 			& span {
-				background-image: linear-gradient(120deg, #839c11, #839c11 100%);
+				background-image: linear-gradient(120deg, #a4a6ab, #8cb2d7 100%);
 				background-repeat: no-repeat;
 				background-size: 100% 0.6em;
 				background-position: 0 70%;
@@ -134,10 +117,6 @@
         & .image {
             animation-delay: 1s;
         }
-		
-		& .mouse {
-			animation-delay: 7s;
-		}
     }
 
 	@media(max-width: 400px) {
@@ -150,162 +129,38 @@
 		}
 	}
 
-    .portfolio {
-		background: #fff !important;
-        animation-duration: 1s;
-        animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
-        animation-fill-mode: both;
-        animation-name: fillUp;
-        animation-delay: 2s;
+    .portfolio__link {
+		animation-delay: 2s;
     }
-	
-	.center-do-not-use {
-		display: block;
-		margin: 0 auto;
-		width: 24px;
-		height: 100px;
-		margin-top: 125px;
-	}
-    
-	.mouse {
-		height: 42px;
-		width: 24px;
-		border-radius: 14px;
-		transform: none;
-		border: 2px solid #fff;
-		margin-bottom: 6px;
-	}
 
-	.wheel {
-		height: 5px;
-		width: 2px;
-		display: block;
-		margin: 5px auto;
-		background: #fff;
-		position: relative;
-		height: 4px;
-		width: 4px;
-		border: 2px solid #fff;
-		border-radius: 8px;
-	}
+	.buttons {
+        display: inline-block;
+    }
 
-	.wheel {
-		animation: mouse-wheel 1s linear infinite;
-		-webkit-animation: mouse-wheel 1s linear infinite;
-		-moz-animation: mouse-wheel 1s linear infinite;
-	}
+    .button-secondary {
+        margin-right: 10px;
+        margin-left: 10px;
+        background-color: #f8faff;
+        color: #3e484e;
+        font-size: 16px;
+        display: inline-block;
+        transition: background-color 80ms ease-in-out;
+        font-weight: 400;
+        text-decoration: none;
+        padding: 9px 24px;
+        font-size: 16px;
+        border: 0;
+        line-height: inherit;
+        cursor: pointer;
+        border-radius: 0;
 
-	@keyframes mouse-wheel {
-		0% {
-			opacity: 1;
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
-		}
-		100% {
-			opacity: 0;
-			-webkit-transform: translateY(20px);
-			-ms-transform: translateY(20px);
-			transform: translateY(20px);
-		}
-	}
+        &:hover {
+            background-color: #d5d6d6;
+            color: #3e484e;
+        }
+    }
 
-	@-webkit-keyframes mouse-wheel {
-		0% {
-			opacity: 1;
-			-webkit-transform: translateY(0);
-			-ms-transform: translateY(0);
-			transform: translateY(0);
-		}
-		100% {
-			opacity: 0;
-			-webkit-transform: translateY(20px);
-			-ms-transform: translateY(20px);
-			transform: translateY(20px);
-		}
-	}
-
-	@-moz-keyframes mouse-wheel {
-		0% {
-			top: 1px;
-		}
-		25% {
-			top: 2px;
-		}
-		50% {
-			top: 6px;
-		}
-		75% {
-			top: 2px;
-		}
-		100% {
-			top: 1px;
-		}
-	}
-
-	@-webkit-keyframes mouse-scroll {
-		0% {
-			opacity: 0;
-		}
-		25% {
-			opacity: .25;
-		}
-		50% {
-			opacity: .5;
-		}
-		75% {
-			opacity: .75;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
-
-	@-moz-keyframes mouse-scroll {
-		0% {
-			opacity: 0;
-		}
-		50% {
-			opacity: .5;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
-
-	@-o-keyframes mouse-scroll {
-		0% {
-			opacity: 0;
-		}
-		25% {
-			opacity: .25;
-		}
-		50% {
-			opacity: .5;
-		}
-		75% {
-			opacity: .75;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
-
-	@keyframes mouse-scroll {
-		0% {
-			opacity: 0;
-		}
-		25% {
-			opacity: .25;
-		}
-		50% {
-			opacity: .5;
-		}
-		75% {
-			opacity: .75;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
+    .profile--picture {
+        transform: scaleX(-1);
+    }
 </style>

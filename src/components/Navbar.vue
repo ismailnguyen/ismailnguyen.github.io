@@ -2,7 +2,7 @@
     <nav class="navbar" :class="isMenuOpen ? 'is-blurred' : ''" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
              <router-link to="/" class="navbar-item">
-                <div id="brand" class="logo"></div>
+                <div id="brand" class="logo">Isma&iuml;l</div>
             </router-link>
 
             <a v-on:click="isMenuOpen ? closeMenu() : openMenu()" role="button" :class="isMenuOpen ? 'navbar-burger burger is-active' : 'navbar-burger burger'" aria-label="menu" aria-expanded="false">
@@ -57,18 +57,6 @@
                                 <i class="fab fa-twitter" title="Twitter"></i>
                             </a>
                         </transition>
-
-                        <transition name="slide-left">
-                            <a class="button button-social button-resume" href="//ismailnguyen.notion.site/Resume-76b61cac195d4a7b867bec952ed76db6" target="_blank" rel="noopener">
-                                <i class="fas fa-file-alt" title="Resum&eacute;"></i>
-                            </a>
-                        </transition>
-
-                        <transition name="slide-left">
-                            <a class="button button-social button-github" href="//github.com/ismailnguyen/ismailnguyen.github.io" target="_blank" rel="noopener">
-                                <i class="fas fa-code" title="Resum&eacute;"></i>
-                            </a>
-                        </transition>
                     </div>
                 </div>
             </div>
@@ -77,7 +65,6 @@
 </template>
 
 <script>
-    import animate from '../logo-animation'
     
     export default {
         data () {
@@ -88,9 +75,7 @@
         },
         components: {
         },
-        mounted () {
-            animate('brand', ['isma&iuml;l', 'NGUYEN']);
-        },
+        
         methods: {
             openMenu: function () {
                 if (this.isMenuOpen)
@@ -127,29 +112,30 @@
     }
 
     .logo {
+        position: fixed;
         line-height: 1.15;
         text-align: center;
-        color: #f8faff;
+        color: #3e484e;
         font-weight: 400;
         text-decoration: none;
         vertical-align: baseline;
         font-family: 'Bowlby One SC';
         font-style: normal;
         font-size: 2.75rem;
-        background: #fff;
+        background: #3e484e;
         background-clip: text;
         color: transparent;
     }
 
     .button-social {
-        background: #839c11;
+        background: #3e484e;
         color: #fff;
         border-radius: 0;
         border: none;
     }
 
     .navbar .burger {
-        color: #fff;
+        color: #3e484e;
         font-size: 22px;
     }
 
@@ -236,10 +222,6 @@
 
     .button-twitter:hover {
         color: #1aa4ef;
-    }
-
-    .button-resume:hover {
-        color: #508ff4;
     }
 
     .button-linkedin:hover {
