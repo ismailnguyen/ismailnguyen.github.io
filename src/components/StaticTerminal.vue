@@ -38,14 +38,14 @@
     .terminal {
         min-height: 0;
         width: 100%;
-        box-shadow: 8px 8px 20px 0 rgba(0,0,0,0.3);
         overflow-x: hidden;
         max-width: 100%;
         background: whitesmoke;
         color: #000;
         font-size: .875rem;
         font-family: Fira Mono, Consolas, Menlo, Monaco, Courier New, Courier, monospace;
-        border-radius: .5rem;
+        border-radius: none;
+        border: 3px solid black;
         position: relative;
         box-sizing: border-box;
 

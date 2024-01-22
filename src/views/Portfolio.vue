@@ -87,7 +87,7 @@
 
 <style scoped lang="scss">
     .featuredposts__see-all {
-        background-image: linear-gradient(120deg, #839c11, #839c11 100%);
+        background: #3e484e;
         background-repeat: no-repeat;
         background-size: 100% 0.4em;
         background-position: 0 70%;

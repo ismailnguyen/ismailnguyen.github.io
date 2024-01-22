@@ -53,7 +53,7 @@
 .featuredposts__item {
         max-width: none;
         padding: 5px;
-        background-image: linear-gradient(120deg, #839c11, #839c11 100%);
+        background: #3e484e;
         display: flex;
         align-items: center;
         gap: 0 0.2rem;

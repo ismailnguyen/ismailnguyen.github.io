@@ -17,26 +17,8 @@
                 <div class="navbar-item">
                     <div class="buttons">
 						<transition name="slide-left">
-                            <a class="button button-social button-buymeacoffee" href="//www.buymeacoffee.com/ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fas fa-coffee" title="Buy me a coffee"></i>
-                            </a>
-                        </transition>
-						
-                        <transition name="slide-left">
-                            <a class="button button-social button-dev" href="//dev.to/ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-dev" title="DEV Community"></i>
-                            </a>
-                        </transition>
-						
-						<transition name="slide-left">
                             <a class="button button-social button-linkedin" href="//www.linkedin.com/in/ismailnguyen" target="_blank" rel="noopener">
                                 <i class="fab fa-linkedin" title="LinkedIn"></i>
-                            </a>
-                        </transition>
-
-                        <transition name="slide-left">
-                            <a class="button button-social button-paypal" href="//www.paypal.me/ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-paypal" title="Paypal"></i>
                             </a>
                         </transition>
 
@@ -207,15 +189,10 @@
         background-color: #fff;
     }
 
-    .button-paypal:hover {
-        color: #15aabf;
-    }
-
     .button-npm:hover {
         color: #cb3837;
     }
 
-    .button-dev:hover,
 	.button-github:hover {
         color: #000;
     }
@@ -228,10 +205,6 @@
         color: #0073b1;
     }
 	
-	.button-buymeacoffee:hover {
-		color: #fd0;
-	}
-
     .navbar-menu .navbar-item {
         padding-right: 22px;
         padding-left: 22px;

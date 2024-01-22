@@ -23,7 +23,7 @@
     methods: {
       printConsoleSignature: function () {
         var consoleSignatureStyle = "font-size: 16px;" +
-        "background-image: linear-gradient(120deg, #839c11, #839c11 100%);" +
+        "background-color: #3e484e;" +
         "color: #fff;" +
         "text-align: center;" +
         "padding: 10px 15px;" +
@@ -47,7 +47,6 @@
     },
     mounted() {
       this.printConsoleSignature();
-      this.initEasterEgg();
     }
   }
 </script>
