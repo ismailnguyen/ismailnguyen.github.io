@@ -34,7 +34,7 @@
 
 <script>
     import WorksService from '@/services/WorksService.js'
-    import MarkdownBloc from '../components/TerminalMarkdownBloc'
+    import MarkdownBloc from '../components/TerminalMarkdownBloc.vue'
 
     export default {
         props: ['workId'],

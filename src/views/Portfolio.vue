@@ -7,13 +7,17 @@
 
 			<div class="tag-list featuredposts__list" :class="isLoading ? 'loading-skeleton' : ''">
 				<InfiniteLoopSlider
-                        :reverse="i % 2"
                         :duration="random(sliderDuration - 5000, sliderDuration + 5000)"
-                        :items_per_row="showAllWorks ? works.length/3 : 5"
-                        :items="works"
-                        v-for="(_, i) in new Array(showAllWorks ? 3 : 1)"
-                        :key="i" />
+                        :items_per_row="pinnedWorks.length"
+                        :items="pinnedWorks" />
                         
+                <InfiniteLoopSlider
+                    :reverse="i % 2"
+                    :duration="random(sliderDuration - 5000, sliderDuration + 5000)"
+                    :items_per_row="showAllWorks ? unpinnedWorks.length/2 : 5"
+                    :items="unpinnedWorks"
+                    v-for="(_, i) in new Array(showAllWorks ? 2 : 1)"
+                    :key="i" />
 			</div>
 			
 			<p class="featuredposts__footer" v-if="!showAllWorks && !isLoading">
@@ -36,7 +40,7 @@
                 works: [],
 				showAllWorks: this.showAll || false,
                 isLoading: true,
-                sliderDuration: 15000,
+                sliderDuration: 30000,
             }
         },
         components: {
@@ -46,7 +50,6 @@
             this.loadWorks();
             this.fetchPortfolio();
             this.startAnimation();
-
         },
         methods: {
             startAnimation: function () {
@@ -75,6 +78,14 @@
 
         },
 		computed: {
+            pinnedWorks () {
+                return this.works ? this.works.filter(work => work.isPinned) : [];
+            },
+
+            unpinnedWorks () {
+                return this.works ? this.works.filter(work => !work.isPinned) : [];
+            },
+
 			displayedWorks: function () {
 				if (this.showAllWorks)
 					return this.works;
@@ -132,7 +143,6 @@
     .featuredpost:hover .featuredpost__inner {
         background-image: linear-gradient(0deg,rgba(0,0,0,.5) 0,rgba(0,0,0,.4) 100%);
     }
-
 
     .featuredposts__footer {
         text-align: right;

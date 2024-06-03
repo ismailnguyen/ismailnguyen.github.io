@@ -50,7 +50,7 @@
 </script>
 
 <style scoped lang="scss">
-.featuredposts__item {
+    .featuredposts__item {
         max-width: none;
         padding: 5px;
         background: #3e484e;
@@ -66,8 +66,6 @@
 
     .featuredpost {
         display: block;
-        height: 300px;
-        width: 300px;
         position: relative;
         border-radius: 0;
         overflow: hidden;
@@ -80,7 +78,19 @@
         background-position: center;
     }
 
+    @media (max-width: 767.98px) {
+        .featuredpost {
+            width: 100vw;
+            height: 80vh;
+        }
+    }
 
+    @media (min-width: 767.98px) {
+        .featuredpost {
+            width: 300px;
+            height: 300px;
+        }
+    }
 
     .featuredpost__link {
         overflow-wrap: break-word;
@@ -125,22 +135,41 @@
         opacity: 1;
     }
 
-.loop-slider .inner {
-  display: flex;
-  width: fit-content;
-  animation-name: loop;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: var(--direction);
-  animation-duration: var(--duration);
-}
+    .loop-slider {
+        /* Hide by default, and show according to screen size */
+        display: none;
+    }
 
-@keyframes loop {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
+    @media (max-width: 767.98px) {
+        /* Display only first line on mobile screen */
+        .loop-slider:nth-child(1) {
+            display: block !important;
+        }
+    }
+
+    @media (min-width: 767.98px) {
+        /* Display all on large screen */
+        .loop-slider {
+            display: block !important;
+        }
+    }
+
+    .loop-slider .inner {
+        display: flex;
+        width: fit-content;
+        animation-name: loop;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: var(--direction);
+        animation-duration: var(--duration);
+    }
+
+    @keyframes loop {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
 </style>

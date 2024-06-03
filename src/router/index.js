@@ -1,57 +1,47 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
-Vue.use(VueRouter)
-
-import Presentation from './views/Presentation.vue'
-import Portfolio from './views/Portfolio.vue'
-import WorkDetail from './views/WorkDetail.vue'
-import WorkPrivacy from './views/WorkPrivacy.vue'
-import WorkLicense from './views/WorkLicense.vue'
-import Terms from './views/Terms.vue'
-
-const router = new VueRouter({
-    mode: 'history',
+const router = createRouter({
+    history: createWebHistory(import.meta.env.BASE_URL),
     linkExactActiveClass: 'is-active',
     routes: [
         {
             name: 'Presentation',
             path: '/',
-            component: Presentation
+            component: () => import('../views/Presentation.vue'),
         },
         {
             name: 'All',
-            path: '*',
-            component: Presentation
+            path: '/:pathMatch(.*)*',
+            component: () => import('../views/Presentation.vue'),
         },
         {
             name: 'Portfolio',
             path: '/portfolio',
-            component: Portfolio,
+            component: () => import('../views/Portfolio.vue'),
             props: { showAll: true }
         },
         {
             name: 'WorkDetail',
             path: '/work/:id',
-            component: WorkDetail,
+            component: () => import('../views/WorkDetail.vue'),
             props: (route) => ({ workId: route.params.id })
         },
         {
             name: 'WorkPrivacy',
             path: '/work/:id/Privacy',
-            component: WorkPrivacy,
+            component: () => import('../views/WorkPrivacy.vue'),
             props: (route) => ({ workId: route.params.id })
         },
         {
             name: 'WorkLicense',
             path: '/work/:id/License',
-            component: WorkLicense,
+            component: () => import('../views/WorkLicense.vue'),
             props: (route) => ({ workId: route.params.id })
         },
         {
             name: 'Terms',
             path: '/terms',
-            component: Terms
+            component: () => import('../views/Terms.vue'),
         }
     ],
     scrollBehavior (to, from, savedPosition) {

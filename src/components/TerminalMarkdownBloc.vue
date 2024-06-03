@@ -7,14 +7,14 @@
 </template>
 
 <script>
-    const markdownParser = require('markdown-it')();
-    import StaticTerminal from '../components/StaticTerminal'
+    import markdownParser from 'markdown-it';
+    import StaticTerminal from './StaticTerminal.vue'
 
     export default {
         props: ['title', 'text', 'icon'],
         computed: {
             parsedContent: function () {
-                return markdownParser.render(this.text);
+                return markdownParser().render(this.text);
             }
         },
         components: {

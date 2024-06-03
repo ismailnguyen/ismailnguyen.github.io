@@ -69,7 +69,7 @@
             </div>
         </section>
 
-        <section class="hero work-detail--content" v-if="images">
+        <section class="hero work-detail--content" v-if="images && images.length">
             <div class="hero-body">
                 <div class="container is-fullhd has-text-centered">
                     <WorkCarousel :images="images" />
@@ -87,9 +87,9 @@
 
 <script>
     import WorksService from '@/services/WorksService.js'
-    import MarkdownBloc from '../components/MarkdownBloc'
-    import IframeBloc from '../components/IframeBloc'
-    import WorkCarousel from '../components/WorkCarousel'
+    import MarkdownBloc from '../components/MarkdownBloc.vue'
+    import IframeBloc from '../components/IframeBloc.vue'
+    import WorkCarousel from '../components/WorkCarousel.vue'
 
     export default {
         props: ['workId'],
@@ -280,7 +280,7 @@
 
     @for $i from 1 through 50 {
       .work-detail .tag:nth-child(#{$i}n) {
-          animation-delay: #{($i/3 + 0.9)}s;
+          animation-delay: #{(calc($i/3) + 0.9)}s;
       }
     }
 

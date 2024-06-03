@@ -11,7 +11,7 @@
 </template>
 
 <script>
-    import StaticTerminal from '../components/StaticTerminal'
+    import StaticTerminal from '../components/StaticTerminal.vue'
 
     export default {
         components: {

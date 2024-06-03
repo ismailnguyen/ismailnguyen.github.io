@@ -31,6 +31,11 @@
         font-family:'Bluu Next Bold', sans-serif;
         padding: 10px 50px; 
         letter-spacing: 6px;
-        font-weight: bold
+        font-weight: bold;
+        animation-duration: 3s;
+        animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+        animation-fill-mode: both;
+        animation-name: slideDown;
+        animation-delay: 4s;
     }
 </style>

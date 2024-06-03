@@ -7,13 +7,13 @@
 </template>
 
 <script>
-    const markdownParser = require('markdown-it')();
+    import markdownParser from 'markdown-it';
 
     export default {
         props: ['text'],
         computed: {
             parsedContent: function () {
-                return markdownParser.render(this.text);
+                return markdownParser().render(this.text);
             }
         }
     }

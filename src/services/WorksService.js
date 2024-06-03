@@ -19,9 +19,9 @@ export default class WorksService {
 
     constructApiUrl = (resource, parameter) => {
         if (parameter) {
-            return process.env.VUE_APP_WORKS_API_URL + resource + '/' + parameter
+            return import.meta.env.VITE_WORKS_API_URL + resource + '/' + parameter
         }
 
-        return process.env.VUE_APP_WORKS_API_URL + resource + '/'
+        return import.meta.env.VITE_WORKS_API_URL + resource + '/'
     }
 }
