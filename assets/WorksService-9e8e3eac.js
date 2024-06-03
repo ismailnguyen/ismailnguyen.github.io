@@ -1,1 +1,0 @@
-class n{async getAllPages(){return(await fetch(this.constructApiUrl("pages"))).json()}async getPage(s){return(await fetch(this.constructApiUrl("page",s))).json()}async getPageImages(s){return(await fetch(this.constructApiUrl("pageImages",s))).json()}constructApiUrl=(s,e)=>e?{}.VITE_WORKS_API_URL+s+"/"+e:{}.VITE_WORKS_API_URL+s+"/"}export{n as W};
