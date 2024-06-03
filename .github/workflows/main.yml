@@ -16,19 +16,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: '${{ runner.os }}-node-${{ hashFiles(''**/package-lock.json'') }}'
-          restore-keys: |
-            ${{ runner.os }}-node-
+          cache: 'npm'
 
       - name: Setup environment variables
         run: |
           touch .env
-          echo VUE_APP_WORKS_API_URL=${{ secrets.WORKS_API_URL }} >> .env
+          echo VITE_WORKS_API_URL=${{ secrets.WORKS_API_URL }} >> .env
 
       - run: npm install
       - run: npm run build
