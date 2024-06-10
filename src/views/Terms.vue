@@ -1,5 +1,5 @@
 <template>
-    <section class="section">
+    <section class="hero section">
         <div class="container is-fullhd">
             <StaticTerminal
                 handle="Terms And Conditions of Use"

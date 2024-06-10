@@ -87,12 +87,6 @@
 
 <style scoped lang="scss">
     .presentation {
-        background: #FFF !important;
-        min-height: 100vh;
-        z-index: 10;
-    }
-
-    .presentation {
         & .subhead,
         & .title,
         & .subtitle,

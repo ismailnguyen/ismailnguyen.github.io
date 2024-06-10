@@ -1,34 +1,32 @@
 <template>
-    <div>
-        <section class="hero work-detail" :class="!hasContent ? 'is-fullheight' : ''" v-if="work">
-            <div class="hero-body">
-                <div class="container is-fullhd has-text-centered">
-                    <h1 class="title is-1 is-spaced">
-                        <span class="icon is-large" v-if="work.logo">
-                            <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
-                        </span>
+    <section class="hero work-detail" :class="!hasContent ? 'is-fullheight' : ''" v-if="work">
+        <div class="hero-body">
+            <div class="container is-fullhd has-text-centered">
+                <h1 class="title is-1 is-spaced">
+                    <span class="icon is-large" v-if="work.logo">
+                        <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
+                    </span>
 
-                        {{ work.title }}
-                    </h1>
-                    <div class="buttons">
-                        <a :href="'/work/' + encodeURIComponent(work.id)" class="button button-secondary">
-                            <i class="fas fa-arrow-left" title="Go back"></i>
-                        </a>
-                    </div>
+                    {{ work.title }}
+                </h1>
+                <div class="buttons">
+                    <a :href="'/work/' + encodeURIComponent(work.id)" class="button button-secondary">
+                        <i class="fas fa-arrow-left" title="Go back"></i>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section work-detail--content" v-if="hasContent">
-            <div class="container is-fullhd">
-                <MarkdownBloc
-                    title="License"
-                    :text="markdownLicenseText"
-                    :icon="work.logo.url"
-                />
-            </div>
-        </section>
-    </div>
+    <section class="section work-detail--content" v-if="hasContent">
+        <div class="container is-fullhd">
+            <MarkdownBloc
+                title="License"
+                :text="markdownLicenseText"
+                :icon="work.logo.url"
+            />
+        </div>
+    </section>
 </template>
 
 <script>

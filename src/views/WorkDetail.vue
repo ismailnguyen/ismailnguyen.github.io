@@ -1,88 +1,86 @@
 <template>
-    <div>
-        <section class="hero work-detail" :class="!hasContent ? 'is-fullheight' : ''" v-if="work">
-            <div class="hero-body">
-                <div class="container is-fullhd has-text-centered">
+    <section class="hero work-detail" :class="!hasContent ? 'is-fullheight' : ''" v-if="work">
+        <div class="hero-body">
+            <div class="container is-fullhd has-text-centered">
 
-                    <h1 class="title is-1 is-spaced">
-                        <span class="icon is-large" v-if="work.logo">
-                             <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
-                        </span>
+                <h1 class="title is-1 is-spaced">
+                    <span class="icon is-large" v-if="work.logo">
+                            <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
+                    </span>
 
-                        {{ work.title }}
-                    </h1>
+                    {{ work.title }}
+                </h1>
 
-                    <h2 class="subtitle is-6" v-if="work.subTitle">
-                        {{ work.subTitle }}
-                    </h2>
+                <h2 class="subtitle is-6" v-if="work.subTitle">
+                    {{ work.subTitle }}
+                </h2>
 
-                    <div class="tags">
-                        <span class="tag" v-for="(tag, tagIndex) in work.tags" :key="tagIndex">
-                            {{ tag }}
-                        </span>
-                    </div>
+                <div class="tags">
+                    <span class="tag" v-for="(tag, tagIndex) in work.tags" :key="tagIndex">
+                        {{ tag }}
+                    </span>
+                </div>
 
-                    <div class="subhead" v-html="work.description"></div>
+                <div class="subhead" v-html="work.description"></div>
 
-                    <div class="buttons">
-                        <a :href="work.secondaryLink.url"
-                            target="_blank"
-                            class="button button-secondary"
-                            rel="noopener"
-                            v-if="work.secondaryLink && work.secondaryLink.text && work.secondaryLink.url">
-                            {{ work.secondaryLink.text }}
-                        </a>
+                <div class="buttons">
+                    <a :href="work.secondaryLink.url"
+                        target="_blank"
+                        class="button button-secondary"
+                        rel="noopener"
+                        v-if="work.secondaryLink && work.secondaryLink.text && work.secondaryLink.url">
+                        {{ work.secondaryLink.text }}
+                    </a>
 
-                        <a :href="work.primaryLink.url"
-                            target="_blank"
-                            class="button button-primary"
-                            rel="noopener"
-                            v-if="work.primaryLink && work.primaryLink.text && work.primaryLink.url">
-                            {{ work.primaryLink.text }}
-                        </a>
+                    <a :href="work.primaryLink.url"
+                        target="_blank"
+                        class="button button-primary"
+                        rel="noopener"
+                        v-if="work.primaryLink && work.primaryLink.text && work.primaryLink.url">
+                        {{ work.primaryLink.text }}
+                    </a>
 
-                        <a :href="'/work/' + encodeURIComponent(work.id) + '/privacy'"
-                            class="button button-secondary"
-                            v-if="work.markdownPrivacyUrl">
-                            Privacy Policy
-                        </a>
+                    <a :href="'/work/' + encodeURIComponent(work.id) + '/privacy'"
+                        class="button button-secondary"
+                        v-if="work.markdownPrivacyUrl">
+                        Privacy Policy
+                    </a>
 
-                        <a :href="'/work/' + encodeURIComponent(work.id) + '/license'"
-                            class="button button-secondary"
-                            v-if="work.markdownLicenseUrl">
-                            License
-                        </a>
-                    </div>
+                    <a :href="'/work/' + encodeURIComponent(work.id) + '/license'"
+                        class="button button-secondary"
+                        v-if="work.markdownLicenseUrl">
+                        License
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section work-detail--content" v-if="work.embeddedVideoUrl">
-            <div class="container is-fullhd">
-                <IframeBloc :url="work.embeddedVideoUrl" />
-            </div>
-        </section>
+    <section class="section work-detail--content" v-if="work.embeddedVideoUrl">
+        <div class="container is-fullhd">
+            <IframeBloc :url="work.embeddedVideoUrl" />
+        </div>
+    </section>
 
-        <section class="section work-detail--content" v-if="work.embeddedContent && work.embeddedContent.url">
-            <div class="container is-fullhd">
-                <IframeBloc :url="work.embeddedContent.url" :orientation="work.embeddedContent.orientation" />
-            </div>
-        </section>
+    <section class="section work-detail--content" v-if="work.embeddedContent && work.embeddedContent.url">
+        <div class="container is-fullhd">
+            <IframeBloc :url="work.embeddedContent.url" :orientation="work.embeddedContent.orientation" />
+        </div>
+    </section>
 
-        <section class="hero work-detail--content" v-if="images && images.length">
-            <div class="hero-body">
-                <div class="container is-fullhd has-text-centered">
-                    <WorkCarousel :images="images" />
-                </div>
+    <section class="hero work-detail--content" v-if="images && images.length">
+        <div class="hero-body">
+            <div class="container is-fullhd has-text-centered">
+                <WorkCarousel :images="images" />
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section work-detail--content" v-if="markdownContent">
-            <div class="container is-fullhd">
-                <MarkdownBloc :text="markdownContent" />
-            </div>
-        </section>
-    </div>
+    <section class="section work-detail--content" v-if="markdownContent">
+        <div class="container is-fullhd">
+            <MarkdownBloc :text="markdownContent" />
+        </div>
+    </section>
 </template>
 
 <script>

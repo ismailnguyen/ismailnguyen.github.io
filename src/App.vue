@@ -145,6 +145,12 @@
     background:none !important;
   }
 
+  .hero {
+    background: #FFF !important;
+    min-height: 100vh;
+    z-index: 10;
+  }
+
   .slide-left-enter-active,
   .slide-left-leave-active,
   .slide-right-enter-active,
