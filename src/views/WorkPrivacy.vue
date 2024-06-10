@@ -95,7 +95,7 @@
         margin-right: 10px;
         margin-left: 10px;
         background-color: #f8faff;
-        color: #3e484e;
+        color: #000;
         font-size: 16px;
         display: inline-block;
         -webkit-transition: background-color 80ms ease-in-out;
@@ -112,7 +112,7 @@
 
         &:hover {
             background-color: #d5d6d6;
-            color: #3e484e;
+            color: #000;
         }
     }
 </style>

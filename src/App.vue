@@ -3,10 +3,12 @@
     <Navbar />
 
     <router-view />
-
-    <Footer />
-
   </main>
+    <div class="placeholder"></div>
+
+    <FooterWithPortfolio v-if=" $route.meta.footerType == 'withPortfolio'" />
+    <Footer v-else />
+    
 </template>
 
 <script>
@@ -14,17 +16,19 @@
   import 'bulma/css/bulma.css'
   import Navbar from './components/Navbar.vue'
   import Footer from './components/Footer.vue'
+  import FooterWithPortfolio from './components/FooterWithPortfolio.vue'
 
   export default {
     name: 'App',
     components: {
       Navbar,
-      Footer
+      Footer,
+      FooterWithPortfolio
     },
     methods: {
       printConsoleSignature: function () {
         var consoleSignatureStyle = "font-size: 16px;" +
-        "background-color: #3e484e;" +
+        "background-color: #000;" +
         "color: #fff;" +
         "text-align: center;" +
         "padding: 10px 15px;" +
@@ -68,9 +72,13 @@
     opacity: 0.8;
   }
 
-  body {
-    margin: 1rem;
-    border-radius: 50px;
+  main {
+    z-index: 10;
+    position: relative;
+  }
+
+  nav {
+    padding: 1rem;
   }
 
   @font-face {

@@ -1,5 +1,7 @@
 <template>
-    <footer class="footer parallax-container">
+    <footer id="portfolio" class="footer parallax-container">
+        <Portfolio />
+
         <div class="content has-text-centered">
             <p class="is-pulled-left">
                 <small>
@@ -19,11 +21,15 @@
 
 <script>
     import '../styles/footer.css';
+	import Portfolio from './Portfolio.vue';
     import initParallax from '../parallax-scroll-animation.js';
 
     export default {
-        mounted() {
+        components: {
+            Portfolio
+        },
+         mounted() {
             initParallax();
         }
-    }
+	}
 </script>

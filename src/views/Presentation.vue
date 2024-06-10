@@ -17,7 +17,7 @@
                                 I have no special talent. I am only passionately curious.
                             </p>
 
-                            <a href="/portfolio" class="button button-secondary portfolio__link">
+                            <a @click="scrollToBottom" class="button button-secondary portfolio__link">
                                 See my works
                             </a>
                         </h2>
@@ -48,6 +48,13 @@
 			this.animateProfilePicture();
 		},
 		methods: {
+            scrollToBottom: function () {
+                window.scroll({
+                    top: window.outerHeight,
+                    behavior: "smooth",
+                });
+            },
+    
 			animateDescriptionText: function () {
 				var animatedTextWrapper = document.querySelector('.animated-text');
 				animatedTextWrapper.innerHTML = animatedTextWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
@@ -79,6 +86,12 @@
 </script>
 
 <style scoped lang="scss">
+    .presentation {
+        background: #FFF !important;
+        min-height: 100vh;
+        z-index: 10;
+    }
+
     .presentation {
         & .subhead,
         & .title,
@@ -139,7 +152,7 @@
         margin-right: 10px;
         margin-left: 10px;
         background-color: #f8faff;
-        color: #3e484e;
+        color: #000;
         font-size: 16px;
         display: inline-block;
         transition: background-color 80ms ease-in-out;
@@ -154,7 +167,7 @@
 
         &:hover {
             background-color: #d5d6d6;
-            color: #3e484e;
+            color: #000;
         }
     }
 

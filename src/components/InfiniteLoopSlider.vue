@@ -43,7 +43,7 @@
     .featuredposts__item {
         max-width: none;
         padding: 5px;
-        background: #3e484e;
+        background: #f8faff;
         display: flex;
         align-items: center;
         gap: 0 0.2rem;

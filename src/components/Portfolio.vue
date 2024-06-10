@@ -1,44 +1,30 @@
 <template>
-    <div class="hero-body">
-		<div class="container has-text-left">
-			<h3 class="title is-5">
-				Featured Works
-			</h3>
-
-			<div class="tag-list featuredposts__list" :class="isLoading ? 'loading-skeleton' : ''">
-				<InfiniteLoopSlider
-                        :duration="random(sliderDuration - 5000, sliderDuration + 5000)"
-                        :items_per_row="pinnedWorks.length"
-                        :items="pinnedWorks" />
-                        
-                <InfiniteLoopSlider
-                    :reverse="i % 2"
+    <div class="container">
+        <div class="tag-list featuredposts__list" :class="isLoading ? 'loading-skeleton' : ''">
+            <InfiniteLoopSlider
                     :duration="random(sliderDuration - 5000, sliderDuration + 5000)"
-                    :items_per_row="showAllWorks ? unpinnedWorks.length/2 : 5"
-                    :items="unpinnedWorks"
-                    v-for="(_, i) in new Array(showAllWorks ? 2 : 1)"
-                    :key="i" />
-			</div>
-			
-			<p class="featuredposts__footer" v-if="!showAllWorks && !isLoading">
-				<a @click="showAllWorks=true" class="featuredposts__see-all">
-					See All Works
-				</a>
-			</p>
-		</div>
-	</div>
+                    :items_per_row="pinnedWorks.length"
+                    :items="pinnedWorks" />
+                    
+            <InfiniteLoopSlider
+                :reverse="i % 2"
+                :duration="random(sliderDuration - 5000, sliderDuration + 5000)"
+                :items_per_row="unpinnedWorks.length/2"
+                :items="unpinnedWorks"
+                v-for="(_, i) in new Array(2)"
+                :key="i" />
+        </div>
+    </div>
 </template>
 
 <script>
     import WorksService from '@/services/WorksService.js'
-    import InfiniteLoopSlider from '../components/InfiniteLoopSlider.vue'
+    import InfiniteLoopSlider from './InfiniteLoopSlider.vue'
 
     export default {
-        props: ['showAll'],
         data () {
             return {
                 works: [],
-				showAllWorks: this.showAll || false,
                 isLoading: true,
                 sliderDuration: 30000,
             }
@@ -85,20 +71,13 @@
             unpinnedWorks () {
                 return this.works ? this.works.filter(work => !work.isPinned) : [];
             },
-
-			displayedWorks: function () {
-				if (this.showAllWorks)
-					return this.works;
-
-				return this.works ? this.works.filter(work => work.isPinned) : [];
-			}
 		}
     }
 </script>
 
 <style scoped lang="scss">
     .featuredposts__see-all {
-        background: #3e484e;
+        background: #000;
         background-repeat: no-repeat;
         background-size: 100% 0.4em;
         background-position: 0 70%;

@@ -96,27 +96,31 @@
         position: fixed;
         line-height: 1.15;
         text-align: center;
-        color: #3e484e;
+        color: #000;
         font-weight: 400;
         text-decoration: none;
         vertical-align: baseline;
         font-family: 'Bowlby One SC';
         font-style: normal;
         font-size: 2.75rem;
-        background: #3e484e;
+        background: #000;
         background-clip: text;
         color: transparent;
     }
 
     .button-social {
-        background: #3e484e;
+        background: #000;
         color: #fff;
         border-radius: 0;
         border: none;
     }
 
+    .navbar {
+        background: #FFF !important;
+    }
+
     .navbar .burger {
-        color: #3e484e;
+        color: #000;
         font-size: 22px;
     }
 

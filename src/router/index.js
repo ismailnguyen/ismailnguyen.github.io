@@ -8,40 +8,58 @@ const router = createRouter({
             name: 'Presentation',
             path: '/',
             component: () => import('../views/Presentation.vue'),
+            meta: {
+                footerType: 'withPortfolio'
+            }
         },
         {
             name: 'All',
             path: '/:pathMatch(.*)*',
             component: () => import('../views/Presentation.vue'),
-        },
-        {
-            name: 'Portfolio',
-            path: '/portfolio',
-            component: () => import('../views/Portfolio.vue'),
-            props: { showAll: true }
+            meta: {
+                footerType: 'withPortfolio'
+            }
         },
         {
             name: 'WorkDetail',
             path: '/work/:id',
             component: () => import('../views/WorkDetail.vue'),
-            props: (route) => ({ workId: route.params.id })
+            props: (route) => ({
+                workId: route.params.id,
+            }),
+            meta: {
+                footerType: 'light'
+            }
         },
         {
             name: 'WorkPrivacy',
             path: '/work/:id/Privacy',
             component: () => import('../views/WorkPrivacy.vue'),
-            props: (route) => ({ workId: route.params.id })
+            props: (route) => ({ 
+                workId: route.params.id,
+            }),
+            meta: {
+                footerType: 'light'
+            }
         },
         {
             name: 'WorkLicense',
             path: '/work/:id/License',
             component: () => import('../views/WorkLicense.vue'),
-            props: (route) => ({ workId: route.params.id })
+            props: (route) => ({ 
+                workId: route.params.id,
+            }),
+            meta: {
+                footerType: 'light'
+            }
         },
         {
             name: 'Terms',
             path: '/terms',
             component: () => import('../views/Terms.vue'),
+            meta: {
+                footerType: 'light'
+            }
         }
     ],
     scrollBehavior (to, from, savedPosition) {
