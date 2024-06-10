@@ -29,13 +29,6 @@
 <script>
     export default {
         props: ['items', 'duration', 'reverse', 'items_per_row'],
-        data () {
-            return {
-            }
-        },
-        async created() {
-
-        },
         methods: {
            cssClass: function () {
                 return `--duration: ${this.duration}ms; --direction: ${this.reverse ? 'reverse' : 'normal'}`;
@@ -43,9 +36,6 @@
 
             shuffle: (arr) => [...arr].sort( () => .5 - Math.random() )
         },
-		computed: {
-			
-		}
     }
 </script>
 
@@ -58,10 +48,6 @@
         align-items: center;
         gap: 0 0.2rem;
         margin-right: 1rem;
-    }
-
-    .featuredposts__item:hover .featuredpost {
-        transform: scale(1.05) translateZ(0);
     }
 
     .featuredpost {
@@ -90,6 +76,10 @@
             width: 300px;
             height: 300px;
         }
+    }
+
+    .featuredposts__item:hover .featuredpost {
+        transform: scale(1.05) translateZ(0);
     }
 
     .featuredpost__link {

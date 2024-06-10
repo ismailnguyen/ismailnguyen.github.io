@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <main>
     <Navbar />
 
     <router-view />
 
     <Footer />
 
-  </div>
+  </main>
 </template>
 
 <script>

@@ -1,39 +1,37 @@
 <template>
-   <div>
-        <section class="hero is-fullheight-with-navbar presentation">
-            <div class="hero-body">
-                <div class="container has-text-left">
-                    <div class="columns is-vcentered">
-                        <div class="column is-5-tablet is-5-desktop">
-                            <h3 class="subhead is-5 handwritten-text">
-                                Hi there 👋🏽 !
-                            </h3>
+    <section class="hero is-fullheight-with-navbar presentation">
+        <div class="hero-body">
+            <div class="container has-text-left">
+                <div class="columns is-vcentered">
+                    <div class="column is-5-tablet is-5-desktop">
+                        <h3 class="subhead is-5 handwritten-text">
+                            Hi there 👋🏽 !
+                        </h3>
 
-                            <h1 class="title is-1 handwritten-text">
-                                I am <span class="has-text-background">Ismaïl NGUYEN</span>
-                            </h1>
+                        <h1 class="title is-1 handwritten-text">
+                            I am <span class="has-text-background">Ismaïl NGUYEN</span>
+                        </h1>
 
-                            <h2 class="subtitle is-4 ">
-                                <p class="handwritten-text animated-text">
-                                    I have no special talent. I am only passionately curious.
-                                </p>
+                        <h2 class="subtitle is-4 ">
+                            <p class="handwritten-text animated-text">
+                                I have no special talent. I am only passionately curious.
+                            </p>
 
-                                <a href="/portfolio" class="button button-secondary portfolio__link">
-                                    See my works
-                                </a>
-                            </h2>
-                        </div>
+                            <a href="/portfolio" class="button button-secondary portfolio__link">
+                                See my works
+                            </a>
+                        </h2>
+                    </div>
 
-                        <div class="column is-7-tablet is-7-desktop">
-                            <figure class="image is4by3">
-								<img class="profile--picture" src="/resources/images/avatar/full_walking.png" alt="Profile picture">
-							</figure>
-                        </div>
+                    <div class="column is-7-tablet is-7-desktop">
+                        <figure class="image is4by3">
+                            <img class="profile--picture" src="/resources/images/avatar/full_walking.png" alt="Profile picture">
+                        </figure>
                     </div>
                 </div>
             </div>
-        </section>
-   </div>
+        </div>
+    </section>
 </template>
 
 <script>
