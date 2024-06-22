@@ -130,6 +130,11 @@
         display: none;
     }
 
+    /* Hovering on the slider will slow down the animation */
+    .loop-slider:hover {
+        --duration: 50000ms !important
+    }
+
     @media (max-width: 767.98px) {
         /* Display only first line on mobile screen */
         .loop-slider:nth-child(1) {
