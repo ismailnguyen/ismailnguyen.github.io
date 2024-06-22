@@ -104,6 +104,8 @@
         position: relative;
         padding: 1.5rem 0;
         overflow: hidden;
+
+        mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12%, rgb(0, 0, 0) 88%, rgba(0, 0, 0, 0) 100%);
     }
 
     .featuredpost__inner {
