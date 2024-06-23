@@ -109,8 +109,7 @@
     }
 
     .button-social {
-        background: #000;
-        color: #fff;
+        color: #000;
         border-radius: 0;
         border: none;
     }
