@@ -43,7 +43,6 @@
         background: whitesmoke;
         color: #000;
         font-size: .875rem;
-        font-family: Fira Mono, Consolas, Menlo, Monaco, Courier New, Courier, monospace;
         border-radius: none;
         border: 3px solid black;
         position: relative;

@@ -124,19 +124,6 @@
                     .then(response => response.text())
                     .then(text => this.markdownContent = text);
             },
-
-            twitterShareLink: function () {
-                return 'https://twitter.com/intent/tweet/'
-                        + '?text=' + this.work.title
-                        + '&url=' + this.work.readMoreLink;
-            },
-        
-            linkedInShareLink: function () {
-                return 'https://www.linkedin.com/shareArticle?mini=true'
-                + '&url=' + this.work.readMoreLink
-                + '&title=' + this.work.title
-                + '&source=https://www.ismailnguyen.com';
-            }
         },
         computed: {
             hasContent: function () {
@@ -161,8 +148,9 @@
     }
 
     .tag {
-        background-color: #000;
-        color: #fff;
+        background-color: #FFF;
+        border: 1px solid #000;
+        color: #000;
         display: inline-block;
         margin-right: 5px;
         margin-bottom: 14px;
@@ -177,52 +165,6 @@
 
     .buttons {
         display: inline-block;
-    }
-
-    .button-primary {
-        margin-right: 10px;
-        margin-left: 10px;
-        padding: 9px 24px;
-        background-color: #060602;
-        font-size: 16px;
-        display: inline-block;
-        -webkit-transition: background-color 80ms ease-in-out;
-        transition: background-color 80ms ease-in-out;
-        font-weight: 400;
-        text-decoration: none;
-        color: #f8faff;
-        border: 0;
-        line-height: inherit;
-        cursor: pointer;
-        border-radius: 0;
-    }
-
-    .button-primary:hover {
-        background-color: #000;
-        color: #f8faff;
-    }
-
-    .button-secondary {
-        margin-right: 10px;
-        margin-left: 10px;
-        background-color: #f8faff;
-        color: #000;
-        font-size: 16px;
-        display: inline-block;
-        transition: background-color 80ms ease-in-out;
-        font-weight: 400;
-        text-decoration: none;
-        padding: 9px 24px;
-        font-size: 16px;
-        border: 0;
-        line-height: inherit;
-        cursor: pointer;
-        border-radius: 0;
-
-        &:hover {
-            background-color: #d5d6d6;
-            color: #000;
-        }
     }
 
     .subhead {
@@ -244,7 +186,7 @@
     }
 
     .work-detail--content .container {
-        border: 5px solid #000;
+        border: 1px dashed #000;
     }
 
     /* Animations */

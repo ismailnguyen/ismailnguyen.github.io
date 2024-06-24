@@ -60,7 +60,6 @@
         background: #2d3748;
         color: #f7fafc;
         font-size: .875rem;
-        font-family: Fira Mono, Consolas, Menlo, Monaco, Courier New, Courier, monospace;
         border-radius: .5rem;
         position: relative;
         box-sizing: border-box;

@@ -1,6 +1,7 @@
 function initParallax () {
     const placeholder = document.querySelector('.placeholder');
     const parallaxContainer = document.querySelector('.parallax-container');
+    const navbar = document.querySelector('.navbar');
 
     let placeholderTop, ticking;
         
@@ -30,10 +31,15 @@ function initParallax () {
             window.addEventListener('scroll', onScroll) 
             parallaxContainer.style.bottom = 'unset'
             parallaxContainer.style.top = '0px'
+
+            navbar.classList.remove('inverted');
         } else { // If parallaxContainer height is not greater than window height, bottom is 0 for normal parllax 
             window.removeEventListener('scroll', onScroll)
             parallaxContainer.style.top = 'unset'
             parallaxContainer.style.bottom = '0px'
+
+            navbar.classList.remove('inverted');
+
         }
     }
 
@@ -55,6 +61,8 @@ function initParallax () {
         // in conjunction with placeholder top value (in relation to viewport)
         if (placeholderTop <= 0) {  
             parallaxContainer.style.top = `${placeholderTop}px` // match parallaxContainer top value with placeholder's top value
+
+            navbar.classList.add('inverted');
         }
     }
 }

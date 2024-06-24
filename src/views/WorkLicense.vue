@@ -88,29 +88,4 @@
     .section.work-detail--content {
         padding-top: 0;
     }
-
-    .button-secondary {
-        margin-right: 10px;
-        margin-left: 10px;
-        background-color: #f8faff;
-        color: #000;
-        font-size: 16px;
-        display: inline-block;
-        -webkit-transition: background-color 80ms ease-in-out;
-        transition: background-color 80ms ease-in-out;
-        font-family: Circular, sans-serif;
-        font-weight: 400;
-        text-decoration: none;
-        padding: 9px 24px;
-        font-size: 16px;
-        border: 0;
-        line-height: inherit;
-        cursor: pointer;
-        border-radius: 0;
-
-        &:hover {
-            background-color: #d5d6d6;
-            color: #000;
-        }
-    }
 </style>

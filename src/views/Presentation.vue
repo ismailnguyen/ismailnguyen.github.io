@@ -3,23 +3,19 @@
         <div class="hero-body">
             <div class="container has-text-left">
                 <div class="columns is-vcentered">
-                    <div class="column is-5-tablet is-5-desktop">
+                    <div class="column is-5-tablet is-5-desktop handwritten-text">
                         <h3 class="subhead is-5 handwritten-text">
                             Hi there 👋🏽 !
                         </h3>
 
                         <h1 class="title is-1 handwritten-text">
-                            I am <span class="has-text-background">Ismaïl NGUYEN</span>
+                            I am Ismaïl NGUYEN
                         </h1>
 
                         <h2 class="subtitle is-4 ">
                             <p class="handwritten-text animated-text">
                                 I have no special talent. I am only passionately curious.
                             </p>
-
-                            <a @click="scrollToBottom" class="button button-secondary portfolio__link">
-                                See my works
-                            </a>
                         </h2>
                     </div>
 
@@ -48,13 +44,6 @@
 			this.animateProfilePicture();
 		},
 		methods: {
-            scrollToBottom: function () {
-                window.scroll({
-                    top: window.outerHeight,
-                    behavior: "smooth",
-                });
-            },
-    
 			animateDescriptionText: function () {
 				var animatedTextWrapper = document.querySelector('.animated-text');
 				animatedTextWrapper.innerHTML = animatedTextWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
@@ -108,7 +97,6 @@
 			padding-bottom: 40px;
 
 			& span {
-				background-image: linear-gradient(120deg, #a4a6ab, #8cb2d7 100%);
 				background-repeat: no-repeat;
 				background-size: 100% 0.6em;
 				background-position: 0 70%;
@@ -140,29 +128,6 @@
 
 	.buttons {
         display: inline-block;
-    }
-
-    .button-secondary {
-        margin-right: 10px;
-        margin-left: 10px;
-        background-color: #f8faff;
-        color: #000;
-        font-size: 16px;
-        display: inline-block;
-        transition: background-color 80ms ease-in-out;
-        font-weight: 400;
-        text-decoration: none;
-        padding: 9px 24px;
-        font-size: 16px;
-        border: 0;
-        line-height: inherit;
-        cursor: pointer;
-        border-radius: 0;
-
-        &:hover {
-            background-color: #d5d6d6;
-            color: #000;
-        }
     }
 
     .profile--picture {
