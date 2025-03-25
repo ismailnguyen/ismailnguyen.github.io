@@ -94,9 +94,24 @@ body {
 }
 
 .handwritten-text {
-  margin: 10px 50px;
   letter-spacing: 6px;
   font-weight: bold;
+}
+
+@media (max-width: 767.98px) {
+  .handwritten-text {
+    margin: 10px;
+    letter-spacing: 6px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 767.98px) {
+  .handwritten-text {
+    margin: 10px 50px;
+    letter-spacing: 6px;
+    font-weight: bold;
+  }
 }
 
 /* Do not factorize this with the below one because it won't work*/
@@ -136,6 +151,11 @@ h3,
 .hero {
   background-color: #fff !important;
   z-index: 10;
+}
+
+.hero-body {
+  background-image: repeating-linear-gradient(#fff 1px, #fff 4px, transparent 5px, transparent 8px), repeating-linear-gradient(90deg, #fff 1px, #fff 5px, transparent 0, transparent 8px), repeating-linear-gradient(rgba(0, 0, 0, .22), rgba(0, 0, 0, .22) 1px, transparent 0, transparent), repeating-linear-gradient(90deg, rgba(0, 0, 0, .22), rgba(0, 0, 0, .22) 1px, transparent 0, transparent);
+  background-size: 56px 56px;
 }
 
 .slide-left-enter-active,

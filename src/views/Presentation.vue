@@ -9,7 +9,7 @@
                         </h3>
 
                         <h1 class="title is-1 handwritten-text">
-                            I am Ismaïl NGUYEN
+                            I am <span class="highlight">Ismaïl</span> NGUYEN
                         </h1>
 
                         <h2 class="subtitle is-4 ">
@@ -87,6 +87,10 @@
             animation-name: slideUp;
         }
 
+        & .hero-body {
+            mask: radial-gradient(77% 50% at 55% 30%,#000 0,#000 39.64%,transparent 100%);
+        }
+
         & .subhead {
             animation-delay: 700ms;
 			padding-bottom: 15px;
@@ -101,6 +105,46 @@
 				background-size: 100% 0.6em;
 				background-position: 0 70%;
 			}
+
+            & .highlight {
+                position: relative;
+                color: #0091ff;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    border-radius: 10px;
+                    background: rgba(1, 128, 255, 0.118);
+                }
+
+                @media (max-width: 767.98px) {
+                    &::before {
+                        top: .25rem;
+                        right: -.75rem;
+                        bottom: 0;
+                        left: -1.25rem;
+                    }
+                }
+
+                @media (min-width: 1218px) {
+                    &::before {
+                        top: .25rem;
+                        right: -0.75rem;
+                        bottom: 0;
+                        left: -1.25rem;
+                    }
+                }
+
+                @media (min-width: 767.98px) and (max-width: 1218px) {
+                    &::before {
+                        top: 3.75rem;
+                        right: -.75rem;
+                        bottom: 0;
+                        left: -8.75rem;
+                    }
+                }
+            }
         }
 
         & .subtitle {
