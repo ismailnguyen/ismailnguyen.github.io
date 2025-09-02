@@ -1,27 +1,33 @@
 {
   "name": "ismailnguyen",
   "description": "Ismail NGUYEN personal website",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "author": "Ismaïl <dev@ismailnguyen.com>",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+  
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
     "animejs": "^3.2.1",
     "bulma": "^0.8.2",
-    "core-js": "^3.6.4",
     "markdown-it": "^14.1.0",
-    "vue": "^3.3.4",
+    "dompurify": "^3.1.6",
+    "markdown-it-link-attributes": "^4.0.1",
+    "vue": "^3.5.12",
     "vue3-carousel": "^0.3.2",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.47.2",
     "@vitejs/plugin-vue": "^5.2.4",
     "sass": "^1.77.8",
     "vite": "^6.3.5",
     "vite-plugin-pwa": "^1.0.3"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:e2e": "playwright test",
+    "e2e:install": "playwright install --with-deps",
+    "gen:sitemap": "node scripts/generate-sitemap.js"
   }
 }
