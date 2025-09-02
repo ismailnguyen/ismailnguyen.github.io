@@ -1,5 +1,5 @@
 <template>
-    <Carousel :itemsToShow="1" v-if="images">
+    <Carousel ref="carousel" :itemsToShow="1" v-if="images" role="region" aria-label="Image carousel" aria-live="polite" tabindex="0" @keydown.left.prevent="onPrev" @keydown.right.prevent="onNext">
         <Slide v-for="(image, imageIndex) in images" :key="imageIndex">
             <figure class="image">
                 <img :src="image.url" :alt="image.alt" loading="lazy">
@@ -19,6 +19,10 @@
             Carousel,
             Slide
         },
+        methods: {
+            onPrev() { this.$refs.carousel && this.$refs.carousel.prev && this.$refs.carousel.prev(); },
+            onNext() { this.$refs.carousel && this.$refs.carousel.next && this.$refs.carousel.next(); }
+        }
     }
 </script>
 
