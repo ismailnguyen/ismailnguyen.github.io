@@ -167,4 +167,19 @@
             transform: translateX(-50%);
         }
     }
+
+    /* Respect reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+        .loop-slider .inner {
+            animation: none !important;
+        }
+        .featuredpost,
+        .featuredposts__item,
+        .slide-left-enter-active,
+        .slide-left-leave-active,
+        .slide-right-enter-active,
+        .slide-right-leave-active {
+            transition: none !important;
+        }
+    }
 </style>
