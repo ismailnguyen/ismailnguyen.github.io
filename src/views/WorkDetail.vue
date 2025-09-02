@@ -9,7 +9,7 @@
                 </a>
             </div>
             <div class="container is-fullhd has-text-centered column">
-                <h1 class="title is-1 is-spaced">
+                <h1 ref="workTitle" class="title is-1 is-spaced" tabindex="-1">
                     <span class="icon is-large" v-if="work.logo">
                             <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
                     </span>
@@ -95,9 +95,18 @@
             <MarkdownBloc :text="markdownContent" />
         </div>
     </section>
+
+    <!-- Skeleton while loading -->
+    <section class="section work-detail--content" v-if="isLoadingWork">
+        <div class="container is-fullhd">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-text"></div>
+        </div>
+    </section>
 </template>
 
 <script>
+    import { nextTick } from 'vue'
     import WorksService from '@/services/WorksService.js'
     import MarkdownBloc from '../components/MarkdownBloc.vue'
     import IframeBloc from '../components/IframeBloc.vue'
@@ -107,9 +116,12 @@
         props: ['workId'],
         data () {
             return {
-                work: {},
+                work: null,
                 markdownContent: '',
-                images: []
+                images: [],
+                isLoadingWork: true,
+                isLoadingImages: true,
+                isLoadingMarkdown: false
             }
         },
         components: {
@@ -120,13 +132,27 @@
         async created() {
             const worksService = new WorksService();
 
-            this.work = await this.fetchPortfolio(worksService);
+            try {
+                this.work = await this.fetchPortfolio(worksService);
+                this.updateMeta();
+            } finally {
+                this.isLoadingWork = false;
+            }
 
-            if (this.work.markdownContentUrl) {
+            if (this.work && this.work.markdownContentUrl) {
                 this.loadDescription();
             }
 
-            this.images = await worksService.getPageImages(this.workId)
+            try {
+                this.images = await worksService.getPageImages(this.workId)
+            } finally {
+                this.isLoadingImages = false;
+            }
+
+            await nextTick();
+            if (this.$refs.workTitle && typeof this.$refs.workTitle.focus === 'function') {
+                this.$refs.workTitle.focus();
+            }
         },
         methods: {
             fetchPortfolio: async function (worksService) {
@@ -134,16 +160,46 @@
             },
 
             loadDescription: function () {
+                this.isLoadingMarkdown = true;
                 fetch(this.work.markdownContentUrl)
                     .then(response => response.text())
-                    .then(text => this.markdownContent = text);
+                    .then(text => this.markdownContent = text)
+                    .finally(() => this.isLoadingMarkdown = false);
             },
+            updateMeta: function () {
+                if (!this.work) return;
+                const title = this.work.title ? `${this.work.title} · Ismaïl NGUYEN` : 'Ismaïl NGUYEN';
+                document.title = title;
+                const desc = this.plainText(this.work.description || '') || 'A software craftsman';
+                this.setMeta('meta[name="description"]', 'content', desc);
+                this.setMeta('meta[property="og:title"]', 'content', title, true);
+                this.setMeta('meta[property="og:description"]', 'content', desc, true);
+                if (this.work.coverImage && this.work.coverImage.url) {
+                    this.setMeta('meta[property="og:image"]', 'content', this.work.coverImage.url, true);
+                }
+            },
+            setMeta: function (selector, attr, val, createIfMissing = false) {
+                let el = document.head.querySelector(selector);
+                if (!el && createIfMissing) {
+                    el = document.createElement('meta');
+                    const match = selector.match(/\[(name|property)="([^"]+)"\]/);
+                    if (match) el.setAttribute(match[1], match[2]);
+                    document.head.appendChild(el);
+                }
+                if (el) el.setAttribute(attr, val);
+            },
+            plainText: function (html) {
+                const tmp = document.createElement('div');
+                tmp.innerHTML = html;
+                const text = tmp.textContent || tmp.innerText || '';
+                return text.trim().replace(/\s+/g, ' ').slice(0, 200);
+            }
         },
         computed: {
             hasContent: function () {
-                return this.images
-                        || this.markdownContent
-                        || this.work.embeddedContent;
+                return (this.images && this.images.length > 0)
+                        || (this.markdownContent && this.markdownContent.length > 0)
+                        || !!(this.work && this.work.embeddedContent && this.work.embeddedContent.url);
             }
         }
     }
@@ -252,4 +308,21 @@
         animation-name: slideUp;
         animation-delay: 2.3s;
     }
+
+    @media (prefers-reduced-motion: reduce) {
+        .work-detail .title,
+        .work-detail .subtitle,
+        .work-detail .subhead,
+        .work-detail .buttons,
+        .work-detail--content {
+            animation: none !important;
+            transition: none !important;
+        }
+    }
+
+    .skeleton { background: linear-gradient(90deg, #eee, #f5f5f5, #eee); background-size: 200% 100%; animation: shine 1.2s linear infinite; border-radius: 6px; }
+    .skeleton-title { height: 28px; width: 60%; margin: 12px auto; }
+    .skeleton-text { height: 16px; width: 80%; margin: 8px auto; }
+
+    @keyframes shine { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 </style>
