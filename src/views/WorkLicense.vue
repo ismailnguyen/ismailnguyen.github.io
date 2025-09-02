@@ -10,8 +10,8 @@
                     {{ work.title }}
                 </h1>
                 <div class="buttons">
-                    <a :href="'/work/' + encodeURIComponent(work.id)" class="button button-secondary">
-                        <i class="fas fa-arrow-left" title="Go back"></i>
+                    <a :href="'/work/' + encodeURIComponent(work.id)" class="button button-secondary" aria-label="Go back to work">
+                        <i class="fas fa-arrow-left" title="Go back" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>

@@ -33,7 +33,7 @@ const router = createRouter({
         },
         {
             name: 'WorkPrivacy',
-            path: '/work/:id/Privacy',
+            path: '/work/:id/privacy',
             component: () => import('../views/WorkPrivacy.vue'),
             props: (route) => ({ 
                 workId: route.params.id,
@@ -44,7 +44,7 @@ const router = createRouter({
         },
         {
             name: 'WorkLicense',
-            path: '/work/:id/License',
+            path: '/work/:id/license',
             component: () => import('../views/WorkLicense.vue'),
             props: (route) => ({ 
                 workId: route.params.id,
@@ -60,7 +60,10 @@ const router = createRouter({
             meta: {
                 footerType: 'light'
             }
-        }
+        },
+        // Backward-compatible redirects for old cased paths
+        { path: '/work/:id/Privacy', redirect: (to) => ({ name: 'WorkPrivacy', params: { id: to.params.id } }) },
+        { path: '/work/:id/License', redirect: (to) => ({ name: 'WorkLicense', params: { id: to.params.id } }) }
     ],
     scrollBehavior (to, from, savedPosition) {
         if (savedPosition)
