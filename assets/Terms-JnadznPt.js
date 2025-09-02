@@ -1,4 +1,4 @@
-import{S as o}from"./StaticTerminal-C6JcheU-.js";import{_ as a,c as s,b as r,y as i,t as n,o as c}from"./index-BCOwMnKj.js";const l={components:{StaticTerminal:o},data(){return{profilePicture:"/resources/images/avatar/face/1.png",text:`
+import{S as o}from"./StaticTerminal-DKf5H8hq.js";import{_ as a,c as s,o as r,b as i,A as n,v as c}from"./index-BguAW5Vc.js";const l={components:{StaticTerminal:o},data(){return{profilePicture:"/resources/images/avatar/face/1.png",text:`
                     <h1 class="title is-spaced">
                         WTFPL - Do What the Fuck You Want to Public License
                     </h1>
@@ -31,4 +31,4 @@ import{S as o}from"./StaticTerminal-C6JcheU-.js";import{_ as a,c as s,b as r,y a
                         <small>
                             See more at <a href="//www.wtfpl.net" target="_blank" rel="noopener">www.wtfpl.net</a>
                         </small>
-                    </p>`}},mounted(){this.animateProfilePicture()},methods:{animateProfilePicture:function(){setInterval(()=>{this.profilePicture="/resources/images/avatar/face/"+Math.floor(Math.random()*13+1)+".png"},1e3)}}},p={class:"hero section"},m={class:"container is-fullhd"};function u(d,f,h,T,e,_){const t=n("StaticTerminal");return c(),s("section",p,[r("div",m,[i(t,{handle:"Terms And Conditions of Use",profilePicture:e.profilePicture,text:e.text},null,8,["profilePicture","text"])])])}const O=a(l,[["render",u]]);export{O as default};
+                    </p>`}},mounted(){this.animateProfilePicture()},methods:{animateProfilePicture:function(){setInterval(()=>{this.profilePicture="/resources/images/avatar/face/"+Math.floor(Math.random()*13+1)+".png"},1e3)}}},p={class:"hero section"},m={class:"container is-fullhd"};function u(d,f,h,T,e,_){const t=c("StaticTerminal");return r(),s("section",p,[i("div",m,[n(t,{handle:"Terms And Conditions of Use",profilePicture:e.profilePicture,text:e.text},null,8,["profilePicture","text"])])])}const O=a(l,[["render",u]]);export{O as default};
