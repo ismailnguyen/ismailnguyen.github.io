@@ -11,7 +11,9 @@
 </template>
 
 <script>
-import "@fortawesome/fontawesome-free/css/all.css";
+import "@fortawesome/fontawesome-free/css/fontawesome.css";
+import "@fortawesome/fontawesome-free/css/brands.css";
+import "@fortawesome/fontawesome-free/css/solid.css";
 import "bulma/css/bulma.css";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
