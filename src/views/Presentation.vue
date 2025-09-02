@@ -88,7 +88,41 @@
         }
 
         & .hero-body {
+            position: relative;
+            /* Remove global static grid on this page */
+            background: none !important;
             mask: radial-gradient(77% 50% at 55% 30%,#000 0,#000 39.64%,transparent 100%);
+        }
+
+        /* Animated grid overlay */
+        & .hero-body::before,
+        & .hero-body::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 1;
+        }
+
+        /* Vertical moving lines */
+        & .hero-body::before {
+            --grid: 56px;
+            --line: rgba(0, 0, 0, 0.10);
+            background-image: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px var(--grid));
+            background-size: var(--grid) var(--grid);
+            animation: grid-move-x 18s linear infinite;
+            will-change: background-position;
+        }
+
+        /* Horizontal moving lines */
+        & .hero-body::after {
+            --grid: 56px;
+            --line: rgba(0, 0, 0, 0.10);
+            background-image: repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px var(--grid));
+            background-size: var(--grid) var(--grid);
+            animation: grid-move-y 24s linear infinite;
+            will-change: background-position;
         }
 
         & .subhead {
@@ -153,6 +187,24 @@
 
         & .image {
             animation-delay: 1s;
+        }
+    }
+
+    @keyframes grid-move-x {
+        from { background-position: 0 0; }
+        to   { background-position: 56px 0; }
+    }
+
+    @keyframes grid-move-y {
+        from { background-position: 0 0; }
+        to   { background-position: 0 56px; }
+    }
+
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        .presentation .hero-body::before,
+        .presentation .hero-body::after {
+            animation: none !important;
         }
     }
 

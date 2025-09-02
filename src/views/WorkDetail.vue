@@ -8,7 +8,7 @@
                     </figure>
                 </a>
             </div>
-            <div class="container is-fullhd has-text-centered column">
+            <div class="container is-fullhd has-text-centered column is-half">
                 <h1 ref="workTitle" class="title is-1 is-spaced" tabindex="-1">
                     <span class="icon is-large" v-if="work.logo">
                             <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
