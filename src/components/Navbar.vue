@@ -17,20 +17,20 @@
                 <div class="navbar-item">
                     <div class="buttons">
 						<transition name="slide-left">
-                            <a class="button button-social button-linkedin" href="//www.linkedin.com/in/ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-linkedin" title="LinkedIn"></i>
+                            <a class="button button-social button-linkedin" href="//www.linkedin.com/in/ismailnguyen" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+                                <i class="fab fa-linkedin" title="LinkedIn" aria-hidden="true"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
-                            <a  class="button button-social button-npm" href="//www.npmjs.com/~ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-npm" title="NPM"></i>
+                            <a  class="button button-social button-npm" href="//www.npmjs.com/~ismailnguyen" target="_blank" rel="noopener" aria-label="NPM profile">
+                                <i class="fab fa-npm" title="NPM" aria-hidden="true"></i>
                             </a>
                         </transition>
 
                         <transition name="slide-left">
-                            <a class="button button-social button-github" href="//github.com/ismailnguyen" target="_blank" rel="noopener">
-                                <i class="fab fa-github" title="Github"></i>
+                            <a class="button button-social button-github" href="//github.com/ismailnguyen" target="_blank" rel="noopener" aria-label="GitHub profile">
+                                <i class="fab fa-github" title="Github" aria-hidden="true"></i>
                             </a>
                         </transition>
                     </div>
