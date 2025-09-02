@@ -1,8 +1,14 @@
 <template>
     <section class="hero work-detail" :class="!hasContent ? 'is-fullheight' : ''" v-if="work">
-        <div class="hero-body">
-            <div class="container is-fullhd has-text-centered">
-
+        <div class="hero-body columns">
+            <div class="container is-fullhd column is-half is-hidden-mobile" v-if="work.coverImage">
+                <a :href="work.primaryLink.url" target="_blank" rel="noopener">
+                    <figure class="image is-square">
+                        <img :src="work.coverImage.url" :alt="work.coverImage.alt"  loading="lazy" />
+                    </figure>
+                </a>
+            </div>
+            <div class="container is-fullhd has-text-centered column">
                 <h1 class="title is-1 is-spaced">
                     <span class="icon is-large" v-if="work.logo">
                             <img class="is-rounded work-logo" :src="work.logo.url" :alt="work.logo.alt" loading="lazy">
@@ -53,6 +59,14 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="section work-detail--content is-hidden-desktop is-hidden-tablet" v-if="work.coverImage">
+        <div class="container is-fullhd">
+             <figure class="image">
+                <img :src="work.coverImage.url" :alt="work.coverImage.alt"  loading="lazy" />
+            </figure>
         </div>
     </section>
 
