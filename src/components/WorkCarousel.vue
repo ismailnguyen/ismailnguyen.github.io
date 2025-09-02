@@ -1,15 +1,17 @@
 <template>
-    <carousel :perPage="1" :paginationPadding="5" paginationColor="#404E57" paginationActiveColor="#f8faff" v-if="images">
-        <slide v-for="(image, imageIndex) in images" :key="imageIndex">
+    <Carousel :itemsToShow="1" v-if="images">
+        <Slide v-for="(image, imageIndex) in images" :key="imageIndex">
             <figure class="image">
                 <img :src="image.url" :alt="image.alt" loading="lazy">
             </figure>
-        </slide>
-    </carousel>
+        </Slide>
+    </Carousel>
+    
 </template>
 
 <script>
-    import { Carousel, Slide } from 'vue-carousel';
+    import { Carousel, Slide } from 'vue3-carousel'
+    import 'vue3-carousel/dist/carousel.css'
 
     export default {
         props: ['images'],
