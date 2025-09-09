@@ -1,4 +1,4 @@
-import{S as o}from"./StaticTerminal-BPp-H8KK.js";import{_ as a,c as s,o as r,b as i,A as n,v as c}from"./index-DBljOFYq.js";const l={components:{StaticTerminal:o},data(){return{profilePicture:"/resources/images/avatar/face/1.png",text:`
+import{S as o}from"./StaticTerminal-ouFVxGSb.js";import{_ as a,c as s,o as r,b as i,A as n,v as c}from"./index-CzlquDsY.js";const l={components:{StaticTerminal:o},data(){return{profilePicture:"/resources/images/avatar/face/1.png",text:`
                     <h1 class="title is-spaced">
                         WTFPL - Do What the Fuck You Want to Public License
                     </h1>
