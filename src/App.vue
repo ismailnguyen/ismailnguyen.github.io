@@ -131,10 +131,6 @@ body {
   color: #060602;
 }
 
-.hero.is-fullheight-with-navbar {
-  min-height: 74vh;
-}
-
 body,
 h1,
 h2,
