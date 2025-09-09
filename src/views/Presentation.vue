@@ -1,5 +1,5 @@
 <template>
-    <section class="hero is-fullheight-with-navbar presentation">
+    <section class="hero is-fullheight presentation">
         <div class="hero-body">
             <div class="container has-text-left">
                 <div class="columns is-vcentered">
