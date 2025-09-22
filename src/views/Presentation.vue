@@ -1,6 +1,8 @@
 <template>
     <section class="hero is-fullheight presentation">
         <div class="hero-body">
+            <div id="game-of-life-canvas"></div>
+
             <div class="container has-text-left">
                 <div class="columns is-vcentered">
                     <div class="column is-5-tablet is-5-desktop handwritten-text">
@@ -32,6 +34,7 @@
 
 <script>
 	import anime from 'animejs/lib/anime.es.js';
+    import GameOfLife from '@ismailnguyen/game-of-life-js';
 
     export default {
         data () {
@@ -42,6 +45,21 @@
 		mounted() {
 			this.animateDescriptionText();
 			this.animateProfilePicture();
+
+            GameOfLife.create(
+                document.getElementById('game-of-life-canvas'),
+                {
+                    width: 2000,
+                    height: 1000,
+                    cellSize: 60,
+                    speed: 200,
+                    autoStart: true,
+                    fillColor: '#00000010',
+                    backgroundColor: 'transparent',
+                    initialPattern: 'random',
+                    borderColor: 'transparent',
+                }
+            );
 		},
 		methods: {
 			animateDescriptionText: function () {
@@ -228,5 +246,22 @@
 
     .profile--picture {
         transform: scaleX(-1);
+    }
+
+    /* Game of life animation */
+
+    #game-of-life-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+    #game-of-life-canvas>canvas {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        border: none;
     }
 </style>
