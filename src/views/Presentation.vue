@@ -16,7 +16,7 @@
 
                         <h2 class="subtitle is-4 ">
                             <p class="handwritten-text animated-text">
-                                I have no special talent. I am only passionately curious.
+                                What we uncover has always been — and was always meant to be revealed.
                             </p>
                         </h2>
                     </div>
