@@ -74,15 +74,21 @@
         position: fixed;
         line-height: 1.15;
         text-align: center;
-        color: #000;
-        font-weight: 400;
+        color: #FFF;
+        font-weight: 800;
         text-decoration: none;
         vertical-align: baseline;
         font-style: normal;
-        font-size: 2.75rem;
-        background: #000;
+        font-size: 3rem;
         background-clip: text;
-        color: transparent;
+        text-shadow: 
+        1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000, 
+        5px 5px 0 #000, 6px 6px 0 #000, 7px 7px 0 #000, 8px 8px 0 #000, 
+        9px 9px 0 #000, 10px 10px 0 #000, 11px 11px 0 #000, 12px 12px 0 #000, 
+        13px 13px 0 #000, 14px 14px 0 #000, 15px 15px 0 #000, 16px 16px 0 #000, 
+        17px 17px 0 #000, 18px 18px 0 #000, 19px 19px 0 #000, 20px 20px 0 #000,
+        /* Optional: Add one last shadow with a slight blur to "ground" the 3D effect */
+        21px 21px 10px rgba(0,0,0,0.4);
     }
 
     .inverted .logo {
