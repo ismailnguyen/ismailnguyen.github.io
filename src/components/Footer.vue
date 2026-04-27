@@ -3,7 +3,7 @@
         <div class="content has-text-centered">
             <p class="is-pulled-left">
                 <small>
-                    Handcrafted with passion
+                    Handcrafted without AI, no tracking, no cookies, only passion.
                 </small>
             </p>
             <p class="is-pulled-right">
