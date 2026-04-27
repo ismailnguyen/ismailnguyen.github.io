@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('home renders and has sane meta', async ({ page }) => {
+test('home renders and has same meta', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveTitle(/Software Craftsman/i);
   const ogTitle = page.locator('head meta[property="og:title"]');
