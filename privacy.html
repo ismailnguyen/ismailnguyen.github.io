@@ -55,9 +55,7 @@
             <li>rédiger des brouillons de messages.</li>
         </ul>
         <p>
-            L'envoi effectif d'un email, ainsi que la modification, l'archivage, la suppression ou le partage d'un message, n'ont lieu que sur approbation explicite et précise d'Ismaïl NGUYEN pour chaque action.
-            Certaines règles récurrentes, expressément autorisées par Ismaïl NGUYEN, peuvent toutefois s'appliquer (par exemple le traitement de factures).
-            Il n'est donc pas exact d'affirmer qu'aucune suppression n'a jamais lieu&nbsp;: chaque action reste encadrée par une autorisation, ponctuelle ou récurrente.
+            Les actions sensibles (envoi effectif d'un email, modification, archivage, suppression ou partage d'un message) n'ont lieu que sur approbation explicite d'Ismaïl NGUYEN, soit ponctuelle, soit via des règles récurrentes qu'il a expressément autorisées (par exemple le traitement de factures).
         </p>
 
         <h2>3. Google Drive</h2>
@@ -79,29 +77,28 @@
 
         <h2>6. Traitement par des prestataires d'IA</h2>
         <p>
-            Pour raisonner sur les tâches, Hermes transmet les données nécessaires à des fournisseurs de modèles d'IA. La configuration actuelle effective est la suivante&nbsp;:
+            Pour raisonner sur les tâches, Hermes transmet les données nécessaires à des fournisseurs de modèles d'IA.
+            Le prestataire principal est OpenAI&nbsp;; Hermes peut également recourir à d'autres prestataires d'IA configurés, y compris via l'intermédiaire OpenRouter.
         </p>
-        <ul>
-            <li>prestataire principal&nbsp;: OpenAI, avec un modèle utilisé via l'abonnement ChatGPT/Codex, y compris le mode vocal&nbsp;;</li>
-            <li>prestataire de repli possible&nbsp;: OpenRouter (modèle z.ai GLM-5.3), pour le traitement de texte auxiliaire.</li>
-        </ul>
         <p>
-            Ces prestataires traitent les données selon leurs conditions applicables. Aucun engagement de non-entraînement ne peut être garanti au-delà de ce que prévoient leurs conditions.
+            Ces prestataires traitent les données selon leurs conditions applicables, dont dépendent la localisation et la durée de rétention.
+            Aucun engagement de non-entraînement ni de localisation ne peut être garanti au-delà de ce que prévoient leurs contrats et configurations, qui peuvent évoluer.
             Cette page ne revendique pas l'absence de lecture humaine des données par ces prestataires au-delà de ce qu'indiquent leurs propres politiques.
         </p>
 
         <h2>7. Stockage et conservation</h2>
         <ul>
-            <li>Les tâches, synthèses et historiques de conversation nécessaires au suivi sont conservés sur un serveur privé (VPS) d'Ismaïl NGUYEN situé en Europe, avec chiffrement au repos.</li>
+            <li>Les tâches, synthèses et historiques de conversation nécessaires au suivi sont conservés sur un serveur privé administré pour Ismaïl NGUYEN.</li>
             <li>Les notifications et les documents choisis sont envoyés en privé à Ismaïl NGUYEN via Telegram.</li>
             <li>Les tâches sont stockées dans Notion.</li>
         </ul>
         <p>
-            Aucun email n'est stocké en dehors des traitements Google décrits ci-dessus&nbsp;: aucun contenu ne sort de Google s'il n'est pas nécessaire à la tâche, et aucune copie de la boîte mail n'est constituée.
+            Des extraits de messages, en-têtes, pièces jointes et documents nécessaires au suivi peuvent être enregistrés dans les historiques, caches et checkpoints du serveur privé, ainsi que dans les tâches et synthèses Notion.
+            Les données nécessaires aux réponses peuvent être transmises aux prestataires IA configurés et aux canaux privés utilisés par le titulaire.
+            Il ne s'agit pas d'un traitement limité aux serveurs Google.
         </p>
         <p>
-            Côté fournisseurs d'IA, la durée de rétention est d'environ 30 jours selon leurs conditions, sans entraînement revendiqué par le fournisseur principal conformément à ses conditions.
-            Une localisation dans l'Union européenne est revendiquée pour le traitement principal, mais elle n'est pas garantie contractuellement ici.
+            La localisation et la durée de rétention chez les prestataires dépendent de leurs contrats et de la configuration, sans garantie générale ici.
         </p>
         <p>
             Les copies locales (historiques, caches, checkpoints, tâches Notion) persistent tant qu'elles sont nécessaires au suivi&nbsp;; il n'existe pas de purge automatique.
@@ -110,7 +107,7 @@
 
         <h2>8. Contrôle d'accès et risques résiduels</h2>
         <p>
-            L'accès aux services Google se fait via OAuth Google, limité au seul compte autorisé. Aucun mot de passe Google n'est collecté ni stocké. L'accès au VPS est restreint.
+            L'accès aux services Google se fait via OAuth Google, limité au seul compte autorisé. Aucun mot de passe Google n'est collecté ni stocké. L'accès au serveur privé est restreint.
         </p>
         <p>
             Des risques résiduels subsistent, notamment ceux liés aux transferts de données vers les prestataires d'IA mentionnés plus haut. Ils sont exposés ici sans garantie excessive.
@@ -119,19 +116,23 @@
         <h2>9. Engagements d'utilisation</h2>
         <p>
             Les données ne sont ni vendues, ni utilisées à des fins publicitaires ou de ciblage.
-            L'utilisation et le transfert des informations reçues des API Google respectent la Google API Services User Data Policy, y compris les exigences de Limited Use, dans la limite des engagements décrits sur cette page.
-            Cette page ne prétend à aucune approbation préalable de Google.
+            L'application n'utilise pas les données reçues des API Google pour entraîner de modèles d'IA généralistes.
+            L'utilisation et le transfert des informations reçues des API Google respectent la Google API Services User Data Policy, y compris les exigences de Limited Use&nbsp;:
+            <a href="https://developers.google.com/terms/api-services-user-data-policy">https://developers.google.com/terms/api-services-user-data-policy</a>.
+            La conformité des prestataires d'IA tiers à ces exigences dépend de leurs propres conditions et n'est pas garantie ici.
+            Cette page ne constitue pas une validation par Google.
         </p>
 
         <h2>10. Sécurité</h2>
         <p>
-            Les mesures en place sont les suivantes&nbsp;: chiffrement au repos sur le VPS, accès limité, et aucun secret publié.
+            L'accès aux services Google se fait via OAuth, limité au seul compte autorisé. Aucun mot de passe Google n'est collecté ni stocké. L'accès au serveur privé est restreint.
             Cette page ne contient aucun script, aucun traceur et ne dépose aucun cookie.
         </p>
 
-        <h2>11. Données de tiers</h2>
+        <h2>11. Données de correspondants</h2>
         <p>
-            Aucune donnée personnelle de tiers (membres de la famille, numéros de compte, détails privés) n'est publiée sur cette page.
+            Les corps de messages et documents traités peuvent inclure des données des personnes en correspondance avec Ismaïl NGUYEN.
+            Ces données ne sont traitées que dans la mesure nécessaire aux tâches demandées et ne sont pas publiées.
         </p>
 
         <h2>Liens</h2>
