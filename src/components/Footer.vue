@@ -7,6 +7,12 @@
                 </small>
             </p>
             <p class="is-pulled-right">
+                <a href="/privacy.html">
+                    <small>
+                        Privacy
+                    </small>
+                </a>
+                &nbsp;
                 <router-link to="/terms">
                     <small>
                         Terms
