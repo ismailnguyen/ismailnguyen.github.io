@@ -7,7 +7,7 @@
   <div class="placeholder"></div>
 
   <FooterWithPortfolio v-if="$route.meta.footerType == 'withPortfolio'" />
-  <Footer v-else />
+  <Footer v-else-if="$route.meta.footerType != 'none'" />
 </template>
 
 <script>

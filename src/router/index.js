@@ -30,7 +30,8 @@ const router = createRouter({
                 workId: route.params.id,
             }),
             meta: {
-                footerType: 'light'
+                footerType: 'none',
+                heroNav: true
             }
         },
         {
