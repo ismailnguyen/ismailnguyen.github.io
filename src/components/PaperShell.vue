@@ -125,7 +125,7 @@
         --paper: #f2f0eb;
         --paper-2: #e8e6e1;
         --ink: #141413;
-        --muted: #6f6e69;
+        --muted: #68675f;
         --rule: 1px solid var(--ink);
 
         min-height: 100vh;
@@ -161,8 +161,20 @@
         overflow: hidden;
     }
 
+    /* compact: the landscape flows under the copy, only its sky overlaps it */
     .wd-hero--compact {
-        min-height: clamp(480px, 70vh, 700px);
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+
+        .wd-mountains {
+            position: relative;
+            inset: auto;
+            order: 1;
+            flex: 1 0 auto;
+            height: clamp(300px, 48vh, 500px);
+            margin-top: calc(-1 * clamp(40px, 9vh, 110px));
+        }
     }
 
     .wd-mountains {
@@ -535,8 +547,8 @@
             min-height: 88svh;
         }
 
-        .wd-hero--compact {
-            min-height: 72svh;
+        .wd-hero--compact .wd-mountains {
+            height: 42svh;
         }
 
         .wd-gallery--2,
