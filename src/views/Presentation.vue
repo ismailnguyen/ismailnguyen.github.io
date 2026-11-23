@@ -2,45 +2,9 @@
     <section class="scene">
         <!-- Landscape (everything that gets the VHS wobble) -->
         <div class="world" aria-hidden="true">
-            <div class="sky"></div>
-            <div class="sun"></div>
-
-            <svg class="mountains mountains--far" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                <path d="M0 260 L120 190 L230 230 L360 120 L470 200 L560 160 L700 60 L820 170 L930 130 L1060 210 L1180 110 L1300 190 L1440 150 L1440 320 L0 320Z" />
-            </svg>
-            <svg class="mountains mountains--near" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                <path d="M0 280 L160 220 L300 260 L420 200 L560 250 L760 170 L900 240 L1040 200 L1200 250 L1320 210 L1440 240 L1440 320 L0 320Z" />
-            </svg>
-
-            <div class="clouds">
-                <span v-for="(c, i) in clouds" :key="'c' + i" class="cloud" :style="c"></span>
-            </div>
-
-            <svg class="hill" viewBox="0 0 1440 400" preserveAspectRatio="none">
-                <defs>
-                    <linearGradient id="hill-gradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0" stop-color="#4f6f9c" />
-                        <stop offset="0.5" stop-color="#2c4a6e" />
-                        <stop offset="1" stop-color="#1b3049" />
-                    </linearGradient>
-                </defs>
-                <path fill="url(#hill-gradient)" d="M0 120 C 240 40, 520 60, 760 90 S 1200 70, 1440 130 L1440 400 L0 400Z" />
-            </svg>
-
-            <div class="flowers flowers--back">
-                <span v-for="(f, i) in flowersBack" :key="'b' + i" class="flower" :style="f"></span>
-            </div>
-
-            <img class="avatar" src="/resources/images/avatar/full_walking.png" alt="">
-
-            <div class="flowers flowers--front">
-                <span v-for="(f, i) in flowersFront" :key="'f' + i" class="flower" :style="f"></span>
-            </div>
+            <canvas ref="scene" class="world__canvas"></canvas>
+            <img v-if="!hasScene" class="world__fallback" src="/resources/images/avatar/full_walking.png" alt="">
         </div>
-
-        <!-- Colour grading (lifted blacks + blue/pink tint, like old film) -->
-        <div class="fx fx--lift" aria-hidden="true"></div>
-        <div class="fx fx--tint" aria-hidden="true"></div>
 
         <!-- Content -->
         <nav class="hero-nav" aria-label="main navigation">
@@ -70,53 +34,18 @@
 </template>
 
 <script>
-    // Seeded random so the landscape is identical on every visit
-    function random(seed) {
-        return () => {
-            seed = (seed * 16807) % 2147483647;
-            return (seed - 1) / 2147483646;
-        };
-    }
-
-    const FLOWER_COLORS = ['#a9c4ff', '#cfdcff', '#8fb0ec', '#d9b8ea', '#b99be0', '#eef2ff', '#7d9fe0'];
-
-    function flowers(count, seed, minY, maxY) {
-        const rand = random(seed);
-        return Array.from({ length: count }, () => {
-            const y = minY + rand() * (maxY - minY); // % from bottom, higher = farther
-            const depth = Math.max(0, 1 - y / 85);    // 1 = close, 0 = far
-            const size = 4 + depth * 22 * (0.5 + rand());
-            return {
-                left: `${rand() * 102 - 1}%`,
-                bottom: `${y}%`,
-                width: `${size}px`,
-                height: `${size * 0.8}px`,
-                background: FLOWER_COLORS[Math.floor(rand() * FLOWER_COLORS.length)],
-                filter: `blur(${(1 - depth) * 1.5 + (depth > 0.85 ? 2 : 0)}px)`,
-                opacity: 0.55 + depth * 0.45,
-            };
-        });
-    }
-
-    function clouds() {
-        const rand = random(42);
-        return Array.from({ length: 9 }, (_, i) => ({
-            left: `${i * 12 - 10 + rand() * 6}%`,
-            bottom: `${rand() * 8}%`,
-            width: `${22 + rand() * 18}vw`,
-            height: `${6 + rand() * 6}vw`,
-            animationDelay: `${-rand() * 60}s`,
-            animationDuration: `${50 + rand() * 40}s`,
-        }));
-    }
+    import startMeadowScene from '../meadow-scene.js';
 
     export default {
         data() {
-            return {
-                clouds: clouds(),
-                flowersBack: flowers(240, 7, 8, 80),
-                flowersFront: flowers(50, 13, -4, 14),
-            };
+            return { hasScene: true };
+        },
+        mounted() {
+            this.stopScene = startMeadowScene(this.$refs.scene, '/resources/images/avatar/full_walking.png');
+            this.hasScene = !!this.stopScene;
+        },
+        beforeUnmount() {
+            this.stopScene && this.stopScene();
         },
     };
 </script>
@@ -132,7 +61,7 @@
         min-height: 620px;
         overflow: hidden;
         isolation: isolate;
-        background: #4a6bd0;
+        background: linear-gradient(180deg, #4d70d8, #9aa0e4 45%, #f2b6c8 62%, #2c4a5c 63%, #16303a);
         color: #fff;
         font-family: var(--sans);
         animation: flicker 6s steps(1) infinite;
@@ -146,99 +75,20 @@
         animation: wobble 7s steps(1) infinite;
     }
 
-    .world > * {
+    .world__canvas {
         position: absolute;
-    }
-
-    .sky {
         inset: 0;
-        background: linear-gradient(
-            180deg,
-            #3d5fcf 0%,
-            #5b7de0 18%,
-            #8b98e2 34%,
-            #c6a3d9 46%,
-            #f0aac2 56%,
-            #f6c4bd 62%,
-            #e7b5c9 70%
-        );
-    }
-
-    .sun {
-        left: 50%;
-        top: 58%;
-        width: 120vw;
-        height: 40vh;
-        transform: translate(-50%, -50%);
-        background: radial-gradient(closest-side, rgba(255, 214, 200, 0.75), rgba(255, 190, 200, 0) 70%);
-    }
-
-    .mountains {
-        left: 0;
         width: 100%;
-        filter: blur(5px);
+        height: 100%;
     }
 
-    .mountains--far {
-        bottom: 34%;
-        height: 26vh;
-        fill: #b8a6d9;
-        opacity: 0.55;
-    }
-
-    .mountains--near {
-        bottom: 30%;
-        height: 22vh;
-        fill: #9d93cf;
-        opacity: 0.65;
-    }
-
-    .clouds {
-        left: 0;
-        right: 0;
-        bottom: 27%;
-        height: 18vh;
-    }
-
-    .cloud {
+    /* only without WebGL: a painted sky and the plain avatar */
+    .world__fallback {
         position: absolute;
-        border-radius: 50%;
-        background: radial-gradient(closest-side, rgba(238, 226, 245, 0.95), rgba(214, 196, 232, 0.6) 60%, transparent);
-        filter: blur(14px);
-        animation: drift linear infinite alternate;
-    }
-
-    .hill {
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 34%;
-    }
-
-    .flowers {
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 34%;
-    }
-
-    .flower {
-        position: absolute;
-        border-radius: 50%;
-        box-shadow: inset -2px -2px 0 rgba(30, 50, 110, 0.25);
-    }
-
-    .avatar {
         left: 50%;
-        bottom: 1%;
-        height: min(50vh, 560px);
-        transform: translateX(-46%);
-        /* soft & faded like the scene, with a RGB fringe on the edges */
-        filter:
-            saturate(0.7)
-            contrast(0.92)
-            drop-shadow(3px 0 0 rgba(255, 70, 140, 0.35))
-            drop-shadow(-3px 0 0 rgba(70, 170, 255, 0.35));
+        bottom: 0;
+        height: min(56vh, 600px);
+        transform: translateX(-50%);
     }
 
     /* ---------- Overlays ---------- */
@@ -247,18 +97,6 @@
         position: absolute;
         inset: 0;
         pointer-events: none;
-    }
-
-    /* lifts pure blacks to a navy, the washed-out film look */
-    .fx--lift {
-        background: #2a3a7a;
-        mix-blend-mode: lighten;
-        opacity: 0.7;
-    }
-
-    .fx--tint {
-        background: linear-gradient(180deg, rgba(60, 90, 220, 0.45), rgba(240, 150, 190, 0.3) 55%, rgba(60, 90, 210, 0.5));
-        mix-blend-mode: soft-light;
     }
 
     .fx--scanlines {
@@ -382,18 +220,7 @@
         animation-delay: 0.7s !important;
     }
 
-    @media (max-width: 767.98px) {
-        .avatar {
-            height: 46vh;
-        }
-    }
-
     /* ---------- Animations ---------- */
-
-    @keyframes drift {
-        from { transform: translateX(-4vw); }
-        to   { transform: translateX(4vw); }
-    }
 
     @keyframes scan {
         from { background-position: 0 0; }
@@ -438,7 +265,6 @@
     @media (prefers-reduced-motion: reduce) {
         .scene,
         .world,
-        .cloud,
         .fx {
             animation: none !important;
         }
