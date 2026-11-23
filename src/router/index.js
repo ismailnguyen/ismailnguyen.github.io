@@ -37,23 +37,27 @@ const router = createRouter({
         {
             name: 'WorkPrivacy',
             path: '/work/:id/privacy',
-            component: () => import('../views/WorkPrivacy.vue'),
-            props: (route) => ({ 
+            component: () => import('../views/WorkLegal.vue'),
+            props: (route) => ({
                 workId: route.params.id,
+                kind: 'privacy',
             }),
             meta: {
-                footerType: 'light'
+                footerType: 'none',
+                heroNav: true
             }
         },
         {
             name: 'WorkLicense',
             path: '/work/:id/license',
-            component: () => import('../views/WorkLicense.vue'),
-            props: (route) => ({ 
+            component: () => import('../views/WorkLegal.vue'),
+            props: (route) => ({
                 workId: route.params.id,
+                kind: 'license',
             }),
             meta: {
-                footerType: 'light'
+                footerType: 'none',
+                heroNav: true
             }
         },
         {
@@ -61,7 +65,8 @@ const router = createRouter({
             path: '/terms',
             component: () => import('../views/Terms.vue'),
             meta: {
-                footerType: 'light'
+                footerType: 'none',
+                heroNav: true
             }
         },
         // Backward-compatible redirects for old cased paths

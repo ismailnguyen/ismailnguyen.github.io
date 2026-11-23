@@ -7,7 +7,6 @@
   <div class="placeholder"></div>
 
   <FooterWithPortfolio v-if="$route.meta.footerType == 'withPortfolio'" />
-  <Footer v-else-if="$route.meta.footerType != 'none'" />
 </template>
 
 <script>
@@ -16,14 +15,12 @@ import "@fortawesome/fontawesome-free/css/brands.css";
 import "@fortawesome/fontawesome-free/css/solid.css";
 import "bulma/css/bulma.css";
 import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
 import FooterWithPortfolio from "./components/FooterWithPortfolio.vue";
 
 export default {
   name: "App",
   components: {
     Navbar,
-    Footer,
     FooterWithPortfolio,
   },
   methods: {
