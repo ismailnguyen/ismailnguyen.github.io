@@ -32,13 +32,13 @@ function initParallax () {
             parallaxContainer.style.bottom = 'unset'
             parallaxContainer.style.top = '0px'
 
-            navbar.classList.remove('inverted');
+            navbar?.classList.remove('inverted');
         } else { // If parallaxContainer height is not greater than window height, bottom is 0 for normal parllax 
             window.removeEventListener('scroll', onScroll)
             parallaxContainer.style.top = 'unset'
             parallaxContainer.style.bottom = '0px'
 
-            navbar.classList.remove('inverted');
+            navbar?.classList.remove('inverted');
 
         }
     }
@@ -62,7 +62,7 @@ function initParallax () {
         if (placeholderTop <= 0) {  
             parallaxContainer.style.top = `${placeholderTop}px` // match parallaxContainer top value with placeholder's top value
 
-            navbar.classList.add('inverted');
+            navbar?.classList.add('inverted');
         }
     }
 }

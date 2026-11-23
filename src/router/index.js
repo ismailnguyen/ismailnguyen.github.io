@@ -9,7 +9,8 @@ const router = createRouter({
             path: '/',
             component: () => import('../views/Presentation.vue'),
             meta: {
-                footerType: 'withPortfolio'
+                footerType: 'withPortfolio',
+                heroNav: true
             }
         },
         {
@@ -17,7 +18,8 @@ const router = createRouter({
             path: '/:pathMatch(.*)*',
             component: () => import('../views/Presentation.vue'),
             meta: {
-                footerType: 'withPortfolio'
+                footerType: 'withPortfolio',
+                heroNav: true
             }
         },
         {

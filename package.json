@@ -3,6 +3,14 @@
   "description": "Ismail NGUYEN personal website",
   "version": "3.3.0",
   "author": "Ismaïl <dev@ismailnguyen.com>",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:e2e": "playwright test",
+    "e2e:install": "playwright install --with-deps",
+    "gen:sitemap": "node scripts/generate-sitemap.js"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
     "@ismailnguyen/game-of-life-js": "^1.0.0",
@@ -21,13 +29,5 @@
     "sass": "^1.77.8",
     "vite": "^6.3.5",
     "vite-plugin-pwa": "^1.0.3"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test:e2e": "playwright test",
-    "e2e:install": "playwright install --with-deps",
-    "gen:sitemap": "node scripts/generate-sitemap.js"
   }
 }

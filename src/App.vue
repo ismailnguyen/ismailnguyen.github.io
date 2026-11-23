@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Navbar />
+    <Navbar v-if="!$route.meta.heroNav" />
 
     <router-view />
   </main>
