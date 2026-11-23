@@ -6,144 +6,387 @@
     <meta name="robots" content="index, follow">
     <title>Politique de confidentialité – Hermes, assistant personnel d'Ismaïl NGUYEN</title>
     <meta name="description" content="Politique de confidentialité de Hermes, l'assistant personnel d'Ismaïl NGUYEN : traitement des données du compte Google, prestataires d'IA, conservation et sécurité.">
+    <link rel="icon" href="/resources/images/favicon.png">
     <style>
-        html { background: #000; color: #eaeaea; }
+        /* Same paper & ink world as the site, but self-contained: no script, no external request */
+        :root {
+            --paper: #f2f0eb;
+            --paper-2: #e8e6e1;
+            --ink: #141413;
+            --muted: #68675f;
+            --text: #34332f;
+            --rule: 1px solid var(--ink);
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            background: var(--paper);
+            color: var(--ink);
+            scroll-behavior: smooth;
+            scroll-padding-top: 1.5rem;
+        }
+
         body {
-            margin: 0 auto;
-            max-width: 46rem;
-            padding: 2.5rem 1.25rem 4rem;
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: clamp(12px, 2.4vw, 36px);
+            font-family: "Google Sans", "Product Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            font-size: 1.05rem;
             line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--ink); color: var(--paper); }
+
+        a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+        a:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
+
+        .frame {
+            max-width: 1848px;
+            margin: 0 auto;
+            border: var(--rule);
+        }
+
+        /* ---------- Hero ---------- */
+
+        .hero {
+            position: relative;
+            min-height: clamp(460px, 64vh, 640px);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero__art {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 52%;
+            background: url("/resources/images/mountains.webp") center top / cover no-repeat;
+            image-rendering: pixelated;
+        }
+
+        .home {
+            position: absolute;
+            z-index: 1;
+            top: clamp(1rem, 2vw, 1.75rem);
+            left: clamp(1rem, 2.2vw, 2.6rem);
+            text-decoration: none;
+        }
+
+        .home:hover { text-decoration: underline; }
+
+        .hero__copy {
+            position: relative;
+            z-index: 1;
+            max-width: 54rem;
+            margin: 0 auto;
+            padding: clamp(4.5rem, 9vh, 6.5rem) 16px 0;
+        }
+
+        h1 {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            font-size: clamp(2.2rem, 4.4vw, 4.4rem);
+            font-weight: 400;
+            line-height: 1.12;
+            letter-spacing: -0.03em;
+            text-wrap: balance;
+        }
+
+        h1 .muted { color: var(--muted); }
+
+        .meta {
+            margin: 1.1rem 0 0;
             font-size: 1.05rem;
         }
-        h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 .5rem; color: #fff; }
-        h2 { font-size: 1.25rem; margin: 2.25rem 0 .75rem; color: #fff; }
-        a { color: #8ecbff; }
-        a:hover, a:focus { color: #c4e4ff; }
-        a:focus-visible { outline: 2px solid #8ecbff; outline-offset: 2px; }
-        .meta { color: #b5b5b5; margin: 0 0 2rem; }
-        nav { margin-bottom: 2rem; }
-        ul { padding-left: 1.25rem; }
-        li { margin-bottom: .4rem; }
-        footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid #333; color: #b5b5b5; font-size: .95rem; }
+
+        /* ---------- Rules ---------- */
+
+        .hatch {
+            height: 26px;
+            border-block: var(--rule);
+            background: repeating-linear-gradient(45deg, transparent 0 4px, var(--ink) 4px 5px);
+        }
+
+        /* ---------- Document: contents | text ---------- */
+
+        .doc {
+            display: grid;
+            grid-template-columns: 1.33fr 3fr;
+            gap: 1px;
+            background: var(--ink);
+        }
+
+        .doc > * { background: var(--paper); }
+
+        .toc {
+            padding: 2.6rem 2rem 2.6rem 2.6rem;
+        }
+
+        .toc ol {
+            position: sticky;
+            top: 1.5rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 0.98rem;
+            line-height: 1.35;
+        }
+
+        .toc li + li { margin-top: 0.7rem; }
+
+        .toc a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover { color: var(--ink); }
+
+        main {
+            padding: clamp(2rem, 5vw, 4.5rem) clamp(1rem, 4vw, 3rem);
+        }
+
+        .prose {
+            max-width: 70ch;
+            margin: 0 auto;
+        }
+
+        h2 {
+            margin: 2.6em 0 0.6em;
+            font-size: 1.7rem;
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+        }
+
+        .prose > h2:first-child { margin-top: 0; }
+
+        p, li { color: var(--text); }
+        p { margin: 0 0 1em; }
+        ul { margin: 0 0 1em; padding-left: 1.25rem; }
+        li { margin-bottom: 0.4rem; }
+        li::marker { color: var(--ink); }
+
+        /* ---------- Footer grid ---------- */
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.33fr 3fr;
+            grid-template-rows: auto;
+            gap: 1px;
+            background: var(--ink);
+            font-size: 1.1rem;
+        }
+
+        .grid > * { background: var(--paper); }
+
+        .brand {
+            grid-row: span 3;
+            padding: 3.4rem 2.6rem 2.4rem;
+        }
+
+        .brand__name { font-size: 1.65rem; letter-spacing: -0.02em; line-height: 1.2; }
+        .brand__text { margin: 0.5rem 0 0; font-size: 1rem; line-height: 1.3; color: var(--muted); }
+
+        .cell {
+            display: grid;
+            place-items: center;
+            min-height: 4.55rem;
+            padding: 0.5rem;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .cell--head {
+            margin: 0;
+            font-weight: 400;
+            line-height: 1.2;
+            min-height: 5.6rem;
+            font-size: 1.45rem;
+            letter-spacing: -0.015em;
+            background: var(--paper-2);
+        }
+
+        a.cell { transition: background-color 0.2s; }
+        a.cell:hover { background: var(--paper-2); }
+
+        footer {
+            padding: 1.4rem 2.6rem 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        footer p { margin: 0; color: var(--ink); }
+
+        @media (max-width: 768px) {
+            .doc { grid-template-columns: 1fr; }
+            .toc { padding: 1.75rem 1.25rem; }
+            .toc ol { position: static; }
+            .grid { grid-template-columns: 1fr; }
+            .brand { grid-row: auto; padding: 2rem 1.25rem; }
+            footer { padding: 1.1rem 1.25rem; font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
-    <nav aria-label="Navigation">
-        <a href="https://www.ismailnguyen.com/">← Retour à l'accueil</a>
-    </nav>
+    <div class="frame">
+        <header class="hero">
+            <div class="hero__art" aria-hidden="true"></div>
 
-    <main>
-        <h1>Politique de confidentialité de Hermes</h1>
-        <p class="meta">Dernière mise à jour : 10 novembre 2026</p>
+            <nav aria-label="Navigation">
+                <a class="home" href="https://www.ismailnguyen.com/">← Retour à l'accueil</a>
+            </nav>
 
-        <h2>1. Cadre et responsable du traitement</h2>
-        <p>
-            Cette politique décrit comment Hermes, l'assistant personnel d'Ismaïl NGUYEN, traite les données du compte Google d'Ismaïl NGUYEN.
-            Hermes est un outil d'assistance personnelle à usage strictement personnel&nbsp;: ce n'est pas un produit commercial et il n'est pas proposé à des tiers.
-        </p>
-        <p>
-            Responsable du traitement&nbsp;: Ismaïl NGUYEN. Contact&nbsp;: <a href="mailto:privacy@ismailnguyen.com">privacy@ismailnguyen.com</a>.
-        </p>
+            <div class="hero__copy">
+                <h1>
+                    <span>Politique de confidentialité</span>
+                    <span class="muted">de Hermes</span>
+                </h1>
+                <p class="meta">Dernière mise à jour : 10 novembre 2026</p>
+            </div>
+        </header>
 
-        <h2>2. Gmail</h2>
-        <p>Hermes accède à Gmail pour les finalités suivantes&nbsp;:</p>
-        <ul>
-            <li>trier les fils de la boîte de réception (INBOX, messages lus et non lus)&nbsp;;</li>
-            <li>lire les en-têtes des messages&nbsp;;</li>
-            <li>lire le corps des messages et les pièces jointes, uniquement lorsque c'est nécessaire à la tâche demandée&nbsp;;</li>
-            <li>rédiger des brouillons de messages.</li>
-        </ul>
-        <p>
-            Les actions sensibles (envoi effectif d'un email, modification, archivage, suppression ou partage d'un message) n'ont lieu que sur approbation explicite d'Ismaïl NGUYEN, soit ponctuelle, soit via des règles récurrentes qu'il a expressément autorisées (par exemple le traitement de factures).
-        </p>
+        <div class="hatch"></div>
 
-        <h2>3. Google Drive</h2>
-        <p>
-            Hermes consulte des documents Google Drive pour obtenir le contexte nécessaire à une tâche, et sauvegarde ou classe des documents autorisés.
-            L'édition ou le partage de fichiers Drive requiert une approbation précise d'Ismaïl NGUYEN.
-        </p>
+        <div class="doc">
+            <nav class="toc" aria-label="Sections">
+                <ol>
+                    <li><a href="#cadre">1. Cadre et responsable du traitement</a></li>
+                    <li><a href="#gmail">2. Gmail</a></li>
+                    <li><a href="#drive">3. Google Drive</a></li>
+                    <li><a href="#calendar">4. Google Calendar</a></li>
+                    <li><a href="#notion">5. Notion</a></li>
+                    <li><a href="#ia">6. Traitement par des prestataires d'IA</a></li>
+                    <li><a href="#stockage">7. Stockage et conservation</a></li>
+                    <li><a href="#acces">8. Contrôle d'accès et risques résiduels</a></li>
+                    <li><a href="#engagements">9. Engagements d'utilisation</a></li>
+                    <li><a href="#securite">10. Sécurité</a></li>
+                    <li><a href="#correspondants">11. Données de correspondants</a></li>
+                </ol>
+            </nav>
 
-        <h2>4. Google Calendar</h2>
-        <p>
-            Hermes consulte les événements de l'agenda afin de préparer le planning.
-            L'édition d'événements requiert une approbation précise d'Ismaïl NGUYEN.
-        </p>
+            <main>
+                <div class="prose">
+                    <h2 id="cadre">1. Cadre et responsable du traitement</h2>
+                    <p>
+                        Cette politique décrit comment Hermes, l'assistant personnel d'Ismaïl NGUYEN, traite les données du compte Google d'Ismaïl NGUYEN.
+                        Hermes est un outil d'assistance personnelle à usage strictement personnel&nbsp;: ce n'est pas un produit commercial et il n'est pas proposé à des tiers.
+                    </p>
+                    <p>
+                        Responsable du traitement&nbsp;: Ismaïl NGUYEN. Contact&nbsp;: <a href="mailto:privacy@ismailnguyen.com">privacy@ismailnguyen.com</a>.
+                    </p>
 
-        <h2>5. Notion</h2>
-        <p>
-            Hermes crée et met à jour des tâches et des synthèses dans Notion, en lien avec les demandes d'Ismaïl NGUYEN.
-        </p>
+                    <h2 id="gmail">2. Gmail</h2>
+                    <p>Hermes accède à Gmail pour les finalités suivantes&nbsp;:</p>
+                    <ul>
+                        <li>trier les fils de la boîte de réception (INBOX, messages lus et non lus)&nbsp;;</li>
+                        <li>lire les en-têtes des messages&nbsp;;</li>
+                        <li>lire le corps des messages et les pièces jointes, uniquement lorsque c'est nécessaire à la tâche demandée&nbsp;;</li>
+                        <li>rédiger des brouillons de messages.</li>
+                    </ul>
+                    <p>
+                        Les actions sensibles (envoi effectif d'un email, modification, archivage, suppression ou partage d'un message) n'ont lieu que sur approbation explicite d'Ismaïl NGUYEN, soit ponctuelle, soit via des règles récurrentes qu'il a expressément autorisées (par exemple le traitement de factures).
+                    </p>
 
-        <h2>6. Traitement par des prestataires d'IA</h2>
-        <p>
-            Pour raisonner sur les tâches, Hermes transmet les données nécessaires à des fournisseurs de modèles d'IA.
-            Le prestataire principal est OpenAI&nbsp;; Hermes peut également recourir à d'autres prestataires d'IA configurés, y compris via l'intermédiaire OpenRouter.
-        </p>
-        <p>
-            Ces prestataires traitent les données selon leurs conditions applicables, dont dépendent la localisation et la durée de rétention.
-            Aucun engagement de non-entraînement ni de localisation ne peut être garanti au-delà de ce que prévoient leurs contrats et configurations, qui peuvent évoluer.
-            Cette page ne revendique pas l'absence de lecture humaine des données par ces prestataires au-delà de ce qu'indiquent leurs propres politiques.
-        </p>
+                    <h2 id="drive">3. Google Drive</h2>
+                    <p>
+                        Hermes consulte des documents Google Drive pour obtenir le contexte nécessaire à une tâche, et sauvegarde ou classe des documents autorisés.
+                        L'édition ou le partage de fichiers Drive requiert une approbation précise d'Ismaïl NGUYEN.
+                    </p>
 
-        <h2>7. Stockage et conservation</h2>
-        <ul>
-            <li>Les tâches, synthèses et historiques de conversation nécessaires au suivi sont conservés sur un serveur privé administré pour Ismaïl NGUYEN.</li>
-            <li>Les notifications et les documents choisis sont envoyés en privé à Ismaïl NGUYEN via Telegram.</li>
-            <li>Les tâches sont stockées dans Notion.</li>
-        </ul>
-        <p>
-            Des extraits de messages, en-têtes, pièces jointes et documents nécessaires au suivi peuvent être enregistrés dans les historiques, caches et checkpoints du serveur privé, ainsi que dans les tâches et synthèses Notion.
-            Les données nécessaires aux réponses peuvent être transmises aux prestataires IA configurés et aux canaux privés utilisés par le titulaire.
-            Il ne s'agit pas d'un traitement limité aux serveurs Google.
-        </p>
-        <p>
-            La localisation et la durée de rétention chez les prestataires dépendent de leurs contrats et de la configuration, sans garantie générale ici.
-        </p>
-        <p>
-            Les copies locales (historiques, caches, checkpoints, tâches Notion) persistent tant qu'elles sont nécessaires au suivi&nbsp;; il n'existe pas de purge automatique.
-            La révocation de l'accès Google ne supprime pas les copies déjà conservées. Une suppression sur demande d'Ismaïl NGUYEN couvre les caches, historiques et tâches sous son contrôle, dans la mesure permise par les obligations et politiques des prestataires.
-        </p>
+                    <h2 id="calendar">4. Google Calendar</h2>
+                    <p>
+                        Hermes consulte les événements de l'agenda afin de préparer le planning.
+                        L'édition d'événements requiert une approbation précise d'Ismaïl NGUYEN.
+                    </p>
 
-        <h2>8. Contrôle d'accès et risques résiduels</h2>
-        <p>
-            L'accès aux services Google se fait via OAuth Google, limité au seul compte autorisé. Aucun mot de passe Google n'est collecté ni stocké. L'accès au serveur privé est restreint.
-        </p>
-        <p>
-            Des risques résiduels subsistent, notamment ceux liés aux transferts de données vers les prestataires d'IA mentionnés plus haut. Ils sont exposés ici sans garantie excessive.
-        </p>
+                    <h2 id="notion">5. Notion</h2>
+                    <p>
+                        Hermes crée et met à jour des tâches et des synthèses dans Notion, en lien avec les demandes d'Ismaïl NGUYEN.
+                    </p>
 
-        <h2>9. Engagements d'utilisation</h2>
-        <p>
-            Les données ne sont ni vendues, ni utilisées à des fins publicitaires ou de ciblage.
-            L'application n'utilise pas les données reçues des API Google pour entraîner de modèles d'IA généralistes.
-            L'utilisation et le transfert des informations reçues des API Google respectent la Google API Services User Data Policy, y compris les exigences de Limited Use&nbsp;:
-            <a href="https://developers.google.com/terms/api-services-user-data-policy">https://developers.google.com/terms/api-services-user-data-policy</a>.
-            La conformité des prestataires d'IA tiers à ces exigences dépend de leurs propres conditions et n'est pas garantie ici.
-            Cette page ne constitue pas une validation par Google.
-        </p>
+                    <h2 id="ia">6. Traitement par des prestataires d'IA</h2>
+                    <p>
+                        Pour raisonner sur les tâches, Hermes transmet les données nécessaires à des fournisseurs de modèles d'IA.
+                        Le prestataire principal est OpenAI&nbsp;; Hermes peut également recourir à d'autres prestataires d'IA configurés, y compris via l'intermédiaire OpenRouter.
+                    </p>
+                    <p>
+                        Ces prestataires traitent les données selon leurs conditions applicables, dont dépendent la localisation et la durée de rétention.
+                        Aucun engagement de non-entraînement ni de localisation ne peut être garanti au-delà de ce que prévoient leurs contrats et configurations, qui peuvent évoluer.
+                        Cette page ne revendique pas l'absence de lecture humaine des données par ces prestataires au-delà de ce qu'indiquent leurs propres politiques.
+                    </p>
 
-        <h2>10. Sécurité</h2>
-        <p>
-            L'accès aux services Google se fait via OAuth, limité au seul compte autorisé. Aucun mot de passe Google n'est collecté ni stocké. L'accès au serveur privé est restreint.
-            Cette page ne contient aucun script, aucun traceur et ne dépose aucun cookie.
-        </p>
+                    <h2 id="stockage">7. Stockage et conservation</h2>
+                    <ul>
+                        <li>Les tâches, synthèses et historiques de conversation nécessaires au suivi sont conservés sur un serveur privé administré pour Ismaïl NGUYEN.</li>
+                        <li>Les notifications et les documents choisis sont envoyés en privé à Ismaïl NGUYEN via Telegram.</li>
+                        <li>Les tâches sont stockées dans Notion.</li>
+                    </ul>
+                    <p>
+                        Des extraits de messages, en-têtes, pièces jointes et documents nécessaires au suivi peuvent être enregistrés dans les historiques, caches et checkpoints du serveur privé, ainsi que dans les tâches et synthèses Notion.
+                        Les données nécessaires aux réponses peuvent être transmises aux prestataires IA configurés et aux canaux privés utilisés par le titulaire.
+                        Il ne s'agit pas d'un traitement limité aux serveurs Google.
+                    </p>
+                    <p>
+                        La localisation et la durée de rétention chez les prestataires dépendent de leurs contrats et de la configuration, sans garantie générale ici.
+                    </p>
+                    <p>
+                        Les copies locales (historiques, caches, checkpoints, tâches Notion) persistent tant qu'elles sont nécessaires au suivi&nbsp;; il n'existe pas de purge automatique.
+                        La révocation de l'accès Google ne supprime pas les copies déjà conservées. Une suppression sur demande d'Ismaïl NGUYEN couvre les caches, historiques et tâches sous son contrôle, dans la mesure permise par les obligations et politiques des prestataires.
+                    </p>
 
-        <h2>11. Données de correspondants</h2>
-        <p>
-            Les corps de messages et documents traités peuvent inclure des données des personnes en correspondance avec Ismaïl NGUYEN.
-            Ces données ne sont traitées que dans la mesure nécessaire aux tâches demandées et ne sont pas publiées.
-        </p>
+                    <h2 id="acces">8. Contrôle d'accès et risques résiduels</h2>
+                    <p>
+                        L'accès aux services Google se fait via OAuth Google, limité au seul compte autorisé. Aucun mot de passe Google n'est collecté ni stocké. L'accès au serveur privé est restreint.
+                    </p>
+                    <p>
+                        Des risques résiduels subsistent, notamment ceux liés aux transferts de données vers les prestataires d'IA mentionnés plus haut. Ils sont exposés ici sans garantie excessive.
+                    </p>
 
-        <h2>Liens</h2>
-        <ul>
-            <li><a href="https://www.ismailnguyen.com/">Accueil – ismailnguyen.com</a></li>
-            <li><a href="/terms">Conditions d'utilisation</a></li>
-        </ul>
-    </main>
+                    <h2 id="engagements">9. Engagements d'utilisation</h2>
+                    <p>
+                        Les données ne sont ni vendues, ni utilisées à des fins publicitaires ou de ciblage.
+                        L'application n'utilise pas les données reçues des API Google pour entraîner de modèles d'IA généralistes.
+                        L'utilisation et le transfert des informations reçues des API Google respectent la Google API Services User Data Policy, y compris les exigences de Limited Use&nbsp;:
+                        <a href="https://developers.google.com/terms/api-services-user-data-policy">https://developers.google.com/terms/api-services-user-data-policy</a>.
+                        La conformité des prestataires d'IA tiers à ces exigences dépend de leurs propres conditions et n'est pas garantie ici.
+                        Cette page ne constitue pas une validation par Google.
+                    </p>
 
-    <footer>
-        <p>Page statique hébergée sur GitHub Pages.</p>
-    </footer>
+                    <h2 id="securite">10. Sécurité</h2>
+                    <p>
+                        L'accès aux services Google se fait via OAuth, limité au seul compte autorisé. Aucun mot de passe Google n'est collecté ni stocké. L'accès au serveur privé est restreint.
+                        Cette page ne contient aucun script, aucun traceur et ne dépose aucun cookie.
+                    </p>
+
+                    <h2 id="correspondants">11. Données de correspondants</h2>
+                    <p>
+                        Les corps de messages et documents traités peuvent inclure des données des personnes en correspondance avec Ismaïl NGUYEN.
+                        Ces données ne sont traitées que dans la mesure nécessaire aux tâches demandées et ne sont pas publiées.
+                    </p>
+                </div>
+            </main>
+        </div>
+
+        <div class="hatch"></div>
+
+        <div class="grid">
+            <div class="brand">
+                <div class="brand__name">Hermes</div>
+                <p class="brand__text">Assistant personnel d'Ismaïl NGUYEN</p>
+            </div>
+            <h2 class="cell cell--head">Liens</h2>
+            <a class="cell" href="https://www.ismailnguyen.com/">Accueil – ismailnguyen.com</a>
+            <a class="cell" href="/terms">Conditions d'utilisation</a>
+        </div>
+
+        <div class="hatch"></div>
+
+        <footer>
+            <p>Page statique hébergée sur GitHub Pages.</p>
+        </footer>
+    </div>
 </body>
 </html>
