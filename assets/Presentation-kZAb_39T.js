@@ -1,4 +1,4 @@
-import{_ as S,c as _,a as u,b as P,d as I,w as U,e as T,r as M,o as y,f as L}from"./index-CIRbbI69.js";const N=`
+import{_ as S,c as _,a as u,b as P,d as I,w as U,e as T,r as M,o as y,f as L}from"./index-BE0iOvlV.js";const N=`
 attribute vec2 a;
 void main() { gl_Position = vec4(a, 0.0, 1.0); }
 `,D=`
