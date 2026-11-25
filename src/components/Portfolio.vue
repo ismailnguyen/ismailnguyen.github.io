@@ -171,13 +171,15 @@
                 this.dragging = true;
                 this.moved = 0;
                 this.velocity = 0;
-                band.setPointerCapture(e.pointerId);
 
                 const move = (ev) => {
                     const now = performance.now();
                     const dx = (ev.clientX - lastX) / this.u;
                     this.offset -= dx;
                     this.moved += Math.abs(dx);
+                    // capture only once it's a real drag: capturing on pointerdown retargets
+                    // the click to the band, so the card link would never navigate
+                    if (this.moved > 6 && !band.hasPointerCapture(ev.pointerId)) band.setPointerCapture(ev.pointerId);
                     const dt = Math.max((now - lastT) / 1000, 0.001);
                     this.velocity = 0.8 * (-dx / dt) + 0.2 * this.velocity;
                     lastX = ev.clientX;
